@@ -1,4 +1,4 @@
-﻿/*
+/*
 -----------------------------------------------------------使用chrome的时候---------------------------------------------
 */
 
@@ -1307,9 +1307,10 @@ SwitchIME(dwLayout){
 ScrollLock::Reload   ;暂停脚本
 Pause::Pause 
 
+;---------------------------------------
+; 查找图片
+;---------------------------------------
 /*
-查找图片
-*/
 NumpadSub::
 ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight, E:\software\AutoHotkey\OneQuick-master_AutoHotKey\tool\ReadFile\test.bmp 
 if ErrorLevel = 2 
@@ -1320,3 +1321,4 @@ else
  ;MsgBox 在 %OutputVarX%x%OutputVarY% 处寻得图标。
 MouseMove  %OutputVarX%, %OutputVarY%
 return 
+*/
