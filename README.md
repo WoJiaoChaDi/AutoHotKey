@@ -1,5 +1,7 @@
 OneQuick
 ========================
+此项目是在https://github.com/XUJINKAI/OneQuick 的基础上个人定制化后的版本，完整初始版本请去支持该作者！
+
 
 OneQuick 是一款基于autohotkey的windows快捷工具。  
 独创的屏幕边缘操作、文本快速搜索功能；还有剪贴板历史纪录、窗口操作菜单等一系列实用功能，操作windows也能如此爽快。  
