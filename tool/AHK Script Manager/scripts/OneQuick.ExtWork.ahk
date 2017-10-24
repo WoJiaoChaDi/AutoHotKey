@@ -1,4 +1,4 @@
-/*
+﻿/*
 -----------------------------------------------------------使用chrome的时候---------------------------------------------
 */
 
@@ -41,6 +41,7 @@ addFangChan(){
 	MouseClick, left, 460, 318
 	Send {Home}   
 	Send +{End}
+	Send ^v
 	Send ^c
 	MouseClick, left, 415, 348 ;所在城市区域
 	Send {down}{enter}
@@ -77,7 +78,7 @@ return
 ::``qq410::
 	Send ^{F5}
 	Sleep 2000
-	MouseClick, left,  87, 211	;关闭系统菜单
+	;MouseClick, left,  87, 211	;关闭系统菜单
 	Sleep, 1000
 	addFangChan()
 	Send ^v
@@ -158,8 +159,6 @@ fangChanChuPing(){
 		Sleep, 800  ;等待
 		sX := OutputVarX - 700
 		sY := OutputVarY - 25
-		MsgBox %sX%
-		MsgBox %sY%
 		MouseClick, left, %sX%, %sY% ;选中所有权人
 		;MouseClick, left, 470, 337 ;选中所有权人
 		Send {Home}   
@@ -183,9 +182,17 @@ fangChanChuPing(){
 		Sleep, 500
 		Send {tab}{enter}
 		Sleep, 500
-		MouseClick, left,  1014, 604
-		Sleep, 100
-		Send, {ENTER}
+		
+		ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight, E:\software\AutoHotkey\OneQuick-master_AutoHotKey\tool\ReadFile\chuping_tijiao.bmp
+		if ErrorLevel = 2 
+		MsgBox 不能实施搜索。
+		else if ErrorLevel = 1 
+		MsgBox 未在屏幕上寻得图标。
+		else{
+			MouseClick, left,  %OutputVarXA%, %OutputVarYA%
+			Sleep, 100
+			Send, {ENTER}
+		}
 	}
 	
 }
@@ -1308,7 +1315,7 @@ ScrollLock::Reload   ;暂停脚本
 Pause::Pause 
 
 ;---------------------------------------
-; 查找图片
+; 查找图片（只能查询当前激活窗口的文件）
 ;---------------------------------------
 /*
 NumpadSub::
