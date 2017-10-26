@@ -31,7 +31,7 @@ _OneQuick基于[AHK][AHK]，如果没有安装的话会先安装AHK。_
 - **剪贴板增强 · clipboard**  
     ctrl + shift + x：打开剪贴板记录  (已被我改为 ctrl + alt + ]  ：弃用)  
     ctrl + shift + c：复制并打开操作列表  (已被我改为 ctrl + alt + c)  
-    ctrl + shift + v：直接打开操作列表  (已被我改为 ctrl + alt + v)
+    ctrl + shift + v：直接打开操作列表  (已被我改为 ctrl + alt + v)  
     ctrl + win + c:复制文件所在路径  (个人新增)    
 
     在操作列表中:  
@@ -50,8 +50,8 @@ _OneQuick基于[AHK][AHK]，如果没有安装的话会先安装AHK。_
     shift + 滚轮：屏幕亮度  
     右键：窗口操作菜单  
 
-    **右上角 · RT**  
-    滚轮/单击滚轮：歌曲上一首/下一首/播放或暂停  
+    **右上角 · 
+    滚轮/单击滚轮：歌曲上一首/下一首/播放或暂停  
     右键：用户自定义菜单（[如何扩展菜单][ext_rt_menu]）  
 
     **左边框 & 右边框 · L-R**  
