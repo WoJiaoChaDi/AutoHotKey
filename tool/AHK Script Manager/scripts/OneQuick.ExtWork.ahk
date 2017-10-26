@@ -41,6 +41,7 @@ addFangChan(){
 	MouseClick, left, 460, 318
 	Send {Home}   
 	Send +{End}
+	Send ^v
 	Send ^c
 	MouseClick, left, 415, 348 ;所在城市区域
 	Send {down}{enter}
@@ -77,7 +78,7 @@ return
 ::``qq410::
 	Send ^{F5}
 	Sleep 2000
-	MouseClick, left,  87, 211	;关闭系统菜单
+	;MouseClick, left,  87, 211	;关闭系统菜单
 	Sleep, 1000
 	addFangChan()
 	Send ^v
@@ -158,16 +159,14 @@ fangChanChuPing(){
 		Sleep, 800  ;等待
 		sX := OutputVarX - 700
 		sY := OutputVarY - 25
-		MsgBox %sX%
-		MsgBox %sY%
 		MouseClick, left, %sX%, %sY% ;选中所有权人
 		;MouseClick, left, 470, 337 ;选中所有权人
 		Send {Home}   
 		Send +{End}
 		Send ^c
-		Send {tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}
+		Send {tab 9}
 		Send ^v
-		Send {tab}{tab}{tab}{tab}{tab}{tab}{tab}
+		Send {tab 7}
 		Send {Home}   
 		Send +{End}
 		Send 15000 ;系统评估单价（元）
@@ -183,9 +182,17 @@ fangChanChuPing(){
 		Sleep, 500
 		Send {tab}{enter}
 		Sleep, 500
-		MouseClick, left,  1014, 604
-		Sleep, 100
-		Send, {ENTER}
+		
+		ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight, E:\software\AutoHotkey\OneQuick-master_AutoHotKey\tool\ReadFile\chuping_tijiao.bmp
+		if ErrorLevel = 2 
+		MsgBox 不能实施搜索。
+		else if ErrorLevel = 1 
+		MsgBox 未在屏幕上寻得图标。
+		else{
+			MouseClick, left,  %OutputVarXA%, %OutputVarYA%
+			Sleep, 100
+			Send, {ENTER}
+		}
 	}
 	
 }
@@ -207,7 +214,7 @@ fangChanChuPing(){
 	MouseClick, left, 207, 246 ;光标定位所有人
 	Send {tab}
 	Send ^v
-	Send {tab}{tab}{tab}{tab}{tab}{enter}
+	Send {tab 5}{enter}
 	Sleep, 1000  ;等待
 	MouseClick, left, 510, 367 ;光标定位第一条记录
 	Sleep, 500  ;等待
@@ -836,7 +843,7 @@ yunYing(){
  * @Description: 隐身登入ql齐龙
  * @author XuDong
  */
- ::````ql:: 
+ ::````qlz:: 
 	autoLoginTag(13701247226)
  return 
 
@@ -852,7 +859,7 @@ yunYing(){
  * @Description: 隐身登入pj潘杰
  * @author XuDong
  */
- ::````pj:: 
+ ::````pjz:: 
 	autoLoginTag(13922236063)
  return
 
@@ -924,7 +931,7 @@ yunYing(){
  * @Description: 隐身登入ql齐龙
  * @author XuDong
  */
- ::``ql:: 
+ ::``qlz:: 
 	autoLogin(13701247226)
  return 
 
@@ -940,7 +947,7 @@ yunYing(){
  * @Description: 隐身登入pj潘杰
  * @author XuDong
  */
- ::``pj:: 
+ ::``pjz:: 
 	autoLogin(13922236063)
  return
 
@@ -979,31 +986,31 @@ yunYing(){
 		Send {Enter}
 	return
 
-	::ds::
+	::dsz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 18611698942
 		Send {Enter}
 	return
 
-	::dw::
+	::dwz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 13366186570
 		Send {Enter}
 	return
 
-	::gf::
+	::gfz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 18514256561
 		Send {Enter}
 	return
 
-	::hg::
+	::hgz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 13601089205
 		Send {Enter}
 	return
 
-	::hh::
+	::hhz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 13522217556
 		Send {Enter}
@@ -1027,7 +1034,7 @@ yunYing(){
 		Send {Enter}
 	return
 
-	::hz::
+	::hzz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 18612315653
 		Send {Enter}
@@ -1039,7 +1046,7 @@ yunYing(){
 		Send {Enter}
 	return
 
-	::lc::
+	::lcz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 18810551529
 		Send {Enter}
@@ -1069,13 +1076,13 @@ yunYing(){
 		Send {Enter}
 	return
 
-	::pj::
+	::pjz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 13922236063
 		Send {Enter}
 	return
 
-	::ql::
+	::qlz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 13701247226
 		Send {Enter}
@@ -1099,7 +1106,7 @@ yunYing(){
 		Send {Enter}
 	return
 
-	::tz::
+	::tzz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 18305405616
 		Send {Enter}
@@ -1123,19 +1130,19 @@ yunYing(){
 		Send {Enter}
 	return
 
-	::yj::
+	::yjz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 18683259087
 		Send {Enter}
 	return
 
-	::ys::
+	::ysz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 13810803511
 		Send {Enter}
 	return
 
-	::yt::
+	::ytz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 13537712861
 		Send {Enter}
@@ -1153,7 +1160,7 @@ yunYing(){
 		Send {Enter}
 	return
 
-	::zl::
+	::zlz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 15801502686
 		Send {Enter}
@@ -1307,9 +1314,10 @@ SwitchIME(dwLayout){
 ScrollLock::Reload   ;暂停脚本
 Pause::Pause 
 
+;---------------------------------------
+; 查找图片（只能查询当前激活窗口的文件）   2
+;---------------------------------------
 /*
-查找图片
-*/
 NumpadSub::
 ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight, E:\software\AutoHotkey\OneQuick-master_AutoHotKey\tool\ReadFile\test.bmp 
 if ErrorLevel = 2 
@@ -1320,3 +1328,4 @@ else
  ;MsgBox 在 %OutputVarX%x%OutputVarY% 处寻得图标。
 MouseMove  %OutputVarX%, %OutputVarY%
 return 
+*/
