@@ -71,8 +71,8 @@ _OneQuick基于[AHK][AHK]，如果没有安装的话会先安装AHK。_
     使用sublime时，按win+E 打开当前正在编辑的文件所在的目录  
 
 - **快捷键 · hotkey**  
-    **win + Z：显示功能菜单（GreatMenu）**  
-    **ctrl + alt + R：打开Command Run窗口** ([可执行的命令说明][run_function])  
+    win + Z：显示功能菜单（GreatMenu）  
+    ctrl + alt + R：打开Command Run窗口 ([可执行的命令说明][run_function])  
     win + 鼠标右键：弹出当前窗口的操作菜单  
     shift + 滚轮：翻页  
     win + T：当前窗口最前端  
