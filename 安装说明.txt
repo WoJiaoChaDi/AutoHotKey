@@ -19,4 +19,4 @@ XuDong自定安装说明：
 
 tool中的文件：
 AutoScriptWriter_AutoHotKey.zip     自己记录操作的程序，方便写ahk脚本
-AutoHotkeyCnCHM.rar					中文帮助手册
+AutoHotkeyCnCHM.rar					中文帮助手册 
