@@ -164,9 +164,9 @@ fangChanChuPing(){
 		Send {Home}   
 		Send +{End}
 		Send ^c
-		Send {tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}
+		Send {tab 9}
 		Send ^v
-		Send {tab}{tab}{tab}{tab}{tab}{tab}{tab}
+		Send {tab 7}
 		Send {Home}   
 		Send +{End}
 		Send 15000 ;系统评估单价（元）
@@ -214,7 +214,7 @@ fangChanChuPing(){
 	MouseClick, left, 207, 246 ;光标定位所有人
 	Send {tab}
 	Send ^v
-	Send {tab}{tab}{tab}{tab}{tab}{enter}
+	Send {tab 5}{enter}
 	Sleep, 1000  ;等待
 	MouseClick, left, 510, 367 ;光标定位第一条记录
 	Sleep, 500  ;等待
@@ -843,7 +843,7 @@ yunYing(){
  * @Description: 隐身登入ql齐龙
  * @author XuDong
  */
- ::````ql:: 
+ ::````qlz:: 
 	autoLoginTag(13701247226)
  return 
 
@@ -859,7 +859,7 @@ yunYing(){
  * @Description: 隐身登入pj潘杰
  * @author XuDong
  */
- ::````pj:: 
+ ::````pjz:: 
 	autoLoginTag(13922236063)
  return
 
@@ -931,7 +931,7 @@ yunYing(){
  * @Description: 隐身登入ql齐龙
  * @author XuDong
  */
- ::``ql:: 
+ ::``qlz:: 
 	autoLogin(13701247226)
  return 
 
@@ -947,7 +947,7 @@ yunYing(){
  * @Description: 隐身登入pj潘杰
  * @author XuDong
  */
- ::``pj:: 
+ ::``pjz:: 
 	autoLogin(13922236063)
  return
 
@@ -986,31 +986,31 @@ yunYing(){
 		Send {Enter}
 	return
 
-	::ds::
+	::dsz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 18611698942
 		Send {Enter}
 	return
 
-	::dw::
+	::dwz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 13366186570
 		Send {Enter}
 	return
 
-	::gf::
+	::gfz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 18514256561
 		Send {Enter}
 	return
 
-	::hg::
+	::hgz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 13601089205
 		Send {Enter}
 	return
 
-	::hh::
+	::hhz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 13522217556
 		Send {Enter}
@@ -1034,7 +1034,7 @@ yunYing(){
 		Send {Enter}
 	return
 
-	::hz::
+	::hzz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 18612315653
 		Send {Enter}
@@ -1046,7 +1046,7 @@ yunYing(){
 		Send {Enter}
 	return
 
-	::lc::
+	::lcz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 18810551529
 		Send {Enter}
@@ -1076,13 +1076,13 @@ yunYing(){
 		Send {Enter}
 	return
 
-	::pj::
+	::pjz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 13922236063
 		Send {Enter}
 	return
 
-	::ql::
+	::qlz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 13701247226
 		Send {Enter}
@@ -1106,7 +1106,7 @@ yunYing(){
 		Send {Enter}
 	return
 
-	::tz::
+	::tzz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 18305405616
 		Send {Enter}
@@ -1130,19 +1130,19 @@ yunYing(){
 		Send {Enter}
 	return
 
-	::yj::
+	::yjz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 18683259087
 		Send {Enter}
 	return
 
-	::ys::
+	::ysz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 13810803511
 		Send {Enter}
 	return
 
-	::yt::
+	::ytz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 13537712861
 		Send {Enter}
@@ -1160,7 +1160,7 @@ yunYing(){
 		Send {Enter}
 	return
 
-	::zl::
+	::zlz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 15801502686
 		Send {Enter}
@@ -1315,7 +1315,7 @@ ScrollLock::Reload   ;暂停脚本
 Pause::Pause 
 
 ;---------------------------------------
-; 查找图片（只能查询当前激活窗口的文件）
+; 查找图片（只能查询当前激活窗口的文件）   2
 ;---------------------------------------
 /*
 NumpadSub::
