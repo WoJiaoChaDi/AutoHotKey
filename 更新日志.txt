@@ -1,6 +1,6 @@
 /*
 v1.1 :
-更新chrome中，ctrl+f自动搜索后，会覆盖剪贴板内容的bug (Clipboard、ClipboardAll的区别)
+更新chrome中，ctrl+f自动搜索后，会覆盖剪贴板内容的bug (Clipboard、ClipboardAll的区别) 
 
 2017-09-26
 */
