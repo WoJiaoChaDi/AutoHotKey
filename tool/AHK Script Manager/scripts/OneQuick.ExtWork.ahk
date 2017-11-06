@@ -440,7 +440,7 @@ neiShen2(){
  zhongShen(){
 	MouseClick, left, 1657, 311 ;待办进入第一个
 	MouseClick, left, 1007, 659 ;接受任务
-	Sleep, 2000  ;等待
+	Sleep, 2500  ;等待
 	MouseClick, left, 1657, 311 ;待办进入第一个
 	Sleep, 4000  ;等待
 	MouseClick, left, 1560, 842, 2 ;下户快卖价（元）//双击
