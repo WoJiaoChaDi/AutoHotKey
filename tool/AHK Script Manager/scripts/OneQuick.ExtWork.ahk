@@ -144,7 +144,7 @@ fangChanChuPing(){
 	MouseClick, left, 306, 217 ;待评估无房本
 	Sleep, 1000  ;等待
 	MouseClick, left, 1789, 363 ;选中第一条评估
-	Sleep, 2000  ;等待
+	Sleep, 3500  ;等待
 	
 	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight, E:\software\AutoHotkey\OneQuick-master_AutoHotKey\tool\ReadFile\chuping_fangwuzuobiao.bmp
 	if ErrorLevel = 2 
@@ -502,7 +502,7 @@ neiShen2(){
 }
 
  /*
- * @Description: 审批经理审批II - 自动表单
+ * @Description: 审批经理审批Ⅱ - 自动表单
  * @author XuDong
  */
  ::``44::
@@ -515,14 +515,37 @@ neiShen2(){
 	Sleep, 2000  ;等待
 	MouseClick, left, 346, 217 ;申请信息
 	Sleep, 500  ;等待
-	MouseClick, left, 1031, 493 ;附属产品
-	Send {down}{down}{enter}
-	Send {tab}500000 ;授信额度(元)
-	MouseClick, left, 738, 611 ;需要签署的文件
-	Send {down}{down}{down}{esc}
-	Send {tab}{tab}{enter}{enter}
-	Sleep, 2000  ;等待
-	Send {enter}
+	
+	ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight, E:\software\AutoHotkey\OneQuick-master_AutoHotKey\tool\ReadFile\shenpi_fushuchanpin.bmp
+	if ErrorLevel = 2 
+	MsgBox 不能实施搜索。
+	else if ErrorLevel = 1 
+	MsgBox 未在屏幕上寻得图标。
+	else{
+		;MouseClick, left, 1031, 493 ;附属产品
+		xa := OutputVarXA + 100
+		ya := OutputVarYA + 15
+		MouseClick, left,  %xa%, %ya%
+		Sleep, 100
+		Send {down}{down}{enter}
+		Send {tab}500000 ;授信额度(元)
+		
+		ImageSearch, OutputVarXB, OutputVarYB, 0, 0, A_ScreenWidth, A_ScreenHeight, E:\software\AutoHotkey\OneQuick-master_AutoHotKey\tool\ReadFile\shenpi_xuyaoqianshudewenjian.bmp
+		if ErrorLevel = 2 
+		MsgBox 不能实施搜索。
+		else if ErrorLevel = 1 
+		MsgBox 未在屏幕上寻得图标。
+		else{
+			;MouseClick, left, 738, 611 ;需要签署的文件
+			xb := OutputVarXB + 300
+			yb := OutputVarYB + 15
+			MouseClick, left,  %xb%, %yb%
+			Send {down}{down}{down}{esc}
+			Send {tab}{tab}{enter}{enter}
+			Sleep, 2000  ;等待
+			Send {enter}
+		}	
+	}	
 }
 
  /*
