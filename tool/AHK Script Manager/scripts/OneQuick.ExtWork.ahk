@@ -264,9 +264,6 @@ fangChanChuPing(){
 	MouseClick, left, 443, 585 ;全国企业信用网 无 401 有
 	MouseClick, left, 1872, 242 ;完善客户信息
 	openCustInfo()
-	Sleep, 1500  ;等待
-	MouseClick, left,  403,  594, 2
-	Send ^c
 }
 
  /*
@@ -678,8 +675,9 @@ yunYing(){
  return    
  
  dzMianQian(){
-	Send {PgDn}
-	MouseClick, left, 463, 472
+	Send {PgDn} 
+	Sleep 100
+	MouseClick, left, 469, 479
 	Send 1{tab}2{tab}3{tab}4{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{space}{tab}{tab}{tab}{tab}6{tab}{tab}7{tab}80000{tab}79999{tab}10{tab}11{tab}1222 2222 2222 22{tab}13{tab}14{tab}15{tab}79888{tab}60000{tab}18{tab}19{tab}59999{tab}21{tab}22{tab}23
 	
 	MouseClick, left, 318, 244 ; 定位到征信及涉诉情况
@@ -687,21 +685,23 @@ yunYing(){
 	Send {tab}{tab}{tab}{space}
 	Send {tab}{tab}{tab}{space}
 	Send {tab}{tab}{tab}{space}
-	MouseClick, left, 1029, 494 ;房产当前状态
+	MouseClick, left, 1050, 518 ;房产当前状态
 	Send {down}{enter}
-	MouseClick, left, 1605, 500 ;使用状态
+	MouseClick, left, 1611, 506 ;使用状态
 	Send {down}{enter}
-	MouseClick, left, 457, 526 ;权利人证件类型
+	MouseClick, left, 470, 538 ;权利人证件类型
 	Send {down}{enter}
-	MouseClick, left, 1552, 525 ;房产所在地区
+	MouseClick, left, 1029, 538 ;权利人证件号
+	Send 421002198005106890
+	MouseClick, left, 1574, 547 ;房产所在地区
 	Send {down}{enter}
-	MouseClick, left, 1653, 528 ;房产所在地区
+	MouseClick, left, 1663, 547 ;房产所在地区
 	Send {down}{enter}
-	MouseClick, left, 461, 557 ;房产用途
+	MouseClick, left, 464, 567 ;房产用途
 	Send {down}{enter}
-	MouseClick, left, 1604, 555 ;房产性质
+	MouseClick, left, 1600, 574 ;房产性质
 	Send {down}{enter}
-	MouseClick, left, 1027, 640 ;授信方式
+	MouseClick, left, 1036, 652 ;授信方式
 	Send {down}{enter}
 	Send {PgUp}
 	Sleep, 300  ;等待
@@ -807,6 +807,20 @@ yunYing(){
 	Send {Home}   
 	Send +{End}
 	Send 4{enter}
+	Sleep, 1500  ;等待
+	MouseClick, left,  403,  594, 2
+	Send ^c
+	
+	ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight, E:\software\AutoHotkey\OneQuick-master_AutoHotKey\tool\ReadFile\dangqiantab.bmp
+		if ErrorLevel = 2 
+		MsgBox 不能实施搜索。
+		else if ErrorLevel = 1 
+		MsgBox 未在屏幕上寻得图标。
+		else{
+			sX := OutputVarXA - 119
+			sY := OutputVarYA
+			MouseClick, left, %sX%, %sY% ;
+		}
  }
  
   /*
