@@ -7,3 +7,12 @@ class User_PC201503250128
 	}
 }
 
+
+class User_DESKTOP_G195C4P
+{
+	Ini()
+	{
+
+	}
+}
+

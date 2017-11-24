@@ -146,7 +146,7 @@ fangChanChuPing(){
 	MouseClick, left, 1789, 363 ;选中第一条评估
 	Sleep, 3500  ;等待
 	
-	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight, E:\software\AutoHotkey\OneQuick-master_AutoHotKey\tool\ReadFile\chuping_fangwuzuobiao.bmp
+	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\chuping_fangwuzuobiao.bmp
 	if ErrorLevel = 2 
 	MsgBox 不能实施搜索。
 	else if ErrorLevel = 1 
@@ -183,7 +183,7 @@ fangChanChuPing(){
 		Send {tab}{enter}
 		Sleep, 500
 		
-		ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight, E:\software\AutoHotkey\OneQuick-master_AutoHotKey\tool\ReadFile\chuping_tijiao.bmp
+		ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\chuping_tijiao.bmp
 		if ErrorLevel = 2 
 		MsgBox 不能实施搜索。
 		else if ErrorLevel = 1 
@@ -513,7 +513,7 @@ neiShen2(){
 	MouseClick, left, 346, 217 ;申请信息
 	Sleep, 500  ;等待
 	
-	ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight, E:\software\AutoHotkey\OneQuick-master_AutoHotKey\tool\ReadFile\shenpi_fushuchanpin.bmp
+	ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\shenpi_fushuchanpin.bmp
 	if ErrorLevel = 2 
 	MsgBox 不能实施搜索。
 	else if ErrorLevel = 1 
@@ -527,7 +527,7 @@ neiShen2(){
 		Send {down}{down}{enter}
 		Send {tab}500000 ;授信额度(元)
 		
-		ImageSearch, OutputVarXB, OutputVarYB, 0, 0, A_ScreenWidth, A_ScreenHeight, E:\software\AutoHotkey\OneQuick-master_AutoHotKey\tool\ReadFile\shenpi_xuyaoqianshudewenjian.bmp
+		ImageSearch, OutputVarXB, OutputVarYB, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\shenpi_xuyaoqianshudewenjian.bmp
 		if ErrorLevel = 2 
 		MsgBox 不能实施搜索。
 		else if ErrorLevel = 1 
@@ -735,7 +735,7 @@ yunYing(){
 	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 	Send ^+n
 	Send ^l
-	localHttp = http://localhost:8064/ts/login.do
+	localHttp = http://localhost:8066/ts/login.do
 	Send %localHttp%
 	Send {enter}
 	Sleep, 1500  ;等待
@@ -753,7 +753,7 @@ yunYing(){
 	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 	Send ^+n
 	Send ^l
-	localHttp = http://localhost:8053/ts/login.do
+	localHttp = http://localhost:8069/ts/login.do
 	Send %localHttp%
 	Send {enter}
 	Sleep, 1500  ;等待
@@ -773,7 +773,7 @@ yunYing(){
 	MouseClick, left, 78, 241 ;刷新菜单
 	Sleep, 1000  ;等待
 	*/
-	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight, E:\software\AutoHotkey\OneQuick-master_AutoHotKey\tool\ReadFile\caidan_dakai.bmp
+	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\caidan_dakai.bmp
 	if ErrorLevel = 2 
 	MsgBox 不能实施搜索。
 	else if ErrorLevel = 1 
@@ -811,13 +811,13 @@ yunYing(){
 	MouseClick, left,  403,  594, 2
 	Send ^c
 	
-	ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight, E:\software\AutoHotkey\OneQuick-master_AutoHotKey\tool\ReadFile\dangqiantab.bmp
+	ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\dangqiantab.bmp
 		if ErrorLevel = 2 
 		MsgBox 不能实施搜索。
 		else if ErrorLevel = 1 
 		MsgBox 未在屏幕上寻得图标。
 		else{
-			sX := OutputVarXA - 119
+			sX := OutputVarXA - 70
 			sY := OutputVarYA
 			MouseClick, left, %sX%, %sY% ;
 		}
@@ -1356,7 +1356,7 @@ Pause::Pause
 ;---------------------------------------
 /*
 NumpadSub::
-ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight, E:\software\AutoHotkey\OneQuick-master_AutoHotKey\tool\ReadFile\test.bmp 
+ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\test.bmp 
 if ErrorLevel = 2 
 MsgBox 不能实施搜索。
 else if ErrorLevel = 1 

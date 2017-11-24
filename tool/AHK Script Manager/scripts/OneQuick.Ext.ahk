@@ -143,7 +143,7 @@ Insert::
 		if(indexJava != 0 `|`| indexJs != 0){
 			MouseClick, left, 1769, 391, ,0 ;旧svn替换
 		}
-		if(indexXml != 0 `|`| indexJsp != 0 ){
+		if(indexXml != 0 `|`| indexJsp != 0 `|`| indexProperties != 0){
 			MouseClick, left, 1769, 121, ,0 ;旧svn替换
 		}
 		MouseMove, %xpos%, %ypos%, 0 ;移动鼠标到原来位置
@@ -165,15 +165,40 @@ return
 	indexXml := InStr(title,".xml")
 	indexJsp  := InStr(title,".jsp")
 	indexJs  := InStr(title,".js")
+    indexProperties  := InStr(title,".properties")
 	if(indexSVN != 0 || indexSVN2 != 0 ){
 		if(indexJsp != 0 && indexJs != 0){
 			indexJs := 0
 		}	
 		if(indexJava != 0 `|`| indexJs != 0){
-			MouseClick, left, 1802, 391, ,0 ;下一处不同
+			;MouseClick, left, 1802, 391, ,0 ;下一处不同
+            
+            ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_next.bmp
+            if ErrorLevel = 2 
+            MsgBox 不能实施搜索。
+            else if ErrorLevel = 1 
+            1==1
+            ;MsgBox 未在屏幕上寻得图标。
+            else{
+                xa := OutputVarXA + 10
+                ya := OutputVarYA
+                MouseClick, left,  %xa%, %ya%, ,0	;下一处不同
+            }
 		}
-		if(indexXml != 0 `|`| indexJsp != 0 ){
-			MouseClick, left, 1799, 119, ,0 ;下一处不同
+		if(indexXml != 0 `|`| indexJsp != 0 `|`| indexProperties != 0){
+			;MouseClick, left, 1799, 119, ,0 ;下一处不同
+            
+            ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_next.bmp
+            if ErrorLevel = 2 
+            MsgBox 不能实施搜索。
+            else if ErrorLevel = 1 
+            1==1
+            ;MsgBox 未在屏幕上寻得图标。
+            else{
+                xa := OutputVarXA + 10
+                ya := OutputVarYA
+                MouseClick, left,  %xa%, %ya%, ,0	;下一处不同
+            }
 		}
 		MouseMove, %xpos%, %ypos%, 0 ;移动鼠标到原来位置
 	}else{
@@ -198,10 +223,34 @@ return
 			indexJs := 0
 		}	
 		if(indexJava != 0 `|`| indexJs != 0){
-			MouseClick, left, 1822, 391, ,0 ;上一处不同
+			;MouseClick, left, 1822, 391, ,0 ;上一处不同
+            
+            ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_previous.bmp
+            if ErrorLevel = 2 
+            MsgBox 不能实施搜索。
+            else if ErrorLevel = 1 
+            1==1
+            ;MsgBox 未在屏幕上寻得图标。
+            else{
+                xa := OutputVarXA + 10
+                ya := OutputVarYA
+                MouseClick, left,  %xa%, %ya%, ,0	;上一处不同
+            }
 		}
-		if(indexXml != 0 `|`| indexJsp != 0 ){
-			MouseClick, left, 1822, 121, ,0 ;上一处不同
+		if(indexXml != 0 `|`| indexJsp != 0 `|`| indexProperties != 0){
+			;MouseClick, left, 1822, 121, ,0 ;上一处不同
+            
+            ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_previous.bmp
+            if ErrorLevel = 2 
+            MsgBox 不能实施搜索。
+            else if ErrorLevel = 1 
+            1==1
+            ;MsgBox 未在屏幕上寻得图标。
+            else{
+                xa := OutputVarXA + 10
+                ya := OutputVarYA
+                MouseClick, left,  %xa%, %ya%, ,0	;上一处不同
+            }
 		}
 		MouseMove, %xpos%, %ypos%, 0 ;移动鼠标到原来位置
 	}else{
@@ -337,7 +386,7 @@ return
  * @author XuDong
  */
  #f::   
- Run C:\Program Files\Everything\Everything.exe
+ Run D:\SoftWare\Everything-1.4.0.713b.x86-Setup\Everything.exe
  return  
 
 /*
