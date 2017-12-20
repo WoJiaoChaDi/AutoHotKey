@@ -82,7 +82,7 @@ return
 return
 
  /*
-使用chrome时，按Alt+v,查看框架源代码
+使用chrome时，按Ctrl+Shift+X,查看框架源代码
 */
 ^+x::
 	Send {F12}

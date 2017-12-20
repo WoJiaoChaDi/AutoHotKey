@@ -285,7 +285,9 @@ fangChanChuPing(){
 	Send {Home}   
 	Send +{End}{BS}
 	Sleep, 100  ;等待
-	Send ^+2 ;粘贴第二个
+	Send ^`` ;打开粘贴
+	Sleep, 100  ;等待
+	Send 2 ;第二个
 	Sleep, 1000  ;等待
 	MouseClick, left, 987, 430 ;保存
 	Sleep, 1500  ;等待
@@ -524,7 +526,7 @@ neiShen2(){
 		ya := OutputVarYA + 15
 		MouseClick, left,  %xa%, %ya%
 		Sleep, 100
-		Send {down}{down}{enter}
+		Send {down}{enter}
 		Send {tab}500000 ;授信额度(元)
 		
 		ImageSearch, OutputVarXB, OutputVarYB, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\shenpi_xuyaoqianshudewenjian.bmp
@@ -554,7 +556,7 @@ neiShen2(){
  return  
  
  ziJinZhuanYuan(){
-	MouseClick, left,  1511, 261
+	MouseClick, left,  1740, 312
 	Send {tab}{enter}
 	Sleep, 3000  ;等待
 	MouseClick, left, 455, 356 ;资金方
@@ -724,43 +726,6 @@ yunYing(){
 	Sleep, 700  ;等待
 	Send ^r
  return    
- 
- 
-  /*
- * @Description: chrome打开隐身模式，并打开tag页面//定义带参数的方法
- * @author XuDong
- */
- autoLoginTag(ByRef userId)
- {
-	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
-	Send ^+n
-	Send ^l
-	localHttp = http://localhost:8066/ts/login.do
-	Send %localHttp%
-	Send {enter}
-	Sleep, 1500  ;等待
-	Send {tab}
-	Send %userId%
-	Send {enter}
- }
- 
- /*
- * @Description: chrome打开隐身模式，并打开tag页面//定义带参数的方法
- * @author XuDong
- */
- autoLogin(ByRef userId)
- {
-	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
-	Send ^+n
-	Send ^l
-	localHttp = http://localhost:8069/ts/login.do
-	Send %localHttp%
-	Send {enter}
-	Sleep, 1500  ;等待
-	Send {tab}
-	Send %userId%
-	Send {enter}
- }
 
  /*
  * @Description: 刷新菜单
@@ -848,136 +813,258 @@ yunYing(){
  
  
  
- 
- 
- 
- 
   /*
- * @Description: 隐身登入cqx陈秋晓
+ * @Description: chrome打开隐身模式，并打开tag页面//定义带参数的方法
  * @author XuDong
  */
- ::````cqx:: 
-	autoLoginTag(13581611612)
- return   
+ autoLogin(ByRef userId, ByRef urlType, ByRef openType)
+ {
+	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+	
+	if openType = 0 
+	{
+		Send ^t
+	}
+	else
+	{
+		Send ^+n
+	}
+	
+	Send ^l
+	if urlType = 0 
+	{
+		localHttp = http://localhost:8069/ts/login.do
+	}
+	else if urlType = 1 
+	{
+		localHttp = http://localhost:8066/ts/login.do
+	}
+	else if urlType = 2 
+	{
+		localHttp = http://localhost:8063/ts/login.do
+	}
+	else if urlType = 3 
+	{
+		localHttp = http://localhost:8039/ts/login.do
+	}
+	else if urlType = 4 
+	{
+		localHttp = http://www.baidu.com
+	}
+	Send %localHttp%
+	Send {enter}
+	Sleep, 1500  ;等待
+	Send {tab}
+	Send %userId%
+	Send {enter}
+ }
+ 
 
- /*
- * @Description: 隐身登入lzh梁志海
- * @author XuDong
- */
- ::````lzh:: 
-	autoLoginTag(13500011090)
- return   
+ 
 
- /*
- * @Description: 隐身登入lzp吕志鹏
- * @author XuDong
- */
- ::````lzp:: 
-	autoLoginTag(15972997555)
- return 
+ 
 
- /*
- * @Description: 隐身登入ql齐龙
- * @author XuDong
- */
- ::````qlz:: 
-	autoLoginTag(13701247226)
- return 
 
-  /*
- * @Description: 隐身登入tlw田玲昊
- * @author XuDong
- */
- ::````tlw:: 
-	autoLoginTag(18301179489)
- return
 
-  /*
- * @Description: 隐身登入pj潘杰
- * @author XuDong
- */
- ::````pjz:: 
-	autoLoginTag(13922236063)
- return
 
-  /*
- * @Description: 隐身登入zny张南燕
+
+
+
+
+
+
+
+
+
+ 
+    /*
+ * @Description: 隐身登入crs曹日升
  * @author XuDong
  */
- ::````zny:: 
-	autoLoginTag(13242030118)
- return
+ ::``crs:: 
+	autoLogin(13501274292, 0, 0)
+ return  
+ 
+ ::``1crs:: 
+	autoLogin(13501274292, 1, 1)
+ return  
+ 
+  ::``2crs:: 
+	autoLogin(13501274292, 2, 1)
+ return  
+ 
+  ::``3crs:: 
+	autoLogin(13501274292, 3, 1)
+ return  
+ 
  
  /*
  * @Description: 隐身登入cqx陈秋晓
  * @author XuDong
  */
  ::``cqx:: 
-	autoLogin(13581611612)
+	autoLogin(13581611612, 0, 0)
  return   
+ 
+ ::``1cqx:: 
+	autoLogin(13581611612, 1, 1)
+ return   
+ 
+  ::``2cqx:: 
+	autoLogin(13581611612, 2, 1)
+ return   
+ 
+ ::``3cqx:: 
+	autoLogin(13581611612, 3, 1)
+ return   
+ 
+ 
+    /*
+ * @Description: 隐身登入cxl陈小磊
+ * @author XuDong
+ */
+ ::``cxl:: 
+	autoLogin(13521284135, 0, 0)
+ return   
+ 
+ ::``1cxl:: 
+	autoLogin(13521284135, 1, 1)
+ return   
+ 
+  ::``2cxl:: 
+	autoLogin(13521284135, 2, 1)
+ return   
+ 
+ ::``3cxl:: 
+	autoLogin(13521284135, 3, 1)
+ return   
+
 
  /*
  * @Description: 隐身登入lzh梁志海
  * @author XuDong
  */
  ::``lzh:: 
-	autoLogin(13500011090)
+	autoLogin(13500011090, 0, 0)
  return   
+ 
+ ::``1lzh:: 
+	autoLogin(13500011090, 1, 1)
+ return   
+ 
+  ::``2lzh:: 
+	autoLogin(13500011090, 2, 1)
+ return   
+ 
+ ::``3lzh:: 
+	autoLogin(13500011090, 3, 1)
+ return   
+
+
 
  /*
  * @Description: 隐身登入lzp吕志鹏
  * @author XuDong
  */
  ::``lzp:: 
-	autoLogin(15972997555)
+	autoLogin(15972997555, 0, 0)
  return 
+ 
+ ::``1lzp:: 
+	autoLogin(15972997555, 1, 1)
+ return 
+ 
+  ::``2lzp:: 
+	autoLogin(15972997555, 2, 1)
+ return 
+ 
+ ::``3lzp:: 
+	autoLogin(15972997555, 3, 1)
+ return 
+ 
  
     /*
  * @Description: 隐身登入xgr幸国荣
  * @author XuDong
  */
- ::````xgr:: 
-	autoLoginTag(13301206456)
+ ::``xgr:: 
+	autoLogin(13301206456, 0, 0)
  return 
  
-  /*
- * @Description: 隐身登入xgr幸国荣
- * @author XuDong
- */
- ::``xgr:: 
-	autoLogin(13301206456)
+ ::``1xgr:: 
+	autoLogin(13301206456, 1, 1)
  return 
+ 
+  ::``2xgr:: 
+	autoLogin(13301206456, 2, 1)
+ return 
+ 
+ ::``3xgr:: 
+	autoLogin(13301206456, 3, 1)
+ return 
+
  
       /*
  * @Description: 隐身登入dam党爱民
  * @author XuDong
  */
- ::````dam:: 
-	autoLoginTag(15130796352)
+  ::``dam:: 
+	autoLogin(15130796352, 0, 0)
  return 
  
-    /*
- * @Description: 隐身登入dam党爱民
- * @author XuDong
- */
- ::``dam:: 
-	autoLogin(15130796352)
+ ::``1dam:: 
+	autoLogin(15130796352, 1, 1)
  return 
+ 
+   ::``2dam:: 
+	autoLogin(15130796352, 2, 1)
+ return 
+ 
+ ::``3dam:: 
+	autoLogin(15130796352, 3, 1)
+ return 
+
+
 
  /*
  * @Description: 隐身登入ql齐龙
  * @author XuDong
  */
  ::``qlz:: 
-	autoLogin(13701247226)
+	autoLogin(13701247226, 0, 0)
  return 
+
+ ::``1qlz:: 
+	autoLogin(13701247226, 1, 1)
+ return 
+ 
+  ::``2qlz:: 
+	autoLogin(13701247226, 2, 1)
+ return 
+
+ ::``3qlz:: 
+	autoLogin(13701247226, 3, 1)
+ return 
+
 
   /*
  * @Description: 隐身登入tlw田玲昊
  * @author XuDong
  */
  ::``tlw:: 
-	autoLogin(18301179489)
+	autoLogin(18301179489, 0, 0)
+ return
+
+ ::``1tlw:: 
+	autoLogin(18301179489, 1, 1)
+ return
+ 
+  ::``2tlw:: 
+	autoLogin(18301179489, 2, 1)
+ return
+
+ ::``3tlw:: 
+	autoLogin(18301179489, 3, 1)
  return
 
   /*
@@ -985,7 +1072,19 @@ yunYing(){
  * @author XuDong
  */
  ::``pjz:: 
-	autoLogin(13922236063)
+	autoLogin(13922236063, 0, 0)
+ return
+
+ ::``1pjz:: 
+	autoLogin(13922236063, 1, 1)
+ return
+ 
+  ::``2pjz:: 
+	autoLogin(13922236063, 2, 1)
+ return
+
+ ::``3pjz:: 
+	autoLogin(13922236063, 3, 1)
  return
 
   /*
@@ -993,7 +1092,39 @@ yunYing(){
  * @author XuDong
  */
  ::``zny:: 
-	autoLogin(13242030118)
+	autoLogin(13242030118, 0, 0)
+ return
+
+ ::``1zny:: 
+	autoLogin(13242030118, 1, 1)
+ return
+ 
+  ::``2zny:: 
+	autoLogin(13242030118, 2, 1)
+ return
+
+ ::``3zny:: 
+	autoLogin(13242030118, 3, 1)
+ return
+ 
+  /*
+ * @Description: 董薇
+ * @author XuDong
+ */
+ ::``dwz:: 
+	autoLogin(13366186570, 0, 0)
+ return
+
+ ::``1dwz:: 
+	autoLogin(13366186570, 1, 1)
+ return
+ 
+  ::``2dwz:: 
+	autoLogin(13366186570, 2, 1)
+ return
+
+ ::``3dwz:: 
+	autoLogin(13366186570, 3, 1)
  return
  
  #IfWinActive 
@@ -1004,6 +1135,12 @@ yunYing(){
 -----------------------------------------------------------使用chrome和PLSQL的时候（该窗口组定义在  ..\OneQuick-master_AutoHotKey\script\OneQuick.ahk  中）---------------------------------------------
 */
  #IfWinActive ahk_group ChromeAndPLSQL
+ 
+	::crs::
+		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+		Send 13501274292
+		Send {Enter}
+	return
  
  	::cqx::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
@@ -1292,13 +1429,13 @@ micChangeTo(ByRef bchId){
  * @author XuDong
  */
  :://cex::
-	FileCopy, E:\work\petecat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE.xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
-	FileCopy, E:\work\petecat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(1).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
-	FileCopy, E:\work\petecat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(2).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
-	FileCopy, E:\work\petecat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(3).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
-	FileCopy, E:\work\petecat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(4).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
-	FileCopy, E:\work\petecat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(5).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
-	FileCopy, E:\work\petecat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(6).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE.xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(1).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(2).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(3).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(4).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(5).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(6).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
 	MsgBox, 0, 提示, 库表结构Excel已经复制完毕！, 1
  return
  
