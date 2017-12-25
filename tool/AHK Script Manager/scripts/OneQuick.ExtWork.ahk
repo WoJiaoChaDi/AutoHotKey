@@ -148,9 +148,9 @@ fangChanChuPing(){
 	
 	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\chuping_fangwuzuobiao.bmp
 	if ErrorLevel = 2 
-	MsgBox 不能实施搜索。
+	MsgBox 房产初评_房屋坐标_不能实施搜索。
 	else if ErrorLevel = 1 
-	MsgBox 未在屏幕上寻得图标。
+	MsgBox 房产初评_房屋坐标_未在屏幕上寻得图标。
 	else{
 		MouseClick, left, %OutputVarX%, %OutputVarY% ;定位
 		;MouseClick, left, 1140, 365 ;定位
@@ -185,9 +185,9 @@ fangChanChuPing(){
 		
 		ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\chuping_tijiao.bmp
 		if ErrorLevel = 2 
-		MsgBox 不能实施搜索。
+		MsgBox 房产初评_提交_不能实施搜索。
 		else if ErrorLevel = 1 
-		MsgBox 未在屏幕上寻得图标。
+		MsgBox 房产初评_提交_未在屏幕上寻得图标。
 		else{
 			MouseClick, left,  %OutputVarXA%, %OutputVarYA%
 			Sleep, 100
@@ -456,9 +456,9 @@ neiShen2(){
 	
 	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\tijiao.bmp
 	if ErrorLevel = 2 
-	MsgBox 终评_不能实施搜索。
+	MsgBox 终评_提交_不能实施搜索。
 	else if ErrorLevel = 1 
-	MsgBox 终评_未在屏幕上寻得图标。
+	MsgBox 终评_提交_未在屏幕上寻得图标。
 	else{
 		xa := OutputVarX + 40
 		ya := OutputVarY
@@ -531,9 +531,9 @@ neiShen2(){
 	
 	ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\shenpi_fushuchanpin.bmp
 	if ErrorLevel = 2 
-	MsgBox 不能实施搜索。
+	MsgBox 审批2_附属产品_不能实施搜索。
 	else if ErrorLevel = 1 
-	MsgBox 未在屏幕上寻得图标。
+	MsgBox 审批2_附属产品_未在屏幕上寻得图标。
 	else{
 		;MouseClick, left, 1031, 493 ;附属产品
 		xa := OutputVarXA + 100
@@ -545,9 +545,9 @@ neiShen2(){
 		
 		ImageSearch, OutputVarXB, OutputVarYB, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\shenpi_xuyaoqianshudewenjian.bmp
 		if ErrorLevel = 2 
-		MsgBox 不能实施搜索。
+		MsgBox 审批2_需要签署的文件_不能实施搜索。
 		else if ErrorLevel = 1 
-		MsgBox 未在屏幕上寻得图标。
+		MsgBox 审批2_需要签署的文件_未在屏幕上寻得图标。
 		else{
 			;MouseClick, left, 738, 611 ;需要签署的文件
 			xb := OutputVarXB + 300
@@ -754,9 +754,9 @@ yunYing(){
 	*/
 	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\caidan_dakai.bmp
 	if ErrorLevel = 2 
-	MsgBox 不能实施搜索。
+	MsgBox 菜单_打开_不能实施搜索。
 	else if ErrorLevel = 1 
-	MsgBox 未在屏幕上寻得图标。
+	MsgBox 菜单_打开_未在屏幕上寻得图标。
 	else{
 		MouseClick, left, %OutputVarX%, %OutputVarY% ;定位
 		Sleep, 500  ;等待
@@ -792,9 +792,9 @@ yunYing(){
 	
 	ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\dangqiantab.bmp
 		if ErrorLevel = 2 
-		MsgBox 不能实施搜索。
+		MsgBox 当前tab_不能实施搜索。
 		else if ErrorLevel = 1 
-		MsgBox 未在屏幕上寻得图标。
+		MsgBox 当前tab_未在屏幕上寻得图标。
 		else{
 			sX := OutputVarXA - 70
 			sY := OutputVarYA
