@@ -1108,6 +1108,28 @@ yunYing(){
  return
  
   /*
+ * @Description: 隐身登入sdd孙丹丹
+ * @author XuDong
+ */
+ ::``sdd:: 
+	autoLogin(13011893241, 0, 0)
+ return
+
+ ::``1sdd:: 
+	autoLogin(13011893241, 1, 1)
+ return
+ 
+  ::``2sdd:: 
+	autoLogin(13011893241, 2, 1)
+ return
+
+ ::``3sdd:: 
+	autoLogin(13011893241, 3, 1)
+ return
+ 
+
+ 
+  /*
  * @Description: 董薇
  * @author XuDong
  */
@@ -1343,6 +1365,12 @@ yunYing(){
 	::zny::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 13242030118
+		Send {Enter}
+	return
+	
+	::sdd::
+		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+		Send 13011893241
 		Send {Enter}
 	return
  
