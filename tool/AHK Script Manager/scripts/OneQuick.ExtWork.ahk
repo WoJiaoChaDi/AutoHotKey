@@ -452,7 +452,21 @@ neiShen2(){
 	Send {tab}{tab}{tab}{enter}
 	Sleep, 500  ;等待
 	Send {enter} 
-	MouseClick, left, 941, 495 ;提交
+	;MouseClick, left, 941, 495 ;提交
+	
+	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\tijiao.bmp
+	if ErrorLevel = 2 
+	MsgBox 终评_不能实施搜索。
+	else if ErrorLevel = 1 
+	MsgBox 终评_未在屏幕上寻得图标。
+	else{
+		xa := OutputVarX + 40
+		ya := OutputVarY
+		MouseClick, left,  %xa%, %ya%
+		MouseClick, left, %OutputVarX%, %OutputVarY% ;定位
+		Sleep, 500  ;等待
+	}
+	
 	MouseClick, left, 987, 655 ;确认
 	Sleep, 2000  ;等待
 	Send {enter}
