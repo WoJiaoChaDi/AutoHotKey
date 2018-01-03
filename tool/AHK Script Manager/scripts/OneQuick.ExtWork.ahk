@@ -169,7 +169,7 @@ fangChanChuPing(){
 		Send {tab 7}
 		Send {Home}   
 		Send +{End}
-		Send 15000 ;系统评估单价（元）
+		Send 150000 ;系统评估单价（元）
 		Send ^{tab}
 		Sleep, 4000  ;等待
 		Send {enter} ;搜索失败的确定
@@ -232,7 +232,7 @@ fangChanChuPing(){
 	MouseClick, left,  1005,  808
 	Sleep, 500  ;等待
 	MouseClick, left, 507, 331 ;申请金额
-	Send 1500000{tab}7{tab}{tab}{tab}{enter}{tab}{tab}{tab}{enter} 
+	Send 8000000{tab}7{tab}{tab}{tab}{enter}{tab}{tab}{tab}{enter} 
 	closeTaskMsg()
 }
  
@@ -330,6 +330,8 @@ neiShen2(){
 	MouseClick, left
 	MouseClick, left
 	MouseClick, left
+	MouseClick, left
+	MouseClick, left
 	Sleep, 500  ;等待
 	MouseClick, left, 1087, 571 ;产权证登记日期 28日
 	MouseClick, left, 474, 470 ;总楼层
@@ -351,7 +353,7 @@ neiShen2(){
 	Send {Home}   
 	Send +{End}
 	Send ^v
-	MouseClick, left, 989, 853 ;保存
+	MouseClick, left, 931, 853 ;保存
 	Sleep, 500  ;等待
 	MouseClick, left, 1037, 661 ;确定
 	Sleep, 500  ;等待
@@ -397,7 +399,7 @@ neiShen2(){
 	Send 18600000000
 	MouseClick, left, 1147, 841 ;单价（元/m²）
 	Send 15555
-	MouseClick, left, 989, 881 ;保存
+	MouseClick, left, 931, 881 ;保存
 	Sleep, 500  ;等待
 	MouseClick, left, 1030, 659 ;确定
 	Sleep, 1000  ;等待
@@ -429,7 +431,7 @@ neiShen2(){
 }
 
  /*
- * @Description: 评估经理终审 - 自动表单
+ * @Description: 终评_评估经理终审 - 自动表单
  * @author XuDong
  */
  ::``33::
@@ -454,6 +456,7 @@ neiShen2(){
 	Send {enter} 
 	;MouseClick, left, 941, 495 ;提交
 	
+	Sleep, 500  ;等待
 	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\tijiao.bmp
 	if ErrorLevel = 2 
 	MsgBox 终评_提交_不能实施搜索。
@@ -593,20 +596,26 @@ neiShen2(){
  return  
  
  yongKuanQueRen(){
-	MouseClick, left,  1636, 332
-	Sleep, 2000  ;等待
-	Send, 2{TAB}15
-	MouseClick, left,  497,  715
-	Sleep, 100
-	Send, {DOWN}{ENTER}
-	MouseClick, left,  1069,  709
-	Sleep, 100
-	Send, {DOWN}{DOWN}{ENTER}
-	MouseClick, left,  1394,  695
-	Send, {TAB}10
-	MouseClick, left,  860,  908
-	Sleep, 100
-	Send, {TAB}
+	
+	
+	MouseClick, left,  1749, 305
+	Send {TAB}{ENTER}	;进入任务
+	Sleep 1000
+	MouseClick, left,  497, 651	;年利率
+	
+	MouseClick, left,  510, 677, 2	;营销利率 双击
+	Send 19.8
+	
+	MouseClick, left,  1081, 701	;业务推介费收取方式
+	MouseClick, left,  1089, 770	;放款前收取部分放款后按月收取
+	MouseClick, left,  1075, 675, 2	;业务推介费 双击
+	Send 6
+	MouseClick, left,  1620, 703, 2	;业务推介费放款后 双击
+	Send 2
+	
+	MouseClick, left,  947, 901	;提交
+	MouseClick, left,  995, 731	;确定
+	
 }
  
    /*
@@ -671,7 +680,7 @@ yunYing(){
 	MouseClick, left,  201,  526
 	Sleep, 100
 	Send, {TAB}{SPACE}
-	MouseClick, left,  802,  839
+	MouseClick, left,  802,  859	;提交定位
 	Sleep, 100
 	Send, {TAB}{ENTER}
 	Sleep, 500
@@ -802,15 +811,45 @@ yunYing(){
 		}
  }
  
-  /*
- * @Description: 打开oa并登入
+
+ 
+    /*
+ * @Description: chrome登入预生产
+ * @author XuDong
+ */
+ ::``tt::
+	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+	autoTestLogin(super, 123456, 1)
+ return
+
+   /*
+ * @Description: chrome登入测试
  * @author XuDong
  */
  ::``oa::
 	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+	autoTestLogin(super, 123456, 0)
+ return
+ 
+   /*
+ * @Description: chrome打开隐身模式，并打开测试\预生产地址
+ * @author XuDong
+ */
+ autoTestLogin(ByRef userId, ByRef passwrd, ByRef openType){
+	
+	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+	
+	if openType = 0 
+	{
+		localHttp = http://oa.cdhryx.cn:6900/sso/toLogin.do?loginKey=ftd	;测试环境
+	}
+	else
+	{
+		localHttp = http://test.cdhryx.cn:6900/sso/toLogin.do?loginKey=ftd	;预生产
+	}
+	
 	Send ^+n
 	Send ^l
-	localHttp = http://oa.cdhryx.cn:6900/sso/toLogin.do?loginKey=ftd
 	Send %localHttp%
 	Send {enter}
 	Sleep, 2000  ;等待
@@ -820,12 +859,7 @@ yunYing(){
 	Sleep, 500  ;等待
 	Send {tab}{tab}qazwsx{enter}
 	Send {enter}
- return
- 
- 
- 
- 
- 
+}
  
   /*
  * @Description: chrome打开隐身模式，并打开tag页面//定义带参数的方法
@@ -1385,6 +1419,15 @@ yunYing(){
 	::sdd::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 13011893241
+		Send {Enter}
+	return
+	
+	::adx::
+		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+		Send ^a
+		Send admin
+		Send {tab}
+		Send 123456
 		Send {Enter}
 	return
  
