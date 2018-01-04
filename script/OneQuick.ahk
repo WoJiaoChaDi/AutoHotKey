@@ -6,9 +6,6 @@
 	OneQuick 配置、运行文件
 */
 
-GroupAdd, ChromeAndPLSQL , ahk_exe chrome.exe
-GroupAdd, ChromeAndPLSQL , ahk_exe plsqldev.exe
-
 ; the following lines is necessary to initialize OneQuick class
 #SingleInstance force
 ; set workdir always be ../
