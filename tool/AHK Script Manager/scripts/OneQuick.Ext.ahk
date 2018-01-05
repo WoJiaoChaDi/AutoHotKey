@@ -160,139 +160,131 @@ return
 使用eclipse时，按]  查看svn同步的下一处不同
 */
 ]::
-	MouseGetPos, xpos, ypos ;获取鼠标当前的位置
-	title := Sys.Win.Title()
-	indexSVN := InStr(title,"的比较")
-    indexSVN2:= InStr(title,"SVN")
-	indexJava := InStr(title,".java")
-	indexXml := InStr(title,".xml")
-	indexJsp  := InStr(title,".jsp")
-	indexJs  := InStr(title,".js")
-    indexProperties  := InStr(title,".properties")
-	if(indexSVN != 0 || indexSVN2 != 0 ){
-		if(indexJsp != 0 && indexJs != 0){
-			indexJs := 0
-		}	
-		if(indexJava != 0 `|`| indexJs != 0){
-			;MouseClick, left, 1802, 391, ,0 ;下一处不同
-            
-            ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_next.bmp
-            if ErrorLevel = 2 
-            MsgBox 不能实施搜索。
-            else if ErrorLevel = 1 
-            1==1
-            ;MsgBox 未在屏幕上寻得图标。
-            else{
-                xa := OutputVarXA + 10
-                ya := OutputVarYA
-                MouseClick, left,  %xa%, %ya%, ,0	;下一处不同
-            }
-		}
-		if(indexXml != 0 `|`| indexJsp != 0 `|`| indexProperties != 0){
-			;MouseClick, left, 1799, 119, ,0 ;下一处不同
-            
-            ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_next.bmp
-            if ErrorLevel = 2 
-            MsgBox 不能实施搜索。
-            else if ErrorLevel = 1 
-            1==1
-            ;MsgBox 未在屏幕上寻得图标。
-            else{
-                xa := OutputVarXA + 10
-                ya := OutputVarYA
-                MouseClick, left,  %xa%, %ya%, ,0	;下一处不同
-            }
-		}
+    
+    title := Sys.Win.Title()
+	indexSubmit := InStr(title,"提交")
+	if(indexSubmit != 0){   ;提交时候的
+		MouseGetPos, xpos, ypos ;获取鼠标当前的位置
+		MouseClick, left, 1829, 119, ,0 ;下一处不同
 		MouseMove, %xpos%, %ypos%, 0 ;移动鼠标到原来位置
 	}else{
-		Send ]
-	}
+        indexSubmit2 := InStr(title,"Workspace")
+        if(indexSubmit2 != 0){  ;synchronize时候的
+              MouseGetPos, xpos, ypos ;获取鼠标当前的位置
+              title := Sys.Win.Title()
+              indexSVN := InStr(title,"的比较")
+              indexSVN2:= InStr(title,"SVN")
+              indexJava := InStr(title,".java")
+              indexXml := InStr(title,".xml")
+              indexJsp  := InStr(title,".jsp")
+              indexJs  := InStr(title,".js")
+              indexProperties  := InStr(title,".properties")
+              if(indexSVN != 0 || indexSVN2 != 0 ){
+                  if(indexJsp != 0 && indexJs != 0){
+                      indexJs := 0
+                  }	
+                  if(indexJava != 0 `|`| indexJs != 0){
+                      ;MouseClick, left, 1802, 391, ,0 ;下一处不同
+                      
+                      ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_next.bmp
+                      if ErrorLevel = 2 
+                      MsgBox 不能实施搜索。
+                      else if ErrorLevel = 1 
+                      1==1
+                      ;MsgBox 未在屏幕上寻得图标。
+                      else{
+                          xa := OutputVarXA + 10
+                          ya := OutputVarYA
+                          MouseClick, left,  %xa%, %ya%, ,0	;下一处不同
+                      }
+                  }
+                  if(indexXml != 0 `|`| indexJsp != 0 `|`| indexProperties != 0){
+                      ;MouseClick, left, 1799, 119, ,0 ;下一处不同
+                      
+                      ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_next.bmp
+                      if ErrorLevel = 2 
+                      MsgBox 不能实施搜索。
+                      else if ErrorLevel = 1 
+                      1==1
+                      ;MsgBox 未在屏幕上寻得图标。
+                      else{
+                          xa := OutputVarXA + 10
+                          ya := OutputVarYA
+                          MouseClick, left,  %xa%, %ya%, ,0	;下一处不同
+                      }
+                  }
+                  MouseMove, %xpos%, %ypos%, 0 ;移动鼠标到原来位置
+              }
+        }else{
+         Send ]
+        }
+	}	
 return
 
  /*
 使用eclipse时，按[  查看svn同步的上一处不同
 */
 [::
-	MouseGetPos, xpos, ypos ;获取鼠标当前的位置
-	title := Sys.Win.Title()
-	indexSVN := InStr(title,"的比较")
-    indexSVN2:= InStr(title,"SVN")
-	indexJava := InStr(title,".java")
-	indexXml := InStr(title,".xml")
-	indexJsp  := InStr(title,".jsp")
-	indexJs  := InStr(title,".js")
-	if(indexSVN != 0 || indexSVN2 != 0 ){
-		if(indexJsp != 0 && indexJs != 0){
-			indexJs := 0
-		}	
-		if(indexJava != 0 `|`| indexJs != 0){
-			;MouseClick, left, 1822, 391, ,0 ;上一处不同
-            
-            ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_previous.bmp
-            if ErrorLevel = 2 
-            MsgBox 不能实施搜索。
-            else if ErrorLevel = 1 
-            1==1
-            ;MsgBox 未在屏幕上寻得图标。
-            else{
-                xa := OutputVarXA + 10
-                ya := OutputVarYA
-                MouseClick, left,  %xa%, %ya%, ,0	;上一处不同
-            }
-		}
-		if(indexXml != 0 `|`| indexJsp != 0 `|`| indexProperties != 0){
-			;MouseClick, left, 1822, 121, ,0 ;上一处不同
-            
-            ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_previous.bmp
-            if ErrorLevel = 2 
-            MsgBox 不能实施搜索。
-            else if ErrorLevel = 1 
-            1==1
-            ;MsgBox 未在屏幕上寻得图标。
-            else{
-                xa := OutputVarXA + 10
-                ya := OutputVarYA
-                MouseClick, left,  %xa%, %ya%, ,0	;上一处不同
-            }
-		}
-		MouseMove, %xpos%, %ypos%, 0 ;移动鼠标到原来位置
-	}else{
-		Send [
-	}
-return
 
-#IfWinActive
-
- /*
-使用eclipse提交时，按]  查看svn同步的下一处不同
-*/
-#IfWinActive ahk_class #32770
-]::
-	title := Sys.Win.Title()
-	indexSubmit := InStr(title,"提交")
-	if(indexSubmit != 0){
-		MouseGetPos, xpos, ypos ;获取鼠标当前的位置
-		MouseClick, left, 1829, 119, ,0 ;上一处不同
-		MouseMove, %xpos%, %ypos%, 0 ;移动鼠标到原来位置
-	}else{
-		Send ]
-	}	
-return
-
- /*
-使用eclipse提交时，按[  查看svn同步的下一处不同
-*/
-[::
-	title := Sys.Win.Title()
+    title := Sys.Win.Title()
 	indexSubmit := InStr(title,"提交")
 	if(indexSubmit != 0){
 		MouseGetPos, xpos, ypos ;获取鼠标当前的位置
 		MouseClick, left, 1848, 121, ,0 ;上一处不同
 		MouseMove, %xpos%, %ypos%, 0 ;移动鼠标到原来位置
 	}else{
-		Send [
+        indexSubmit2 := InStr(title,"Workspace")
+        if(indexSubmit2 != 0){
+              MouseGetPos, xpos, ypos ;获取鼠标当前的位置
+              title := Sys.Win.Title()
+              indexSVN := InStr(title,"的比较")
+              indexSVN2:= InStr(title,"SVN")
+              indexJava := InStr(title,".java")
+              indexXml := InStr(title,".xml")
+              indexJsp  := InStr(title,".jsp")
+              indexJs  := InStr(title,".js")
+              if(indexSVN != 0 || indexSVN2 != 0 ){
+                  if(indexJsp != 0 && indexJs != 0){
+                      indexJs := 0
+                  }	
+                  if(indexJava != 0 `|`| indexJs != 0){
+                      ;MouseClick, left, 1822, 391, ,0 ;上一处不同
+                      
+                      ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_previous.bmp
+                      if ErrorLevel = 2 
+                      MsgBox 不能实施搜索。
+                      else if ErrorLevel = 1 
+                      1==1
+                      ;MsgBox 未在屏幕上寻得图标。
+                      else{
+                          xa := OutputVarXA + 10
+                          ya := OutputVarYA
+                          MouseClick, left,  %xa%, %ya%, ,0	;上一处不同
+                      }
+                  }
+                  if(indexXml != 0 `|`| indexJsp != 0 `|`| indexProperties != 0){
+                      ;MouseClick, left, 1822, 121, ,0 ;上一处不同
+                      
+                      ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_previous.bmp
+                      if ErrorLevel = 2 
+                      MsgBox 不能实施搜索。
+                      else if ErrorLevel = 1 
+                      1==1
+                      ;MsgBox 未在屏幕上寻得图标。
+                      else{
+                          xa := OutputVarXA + 10
+                          ya := OutputVarYA
+                          MouseClick, left,  %xa%, %ya%, ,0	;上一处不同
+                      }
+                  }
+                  MouseMove, %xpos%, %ypos%, 0 ;移动鼠标到原来位置
+              }
+        }else{
+         Send ]
+        }
 	}	
 return
+
 #IfWinActive
 
 

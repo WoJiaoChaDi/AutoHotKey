@@ -613,6 +613,9 @@ neiShen2(){
 	MouseClick, left,  1620, 703, 2	;业务推介费放款后 双击
 	Send 2
 	
+	MouseClick, left,  500, 707	;业务推介费收取形式
+	MouseClick, left,  519, 751	;委托收取
+	
 	MouseClick, left,  947, 901	;提交
 	MouseClick, left,  995, 731	;确定
 	
@@ -638,7 +641,7 @@ neiShen2(){
  * @Description: 提款申请 - 自动表单
  * @author XuDong
  */
- ::``6::
+ ::``555::
 	tiKuanShenQing()
  return  
 
@@ -652,6 +655,7 @@ tiKuanShenQing(){
 	Sleep, 1000  ;等待
 	MouseClick, left, 968, 517 ;选中第一个客户账号选择
 	MouseClick, left, 987, 797 ;确定
+	
 	Send {tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{enter}
 	Sleep, 1000  ;等待
 	MouseClick, left, 924, 537 ;选中第一个客户账号选择
@@ -660,8 +664,15 @@ tiKuanShenQing(){
 	Sleep, 500  ;等待
 	MouseClick, left, 534, 736 ;授信用途
 	Send {down}{enter}
-	Send {tab}123
-	Send {tab}{tab}{tab}{tab}{enter}{enter}
+	
+	Send {tab}123	;用途说明：
+	
+	MouseClick, left, 1150, 470 ;合同生效日
+	Send {enter}
+	
+	MouseClick, left, 633, 810 ;定位到保存合同前面
+	
+	Send {tab}{tab}{tab}{tab}{enter}{enter}	;签订合同
 	Sleep, 2000  ;等待
 	closeTaskMsg()
 }
@@ -670,7 +681,7 @@ tiKuanShenQing(){
  * @Description: 运营放款等 - 自动表单
  * @author XuDong
  */
- ::``7::
+ ::``6::
 	yunYing()
  return
 
@@ -1094,6 +1105,25 @@ yunYing(){
 	autoLogin(13701247226, 3, 1)
  return 
 
+  /*
+ * @Description: 隐身登入ytz叶婷
+ * @author XuDong
+ */
+ ::``ytz:: 
+	autoLogin(13537712861, 0, 0)
+ return
+
+ ::``1ytz:: 
+	autoLogin(13537712861, 1, 1)
+ return
+ 
+  ::``2ytz:: 
+	autoLogin(13537712861, 2, 1)
+ return
+
+ ::``3ytz:: 
+	autoLogin(13537712861, 3, 1)
+ return
 
   /*
  * @Description: 隐身登入tlw田玲昊
@@ -1331,6 +1361,12 @@ yunYing(){
 		Send 13701247226
 		Send {Enter}
 	return
+	
+	::qlz::
+		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+		Send 13537712861
+		Send {Enter}
+	return
 
 	::sygrb::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
@@ -1429,6 +1465,16 @@ yunYing(){
 		Send {tab}
 		Send 123456
 		Send {Enter}
+	return
+	
+	::sdx::
+		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+		Send ^a
+		Send super
+		Send {tab}123456
+		Sleep 100
+		Send {tab 2}qazwsx
+		Send {tab 3}{Enter}
 	return
  
   #IfWinActive 
