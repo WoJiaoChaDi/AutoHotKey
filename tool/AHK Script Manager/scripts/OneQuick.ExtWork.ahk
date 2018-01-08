@@ -305,6 +305,74 @@ fangChanChuPing(){
 }
 
  /*
+ * @Description: 内审1（新） - 自动表单
+ * @author XuDong
+ */
+ ::``1w::
+	neiShen1w()
+	neiShen11w()
+ return  
+ 
+ neiShen1w(){
+	refreshMenu()
+	MouseClick, left, 65, 432 ;个人中心
+	Sleep, 800  ;等待
+	MouseClick, left, 76, 466 ;待办流程
+	Sleep, 2000  ;等待
+	MouseClick, left,  1009,  253 ;搜索
+	Sleep, 2500  ;等待
+	MouseClick, left, 1657, 311 ;待办进入第一个
+	Sleep, 1000  ;等待
+	MouseClick, left, 1007, 659 ;接受任务
+	Sleep, 2500  ;等待
+	MouseClick, left, 1657, 311 ;待办进入第一个
+	Sleep, 3800  ;等待
+	openCustInfo()
+}
+
+::``11w::
+	neiShen11w()
+return  
+ 
+neishen11w(){
+	MouseClick, left, 1029, 273 ;身份证号
+	Send ^v
+	Sleep 200
+	Send {enter}
+	Sleep 200
+	MouseClick, left, 874, 483 ;选中第一个已存在客户
+	Sleep 100
+	Send {tab}{enter}
+	MouseClick, left, 514, 275 ;客户名称
+	Send ^a
+	Send ^`` ;打开粘贴
+	Sleep, 100  ;等待
+	Send 2 ;第二个
+	Sleep 200
+	
+	MouseClick, left, 278, 218 ;涉诉情况
+	MouseClick, left, 396, 271 ;法院公告网前面定位
+	Send {tab 2}{right 2}{tab}
+	Send 这是法院公告网的备注哦！
+	Send {tab 2}{right 2}{tab}
+	Send 这是执行/失信网的备注哦！
+	Send {tab 2}{right 2}{tab}
+	Send 这是裁判文书网的备注哦！
+	Send {tab 2}{right 2}{tab}
+	Send 这是企业信用网的备注哦！
+	Send {tab 2}{right 2}{tab}
+	Send 这是汇法网的备注哦！
+	Send {tab 2}{right 2}{tab}
+	Send 这是企查查的备注哦！
+	
+	fun_btn("内审I", "tijiao", "提交", 40, 0)
+	Sleep 200
+	fun_btn("内审I", "queding", "确定", 40, 0)
+	Sleep 100
+	Send {enter}
+}
+
+ /*
  * @Description: 内审2 - 自动表单
  * @author XuDong
  */
@@ -361,6 +429,56 @@ neiShen2(){
 	MouseClick, left, 990, 653 ;确定
 	Sleep, 2000  ;等待
 	Send {enter}
+}
+
+ /*
+ * @Description: 内审2（新页面） - 自动表单
+ * @author XuDong
+ */
+ ::``2w::
+	neiShen2w()
+ return  
+
+neiShen2w(){
+	
+	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+	
+	MouseClick, left, 1657, 311 ;待办进入第一个
+	Sleep, 2000  ;等待
+	MouseClick, left, 1861, 323 ;备用资产加一个
+	MouseClick, left, 1861, 323 ;备用资产加一个
+	MouseClick, left, 1861, 323 ;备用资产加一个
+	MouseClick, left, 940, 353 ;第一个备用资产的房产用途
+	Send 经营万事屋
+	Send {tab}老房子
+	Send {tab}老112233
+	Send {tab}银
+	Send {tab}旺财
+	Send {tab}武士道
+	Send {tab}112
+	Send {tab}5000000
+	Send {tab}{right}
+	Send {tab}4000000
+	
+	MouseClick, left, 447, 468 ;第二个备用资产的资产类型
+	Send {down}
+	MouseClick, left, 447, 468 ;第二个备用资产的资产类型
+	Send {down}
+	MouseClick, left, 447, 468 ;第二个备用资产的资产类型
+	Send {down}
+	
+	MouseClick, left, 972, 471 ;第二个备用资产的车辆品牌型号
+	Send 川A12345
+	Send {tab}500000
+	
+	Send {tab 2}556
+	Send {tab}50000
+	
+	
+	MouseClick, left, 1862, 523 ;银行流水+1
+	MouseClick, left, 1862, 523 ;银行流水+1
+	
+
 }
 
 /*
@@ -1611,6 +1729,25 @@ SwitchIME(dwLayout){
     ControlGetFocus,ctl,A
     SendMessage,0x50,0,HKL,%ctl%,A
 }
+
+/*
+	图片搜索按钮
+*/
+fun_btn(ByRef eventName, ByRef btnId, ByRef btnName, ByRef xAdd, ByRef yAdd){
+	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\%btnId%.bmp
+	if ErrorLevel = 2 
+	MsgBox %eventName%_%btnName%_不能实施搜索。
+	else if ErrorLevel = 1 
+	MsgBox %eventName%_%btnName%_未在屏幕上寻得图标。
+	else{
+		xa := OutputVarX + %xAdd%
+		ya := OutputVarY + %yAdd%
+		MouseClick, left,  %xa%, %ya%
+		MouseClick, left, %OutputVarX%, %OutputVarY% ;定位
+		Sleep, 500  ;等待
+	}
+}
+
 
 /*
  * @Description: 暂停脚本

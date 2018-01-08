@@ -280,7 +280,7 @@ return
                   MouseMove, %xpos%, %ypos%, 0 ;移动鼠标到原来位置
               }
         }else{
-         Send ]
+         Send [
         }
 	}	
 return
