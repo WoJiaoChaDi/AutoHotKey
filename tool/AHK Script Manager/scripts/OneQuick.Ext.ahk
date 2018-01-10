@@ -99,6 +99,20 @@ return
 */
 #IfWinActive ahk_group EclipseAllWindow
 
+/*
+Ctrl+CapsLock --》 Ctrl + PgDn（下一个视图）
+*/
+^CapsLock::
+    Send ^{PgDn}
+return
+
+/*
+Ctrl+Shift+CapsLock --》 Ctrl + PgUp（上一个视图）
+*/
+^+CapsLock::
+    Send ^{PgUp}
+return
+
  /*
 使用eclipse时，按Alt+Shift+D执行Ctrl+Shift+O  导包
 */
@@ -497,6 +511,17 @@ SwitchIME(dwLayout){
     HKL:=DllCall("LoadKeyboardLayout", Str, dwLayout, UInt, 1)
     ControlGetFocus,ctl,A
     SendMessage,0x50,0,HKL,%ctl%,A
+}
+
+/*
+从50w身份证数据中获取身份证
+*/
+ getIdCard(){
+	ahkPath = %A_ScriptDir%
+    idCardPath := SubStr(ahkPath, 1 , StrLen(ahkPath)-31) "tool\ReadFile\IdCardRandom_50W.txt"
+	Random, idCardRand, 000000, 500000
+	FileReadLine, idCardLine, %idCardPath%, %idCardRand%
+	return %idCardLine%
 }
 
 /*

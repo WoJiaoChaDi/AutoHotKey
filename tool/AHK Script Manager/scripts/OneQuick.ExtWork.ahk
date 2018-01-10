@@ -244,7 +244,7 @@ fangChanChuPing(){
 	neiShen1()
  return  
  
- neiShen1(){
+  neiShen1(){
 	refreshMenu()
 	MouseClick, left, 65, 432 ;个人中心
 	Sleep, 800  ;等待
@@ -264,6 +264,49 @@ fangChanChuPing(){
 	MouseClick, left, 443, 585 ;全国企业信用网 无 401 有
 	MouseClick, left, 1872, 242 ;完善客户信息
 	openCustInfo()
+}
+ 
+ neiShen1ForNew(){
+	refreshMenu()
+	MouseClick, left, 65, 432 ;个人中心
+	Sleep, 800  ;等待
+	MouseClick, left, 76, 466 ;待办流程
+	Sleep, 2000  ;等待
+	MouseClick, left,  1009,  253 ;搜索
+	Sleep, 2500  ;等待
+	MouseClick, left, 1657, 311 ;待办进入第一个
+	Sleep, 1000  ;等待
+	MouseClick, left, 1007, 659 ;接受任务
+	Sleep, 2500  ;等待
+	MouseClick, left, 1657, 311 ;待办进入第一个
+	Sleep, 3800  ;等待
+	MouseClick, left, 440, 500 ;人民法院公告网 无 401 有
+	MouseClick, left, 440, 526 ;执行/失信网 无 401 有
+	MouseClick, left, 440, 556 ;中国裁判文书网 无 401 有
+	MouseClick, left, 443, 585 ;全国企业信用网 无 401 有
+	MouseClick, left, 1872, 242 ;完善客户信息
+		;openCustInfo()	;旧的内审I，采用客户信息第四页的一条数据
+		
+	Sleep 500
+	MouseClick, left, 260, 272 ;客户姓名
+	Send {tab}^v
+	Send {tab 7}
+	RandIdCard := getIdCard()
+	Send %RandIdCard%	;随机身份证
+	
+	Send {tab 8}{enter}
+	Sleep 500
+	Send {enter}
+	
+	MouseClick, left, 480, 872 ;借款用途
+	Send {down}{Enter}
+	
+	MouseClick, left, 748, 922 ;提交
+	MouseClick, left, 994, 653 ;确定
+	closeTaskMsg()
+	Sleep, 2000
+	MouseClick, left, 1044, 704 ;关闭任务
+	
 }
 
  /*
@@ -327,7 +370,7 @@ fangChanChuPing(){
 	Sleep, 2500  ;等待
 	MouseClick, left, 1657, 311 ;待办进入第一个
 	Sleep, 3800  ;等待
-	openCustInfo()
+	;openCustInfo()	;采用客户信息第四页的一条数据
 }
 
 ::``11w::
@@ -429,6 +472,108 @@ neiShen2(){
 	MouseClick, left, 990, 653 ;确定
 	Sleep, 2000  ;等待
 	Send {enter}
+}
+
+ /*
+ * @Description: 内审2 - 自动表单
+ * @author XuDong
+ */
+ ::``2c::
+	neiShen2ForCust()
+ return  
+
+neiShen2ForCust(){
+	
+	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+	
+	MouseClick, left, 662, 300 ;定位到移动电话前面
+	Random, rand, 00000000, 99999999	;生成8位随机数
+	Random, rand2, 00000, 99999	;生成8位随机数
+	Send {tab}186%rand%
+	Send {tab}^v%rand%	;家庭住址
+	
+	MouseClick, left, 441, 325 ;定位到户籍所在省
+	Send {down}{enter}
+	
+	MouseClick, left, 838, 327 ;定位到户籍所在市
+	Send {down}{enter}
+	
+	Send {tab}^v%rand%	;户籍住址
+	Send {tab}^v%rand%	;户籍住址
+	Send {tab}028852%rand2%	;家庭电话
+	
+	MouseClick, left, 1242, 354 ;婚姻状况
+	Send {down}{enter}
+	
+	MouseClick, left, 1339, 380 ;证件到期日
+	MouseClick, left, 1350, 401, 8 ;证件到期日
+	MouseClick, left, 1295, 491 ;证件到期日
+	
+	MouseClick, left, 417, 424 ;来本市时间
+	Send {down}{enter}
+	
+	MouseClick, left, 784, 424 ;年收入
+	Send {down}{enter}
+	Send {tab}800000
+	
+	MouseClick, left, 1283, 424 ;最高学历
+	Send {down}{enter}
+	
+	MouseClick, left, 1687, 425 ;学位
+	Send {down}{enter}
+	
+	Send {tab}%rand%@163.com
+	Send {tab}%rand2%_wx
+	Send {tab}%rand%
+	Send {tab}2
+	Send {tab}610041
+	
+	MouseClick, left, 1267, 472 ;职业类别
+	Send {down}{enter}
+	
+	Send {tab}2
+	
+	MouseClick, left, 413, 496 ;职业类别
+	Send {down}{enter}
+	
+	Send {tab}%rand%_号
+	Send {tab}皮特猫信息科技有限公司
+	Send {tab}环球中心N3-N9-1425
+	
+	MouseClick, left, 482, 570 ;行业分类
+	Send {down}{enter}
+	MouseClick, left, 646, 575 ;行业分类
+	Send {down}{enter}
+	
+	Send {tab}^v这是备注
+	MouseClick, left, 429, 593 ;客户所属国家
+	Send {down}{enter}
+
+	
+	MouseClick, left, 318, 249 ;客户附属信息
+	Send {tab}549
+	Send {tab}148
+	Send {tab}^v联系人1
+	Random, rand3, 00000000, 99999999	;生成8位随机数
+	Send {tab}186%rand3%
+	Send {tab}%rand3%与借款人关系
+	Send {tab}%rand3%22
+	Send {tab}%rand3%33
+	Send {tab}%rand3%学校
+	Send {tab}%rand3%联系地址
+	
+	Send {tab}^v联系人2
+	Random, rand4, 00000000, 99999999	;生成8位随机数
+	Send {tab}186%rand4%
+	Send {tab}%rand4%与借款人关系
+	Send {tab}%rand4%22
+	Send {tab}%rand4%33
+	Send {tab}%rand4%学校
+	Send {tab}%rand4%联系地址
+	
+	Send {tab}{enter}	;保存
+	Sleep 300
+	Send {tab}{enter}	;保存
 }
 
  /*
@@ -718,7 +863,7 @@ neiShen2w(){
 	
 	MouseClick, left,  1749, 305
 	Send {TAB}{ENTER}	;进入任务
-	Sleep 1000
+	Sleep 1500
 	MouseClick, left,  497, 651	;年利率
 	
 	MouseClick, left,  510, 677, 2	;营销利率 双击
@@ -1746,6 +1891,17 @@ fun_btn(ByRef eventName, ByRef btnId, ByRef btnName, ByRef xAdd, ByRef yAdd){
 		MouseClick, left, %OutputVarX%, %OutputVarY% ;定位
 		Sleep, 500  ;等待
 	}
+}
+
+/*
+从50w身份证数据中获取身份证
+*/
+ getIdCard(){
+	ahkPath = %A_ScriptDir%
+    idCardPath := SubStr(ahkPath, 1 , StrLen(ahkPath)-31) "tool\ReadFile\IdCardRandom_50W.txt"
+	Random, idCardRand, 000000, 500000
+	FileReadLine, idCardLine, %idCardPath%, %idCardRand%
+	return %idCardLine%
 }
 
 
