@@ -27,6 +27,8 @@ addFangChan(){
 	Sleep, 1000
 	MouseClick, left,  470,  327
 	Sleep, 1000
+	
+	ToolTip("...脚本结束")
 }
 
 /*
@@ -56,6 +58,8 @@ addFangChan(){
 	Send 155
 	MouseClick, left, 999, 624 ;保存
 	MouseClick, left, 1051, 660 ;确定
+	
+	ToolTip("...脚本结束")
 }
 
 /*
@@ -85,10 +89,7 @@ return
 	addFangChan2()
 	fangChanChuPing()
 	yeWuShenQing(13581611612)
-	neiShen1()
-	MouseClick, left, 509, 190	;待办流程
-	MouseClick, left, 949, 317	;证件号码
-	neiShen11()
+	neiShen1ForNew()
 	Sleep, 2000
 	neiShen2()
 	Sleep, 3000
@@ -113,10 +114,7 @@ return
 	addFangChan2()
 	fangChanChuPing()
 	yeWuShenQing(13500011090)
-	neiShen1()
-	MouseClick, left, 509, 190	;待办流程
-	MouseClick, left, 949, 317	;证件号码
-	neiShen11()
+	neiShen1ForNew()
 	Sleep, 1000
 	neiShen2()
 	Sleep, 2000
@@ -195,6 +193,7 @@ fangChanChuPing(){
 		}
 	}
 	
+	ToolTip("...脚本结束")
 }
 
  /*
@@ -234,6 +233,8 @@ fangChanChuPing(){
 	MouseClick, left, 507, 331 ;申请金额
 	Send 8000000{tab}7{tab}{tab}{tab}{enter}{tab}{tab}{tab}{enter} 
 	closeTaskMsg()
+	
+	ToolTip("...脚本结束")
 }
  
  /*
@@ -241,9 +242,12 @@ fangChanChuPing(){
  * @author XuDong
  */
  ::``1::
-	neiShen1()
+	neiShen1ForNew()
  return  
  
+ /*
+ 旧的内审I，客户采用旧客户
+ */
   neiShen1(){
 	refreshMenu()
 	MouseClick, left, 65, 432 ;个人中心
@@ -266,6 +270,9 @@ fangChanChuPing(){
 	openCustInfo()
 }
  
+ /*
+ 新的内审I，身份证使用随机身份证里面的一个
+ */
  neiShen1ForNew(){
 	refreshMenu()
 	MouseClick, left, 65, 432 ;个人中心
@@ -307,6 +314,7 @@ fangChanChuPing(){
 	Sleep, 2000
 	MouseClick, left, 1044, 704 ;关闭任务
 	
+	ToolTip("...脚本结束")
 }
 
  /*
@@ -345,6 +353,8 @@ fangChanChuPing(){
 	closeTaskMsg()
 	Sleep, 2000
 	MouseClick, left, 1044, 704 ;关闭任务
+	
+	ToolTip("...脚本结束")
 }
 
  /*
@@ -371,6 +381,8 @@ fangChanChuPing(){
 	MouseClick, left, 1657, 311 ;待办进入第一个
 	Sleep, 3800  ;等待
 	;openCustInfo()	;采用客户信息第四页的一条数据
+	
+	ToolTip("...脚本结束")
 }
 
 ::``11w::
@@ -413,6 +425,8 @@ neishen11w(){
 	fun_btn("内审I", "queding", "确定", 40, 0)
 	Sleep 100
 	Send {enter}
+	
+	ToolTip("...脚本结束")
 }
 
  /*
@@ -464,14 +478,26 @@ neiShen2(){
 	Send {Home}   
 	Send +{End}
 	Send ^v
-	MouseClick, left, 931, 853 ;保存
+	
+	;MouseClick, left, 931, 853 ;保存
+	fun_btn("内审II-抵押物信息", "baocun", "保存", 60, 20)
 	Sleep, 500  ;等待
-	MouseClick, left, 1037, 661 ;确定
+	Send {enter}
+	
+	MouseClick, left, 206, 220 ;面签信息
+	MouseClick, left, 1869, 246 ;编辑客户信息
+	Sleep 1000
+	neiShen2ForCust()	;内审2客户信息
+	
 	Sleep, 500  ;等待
-	MouseClick, left, 753, 496 ;提交
-	MouseClick, left, 990, 653 ;确定
+	fun_btn("内审II", "tijiao2", "提交", 60, 20)
+	;MouseClick, left, 753, 496 ;提交
+	Send {enter}
+	;MouseClick, left, 990, 653 ;确定
 	Sleep, 2000  ;等待
 	Send {enter}
+	
+	ToolTip("...脚本结束")
 }
 
  /*
@@ -574,6 +600,8 @@ neiShen2ForCust(){
 	Send {tab}{enter}	;保存
 	Sleep 300
 	Send {tab}{enter}	;保存
+	
+	ToolTip("...脚本结束")
 }
 
  /*
@@ -623,7 +651,7 @@ neiShen2w(){
 	MouseClick, left, 1862, 523 ;银行流水+1
 	MouseClick, left, 1862, 523 ;银行流水+1
 	
-
+	ToolTip("...脚本结束")
 }
 
 /*
@@ -661,8 +689,9 @@ neiShen2w(){
 	MouseClick, left, 756, 844 ;中介联系方式
 	Send 18600000000
 	MouseClick, left, 1147, 841 ;单价（元/m²）
-	Send 15555
-	MouseClick, left, 931, 881 ;保存
+	Send 15452
+	;MouseClick, left, 931, 881 ;保存
+	fun_btn("外审", "baocun", "保存", 60, 20)
 	Sleep, 500  ;等待
 	MouseClick, left, 1030, 659 ;确定
 	Sleep, 1000  ;等待
@@ -670,6 +699,8 @@ neiShen2w(){
 	MouseClick, left, 993, 656 ;提交
 	Sleep, 4000  ;等待
 	Send {enter}
+	
+	ToolTip("...脚本结束")
 }
 
  /*
@@ -691,6 +722,8 @@ neiShen2w(){
 	Send {enter}
 	Sleep, 4000
 	MouseClick, left, 1044, 704 ;关闭任务
+	
+	ToolTip("...脚本结束")
 }
 
  /*
@@ -702,10 +735,12 @@ neiShen2w(){
  return  
  
  zhongShen(){
-	MouseClick, left, 1657, 311 ;待办进入第一个
+	MouseClick, left, 1580, 330 ;待办进入第二个
+	Send {tab 2}{enter}	;待办进入第二个
 	MouseClick, left, 1007, 659 ;接受任务
 	Sleep, 2500  ;等待
-	MouseClick, left, 1657, 311 ;待办进入第一个
+	MouseClick, left, 1580, 330 ;待办进入第二个
+	Send {tab 2}{enter}	;待办进入第二个
 	Sleep, 4000  ;等待
 	MouseClick, left, 1560, 842, 2 ;下户快卖价（元）//双击
 	Send ^c
@@ -720,22 +755,14 @@ neiShen2w(){
 	;MouseClick, left, 941, 495 ;提交
 	
 	Sleep, 500  ;等待
-	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\tijiao.bmp
-	if ErrorLevel = 2 
-	MsgBox 终评_提交_不能实施搜索。
-	else if ErrorLevel = 1 
-	MsgBox 终评_提交_未在屏幕上寻得图标。
-	else{
-		xa := OutputVarX + 40
-		ya := OutputVarY
-		MouseClick, left,  %xa%, %ya%
-		MouseClick, left, %OutputVarX%, %OutputVarY% ;定位
-		Sleep, 500  ;等待
-	}
+	
+	fun_btn("评估经理终审", "tijiao3", "提交", 60, 20)
 	
 	MouseClick, left, 987, 655 ;确认
 	Sleep, 2000  ;等待
 	Send {enter}
+	
+	ToolTip("...脚本结束")
 }
 
  /*
@@ -754,6 +781,8 @@ neiShen2w(){
 	MouseClick, left,  1005,  314
 	Sleep, 2500
 	MouseClick, left,  1717,  439
+	
+	ToolTip("...脚本结束")
 }
 
 
@@ -778,6 +807,8 @@ neiShen2w(){
 	Send {tab}{tab}{tab}{enter}{enter}
 	Sleep, 2000  ;等待
 	Send {enter}
+	
+	ToolTip("...脚本结束")
 }
 
  /*
@@ -795,36 +826,18 @@ neiShen2w(){
 	MouseClick, left, 346, 217 ;申请信息
 	Sleep, 500  ;等待
 	
-	ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\shenpi_fushuchanpin.bmp
-	if ErrorLevel = 2 
-	MsgBox 审批2_附属产品_不能实施搜索。
-	else if ErrorLevel = 1 
-	MsgBox 审批2_附属产品_未在屏幕上寻得图标。
-	else{
-		;MouseClick, left, 1031, 493 ;附属产品
-		xa := OutputVarXA + 100
-		ya := OutputVarYA + 15
-		MouseClick, left,  %xa%, %ya%
-		Sleep, 100
-		Send {down}{enter}
-		Send {tab}500000 ;授信额度(元)
-		
-		ImageSearch, OutputVarXB, OutputVarYB, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\shenpi_xuyaoqianshudewenjian.bmp
-		if ErrorLevel = 2 
-		MsgBox 审批2_需要签署的文件_不能实施搜索。
-		else if ErrorLevel = 1 
-		MsgBox 审批2_需要签署的文件_未在屏幕上寻得图标。
-		else{
-			;MouseClick, left, 738, 611 ;需要签署的文件
-			xb := OutputVarXB + 300
-			yb := OutputVarYB + 15
-			MouseClick, left,  %xb%, %yb%
-			Send {down}{down}{down}{esc}
-			Send {tab}{tab}{enter}{enter}
-			Sleep, 2000  ;等待
-			Send {enter}
-		}	
-	}	
+	fun_btn("审批经理审批Ⅱ", "fushuchanpin", "附属产品", 100, 15)
+	Sleep, 100
+	Send {down}{enter}
+	Send {tab}500000 ;授信额度(元)
+	
+	fun_btn("审批经理审批Ⅱ", "shenpi_xuyaoqianshudewenjian", "需要审批的文件", 300, 20)
+	Send {down}{down}{down}{esc}
+	Send {tab}{tab}{enter}{enter}
+	Sleep, 2000  ;等待
+	Send {enter}
+	
+	ToolTip("...脚本结束")
 }
 
  /*
@@ -842,12 +855,14 @@ neiShen2w(){
 	MouseClick, left, 455, 356 ;资金方
 	Send {down}{enter}
 	MouseClick, left, 1030, 358 ;放款机构
-	Send {down}{down}down}{down}{down}{enter}
+	Send {down 4}{enter}
 	MouseClick, left, 1605, 360 ;计划归入资产包
-	Send {down}{down}{down}{down}{enter}
-	Send {tab}{enter}{enter}
+	Send {down 4}{enter}
+	Send {tab}{enter 2}
 	Sleep, 2000  ;等待
 	Send {enter}
+	
+	ToolTip("...脚本结束")
 }
  
   /*
@@ -860,9 +875,13 @@ neiShen2w(){
  
  yongKuanQueRen(){
 	
-	
-	MouseClick, left,  1749, 305
-	Send {TAB}{ENTER}	;进入任务
+	nomsg := fun_btn_nomsg("用款确认", "yongkuanqueren", "用款确认", 10, 10)
+	if(nomsg == 2 || nomsg == 1){
+		MouseClick, left,  1749, 305
+		Send {tab}{enter}	;进入任务
+	}else{
+		Send {tab 2}{enter}	;进入任务
+	}
 	Sleep 1500
 	MouseClick, left,  497, 651	;年利率
 	
@@ -882,6 +901,7 @@ neiShen2w(){
 	MouseClick, left,  947, 901	;提交
 	MouseClick, left,  995, 731	;确定
 	
+	ToolTip("...脚本结束")
 }
  
    /*
@@ -898,6 +918,8 @@ neiShen2w(){
 	MouseClick, left,  800,  955
 	Sleep, 100
 	Send, {TAB}{ENTER}{ENTER}
+	
+	ToolTip("...脚本结束")
 }
 
  /*
@@ -909,17 +931,26 @@ neiShen2w(){
  return  
 
 tiKuanShenQing(){
-	MouseClick, left, 1657, 311 ;待办进入第一个
-	MouseClick, left, 1007, 659 ;接受任务
+	
+	nomsg := fun_btn_nomsg("提款申请", "tikuanshenqing", "提款申请", 10, 10)
+	if(nomsg == 2 || nomsg == 1){
+		MouseClick, left, 1657, 311 ;待办进入第一个
+		MouseClick, left, 1007, 659 ;接受任务
+	}else{
+		Send {tab 2}{enter}	;进入任务
+	}
+	
 	Sleep, 2500  ;等待
+	
 	MouseClick, left, 298, 273 ;合同信息tab
-	Send {tab}{tab}{tab}{tab}{tab}{tab}{enter}
-	Send {tab}{tab}{tab}{tab}{enter}
+	
+	Send {tab 6}{enter}	;合同生效日期
+	Send {tab 5}{enter}		;客户代扣开户行
 	Sleep, 1000  ;等待
 	MouseClick, left, 968, 517 ;选中第一个客户账号选择
 	MouseClick, left, 987, 797 ;确定
 	
-	Send {tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{enter}
+	Send {tab 16}{enter}	;客户放款账户开户行
 	Sleep, 1000  ;等待
 	MouseClick, left, 924, 537 ;选中第一个客户账号选择
 	Sleep, 500  ;等待
@@ -935,9 +966,15 @@ tiKuanShenQing(){
 	
 	MouseClick, left, 633, 810 ;定位到保存合同前面
 	
-	Send {tab}{tab}{tab}{tab}{enter}{enter}	;签订合同
+	fun_btn("提款申请", "qiandinghetong", "签订合同", 70, 10)
+	sleep 100
+	Send {enter}
 	Sleep, 2000  ;等待
 	closeTaskMsg()
+	
+	ToolTip("...脚本结束")
+	
+	
 }
 
  /*
@@ -954,16 +991,62 @@ yunYing(){
 	MouseClick, left,  201,  526
 	Sleep, 100
 	Send, {TAB}{SPACE}
-	MouseClick, left,  802,  859	;提交定位
-	Sleep, 100
-	Send, {TAB}{ENTER}
+	
+	nomsg := fun_btn_nomsg("运营4个", "tijiao", "提交", 50, 10)
+	if(nomsg != 0){		
+		fun_btn("运营4个", "tongyi", "同意", 50, 10)
+	}
+	
 	Sleep, 500
 	Send {ENTER}
 	Sleep, 1500
 	Send {ENTER}
 	Sleep, 1000
 	Send {ENTER}
+	
+	ToolTip("...脚本结束")
 }
+
+ /*
+ * @Description: 贷前费用收取/复核
+ * @author XuDong
+ */
+ ::``66::
+	daiqianfeiyong()
+ return
+
+daiqianfeiyong(){
+	
+	fun_btn("菜单", "feiyongshouqu", "费用收取", 50, 10)
+	Sleep, 200
+	
+	fun_btn("菜单", "daiqianfeiyongshouqu", "贷前费用收取", 50, 10)
+	Sleep, 200
+	MouseClick, left,  353, 222		;客户名称
+	Send ^v
+	fun_btn("贷前费用收取", "sousuotubiao", "搜索图标", 50, 10)
+	Sleep 300
+	MouseClick, left,  575, 337		;第一条数据
+	fun_btn("贷前费用收取", "duigoutubiao", "对勾图标", 50, 10)
+	Sleep 500
+	fun_btn("贷前费用收取", "duigoutubiao", "对勾图标", 50, 10)
+	Sleep 100
+	Send {enter}
+	Sleep 500
+	
+	fun_btn("菜单", "daiqianfeiyongfuhe", "贷前费用复核", 50, 10)
+	Sleep, 200
+	MouseClick, left,  353, 222		;客户名称
+	Send ^v
+	fun_btn("贷前费用收取", "sousuotubiao", "搜索图标", 50, 10)
+	Sleep 300
+	MouseClick, left,  575, 337		;第一条数据
+	fun_btn("贷前费用收取", "duigoutubiao", "对勾图标", 50, 10)
+	Sleep 500
+	
+	ToolTip("...脚本结束")
+}
+
 
 /*
  * @Description: 垫资面签 - 自动表单
@@ -1007,6 +1090,8 @@ yunYing(){
 	MouseClick, left, 1841, 246 ;新增客户基本信息
 	Sleep, 1000  ;等待
 	openCustInfo()
+	
+	ToolTip("...脚本结束")
 }
 
  /*
@@ -1044,6 +1129,8 @@ yunYing(){
 		MouseClick, left, %OutputVarX%, %OutputVarY% ;定位
 		Sleep, 500  ;等待
 	}
+	
+	ToolTip("...脚本结束")
  }
 
  /*
@@ -1053,6 +1140,8 @@ yunYing(){
  closeTaskMsg(){
 	Sleep, 3000  ;等待
 	Send {enter}
+	
+	ToolTip("...脚本结束")
  }
 
  /*
@@ -1083,6 +1172,8 @@ yunYing(){
 			sY := OutputVarYA
 			MouseClick, left, %sX%, %sY% ;
 		}
+		
+	ToolTip("...脚本结束")
  }
  
 
@@ -1133,6 +1224,8 @@ yunYing(){
 	Sleep, 500  ;等待
 	Send {tab}{tab}qazwsx{enter}
 	Send {enter}
+	
+	ToolTip("...脚本结束")
 }
  
   /*
@@ -1179,6 +1272,8 @@ yunYing(){
 	Send {tab}
 	Send %userId%
 	Send {enter}
+	
+	ToolTip("...脚本结束")
  }
  
 
@@ -1793,6 +1888,8 @@ micChangeTo(ByRef bchId){
 	Send %bchId%
 	Send ^s
 	Clipboard = %ClipboardOld% ;恢复剪贴板初始的内容Return
+	
+	ToolTip("...脚本结束")
 }
 
 #IfWinActive
@@ -1830,7 +1927,8 @@ micChangeTo(ByRef bchId){
 	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(4).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
 	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(5).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
 	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(6).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
-	MsgBox, 0, 提示, 库表结构Excel已经复制完毕！, 1
+	
+	ToolTip("...库表结构Excel已经复制完毕！")
  return
  
   /*
@@ -1885,13 +1983,40 @@ fun_btn(ByRef eventName, ByRef btnId, ByRef btnName, ByRef xAdd, ByRef yAdd){
 	else if ErrorLevel = 1 
 	MsgBox %eventName%_%btnName%_未在屏幕上寻得图标。
 	else{
-		xa := OutputVarX + %xAdd%
-		ya := OutputVarY + %yAdd%
+		xa := OutputVarX + xAdd		
+		ya := OutputVarY + yAdd
 		MouseClick, left,  %xa%, %ya%
-		MouseClick, left, %OutputVarX%, %OutputVarY% ;定位
 		Sleep, 500  ;等待
 	}
 }
+
+/*
+	图片搜索按钮
+*/
+fun_btn_nomsg(ByRef eventName, ByRef btnId, ByRef btnName, ByRef xAdd, ByRef yAdd){
+	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\%btnId%.bmp
+	nomsg := 2
+	if (ErrorLevel = 2) {
+		aa = %eventName%_%btnName%_未在屏幕上寻得图标。
+		ToolTip(aa)
+		nomsg := 2	
+	}else if (ErrorLevel = 1) {
+		bb = %eventName%_%btnName%_未在屏幕上寻得图标。
+		ToolTip(bb)
+		nomsg := 1
+	}else{
+		xa := OutputVarX + xAdd		
+		ya := OutputVarY + yAdd
+		MouseClick, left,  %xa%, %ya%
+		Sleep, 500  ;等待
+		nomsg := 0
+	}
+	return nomsg
+}
+
+::``test::
+	fun_btn_nomsg("用款确认", "yongkuanqueren", "用款确认", 10, 10)
+return
 
 /*
 从50w身份证数据中获取身份证
@@ -1904,6 +2029,25 @@ fun_btn(ByRef eventName, ByRef btnId, ByRef btnName, ByRef xAdd, ByRef yAdd){
 	return %idCardLine%
 }
 
+;---------------------------------------
+; Tooltips and Timers
+;---------------------------------------	
+	RandomSleep:			; Random timing between Autofire shots
+		Random, random, 14, 25
+		Sleep %random%-5
+	Return
+	
+	RemoveToolTip:			; Used to remove tooltips.
+	   SetTimer, RemoveToolTip, Off
+	   tooltip
+	Return
+
+	ToolTip(label) ;Function to show a tooltip when activating, deactivating or changing values.
+	{
+  		ToolTip, %label%, 1200, 1000 ;Tooltips are shown under crosshair for FullHD monitors.
+  		SetTimer, RemoveToolTip, 1000 ;Removes tooltip after 1.3 seconds.
+  		Return
+	}
 
 /*
  * @Description: 暂停脚本
