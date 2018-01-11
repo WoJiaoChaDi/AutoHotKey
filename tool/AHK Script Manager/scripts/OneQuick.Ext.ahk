@@ -1,83 +1,83 @@
-ï»¿/*
+/*
 
 v.1.5.2.2
-æ–°å¢ï¼šåœ¨eclipseçš„svnå¯¹æ¯”å·¥å…·æ—¶ï¼ŒæŒ‰insertå°†ä¸åŒç‚¹æ›¿æ¢æˆæ—§å†…å®¹
+ĞÂÔö£ºÔÚeclipseµÄsvn¶Ô±È¹¤¾ßÊ±£¬°´insert½«²»Í¬µãÌæ»»³É¾ÉÄÚÈİ
 
 v.1.5.2.1
-ä¼˜åŒ–wpfæ—¶å€™ï¼Œctrl+shift+f,è‡ªåŠ¨è·³åˆ°ç¬¬ä¸€ä¸ªsheetçš„æœ€ä¸Šé¢ï¼Œæœ‰æ—¶ä¸ç”Ÿæ•ˆçš„bug
+ÓÅ»¯wpfÊ±ºò£¬ctrl+shift+f,×Ô¶¯Ìøµ½µÚÒ»¸ösheetµÄ×îÉÏÃæ£¬ÓĞÊ±²»ÉúĞ§µÄbug
 
 v1.5.2
-wpfæ—¶å€™ï¼Œctrl+shift+f,è‡ªåŠ¨è·³åˆ°ç¬¬ä¸€ä¸ªsheetçš„æœ€ä¸Šé¢ï¼Œç„¶åæœç´¢
+wpfÊ±ºò£¬ctrl+shift+f,×Ô¶¯Ìøµ½µÚÒ»¸ösheetµÄ×îÉÏÃæ£¬È»ºóËÑË÷
 
 v1.5.1
-æ·»åŠ ä½¿ç”¨chromeæ—¶å€™ï¼Œctrl+shift+x æ˜ å°„ä¸º F12æ‰“å¼€æ§åˆ¶å°
+Ìí¼ÓÊ¹ÓÃchromeÊ±ºò£¬ctrl+shift+x Ó³ÉäÎª F12´ò¿ª¿ØÖÆÌ¨
 */
 
 GroupAdd, EclipseAllWindow , ahk_class #32770
 GroupAdd, EclipseAllWindow , ahk_class SWT_Window0
 
- /*
-----------------------------------------------------------------------------------------------------------------------ä½¿ç”¨WPSè¡¨æ ¼æ—¶å€™çš„å¿«æ·é”®----------------------------------------------------------------------------------------------------------------------
+/*
+----------------------------------------------------------------------------------------------------------------------Ê¹ÓÃWPS±í¸ñÊ±ºòµÄ¿ì½İ¼ü----------------------------------------------------------------------------------------------------------------------
 */
 #IfWinActive ahk_exe et.exe
  /*
-ä½¿ç”¨WPSè¡¨æ ¼æ—¶ï¼ŒæŒ‰Ctrl+Shift+F è¿”å›é¦–é¡µå¹¶æ‰“å¼€æœç´¢
+Ê¹ÓÃWPS±í¸ñÊ±£¬°´Ctrl+Shift+F ·µ»ØÊ×Ò³²¢´ò¿ªËÑË÷
 */
 ^+f::
-    title := Sys.Win.Title()
-	indexSubmit := InStr(title,"WPS è¡¨æ ¼")
-    if(indexSubmit != 0){
-        MouseClick, left, 12, 1005 ;è¿”å›ç¬¬ä¸€ä¸ªé¡µé¢
-        MouseClick, left, 107, 1010 ;è¿”å›ç¬¬ä¸€ä¸ªé¡µé¢
-        MouseClick, left, 107, 1010 ;è¿”å›ç¬¬ä¸€ä¸ªé¡µé¢
-        MouseClick, left, 121, 902 ;éšä¾¿ç‚¹ä¸€ä¸ªè¡¨æ ¼æ¡†
-        Send ^{Home}
-        Send ^f
-        Send ^v
-        Send ^a
+		title := Sys.Win.Title()
+	indexSubmit := InStr(title,"WPS ±í¸ñ")
+	if(indexSubmit != 0){
+			MouseClick, left, 12, 1005 ;·µ»ØµÚÒ»¸öÒ³Ãæ
+			MouseClick, left, 107, 1010 ;·µ»ØµÚÒ»¸öÒ³Ãæ
+			MouseClick, left, 107, 1010 ;·µ»ØµÚÒ»¸öÒ³Ãæ
+			MouseClick, left, 121, 902 ;Ëæ±ãµãÒ»¸ö±í¸ñ¿ò
+			Send ^{Home}
+			Send ^f
+			Send ^v
+			Send ^a
 	}else{
-		Send ^+f
+			Send ^+f
 	}	
 return
 
 #IfWinActive
 
  /*
-----------------------------------------------------------------------------------------------------------------------ä½¿ç”¨chromeæ—¶å€™çš„å¿«æ·é”®----------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------Ê¹ÓÃchromeÊ±ºòµÄ¿ì½İ¼ü----------------------------------------------------------------------------------------------------------------------
 */
 #IfWinActive ahk_exe chrome.exe
  /*
-ä½¿ç”¨chromeï¼ŒæŒ‰alt+2  æŸ¥çœ‹chromeä¸‹ä¸€å¤„æœç´¢
+Ê¹ÓÃchrome£¬°´alt+2  ²é¿´chromeÏÂÒ»´¦ËÑË÷
 */
 !2::
-   MouseGetPos, xpos, ypos ;è·å–é¼ æ ‡å½“å‰çš„ä½ç½®
-   MouseClick, left, 1851, 111, ,0 ;ä¸‹ä¸€ä¸ª
-   MouseMove, %xpos%, %ypos%, 0 ;ç§»åŠ¨é¼ æ ‡åˆ°åŸæ¥ä½ç½®
+	MouseGetPos, xpos, ypos ;»ñÈ¡Êó±êµ±Ç°µÄÎ»ÖÃ
+	MouseClick, left, 1851, 111, ,0 ;ÏÂÒ»¸ö
+	MouseMove, %xpos%, %ypos%, 0 ;ÒÆ¶¯Êó±êµ½Ô­À´Î»ÖÃ
 return
 
  /*
-ä½¿ç”¨chromeï¼ŒæŒ‰alt+1  æŸ¥çœ‹chromeä¸Šä¸€å¤„æœç´¢
+Ê¹ÓÃchrome£¬°´alt+1  ²é¿´chromeÉÏÒ»´¦ËÑË÷
 */
 !1::
-   MouseGetPos, xpos, ypos ;è·å–é¼ æ ‡å½“å‰çš„ä½ç½®
-   MouseClick, left, 1824, 108, ,0 ;ä¸Šä¸€ä¸ª
-   MouseMove, %xpos%, %ypos%, 0 ;ç§»åŠ¨é¼ æ ‡åˆ°åŸæ¥ä½ç½®
+	MouseGetPos, xpos, ypos ;»ñÈ¡Êó±êµ±Ç°µÄÎ»ÖÃ
+	MouseClick, left, 1824, 108, ,0 ;ÉÏÒ»¸ö
+	MouseMove, %xpos%, %ypos%, 0 ;ÒÆ¶¯Êó±êµ½Ô­À´Î»ÖÃ
 return
 
  /*
-ä½¿ç”¨chromeï¼ŒæŒ‰ctrl+f  è‡ªåŠ¨æœç´¢é€‰ä¸­æ–‡å­—
+Ê¹ÓÃchrome£¬°´ctrl+f  ×Ô¶¯ËÑË÷Ñ¡ÖĞÎÄ×Ö
 */
 ^f::
-   ClipboardOld = %clipboard% ;ä¿ç•™å‰ªè´´æ¿ä¸­åŸæ¥çš„å†…å®¹
-   Send ^c
-   Send ^f
-   Send ^v
-   Send ^a
-   clipboard = %ClipboardOld%
+	ClipboardOld = %clipboard% ;±£Áô¼ôÌù°åÖĞÔ­À´µÄÄÚÈİ
+	Send ^c
+	Send ^f
+	Send ^v
+	Send ^a
+	clipboard = %ClipboardOld%
 return
 
  /*
-ä½¿ç”¨chromeæ—¶ï¼ŒæŒ‰Alt+v,æŸ¥çœ‹æ¡†æ¶æºä»£ç 
+Ê¹ÓÃchromeÊ±£¬°´Alt+v,²é¿´¿ò¼ÜÔ´´úÂë
 */
 !v::
 	MouseClick, right
@@ -85,7 +85,7 @@ return
 return
 
  /*
-ä½¿ç”¨chromeæ—¶ï¼ŒæŒ‰Ctrl+Shift+X,æŸ¥çœ‹æ¡†æ¶æºä»£ç 
+Ê¹ÓÃchromeÊ±£¬°´Ctrl+Shift+X,²é¿´¿ò¼ÜÔ´´úÂë
 */
 ^+x::
 	Send {F12}
@@ -95,60 +95,60 @@ return
 #IfWinActive
 
 /*
----------------------------------------------------------------------------------------------------ä½¿ç”¨EclipseAllWindowçš„æ—¶å€™ï¼ˆè¯¥çª—å£ç»„å®šä¹‰åœ¨  æœ¬æ–‡ä»¶å¤´  ä¸­ï¼‰----------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------Ê¹ÓÃEclipseAllWindowµÄÊ±ºò£¨¸Ã´°¿Ú×é¶¨ÒåÔÚ  ±¾ÎÄ¼şÍ·  ÖĞ£©----------------------------------------------------------------------------------------------------------------------
 */
 #IfWinActive ahk_group EclipseAllWindow
 
 /*
-Ctrl+CapsLock --ã€‹ Ctrl + PgDnï¼ˆä¸‹ä¸€ä¸ªè§†å›¾ï¼‰
+Ctrl+CapsLock --¡· Ctrl + PgDn£¨ÏÂÒ»¸öÊÓÍ¼£©
 */
 ^CapsLock::
-    Send ^{PgDn}
+	Send ^{PgDn}
 return
 
 /*
-Ctrl+Shift+CapsLock --ã€‹ Ctrl + PgUpï¼ˆä¸Šä¸€ä¸ªè§†å›¾ï¼‰
+Ctrl+Shift+CapsLock --¡· Ctrl + PgUp£¨ÉÏÒ»¸öÊÓÍ¼£©
 */
 ^+CapsLock::
-    Send ^{PgUp}
+	Send ^{PgUp}
 return
 
  /*
-ä½¿ç”¨eclipseæ—¶ï¼ŒæŒ‰Alt+Shift+Dæ‰§è¡ŒCtrl+Shift+O  å¯¼åŒ…
+Ê¹ÓÃeclipseÊ±£¬°´Alt+Shift+DÖ´ĞĞCtrl+Shift+O  µ¼°ü
 */
 +!D::
 	Send ^+o
 return
 
  /*
-ä½¿ç”¨eclipseæ—¶ï¼ŒæŒ‰Ctrl+Bæ‰§è¡ŒCtrl+O
+Ê¹ÓÃeclipseÊ±£¬°´Ctrl+BÖ´ĞĞCtrl+O
 */
 ^B::
 	Send ^o
 return
 
  /*
-ä½¿ç”¨eclipseæ—¶ï¼ŒæŒ‰Alt+`æ‰§è¡ŒAlt+/
+Ê¹ÓÃeclipseÊ±£¬°´Alt+`Ö´ĞĞAlt+/
 */
 !`::
 	Send !/
 return
 
  /*
-ä½¿ç”¨eclipseæ—¶ï¼ŒæŒ‰ctrl+tabåœ¨ä¸¤ä¸ªæ‹¬å·é—´åˆ‡æ¢
+Ê¹ÓÃeclipseÊ±£¬°´ctrl+tabÔÚÁ½¸öÀ¨ºÅ¼äÇĞ»»
 */
 ^Tab::
 	Send ^+p
 return
 
  /*
-åœ¨eclipseçš„svnå¯¹æ¯”å·¥å…·æ—¶ï¼ŒæŒ‰insertå°†ä¸åŒç‚¹æ›¿æ¢æˆæ—§å†…å®¹
+ÔÚeclipseµÄsvn¶Ô±È¹¤¾ßÊ±£¬°´insert½«²»Í¬µãÌæ»»³É¾ÉÄÚÈİ
 */
 Insert::
-	MouseGetPos, xpos, ypos ;è·å–é¼ æ ‡å½“å‰çš„ä½ç½®
+	MouseGetPos, xpos, ypos ;»ñÈ¡Êó±êµ±Ç°µÄÎ»ÖÃ
 	title := Sys.Win.Title()
-	indexSVN := InStr(title,"çš„æ¯”è¾ƒ")
-    indexSVN2:= InStr(title,"SVN")
+	indexSVN := InStr(title,"µÄ±È½Ï")
+	indexSVN2:= InStr(title,"SVN")
 	indexJava := InStr(title,".java")
 	indexXml := InStr(title,".xml")
 	indexJsp  := InStr(title,".jsp")
@@ -158,144 +158,142 @@ Insert::
 			indexJs := 0
 		}	
 		if(indexJava != 0 `|`| indexJs != 0){
-			MouseClick, left, 1769, 391, ,0 ;æ—§svnæ›¿æ¢
+			MouseClick, left, 1769, 391, ,0 ;¾ÉsvnÌæ»»
 		}
 		if(indexXml != 0 `|`| indexJsp != 0 `|`| indexProperties != 0){
-			MouseClick, left, 1769, 121, ,0 ;æ—§svnæ›¿æ¢
+			MouseClick, left, 1769, 121, ,0 ;¾ÉsvnÌæ»»
 		}
-		MouseMove, %xpos%, %ypos%, 0 ;ç§»åŠ¨é¼ æ ‡åˆ°åŸæ¥ä½ç½®
-        Send ^s
+		MouseMove, %xpos%, %ypos%, 0 ;ÒÆ¶¯Êó±êµ½Ô­À´Î»ÖÃ
+				Send ^s
 	}else{
 		Send {Insert}
 	}
 return
 
  /*
-ä½¿ç”¨eclipseæ—¶ï¼ŒæŒ‰]  æŸ¥çœ‹svnåŒæ­¥çš„ä¸‹ä¸€å¤„ä¸åŒ
+Ê¹ÓÃeclipseÊ±£¬°´]  ²é¿´svnÍ¬²½µÄÏÂÒ»´¦²»Í¬
 */
 ]::
-    
-    title := Sys.Win.Title()
-	indexSubmit := InStr(title,"æäº¤")
-	if(indexSubmit != 0){   ;æäº¤æ—¶å€™çš„
-		MouseGetPos, xpos, ypos ;è·å–é¼ æ ‡å½“å‰çš„ä½ç½®
-		MouseClick, left, 1829, 119, ,0 ;ä¸‹ä¸€å¤„ä¸åŒ
-		MouseMove, %xpos%, %ypos%, 0 ;ç§»åŠ¨é¼ æ ‡åˆ°åŸæ¥ä½ç½®
+	title := Sys.Win.Title()
+	indexSubmit := InStr(title,"Ìá½»")
+	if(indexSubmit != 0){	;Ìá½»Ê±ºòµÄ
+		MouseGetPos, xpos, ypos ;»ñÈ¡Êó±êµ±Ç°µÄÎ»ÖÃ
+		MouseClick, left, 1829, 119, ,0 ;ÏÂÒ»´¦²»Í¬
+		MouseMove, %xpos%, %ypos%, 0 ;ÒÆ¶¯Êó±êµ½Ô­À´Î»ÖÃ
 	}else{
-        indexSubmit2 := InStr(title,"Workspace")
-        if(indexSubmit2 != 0){  ;synchronizeæ—¶å€™çš„
-              MouseGetPos, xpos, ypos ;è·å–é¼ æ ‡å½“å‰çš„ä½ç½®
-              title := Sys.Win.Title()
-              indexSVN := InStr(title,"çš„æ¯”è¾ƒ")
-              indexSVN2:= InStr(title,"SVN")
-              indexJava := InStr(title,".java")
-              indexXml := InStr(title,".xml")
-              indexJsp  := InStr(title,".jsp")
-              indexJs  := InStr(title,".js")
-              indexProperties  := InStr(title,".properties")
-              if(indexSVN != 0 || indexSVN2 != 0 ){
-                  if(indexJsp != 0 && indexJs != 0){
-                      indexJs := 0
-                  }	
-                  if(indexJava != 0 `|`| indexJs != 0){
-                      ;MouseClick, left, 1802, 391, ,0 ;ä¸‹ä¸€å¤„ä¸åŒ
-                      
-                      ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_next.bmp
-                      if ErrorLevel = 2 
-                      MsgBox ä¸èƒ½å®æ–½æœç´¢ã€‚
-                      else if ErrorLevel = 1 
-                      1==1
-                      ;MsgBox æœªåœ¨å±å¹•ä¸Šå¯»å¾—å›¾æ ‡ã€‚
-                      else{
-                          xa := OutputVarXA + 10
-                          ya := OutputVarYA
-                          MouseClick, left,  %xa%, %ya%, ,0	;ä¸‹ä¸€å¤„ä¸åŒ
-                      }
-                  }
-                  if(indexXml != 0 `|`| indexJsp != 0 `|`| indexProperties != 0){
-                      ;MouseClick, left, 1799, 119, ,0 ;ä¸‹ä¸€å¤„ä¸åŒ
-                      
-                      ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_next.bmp
-                      if ErrorLevel = 2 
-                      MsgBox ä¸èƒ½å®æ–½æœç´¢ã€‚
-                      else if ErrorLevel = 1 
-                      1==1
-                      ;MsgBox æœªåœ¨å±å¹•ä¸Šå¯»å¾—å›¾æ ‡ã€‚
-                      else{
-                          xa := OutputVarXA + 10
-                          ya := OutputVarYA
-                          MouseClick, left,  %xa%, %ya%, ,0	;ä¸‹ä¸€å¤„ä¸åŒ
-                      }
-                  }
-                  MouseMove, %xpos%, %ypos%, 0 ;ç§»åŠ¨é¼ æ ‡åˆ°åŸæ¥ä½ç½®
-              }
-        }else{
-         Send ]
-        }
+		indexSubmit2 := InStr(title,"Workspace")
+		if(indexSubmit2 != 0){  ;synchronizeÊ±ºòµÄ
+			  MouseGetPos, xpos, ypos ;»ñÈ¡Êó±êµ±Ç°µÄÎ»ÖÃ
+			  title := Sys.Win.Title()
+			  indexSVN := InStr(title,"µÄ±È½Ï")
+			  indexSVN2:= InStr(title,"SVN")
+			  indexJava := InStr(title,".java")
+			  indexXml := InStr(title,".xml")
+			  indexJsp  := InStr(title,".jsp")
+			  indexJs  := InStr(title,".js")
+			  indexProperties  := InStr(title,".properties")
+			  if(indexSVN != 0 || indexSVN2 != 0 ){
+					  if(indexJsp != 0 && indexJs != 0){
+									indexJs := 0
+					  }	
+					  if(indexJava != 0 `|`| indexJs != 0){
+									;MouseClick, left, 1802, 391, ,0 ;ÏÂÒ»´¦²»Í¬
+									
+									ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_next.bmp
+									if ErrorLevel = 2 
+									MsgBox ²»ÄÜÊµÊ©ËÑË÷¡£
+									else if ErrorLevel = 1 
+									1==1
+									;MsgBox Î´ÔÚÆÁÄ»ÉÏÑ°µÃÍ¼±ê¡£
+									else{
+											xa := OutputVarXA + 10
+											ya := OutputVarYA
+											MouseClick, left,  %xa%, %ya%, ,0	;ÏÂÒ»´¦²»Í¬
+									}
+					  }
+					  if(indexXml != 0 `|`| indexJsp != 0 `|`| indexProperties != 0){
+									;MouseClick, left, 1799, 119, ,0 ;ÏÂÒ»´¦²»Í¬
+									
+									ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_next.bmp
+									if ErrorLevel = 2 
+									MsgBox ²»ÄÜÊµÊ©ËÑË÷¡£
+									else if ErrorLevel = 1 
+									1==1
+									;MsgBox Î´ÔÚÆÁÄ»ÉÏÑ°µÃÍ¼±ê¡£
+									else{
+											xa := OutputVarXA + 10
+											ya := OutputVarYA
+											MouseClick, left,  %xa%, %ya%, ,0	;ÏÂÒ»´¦²»Í¬
+									}
+					  }
+					  MouseMove, %xpos%, %ypos%, 0 ;ÒÆ¶¯Êó±êµ½Ô­À´Î»ÖÃ
+				  }
+		}else{
+				Send ]
+		}
 	}	
 return
 
  /*
-ä½¿ç”¨eclipseæ—¶ï¼ŒæŒ‰[  æŸ¥çœ‹svnåŒæ­¥çš„ä¸Šä¸€å¤„ä¸åŒ
+Ê¹ÓÃeclipseÊ±£¬°´[  ²é¿´svnÍ¬²½µÄÉÏÒ»´¦²»Í¬
 */
 [::
-
-    title := Sys.Win.Title()
-	indexSubmit := InStr(title,"æäº¤")
+	title := Sys.Win.Title()
+	indexSubmit := InStr(title,"Ìá½»")
 	if(indexSubmit != 0){
-		MouseGetPos, xpos, ypos ;è·å–é¼ æ ‡å½“å‰çš„ä½ç½®
-		MouseClick, left, 1848, 121, ,0 ;ä¸Šä¸€å¤„ä¸åŒ
-		MouseMove, %xpos%, %ypos%, 0 ;ç§»åŠ¨é¼ æ ‡åˆ°åŸæ¥ä½ç½®
+		MouseGetPos, xpos, ypos ;»ñÈ¡Êó±êµ±Ç°µÄÎ»ÖÃ
+		MouseClick, left, 1848, 121, ,0 ;ÉÏÒ»´¦²»Í¬
+		MouseMove, %xpos%, %ypos%, 0 ;ÒÆ¶¯Êó±êµ½Ô­À´Î»ÖÃ
 	}else{
-        indexSubmit2 := InStr(title,"Workspace")
-        if(indexSubmit2 != 0){
-              MouseGetPos, xpos, ypos ;è·å–é¼ æ ‡å½“å‰çš„ä½ç½®
-              title := Sys.Win.Title()
-              indexSVN := InStr(title,"çš„æ¯”è¾ƒ")
-              indexSVN2:= InStr(title,"SVN")
-              indexJava := InStr(title,".java")
-              indexXml := InStr(title,".xml")
-              indexJsp  := InStr(title,".jsp")
-              indexJs  := InStr(title,".js")
-              if(indexSVN != 0 || indexSVN2 != 0 ){
-                  if(indexJsp != 0 && indexJs != 0){
-                      indexJs := 0
-                  }	
-                  if(indexJava != 0 `|`| indexJs != 0){
-                      ;MouseClick, left, 1822, 391, ,0 ;ä¸Šä¸€å¤„ä¸åŒ
-                      
-                      ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_previous.bmp
-                      if ErrorLevel = 2 
-                      MsgBox ä¸èƒ½å®æ–½æœç´¢ã€‚
-                      else if ErrorLevel = 1 
-                      1==1
-                      ;MsgBox æœªåœ¨å±å¹•ä¸Šå¯»å¾—å›¾æ ‡ã€‚
-                      else{
-                          xa := OutputVarXA + 10
-                          ya := OutputVarYA
-                          MouseClick, left,  %xa%, %ya%, ,0	;ä¸Šä¸€å¤„ä¸åŒ
-                      }
-                  }
-                  if(indexXml != 0 `|`| indexJsp != 0 `|`| indexProperties != 0){
-                      ;MouseClick, left, 1822, 121, ,0 ;ä¸Šä¸€å¤„ä¸åŒ
-                      
-                      ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_previous.bmp
-                      if ErrorLevel = 2 
-                      MsgBox ä¸èƒ½å®æ–½æœç´¢ã€‚
-                      else if ErrorLevel = 1 
-                      1==1
-                      ;MsgBox æœªåœ¨å±å¹•ä¸Šå¯»å¾—å›¾æ ‡ã€‚
-                      else{
-                          xa := OutputVarXA + 10
-                          ya := OutputVarYA
-                          MouseClick, left,  %xa%, %ya%, ,0	;ä¸Šä¸€å¤„ä¸åŒ
-                      }
-                  }
-                  MouseMove, %xpos%, %ypos%, 0 ;ç§»åŠ¨é¼ æ ‡åˆ°åŸæ¥ä½ç½®
-              }
-        }else{
-         Send [
-        }
+		indexSubmit2 := InStr(title,"Workspace")
+		if(indexSubmit2 != 0){
+			  MouseGetPos, xpos, ypos ;»ñÈ¡Êó±êµ±Ç°µÄÎ»ÖÃ
+			  title := Sys.Win.Title()
+			  indexSVN := InStr(title,"µÄ±È½Ï")
+			  indexSVN2:= InStr(title,"SVN")
+			  indexJava := InStr(title,".java")
+			  indexXml := InStr(title,".xml")
+			  indexJsp  := InStr(title,".jsp")
+			  indexJs  := InStr(title,".js")
+			  if(indexSVN != 0 || indexSVN2 != 0 ){
+					  if(indexJsp != 0 && indexJs != 0){
+									indexJs := 0
+					  }	
+					  if(indexJava != 0 `|`| indexJs != 0){
+									;MouseClick, left, 1822, 391, ,0 ;ÉÏÒ»´¦²»Í¬
+									
+									ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_previous.bmp
+									if ErrorLevel = 2 
+									MsgBox ²»ÄÜÊµÊ©ËÑË÷¡£
+									else if ErrorLevel = 1 
+									1==1
+									;MsgBox Î´ÔÚÆÁÄ»ÉÏÑ°µÃÍ¼±ê¡£
+									else{
+											xa := OutputVarXA + 10
+											ya := OutputVarYA
+											MouseClick, left,  %xa%, %ya%, ,0	;ÉÏÒ»´¦²»Í¬
+									}
+					  }
+					  if(indexXml != 0 `|`| indexJsp != 0 `|`| indexProperties != 0){
+									;MouseClick, left, 1822, 121, ,0 ;ÉÏÒ»´¦²»Í¬
+									
+									ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\svn_previous.bmp
+									if ErrorLevel = 2 
+									MsgBox ²»ÄÜÊµÊ©ËÑË÷¡£
+									else if ErrorLevel = 1 
+									1==1
+									;MsgBox Î´ÔÚÆÁÄ»ÉÏÑ°µÃÍ¼±ê¡£
+									else{
+											xa := OutputVarXA + 10
+											ya := OutputVarYA
+											MouseClick, left,  %xa%, %ya%, ,0	;ÉÏÒ»´¦²»Í¬
+									}
+					  }
+					  MouseMove, %xpos%, %ypos%, 0 ;ÒÆ¶¯Êó±êµ½Ô­À´Î»ÖÃ
+				  }
+		}else{
+		 Send [
+		}
 	}	
 return
 
@@ -304,164 +302,162 @@ return
 
 
  /*
------------------------------------------------------------ä»»ä½•æ—¶å€™---------------------------------------------
+-----------------------------------------------------------ÈÎºÎÊ±ºò---------------------------------------------
 */
 
 
 /*
- * @Description: alt+m åˆ‡æ¢å½“å‰çª—å£çš„æœ€å¤§åŒ–/æœ€å°åŒ–
+ * @Description: alt+m ÇĞ»»µ±Ç°´°¿ÚµÄ×î´ó»¯/×îĞ¡»¯
  * @author XuDong
  */
-WinStatus:=0    
-!m::    
-if WinStatus=0    
-	{         
-		WinMaximize , A         
-		WinStatus:=1    
-	}    
-else    
-	{         
-		WinRestore ,A         
-		WinStatus:=0    
-	}    
+WinStatus:=0		
+!m::		
+if WinStatus=0		
+	{				 
+		WinMaximize , A				 
+		WinStatus:=1		
+	}		
+else		
+	{				 
+		WinRestore ,A				 
+		WinStatus:=0		
+	}		
 return
 
 /*
- * @Description: alt+n æœ€å°åŒ–å½“å‰æ¿€æ´»çª—å£
+ * @Description: alt+n ×îĞ¡»¯µ±Ç°¼¤»î´°¿Ú
  * @author XuDong
  */
-!n::    
-WinMinimize, A
+!n::		
+	WinMinimize, A
 return
 
 /*
- * @Description: Win+Escæ˜ å°„ä¸º alt+F4
+ * @Description: Win+EscÓ³ÉäÎª alt+F4
  * @author XuDong
  */
 #Esc::!F4
 
 /*
- * @Description: alt+A é€‰ä¸­å…‰æ ‡æ‰€åœ¨è¡Œæ‰€æœ‰å†…å®¹ï¼Œå¹¶æŠŠå…‰æ ‡å®šä½åˆ°æœ«å°¾
+ * @Description: alt+A Ñ¡ÖĞ¹â±êËùÔÚĞĞËùÓĞÄÚÈİ£¬²¢°Ñ¹â±ê¶¨Î»µ½Ä©Î²
  * @author XuDong
  */
-!a::   
- Send {Home}
- Send {Home}   
- Send +{End}
- return    
+!a::	
+	Send {Home}
+	Send {Home}	
+	Send +{End}
+ return		
 
 /*
- * @Description: é”®å…¥//nå†ä¸€ä¸ªç»ˆæ­¢ç¬¦ï¼Œæ‰“å¼€notepad
+ * @Description: ¼üÈë//nÔÙÒ»¸öÖÕÖ¹·û£¬´ò¿ªnotepad
  * @author XuDong
  */
- :://n::   
- Run notepad   
- return    
+ :://n::	
+	Run notepad	
+ return		
 
 /*
- * @Description: //calcæ‰“å¼€è®¡ç®—å™¨
+ * @Description: //calc´ò¿ª¼ÆËãÆ÷
  * @author XuDong
  */
- :://calc::   
- Run calc
- return    
+	 :://calc::	
+	 Run calc
+ return		
 
 /*
- * @Description: //fæ‰“å¼€ç™¾åº¦ç¿»è¯‘
+ * @Description: //f´ò¿ª°Ù¶È·­Òë
  * @author XuDong
  */
- :://f::   
- Run https://fanyi.baidu.com/
+ :://f::	
+	Run https://fanyi.baidu.com/
  return  
  
  /*
- * @Description: //bæ‰“å¼€ç™¾åº¦
+ * @Description: //b´ò¿ª°Ù¶È
  * @author XuDong
  */
- :://b::   
- Run https://www.baidu.com/
+ :://b::	
+	Run https://www.baidu.com/
  return  
 
 /*
- * @Description: win+b æ‰“å¼€sublime_text
+ * @Description: win+b ´ò¿ªsublime_text
  * @author XuDong
  */
- #b::   
- Run E:\software\Sublime Text 2\sublime_text.exe  
+ #b::	
+	Run E:\software\Sublime Text 2\sublime_text.exe  
  return  
 
 /*
- * @Description: win+f æ‰“å¼€everything
+ * @Description: win+f ´ò¿ªeverything
  * @author XuDong
  */
- #f::   
- Run D:\SoftWare\Everything-1.4.0.713b.x86-Setup\Everything.exe
+ #f::	
+	Run D:\SoftWare\Everything-1.4.0.713b.x86-Setup\Everything.exe
  return  
 
 /*
- * @Description: //dæ‰“å¼€dç›˜
+ * @Description: //d´ò¿ªdÅÌ
  * @author XuDong
  */
- :://d::   
- Run D:\
- return    
+ :://d::	
+	Run D:\
+ return		
 
 /*
- * @Description: //eæ‰“å¼€eç›˜
+ * @Description: //e´ò¿ªeÅÌ
  * @author XuDong
  */
- :://e::   
- Run E:\
+ :://e::	
+	Run E:\
  return 
 
 /*
- * @Description: ctrl+win+c å¤åˆ¶æ–‡ä»¶è·¯å¾„
+ * @Description: ctrl+win+c ¸´ÖÆÎÄ¼şÂ·¾¶
  * @author XuDong
  */
 ^#c::
-send ^c
-sleep,200
-clipboard=%clipboard% ; è¿™å¥è¿˜æ˜¯åºŸè¯ä¸€ä¸‹ï¼šwindows å¤åˆ¶çš„æ—¶å€™ï¼Œå‰ªè´´æ¿ä¿å­˜çš„æ˜¯â€œè·¯å¾„â€ã€‚åªæ˜¯è·¯å¾„ä¸æ˜¯å­—ç¬¦ä¸²ï¼Œåªè¦è½¬æ¢æˆå­—ç¬¦ä¸²å°±å¯ä»¥ç²˜è´´å‡ºæ¥äº†ã€‚
-tooltip,%clipboard%
-sleep,1000
-tooltip,
+	send ^c
+	sleep,200
+	clipboard=%clipboard% ; Õâ¾ä»¹ÊÇ·Ï»°Ò»ÏÂ£ºwindows ¸´ÖÆµÄÊ±ºò£¬¼ôÌù°å±£´æµÄÊÇ¡°Â·¾¶¡±¡£Ö»ÊÇÂ·¾¶²»ÊÇ×Ö·û´®£¬Ö»Òª×ª»»³É×Ö·û´®¾Í¿ÉÒÔÕ³Ìù³öÀ´ÁË¡£
+	tooltip,%clipboard%
+	sleep,1000
+	tooltip,
 return 
 
 /*
- * @Description: ctrl+delete å‰ªåˆ‡
+ * @Description: ctrl+delete ¼ôÇĞ
  * @author XuDong
  */
 ^Delete::
-send ^x
+	send ^x
 return 
 
 /*
- * @Description: ctrl+insert ç²˜è´´
+ * @Description: ctrl+insert Õ³Ìù
  * @author XuDong
  */
 ^Insert::
-send ^v
+	send ^v
 return 
 
 /*
- * @Description: ctrl+\ å¤åˆ¶
+ * @Description: ctrl+\ ¸´ÖÆ
  * @author XuDong
  */
 ^\::
-send ^c
+	send ^c
 return 
 
 /*
- * @Description: //t è®¡æ—¶å™¨
+ * @Description: //t ¼ÆÊ±Æ÷
  * @author XuDong
  */
 :://t::
-InputBox, time, è®¡æ—¶å™¨, è¯·è¾“å…¥ä¸€ä¸ªæ—¶é—´ï¼ˆå•ä½æ˜¯ç§’ï¼‰
-        ; å¼¹å‡ºä¸€ä¸ªè¾“å…¥æ¡†ï¼Œæ ‡é¢˜æ˜¯â€œè®¡æ—¶å™¨â€ï¼Œå†…å®¹æ˜¯â€œè¯·è¾“å…¥ä¸€ä¸ªæ—¶é—´ï¼ˆå•ä½æ˜¯ç§’ï¼‰â€
-millisecond := time*1000
-        ; å¦‚æœä¸€ä¸ªå˜é‡è¦åšè®¡ç®—çš„è¯ï¼Œä¸€å®šè¦åƒè¿™æ ·å†™ï¼Œå’Œå¹³å¸¸çš„ç®—å¼ç›¸æ¯”ï¼Œå¤šäº†ä¸€ä¸ªå†’å·ã€‚sleep çš„æ—¶é—´æ˜¯æŒ‰ç…§åƒåˆ†ä¹‹ä¸€ç§’ç®—çš„ï¼Œè¿™é‡Œä¹˜ä»¥ 1000 å°±å˜æˆç§’äº†ã€‚
-Sleep,%millisecond%
-MsgBox è®¡æ—¶ç»“æŸï¼ˆ%time%ç§’ï¼‰
+	InputBox, time, ¼ÆÊ±Æ÷, ÇëÊäÈëÒ»¸öÊ±¼ä£¨µ¥Î»ÊÇÃë£©	; µ¯³öÒ»¸öÊäÈë¿ò£¬±êÌâÊÇ¡°¼ÆÊ±Æ÷¡±£¬ÄÚÈİÊÇ¡°ÇëÊäÈëÒ»¸öÊ±¼ä£¨µ¥Î»ÊÇÃë£©¡±
+	millisecond := time*1000	; Èç¹ûÒ»¸ö±äÁ¿Òª×ö¼ÆËãµÄ»°£¬Ò»¶¨ÒªÏñÕâÑùĞ´£¬ºÍÆ½³£µÄËãÊ½Ïà±È£¬¶àÁËÒ»¸öÃ°ºÅ¡£sleep µÄÊ±¼äÊÇ°´ÕÕÇ§·ÖÖ®Ò»ÃëËãµÄ£¬ÕâÀï³ËÒÔ 1000 ¾Í±ä³ÉÃëÁË¡£
+	Sleep,%millisecond%
+	MsgBox ¼ÆÊ±½áÊø£¨%time%Ãë£©
 return
 
 /*
@@ -469,7 +465,7 @@ return
  * @author XuDong
  */
 +!1::
-Send ^{Home}
+	Send ^{Home}
 return
 
 /*
@@ -477,81 +473,81 @@ return
  * @author XuDong
  */
 +!2::
-Send ^{End}
+	Send ^{End}
 return
 
 /*
- * @Description: win+alt+e  æ‰“å¼€æ‰€é€‰ä¸­çš„æ–‡ä»¶è·¯å¾„æ‰€åœ¨çš„æ–‡ä»¶å¤¹ï¼Œå¹¶å®šä½åˆ°è¯¥æ–‡ä»¶
+ * @Description: win+alt+e  ´ò¿ªËùÑ¡ÖĞµÄÎÄ¼şÂ·¾¶ËùÔÚµÄÎÄ¼ş¼Ğ£¬²¢¶¨Î»µ½¸ÃÎÄ¼ş
  * @author XuDong
  */
- #!e::   
-SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
-Send ^c
-xC_tmp := % Clipboard
-tempPath := RegExMatch(xC_tmp, ".*\\", UnquotedOutputVar)
-tempFile := RegExReplace(xC_tmp, ".*\\")
-run %UnquotedOutputVar%
-Sleep 1000
-Send %tempFile%
+ #!e::	
+	SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
+	Send ^c
+	xC_tmp := % Clipboard
+	tempPath := RegExMatch(xC_tmp, ".*\\", UnquotedOutputVar)
+	tempFile := RegExReplace(xC_tmp, ".*\\")
+	run %UnquotedOutputVar%
+	Sleep 1000
+	Send %tempFile%
 return
 
  /*
-æŒ‰escåˆ‡æ¢è¾“å…¥æ³•
+°´escÇĞ»»ÊäÈë·¨
 */
 ~esc::
-; ä¸‹æ–¹ä»£ç å¯åªä¿ç•™ä¸€ä¸ª
-SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
-; SwitchIME(0x08040804) ; ä¸­æ–‡(ä¸­å›½) ç®€ä½“ä¸­æ–‡-ç¾å¼é”®ç›˜
+	; ÏÂ·½´úÂë¿ÉÖ»±£ÁôÒ»¸ö
+	SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
+	; SwitchIME(0x08040804) ; ÖĞÎÄ(ÖĞ¹ú) ¼òÌåÖĞÎÄ-ÃÀÊ½¼üÅÌ
 return
 
  /*
-è¾“å…¥æ³•åˆ‡æ¢æ–¹æ³•
+ÊäÈë·¨ÇĞ»»·½·¨
 */
 SwitchIME(dwLayout){
-    HKL:=DllCall("LoadKeyboardLayout", Str, dwLayout, UInt, 1)
-    ControlGetFocus,ctl,A
-    SendMessage,0x50,0,HKL,%ctl%,A
+		HKL:=DllCall("LoadKeyboardLayout", Str, dwLayout, UInt, 1)
+		ControlGetFocus,ctl,A
+		SendMessage,0x50,0,HKL,%ctl%,A
 }
 
 /*
-ä»50wèº«ä»½è¯æ•°æ®ä¸­è·å–èº«ä»½è¯
+´Ó50wÉí·İÖ¤Êı¾İÖĞ»ñÈ¡Éí·İÖ¤
 */
  getIdCard(){
 	ahkPath = %A_ScriptDir%
-    idCardPath := SubStr(ahkPath, 1 , StrLen(ahkPath)-31) "tool\ReadFile\IdCardRandom_50W.txt"
+		idCardPath := SubStr(ahkPath, 1 , StrLen(ahkPath)-31) "tool\ReadFile\IdCardRandom_50W.txt"
 	Random, idCardRand, 000000, 500000
 	FileReadLine, idCardLine, %idCardPath%, %idCardRand%
 	return %idCardLine%
 }
 
 /*
- * @Description: æš‚åœè„šæœ¬
+ * @Description: ÔİÍ£½Å±¾
  * @author XuDong
-ScrollLock::Pause   ;æš‚åœè„šæœ¬
+ScrollLock::Pause	;ÔİÍ£½Å±¾
  */
 
  /*
-ç³»ç»Ÿç±»
+ÏµÍ³Àà
 */
 class Sys
-    {
-     class Win
-         {
-             ID()
-             {
-                 WinGet, winID, ID, A
-                 return % winID
-             }
+	{
+	 class Win
+		 {
+			 ID()
+			 {
+				 WinGet, winID, ID, A
+				 return % winID
+			 }
 
-             Title(winID := "")
-             {
-                 if (winID == "")
-                     winID := this.ID()
-                 WinGetTitle, title, ahk_id %winID%
-                 return % title
-             }
-         }
-    }
+			 Title(winID := "")
+			 {
+				 if (winID == "")
+						 winID := this.ID()
+				 WinGetTitle, title, ahk_id %winID%
+				 return % title
+			 }
+		 }
+	}
 
 
 
@@ -561,17 +557,17 @@ class Sys
 
 
  /*
- * f12::ExitApp ;f12é€€å‡º   
- * f11::Pause ;æš‚åœ
+ * f12::ExitApp ;f12ÍË³ö	
+ * f11::Pause ;ÔİÍ£
  */
 
 
 /*
- * @Description: é”®å…¥//nï¼Œæ‰“å¼€notepad  ï¼ˆä¸éœ€è¦ç»ˆæ­¢ç¬¦ï¼‰
+ * @Description: ¼üÈë//n£¬´ò¿ªnotepad  £¨²»ĞèÒªÖÕÖ¹·û£©
  * @author XuDong
 
- :*://n::   
- Run notepad   
- return    
+ :*://n::	
+	Run notepad	
+ return		
 
  */

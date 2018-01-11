@@ -1043,6 +1043,9 @@ daiqianfeiyong(){
 	MouseClick, left,  575, 337		;第一条数据
 	fun_btn("贷前费用收取", "duigoutubiao", "对勾图标", 50, 10)
 	Sleep 500
+	fun_btn("贷前费用收取", "duigoutubiao", "对勾图标", 50, 10)
+	Sleep 100
+	Send {enter}
 	
 	ToolTip("...脚本结束")
 }
