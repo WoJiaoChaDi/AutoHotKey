@@ -4,6 +4,9 @@
 ; 修改自：http://ahk.5d6d.com/thread-701-1-3.html
 ; 增加了快捷键、编辑、重载某个单独的脚本
 ;====================================
+
+#SingleInstance 
+
 #Persistent
 #SingleInstance force
 Menu, Tray, Icon, %A_ScriptDir%\resources\ahk.ico
@@ -213,3 +216,5 @@ Return
 Menu_Show:
     Menu, Tray, Show
 Return
+
+ScrollLock::Reload   ;重载脚本
