@@ -1,4 +1,9 @@
-﻿/*
+﻿;========================
+;备注模板
+;========================
+
+
+/*
 -----------------------------------------------------------使用chrome的时候---------------------------------------------
 */
 
@@ -424,15 +429,28 @@ neishen11w(){
 	Send %RandIdCard%	;随机身份证
 	MouseClick, left, 514, 275 ;客户名称
 	Send ^a
-	Send ^`` ;打开粘贴
-	Sleep, 100  ;等待
-	Send 2 ;第二个
+	
+	;Send ^`` ;打开粘贴
+	;Sleep, 100  ;等待
+	;Send 2 ;第二个
+	
+	Send ^v
+	
 	Sleep 200
 	Random, mobile8, 10000000, 99999999	;生成8位随机数
 	Send {tab 2}186%mobile8%	;手机号
 	
+	;========================
+	;涉诉情况
+	;========================
 	MouseClick, left, 278, 218 ;涉诉情况
-	MouseClick, left, 396, 271 ;法院公告网前面定位
+	MouseClick, left, 590, 274 ;涉诉金额
+	Send {down}{enter}
+	MouseClick, left, 1185, 273 ;涉诉类型
+	Send {down}{enter}
+	MouseClick, left, 1350, 275 ;涉诉时间
+	Send {down}{enter}
+	MouseClick, left, 360, 298 ;法院公告网前面定位
 	Send {tab 2}{right 2}{tab}
 	Send 这是法院公告网的备注哦！
 	Send {tab 2}{right 2}{tab}
@@ -524,6 +542,65 @@ neiShen2(){
 	Send {enter}
 	
 	ToolTip("...脚本结束")
+}
+
+ /*
+ * @Description: 内审2（抵押物信息） - 自动表单
+ * @author XuDong
+ */
+ ::``2d::
+	neiShen2ForDbdm()
+ return  
+ 
+ neiShen2ForDbdm(){
+	MouseClick, left, 453, 219 ;担保方式
+	MouseClick, left, 1501, 324 ;预计可贷金额(元)
+	Send {tab}{enter}	;完善
+	Sleep 1500
+	
+	MouseClick, left, 1035, 367 ;房产获得方式
+	Send {down}{enter}
+	MouseClick, left, 465, 391 ;房产性质
+	Send {down}{enter}
+	MouseClick, left, 468, 417 ;规划用途
+	Send {down}{enter}
+	MouseClick, left, 1033, 417 ;产权证登记日期
+	MouseClick, left, 981, 442 ;产权证登记日期 往前两个月
+	MouseClick, left
+	MouseClick, left
+	MouseClick, left
+	MouseClick, left
+	MouseClick, left
+	Sleep, 500  ;等待
+	MouseClick, left, 1087, 571 ;产权证登记日期 28日
+	MouseClick, left, 474, 470 ;总楼层
+	Send 15
+	MouseClick, left, 1050, 473 ;所在楼层
+	Send 15
+	MouseClick, left, 481, 558 ;土地来源
+	Send {down}{enter}
+	MouseClick, left, 856, 554 ;是否有土地证
+	Send {tab}{right}
+	MouseClick, left, 1480, 555 ;当前是否在押
+	Send {tab}{right}
+	MouseClick, left, 333, 610 ;是否唯一住房 无
+	Send {tab}{right}
+	MouseClick, left, 897, 608 ;是否满二/五 无
+	Send {tab}{right}
+	MouseClick, left, 1473, 609 ;是否需垫资 无
+	Send {tab}{right}
+	MouseClick, left, 457, 305 ;复制所有权人
+	Send {Home}   
+	Send +{End}
+	Send ^c
+	MouseClick, left, 1608, 304 ;产权证号码
+	Send {Home}   
+	Send +{End}
+	Send ^v
+	
+	fun_btn("内审II-抵押物信息", "baocun2", "保存", 60, 20)
+	Sleep, 500  ;等待
+	Send {enter}
 }
 
  /*
@@ -713,49 +790,7 @@ neiShen2w(){
 	;========================
 	;担保方式
 	;========================
-	MouseClick, left, 453, 219 ;担保方式
-	MouseClick, left, 1501, 324 ;预计可贷金额(元)
-	Send {tab}{enter}	;完善
-	Sleep 1000
-	
-	MouseClick, left, 1035, 367 ;房产获得方式
-	Send {down}{enter}
-	MouseClick, left, 465, 391 ;房产性质
-	Send {down}{enter}
-	MouseClick, left, 468, 417 ;规划用途
-	Send {down}{enter}
-	MouseClick, left, 1033, 417 ;产权证登记日期
-	MouseClick, left, 981, 442 ;产权证登记日期 往前两个月
-	MouseClick, left
-	MouseClick, left
-	MouseClick, left
-	MouseClick, left
-	MouseClick, left
-	Sleep, 500  ;等待
-	MouseClick, left, 1087, 571 ;产权证登记日期 28日
-	MouseClick, left, 474, 470 ;总楼层
-	Send 15
-	MouseClick, left, 1050, 473 ;所在楼层
-	Send 15
-	MouseClick, left, 464, 527 ;土地来源
-	Send {down}{enter}
-	MouseClick, left, 1002, 525 ;是否有土地证 无  960, 525 有
-	MouseClick, left, 1573, 528 ;当前是否在押 无
-	MouseClick, left, 431, 585 ;是否唯一住房 无
-	MouseClick, left, 1000, 578 ;是否满二/五 无
-	MouseClick, left, 1575, 584 ;是否需垫资 无
-	MouseClick, left, 457, 305 ;复制所有权人
-	Send {Home}   
-	Send +{End}
-	Send ^c
-	MouseClick, left, 1608, 304 ;产权证号码
-	Send {Home}   
-	Send +{End}
-	Send ^v
-	
-	fun_btn("内审II-抵押物信息", "baocun2", "保存", 60, 20)
-	Sleep, 500  ;等待
-	Send {enter}
+	neiShen2ForDbdm()
 	
 	;========================
 	;内审II提交
@@ -781,30 +816,39 @@ neiShen2w(){
  waiShen(){
 	MouseClick, left, 1657, 311 ;待办进入第一个
 	Sleep, 5000  ;等待
-	MouseClick, left, 469, 659 ;内部结构
-	Send {down}{enter}
-	MouseClick, left, 1033, 659 ;户型结构
-	Send {down}{enter}
-	MouseClick, left, 1609, 661 ;装修
-	Send {down}{enter}
-	MouseClick, left, 463, 686 ;朝向
-	Send {down}{enter}
-	MouseClick, left, 429, 715 ;房产实际地址与产权证地址是否一致
-	MouseClick, left, 1061, 714 ;使用状况
-	MouseClick, left, 1569, 710 ;是否有电梯
-	MouseClick, left, 431, 742 ;是否有遮挡
-	MouseClick, left, 1002, 744 ;是否打通
-	MouseClick, left, 1572, 741 ;是否有老年人、残疾人
-	MouseClick, left, 378, 845 ;中介名称
 
+	MouseClick, left, 469, 684 ;内部结构
+	Send {down}{enter}
+	MouseClick, left, 1033, 684 ;户型结构
+	Send {down}{enter}
+	MouseClick, left, 1609, 686 ;装修
+	Send {down}{enter}
+	MouseClick, left, 462, 712 ;朝向
+	Send {down}{enter}
+	MouseClick, left, 318, 740 ;房产实际地址与产权证地址是否一致
+	Send {tab}{right}
+	MouseClick, left, 908, 739 ;使用状况
+	Send {tab}{right}
+	MouseClick, left, 1463, 738 ;是否有电梯
+	Send {tab}{right}
+	MouseClick, left, 330, 768 ;是否有遮挡
+	Send {tab}{right}
+	MouseClick, left, 905, 765 ;是否打通
+	Send {tab}{right}
+	MouseClick, left, 1455, 771 ;是否有老年人、残疾人
+	Send {tab}{right}
+	
+	MouseClick, left, 370, 869 ;中介名称
 	ClipboardOld = %ClipboardAll% ;保留剪贴板中原来的内容
 	Clipboard = 链家链家
 	Send ^v
 	Clipboard = %ClipboardOld% ;恢复剪贴板初始的内容Return
 	
-	MouseClick, left, 756, 844 ;中介联系方式
+	;MouseClick, left, 756, 844 ;中介联系方式
+	Send {tab}	;中介联系方式
 	Send 18600000000
-	MouseClick, left, 1147, 841 ;单价（元/m²）
+	;MouseClick, left, 1147, 841 ;单价（元/m²）
+	Send {tab}	;单价（元/m²）
 	Send 15452
 	;MouseClick, left, 931, 881 ;保存
 	fun_btn("外审", "baocun2", "保存", 60, 20)
@@ -1464,6 +1508,55 @@ daiqianfeiyong(){
 	autoLogin(13581611612, 3, 1)
  return   
  
+ ::``cjs:: 
+	autoLogin(15918702471, 0, 0)
+ return   
+ 
+ ::``1cjs:: 
+	autoLogin(15918702471, 1, 1)
+ return   
+ 
+  ::``2cjs:: 
+	autoLogin(15918702471, 2, 1)
+ return   
+ 
+ ::``3cjs:: 
+	autoLogin(15918702471, 3, 1)
+ return   
+ 
+ 
+ ::``jlz:: 
+	autoLogin(18210515167, 0, 0)
+ return   
+ 
+ ::``1jlz:: 
+	autoLogin(18210515167, 1, 1)
+ return   
+ 
+  ::``2jlz:: 
+	autoLogin(18210515167, 2, 1)
+ return   
+ 
+ ::``3jlz:: 
+	autoLogin(18210515167, 3, 1)
+ return   
+ 
+ 
+ ::``tjz:: 
+	autoLogin(15201442426, 0, 0)
+ return   
+ 
+ ::``1tjz:: 
+	autoLogin(15201442426, 1, 1)
+ return   
+ 
+  ::``2tjz:: 
+	autoLogin(15201442426, 2, 1)
+ return   
+ 
+ ::``3tjz:: 
+	autoLogin(15201442426, 3, 1)
+ return   
  
     /*
  * @Description: 隐身登入cxl陈小磊
@@ -1591,6 +1684,46 @@ daiqianfeiyong(){
  ::``3qlz:: 
 	autoLogin(13701247226, 3, 1)
  return 
+ 
+ /*
+ * @Description: 隐身登入ql齐龙
+ * @author XuDong
+ */
+ ::``zfz:: 
+	autoLogin(13717658868, 0, 0)
+ return 
+
+ ::``1zfz:: 
+	autoLogin(13717658868, 1, 1)
+ return 
+ 
+  ::``2zfz:: 
+	autoLogin(13717658868, 2, 1)
+ return 
+
+ ::``3zfz:: 
+	autoLogin(13717658868, 3, 1)
+ return 
+ 
+ /*
+ * @Description: 隐身登入ql齐龙
+ * @author XuDong
+ */
+ ::``fbb:: 
+	autoLogin(18501367449, 0, 0)
+ return 
+
+ ::``1fbb:: 
+	autoLogin(18501367449, 1, 1)
+ return 
+ 
+  ::``2fbb:: 
+	autoLogin(18501367449, 2, 1)
+ return 
+
+ ::``3fbb:: 
+	autoLogin(18501367449, 3, 1)
+ return 
 
   /*
  * @Description: 隐身登入ytz叶婷
@@ -1692,6 +1825,21 @@ daiqianfeiyong(){
 	autoLogin(13011893241, 3, 1)
  return
  
+ ::``cll:: 
+	autoLogin(18210473155, 0, 0)
+ return
+
+ ::``1cll:: 
+	autoLogin(18210473155, 1, 1)
+ return
+ 
+  ::``2cll:: 
+	autoLogin(18210473155, 2, 1)
+ return
+
+ ::``3cll:: 
+	autoLogin(18210473155, 3, 1)
+ return
 
  
   /*
@@ -1732,6 +1880,24 @@ daiqianfeiyong(){
  	::cqx::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 13581611612
+		Send {Enter}
+	return
+	
+	::cjs::
+		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+		Send 15918702471
+		Send {Enter}
+	return
+	
+	::cqx::
+		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+		Send 18210515167
+		Send {Enter}
+	return
+
+	::tjz::
+		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+		Send 15201442426
 		Send {Enter}
 	return
 
@@ -1849,9 +2015,15 @@ daiqianfeiyong(){
 		Send {Enter}
 	return
 	
-	::qlz::
+	::zfz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
-		Send 13537712861
+		Send 13717658868
+		Send {Enter}
+	return
+	
+	::fbb::
+		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+		Send 18501367449
 		Send {Enter}
 	return
 
@@ -1906,6 +2078,12 @@ daiqianfeiyong(){
 	::ysz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 13810803511
+		Send {Enter}
+	return
+	
+	::cll::
+		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+		Send 18210473155
 		Send {Enter}
 	return
 
