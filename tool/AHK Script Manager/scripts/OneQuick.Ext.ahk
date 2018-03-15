@@ -178,7 +178,7 @@ return
 	indexSubmit := InStr(title,"提交")
 	if(indexSubmit != 0){	;提交时候的
 		MouseGetPos, xpos, ypos ;获取鼠标当前的位置
-		MouseClick, left, 1829, 119, ,0 ;下一处不同
+		MouseClick, left, 1833, 114, ,0 ;下一处不同
 		MouseMove, %xpos%, %ypos%, 0 ;移动鼠标到原来位置
 	}else{
 		indexSubmit2 := InStr(title,"Workspace")
@@ -242,7 +242,7 @@ return
 	indexSubmit := InStr(title,"提交")
 	if(indexSubmit != 0){
 		MouseGetPos, xpos, ypos ;获取鼠标当前的位置
-		MouseClick, left, 1848, 121, ,0 ;上一处不同
+		MouseClick, left, 1857, 114, ,0 ;上一处不同
 		MouseMove, %xpos%, %ypos%, 0 ;移动鼠标到原来位置
 	}else{
 		indexSubmit2 := InStr(title,"Workspace")
@@ -520,11 +520,6 @@ SwitchIME(dwLayout){
 	return %idCardLine%
 }
 
-/*
- * @Description: 暂停脚本
- * @author XuDong
-ScrollLock::Pause	;暂停脚本
- */
 
  /*
 系统类

@@ -444,13 +444,7 @@ neishen11w(){
 	;涉诉情况
 	;========================
 	MouseClick, left, 278, 218 ;涉诉情况
-	MouseClick, left, 590, 274 ;涉诉金额
-	Send {down}{enter}
-	MouseClick, left, 1185, 273 ;涉诉类型
-	Send {down}{enter}
-	MouseClick, left, 1350, 275 ;涉诉时间
-	Send {down}{enter}
-	MouseClick, left, 360, 298 ;法院公告网前面定位
+	MouseClick, left, 314, 269 ;法院公告网前面定位
 	Send {tab 2}{right 2}{tab}
 	Send 这是法院公告网的备注哦！
 	Send {tab 2}{right 2}{tab}
@@ -464,11 +458,16 @@ neishen11w(){
 	Send {tab 2}{right 2}{tab}
 	Send 这是企查查的备注哦！
 	
-	fun_btn("内审I", "tijiao", "提交", 40, 0)
-	Sleep 200
-	fun_btn("内审I", "queding", "确定", 40, 0)
-	Sleep 100
-	Send {enter}
+	MouseClick, left, 473, 908 ;涉诉金额
+	Send {down}{enter}
+	MouseClick, left, 975, 910 ;涉诉类型
+	Send {down}{enter}
+	MouseClick, left, 1481, 912 ;涉诉时间
+	Send {down}{enter}
+	
+	Send {tab}{enter}
+	MouseClick, left, 1040, 493 ;确认提交
+	Send {tab}{enter}{enter}
 	
 	ToolTip("...脚本结束")
 }
@@ -558,6 +557,8 @@ neiShen2(){
 	Send {tab}{enter}	;完善
 	Sleep 1500
 	
+	MouseClick, left, 422, 362, 2 ;房龄 双击
+	Send 12
 	MouseClick, left, 1035, 367 ;房产获得方式
 	Send {down}{enter}
 	MouseClick, left, 465, 391 ;房产性质
@@ -577,6 +578,13 @@ neiShen2(){
 	Send 15
 	MouseClick, left, 1050, 473 ;所在楼层
 	Send 15
+	Send {tab}{right}	;是否二手房
+	MouseClick, left, 1027, 498 ;土地类型
+	Send {down}{enter}
+	MouseClick, left, 471, 525 ;竣工日期
+	MouseClick, left, 413, 554, 12 ;日期往前翻
+	MouseClick, left, 423, 645 ;随便选一天
+	
 	MouseClick, left, 481, 558 ;土地来源
 	Send {down}{enter}
 	MouseClick, left, 856, 554 ;是否有土地证
@@ -598,7 +606,10 @@ neiShen2(){
 	Send +{End}
 	Send ^v
 	
-	fun_btn("内审II-抵押物信息", "baocun2", "保存", 60, 20)
+	;fun_btn("内审II-抵押物信息", "baocun2", "保存", 60, 20)
+	MouseClick, left, 850, 879 ;保存
+	Send {tab}{enter}
+	
 	Sleep, 500  ;等待
 	Send {enter}
 }
@@ -615,6 +626,12 @@ neiShen2ForCust(){
 	
 	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 	
+	;========================
+	;客户基本信息
+	;========================
+	MouseClick, left, 208, 220 ;初审信息
+	MouseClick, left, 1874, 247 ;修改客户信息
+	Sleep 1000
 	MouseClick, left, 662, 300 ;定位到移动电话前面
 	Random, rand, 10000000, 99999999	;生成8位随机数
 	Random, rand2, 00000, 99999	;生成8位随机数
@@ -628,27 +645,36 @@ neiShen2ForCust(){
 	Send {down}{enter}
 	
 	Send {tab}^v%rand%	;户籍住址
-	Send {tab}^v%rand%	;户籍住址
+	Send {tab}^v%rand%	;曾用名
+	MouseClick, left, 813, 351 ;婚姻状况
+	Send {down 2}{enter}
+	MouseClick, left, 1339, 353 ;婚姻情况
+	Send {down}{enter}
+	
+	MouseClick, left, 1710, 351 ;婚姻登记日期
+	MouseClick, left, 1680, 379, 10 ;日期往前选10个月
+	MouseClick, left, 1731, 463 ;随便一点
+	
+	MouseClick, left, 261, 373 ;定位家庭电话
 	Send {tab}028852%rand2%	;家庭电话
 	
-	MouseClick, left, 1242, 354 ;婚姻状况
+	MouseClick, left, 1787, 375 ;证件到期日
+	Sleep 200
+	MouseClick, left, 1819, 403, 15 ;证件到期日 往后
+	MouseClick, left, 1739, 487 ;证件到期日
+
+	
+	MouseClick, left, 822, 425 ;来本市时间
 	Send {down}{enter}
 	
-	MouseClick, left, 1339, 380 ;证件到期日
-	MouseClick, left, 1350, 401, 8 ;证件到期日
-	MouseClick, left, 1295, 491 ;证件到期日
-	
-	MouseClick, left, 417, 424 ;来本市时间
-	Send {down}{enter}
-	
-	MouseClick, left, 784, 424 ;年收入
+	MouseClick, left, 1220, 436 ;年收入
 	Send {down}{enter}
 	Send {tab}800000
 	
-	MouseClick, left, 1283, 424 ;最高学历
+	MouseClick, left, 1724, 433 ;最高学历
 	Send {down}{enter}
 	
-	MouseClick, left, 1687, 425 ;学位
+	MouseClick, left, 402, 462 ;学位
 	Send {down}{enter}
 	
 	Send {tab}%rand%@163.com	;邮箱
@@ -657,39 +683,77 @@ neiShen2ForCust(){
 	Send {tab}2			;供养人口
 	Send {tab}610041	;邮政编码
 
-	MouseClick, left, 899, 473 ;资料收集日
-	MouseClick, left, 787, 497, 12 ;往前面翻页
-	MouseClick, left, 834, 577 ;选日
+	MouseClick, left, 1264, 483 ;资料收集日
+	MouseClick, left, 1233, 504, 12 ;往前面翻页
+	MouseClick, left, 1290, 587 ;选日
 	
-	MouseClick, left, 1267, 472 ;职业类别
+	MouseClick, left, 1712, 487 ;职业类别
 	Send {down}{enter}
 	
-	Send {tab}2
+	MouseClick, left, 267, 496	;定位在职年限
+	Send {tab}8	;在职年限
 	
-	MouseClick, left, 413, 496 ;职业类别
-	Send {down}{enter}
-	
-	Send {tab}%rand%_号
+	MouseClick, left, 280, 516 ;定位公司名称
 	Send {tab}皮特猫信息科技有限公司
 	Send {tab}环球中心N3-N9-1425
 	
-	MouseClick, left, 482, 570 ;行业分类
+	MouseClick, left, 406, 545 ;行业分类
 	Send {down}{enter}
-	MouseClick, left, 646, 575 ;行业分类
+	MouseClick, left, 642, 546 ;行业分类
 	Send {down}{enter}
 	
-	Send {tab}^v这是备注
+	MouseClick, left, 1125, 542 ;定位备注
+	Send {tab}^v
+	Send 这是备注
 	MouseClick, left, 429, 593 ;客户所属国家
 	Send {down}{enter}
-
 	
+	;========================
+	;客户配偶信息
+	;========================
+	MouseClick, left, 299, 624 ;定位配偶姓名
+	Send {tab}^v的配偶			;配偶姓名
+	
+	Random, randP1, 10000000, 99999999	;生成8位随机数
+	Send {tab}186%randP1%		;配偶电话
+	
+	MouseClick, left, 1274, 624 ;配偶性别
+	Send {down}{enter}
+	
+	MouseClick, left, 1701, 638 ;最高学历
+	Send {down}{enter}
+	
+	Send {tab}18	;年龄
+	
+	MouseClick, left, 830, 649 ;证件类型
+	Send {down}{enter}		
+	
+	RandIdCardP1 := getIdCard()
+	Send {tab}%RandIdCardP1%	;随机身份证
+	
+	MouseClick, left, 375, 673 ;配偶年收入
+	Send {down}{enter}		;配偶年收入
+	Send {tab}3000			;配偶年收入
+	
+	Send {tab}30			;配偶在职年限
+	
+	Send {tab}^v地址地址		;配偶户籍地址
+
+	;========================
+	;客户附属信息
+	;========================
 	MouseClick, left, 318, 249 ;客户附属信息
 	Send {tab}549
 	Send {tab}148
+	Send {tab}549
+	Send {tab}148
+	
 	Send {tab}^v联系人1
 	Random, rand3, 10000000, 99999999	;生成8位随机数
 	Send {tab}186%rand3%
-	Send {tab}%rand3%与借款人关系
+	;Send {tab}%rand3%与借款人关系
+	MouseClick, left, 1594, 389 ;与借款人关系
+	Send {down}{enter}
 	Send {tab}%rand3%22
 	Send {tab}%rand3%33
 	Send {tab}%rand3%学校
@@ -698,7 +762,9 @@ neiShen2ForCust(){
 	Send {tab}^v联系人2
 	Random, rand4, 10000000, 99999999	;生成8位随机数
 	Send {tab}186%rand4%
-	Send {tab}%rand4%与借款人关系
+	;Send {tab}%rand4%与借款人关系
+	MouseClick, left, 1599, 475 ;与借款人关系
+	Send {down}{enter}
 	Send {tab}%rand4%22
 	Send {tab}%rand4%33
 	Send {tab}%rand4%学校
@@ -711,34 +777,22 @@ neiShen2ForCust(){
 	ToolTip("...脚本结束")
 }
 
- /*
- * @Description: 内审2（新页面） - 自动表单
- * @author XuDong
- */
- ::``2w::
-	neiShen2w()
- return  
-
-neiShen2w(){
+ ::``2e::
+	neiShenWai()
+ return
+ 
+neiShenWai(){
 	
 	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
-	
-	MouseClick, left, 1657, 311 ;待办进入第一个
-	Sleep, 2000  ;等待
-	
-	;========================
-	;初审信息(客户信息)
-	;========================
-	fun_btn_nomsg("内审2", "huabi", "编辑客户信息按钮", 10, 10)
-	Sleep 2000
-	neiShen2ForCust()
 	
 	;========================
 	;初审信息(外层)
 	;========================
-	MouseClick, left, 1861, 323 ;备用资产加一个
-	MouseClick, left, 1861, 323 ;备用资产加一个
-	MouseClick, left, 1861, 323 ;备用资产加一个
+	MouseClick, left, 200, 218 ;初审信息
+	
+	MouseClick, left, 1890, 335 ;备用资产加一个
+	MouseClick, left, 1890, 335 ;备用资产加一个
+	MouseClick, left, 1890, 335 ;备用资产加一个
 	MouseClick, left, 940, 353 ;第一个备用资产的房产用途
 	Send 经营万事屋
 	Send {tab}老房子
@@ -750,6 +804,8 @@ neiShen2w(){
 	Send {tab}5000000
 	Send {tab}{right}
 	Send {tab}4000000
+	MouseClick, left, 1507, 447 ;与借款人关系
+	Send {down}{enter}
 	
 	MouseClick, left, 447, 468 ;第二个备用资产的资产类型
 	Send {down}
@@ -765,8 +821,11 @@ neiShen2w(){
 	Send {tab 2}556
 	Send {tab}50000
 	
-	MouseClick, left, 1862, 523 ;银行流水+1
-	MouseClick, left, 1862, 523 ;银行流水+1
+	MouseClick, left, 1507, 447 ;与借款人关系(第一个备用资产)
+	Send {down}{enter}
+	
+	MouseClick, left, 1892, 535 ;银行流水+1
+	MouseClick, left, 1892, 535 ;银行流水+1
 	Send {tab}银行流水1{tab}中风银行{tab}4000{tab}80000{tab}40000{tab}2000
 	Send {tab}银行流水2{tab}伤仲永银行{tab}4000{tab}80000{tab}40000{tab}2000
 	
@@ -774,18 +833,50 @@ neiShen2w(){
 	MouseClick, left, 1841, 668 ;还款来源+1
 	Send {tab}家徒四壁书侵坐，无可奈何花落去{tab}出息是个大头鬼，难得遇见老夫妻
 	
-	Send {tab}此人有一定风险，请一定小心啊！！	;风险分析
-	
-	Send {tab}{space}{tab}拿钱来买开心！	;借款用途
+	Send {tab}{right}{tab}{right}{tab}拿钱来买开心！	;借款用途
 	
 	;========================
 	;征信涉诉情况
 	;========================
 	MouseClick, left, 290, 220 ;征信涉诉情况
-	MouseClick, left, 353, 271 ;客户人行征信(定位)
-	Send {tab}{space}{tab}5{tab}4{tab}3{tab}客户人行征信可以说是肥肠良好！
+	MouseClick, left, 278, 266 ;借款人人行征信(定位)
+	Send {tab}{right}{tab}1{tab}2{tab}3{tab}{right}{tab}{right}{tab 2}{right}{tab}客户人行征信可以说是肥肠良好！
+	Send {tab}{right}{tab}1{tab}2{tab}3{tab}{right}{tab}{right}{tab 2}{right}{tab}配偶人行征信也可以说是肥肠良好！
+	MouseClick, left, 1623, 334 ;贷款五级分类
+	Send {down}{enter}
+	MouseClick, left, 1615, 490 ;贷款五级分类
+	Send {down}{enter}
+}
+
+ /*
+ * @Description: 内审2（新页面） - 自动表单
+ * @author XuDong
+ */
+ ::``2w::
+	neiShen2w()
+ return  
+
+neiShen2w(){
 	
-	Send {tab}{space}{tab}5{tab}4{tab}3{tab}配偶人行征信也可以说是肥肠良好！
+	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+	
+	MouseClick, left, 1657, 311 ;待办进入第一个
+	Send {enter}	;接受任务
+	Sleep 1000
+	MouseClick, left, 1657, 311 ;待办进入第一个
+	Sleep, 2000  ;等待
+	
+	;========================
+	;初审信息(客户信息)
+	;========================
+	fun_btn_nomsg("内审2", "huabi", "编辑客户信息按钮", 10, 10)
+	Sleep 2000
+	neiShen2ForCust()
+	
+	;========================
+	;初审信息(外层)
+	;========================
+	neiShenWai()
 	
 	;========================
 	;担保方式
@@ -851,14 +942,39 @@ neiShen2w(){
 	Send {tab}	;单价（元/m²）
 	Send 15452
 	;MouseClick, left, 931, 881 ;保存
-	fun_btn("外审", "baocun2", "保存", 60, 20)
-	Sleep, 500  ;等待
-	MouseClick, left, 1030, 659 ;确定
-	Sleep, 1000  ;等待
-	MouseClick, left, 938, 492 ;提交
-	MouseClick, left, 993, 656 ;提交
-	Sleep, 4000  ;等待
+	;fun_btn("外审", "baocun2", "保存", 60, 20)
+	MouseClick, left, 746, 908 ;外审里面保存
+	Send {tab}{enter}
+	
+	MouseClick, left, 801, 393 ;外审主页面保存
+	Send {tab}{enter}
+	Sleep 500
 	Send {enter}
+	
+	Sleep 2000
+	
+	ToolTip("...脚本结束")
+}
+
+/*
+ * @Description: 派驻风控总监审批 - 自动表单
+ * @author XuDong
+ */
+ ::``3w::
+	paiZhu_xin()
+ return  
+ 
+ paiZhu_xin(){
+	MouseClick, left, 1657, 311 ;待办进入第一个
+	Sleep, 2000  ;等待
+	MouseClick, left, 860, 1003 ;提交
+	Send {enter}
+	Sleep, 2000  ;等待
+	MouseClick, left, 1045, 707 ;确定
+	Sleep, 2000  ;等待
+	Send {enter}
+	Sleep, 4000
+	MouseClick, left, 1044, 704 ;关闭任务
 	
 	ToolTip("...脚本结束")
 }
@@ -886,6 +1002,44 @@ neiShen2w(){
 	ToolTip("...脚本结束")
 }
 
+/*
+ * @Description: 终评_评估经理终审 - 自动表单
+ * @author XuDong
+ */
+ ::``33w::
+	zhongShen_xin()
+ return  
+
+zhongShen_xin(){
+	MouseClick, left, 1774, 317 ;待办进入第一个
+	Send {tab}{enter}	;待办进入第一个
+	MouseClick, left, 1007, 659 ;接受任务
+	Sleep, 2500  ;等待
+	MouseClick, left, 1774, 317 ;待办进入第一个
+	Send {tab}{enter}	;待办进入第一个
+	Sleep, 4000  ;等待
+	MouseClick, left, 1563, 868, 2 ;下户快卖价（元）//双击
+	Send ^c
+	Send {tab}^v
+	Send {tab 2}^v
+	Send {tab}{tab}{tab}{tab}{enter}
+	Send {tab}{tab}{tab}{enter}
+	Sleep, 500  ;等待
+	Send {enter} 
+	;MouseClick, left, 941, 495 ;提交
+	
+	Sleep, 500  ;等待
+	
+	;fun_btn("评估经理终审", "tijiao5", "提交", 60, 20)
+	MouseClick, left, 810, 394 ;提交
+	
+	MouseClick, left, 987, 655 ;确认
+	Sleep, 2000  ;等待
+	Send {enter}
+	
+	ToolTip("...脚本结束")
+}
+
  /*
  * @Description: 终评_评估经理终审 - 自动表单
  * @author XuDong
@@ -902,12 +1056,10 @@ neiShen2w(){
 	MouseClick, left, 1580, 330 ;待办进入第二个
 	Send {tab 2}{enter}	;待办进入第二个
 	Sleep, 4000  ;等待
-	MouseClick, left, 1560, 842, 2 ;下户快卖价（元）//双击
+	MouseClick, left, 1563, 868, 2 ;下户快卖价（元）//双击
 	Send ^c
-	Send {tab}
-	Send ^v
-	Send {tab}{tab}
-	Send ^v
+	Send {tab}^v
+	Send {tab 2}^v
 	Send {tab}{tab}{tab}{tab}{enter}
 	Send {tab}{tab}{tab}{enter}
 	Sleep, 500  ;等待
@@ -916,7 +1068,7 @@ neiShen2w(){
 	
 	Sleep, 500  ;等待
 	
-	fun_btn("评估经理终审", "tijiao4", "提交", 60, 20)
+	fun_btn("评估经理终审", "tijiao5", "提交", 60, 20)
 	
 	MouseClick, left, 987, 655 ;确认
 	Sleep, 2000  ;等待
@@ -945,6 +1097,102 @@ neiShen2w(){
 	ToolTip("...脚本结束")
 }
 
+/*
+ * @Description: 审批经理审批Ⅰ - 自动表单
+ * @author XuDong
+ */
+ ::``4w::
+	shenPi1_xin()
+ return  
+ 
+ shenPi1_xin(){
+	
+	MouseClick, left,  1474,  273
+	Sleep, 100
+	Send, {TAB}{enter}
+	Sleep, 2000  ;等待
+	MouseClick, left, 1657, 311 ;待办进入第一个
+	MouseClick, left, 1007, 659 ;接受任务
+	Sleep, 2000  ;等待
+	
+	MouseClick, left, 367, 282 ;需要签署的文件
+	Send {tab}{space}{tab}{space}{tab}{space}{tab}{space}{tab}{space}{tab}{space}
+	
+	MouseClick, left, 510, 417 ;用款审批意见
+	
+
+	MouseClick, left, 280, 229 ;审查信息
+	MouseClick, left, 773, 340 ;借款人身份证 
+	Loop, 7{
+	Send {tab}{right %A_Index%}{tab}%A_Index%
+	Sleep, 100
+	}
+	
+	Send {tab}	;借款人户口本
+	Loop, 7{
+	Send {tab}{right %A_Index%}{tab}%A_Index%
+	Sleep, 100
+	}
+
+	Send {tab}	;借款人婚姻证明
+	Loop, 7{
+	Send {tab}{right %A_Index%}{tab}%A_Index%
+	Sleep, 100
+	}
+	
+	Send {tab}	;征信报告-借款人
+	Loop, 11{
+	Send {tab}{right %A_Index%}{tab}%A_Index%
+	Sleep, 100
+	}
+	
+	Send {tab}	;征信报告-配偶
+	Loop, 11{
+	Send {tab}{right %A_Index%}{tab}%A_Index%
+	Sleep, 100
+	}
+	
+	Send {tab}	;涉诉查询截图
+	Loop, 3{
+	Send {tab}{right %A_Index%}{tab}%A_Index%
+	Sleep, 100
+	}
+	
+	Send {tab}	;借款用途
+	Loop, 6{
+	Send {tab}{right %A_Index%}{tab}%A_Index%
+	Sleep, 100
+	}
+	
+	Send {tab}	;房产证
+	Loop, 13{
+	Send {tab}{right %A_Index%}{tab}%A_Index%
+	Sleep, 100
+	}
+	
+	Send {tab}	;购房合同
+	Loop, 1{
+	Send {tab}{right %A_Index%}{tab}%A_Index%
+	Sleep, 100
+	}
+	
+	Send {tab}	;产调
+	Loop, 1{
+	Send {tab}{right %A_Index%}{tab}%A_Index%
+	Sleep, 100
+	}
+	
+	Send {tab}	;其他抵押物分类项下材料
+	Loop, 7{
+	Send {tab}{right %A_Index%}{tab}%A_Index%
+	Sleep, 100
+	}
+	
+	MouseClick, left, 823, 908 ;同意
+	Send {enter}
+
+	ToolTip("...脚本结束")
+}
 
  /*
  * @Description: 审批经理审批Ⅰ - 自动表单
@@ -1058,7 +1306,7 @@ neiShen2w(){
 	MouseClick, left,  500, 707	;业务推介费收取形式
 	MouseClick, left,  519, 751	;委托收取
 	
-	MouseClick, left,  947, 901	;提交
+	MouseClick, left,  890, 900	;提交
 	MouseClick, left,  995, 731	;确定
 	
 	ToolTip("...脚本结束")
@@ -1508,6 +1756,22 @@ daiqianfeiyong(){
 	autoLogin(13581611612, 3, 1)
  return   
  
+ ::``jjc:: 
+	autoLogin(18510602312, 0, 0)
+ return   
+ 
+ ::``1jjc:: 
+	autoLogin(18510602312, 1, 1)
+ return   
+ 
+  ::``2jjc:: 
+	autoLogin(18510602312, 2, 1)
+ return   
+ 
+ ::``3jjc:: 
+	autoLogin(18510602312, 3, 1)
+ return   
+ 
  ::``cjs:: 
 	autoLogin(15918702471, 0, 0)
  return   
@@ -1880,6 +2144,12 @@ daiqianfeiyong(){
  	::cqx::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send 13581611612
+		Send {Enter}
+	return
+	
+	::jjc::
+		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+		Send 18510602312
 		Send {Enter}
 	return
 	
