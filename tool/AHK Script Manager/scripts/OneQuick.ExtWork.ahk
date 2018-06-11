@@ -95,15 +95,17 @@ return
 	fangChanChuPing()
 	yeWuShenQing(13581611612)
 	neiShen1w()
+	Sleep 500
+	Send {enter}
 	neiShen11w()
 	Sleep, 2000
 	neiShen2w()
 	Sleep, 3000
-	waiShen()
+	waiShenw()
 	Sleep, 3000
-	paiZhu()
+	paiZhuw()
 	Sleep, 3000
-	zhongShen()
+	zhongShenw()
 return
 
 /*
@@ -272,7 +274,7 @@ fangChanChuPing(){
  * @Description: 内审1 - 自动表单
  * @author XuDong
  */
- ::``1::
+ ::``1q::
 	neiShen1ForNew()
  return  
  
@@ -352,7 +354,7 @@ fangChanChuPing(){
  * @Description: 内审1后半部分 - 自动表单
  * @author XuDong
  */
- ::``11::
+ ::``11q::
 	neiShen11()
  return  
  
@@ -392,7 +394,7 @@ fangChanChuPing(){
  * @Description: 内审1（新页面） - 自动表单
  * @author XuDong
  */
- ::``1w::
+ ::``1::
 	neiShen1w()
 	neiShen11w()
  return  
@@ -416,7 +418,7 @@ fangChanChuPing(){
 	ToolTip("...脚本结束")
 }
 
-::``11w::
+::``11::
 	neiShen11w()
 return  
  
@@ -476,7 +478,7 @@ neishen11w(){
  * @Description: 内审2 - 自动表单
  * @author XuDong
  */
- ::``2::
+ ::``2q::
 	neiShen2()
  return  
 
@@ -566,12 +568,10 @@ neiShen2(){
 	MouseClick, left, 468, 417 ;规划用途
 	Send {down}{enter}
 	MouseClick, left, 1033, 417 ;产权证登记日期
-	MouseClick, left, 981, 442 ;产权证登记日期 往前两个月
+	MouseClick, left, 977, 451 ;产权证登记日期 往前两个月
 	MouseClick, left
-	MouseClick, left
-	MouseClick, left
-	MouseClick, left
-	MouseClick, left
+
+
 	Sleep, 500  ;等待
 	MouseClick, left, 1087, 571 ;产权证登记日期 28日
 	MouseClick, left, 474, 470 ;总楼层
@@ -579,10 +579,10 @@ neiShen2(){
 	MouseClick, left, 1050, 473 ;所在楼层
 	Send 15
 	Send {tab}{right}	;是否二手房
-	MouseClick, left, 1027, 498 ;土地类型
+	MouseClick, left, 1040, 508 ;土地类型
 	Send {down}{enter}
-	MouseClick, left, 471, 525 ;竣工日期
-	MouseClick, left, 413, 554, 12 ;日期往前翻
+	MouseClick, left, 476, 536 ;竣工日期
+	MouseClick, left, 411, 556, 12 ;日期往前翻
 	MouseClick, left, 423, 645 ;随便选一天
 	
 	MouseClick, left, 481, 558 ;土地来源
@@ -612,6 +612,7 @@ neiShen2(){
 	
 	Sleep, 500  ;等待
 	Send {enter}
+
 }
 
  /*
@@ -630,7 +631,7 @@ neiShen2ForCust(){
 	;客户基本信息
 	;========================
 	MouseClick, left, 208, 220 ;初审信息
-	MouseClick, left, 1874, 247 ;修改客户信息
+	MouseClick, left, 1899, 249 ;修改客户信息
 	Sleep 1000
 	MouseClick, left, 662, 300 ;定位到移动电话前面
 	Random, rand, 10000000, 99999999	;生成8位随机数
@@ -699,7 +700,8 @@ neiShen2ForCust(){
 	
 	MouseClick, left, 406, 545 ;行业分类
 	Send {down}{enter}
-	MouseClick, left, 642, 546 ;行业分类
+	Sleep 500
+	MouseClick, left, 666, 552 ;行业分类
 	Send {down}{enter}
 	
 	MouseClick, left, 1125, 542 ;定位备注
@@ -852,7 +854,7 @@ neiShenWai(){
  * @Description: 内审2（新页面） - 自动表单
  * @author XuDong
  */
- ::``2w::
+ ::``2::
 	neiShen2w()
  return  
 
@@ -869,8 +871,9 @@ neiShen2w(){
 	;========================
 	;初审信息(客户信息)
 	;========================
-	fun_btn_nomsg("内审2", "huabi", "编辑客户信息按钮", 10, 10)
-	Sleep 2000
+	;~ fun_btn_nomsg("内审2", "huabi", "编辑客户信息按钮", 10, 10)
+	;~ MouseClick, left, 1898, 248 ;编辑客户信息按钮
+	;~ Sleep 2000
 	neiShen2ForCust()
 	
 	;========================
@@ -890,7 +893,8 @@ neiShen2w(){
 	fun_btn("内审II", "tijiao", "提交", 60, 20)
 	Sleep 500
 	
-	fun_btn("内审II", "queding", "确定", 60, 20)
+	;~ fun_btn("内审II", "queding", "确定", 60, 20)
+	MouseClick, left, 1001, 746
 	Sleep 1000
 	
 	ToolTip("...脚本结束")
@@ -901,6 +905,80 @@ neiShen2w(){
  * @author XuDong
  */
  ::``22::
+	waiShenw()
+ return  
+ 
+ waiShenw(){
+	MouseClick, left, 1657, 311 ;待办进入第一个
+	Sleep, 5000  ;等待
+
+	MouseClick, left, 505, 693 ;内部结构
+	Send {down}{enter}
+	MouseClick, left, 1045, 693 ;户型结构
+	Send {down}{enter}
+	MouseClick, left, 1626, 694 ;装修
+	Send {down}{enter}
+	MouseClick, left, 484, 717 ;朝向
+	Send {down}{enter}
+	
+	MouseClick, left, 349, 742 ;定位到（房产实际地址与产权证地址是否一致）
+	Loop, 18{
+	Send {tab}{right}
+	Sleep, 10
+	}
+	;~ 循环结束抵达  是否有老年人、残疾人
+	Send {tab}外审下户的备注备注备注
+	Send {PgDn}{tab}{tab}
+
+	/*
+	MouseClick, left, 318, 740 ;房产实际地址与产权证地址是否一致
+	Send {tab}{right}
+	MouseClick, left, 908, 739 ;使用状况
+	Send {tab}{right}
+	MouseClick, left, 1463, 738 ;是否有电梯
+	Send {tab}{right}
+	MouseClick, left, 330, 768 ;是否有遮挡
+	Send {tab}{right}
+	MouseClick, left, 905, 765 ;是否打通
+	Send {tab}{right}
+	MouseClick, left, 1455, 771 ;是否有老年人、残疾人
+	Send {tab}{right}
+	*/
+	
+	;~ MouseClick, left, 370, 869 ;中介名称
+	ClipboardOld = %ClipboardAll% ;保留剪贴板中原来的内容
+	Clipboard = 链家链家
+	Send ^v
+	Clipboard = %ClipboardOld% ;恢复剪贴板初始的内容Return
+	
+	;MouseClick, left, 756, 844 ;中介联系方式
+	Send {tab}	;中介联系方式
+	Send 18600000000
+	;MouseClick, left, 1147, 841 ;单价（元/m²）
+	Send {tab}	;单价（元/m²）
+	Send 15452
+	;MouseClick, left, 931, 881 ;保存
+	;fun_btn("外审", "baocun2", "保存", 60, 20)
+	MouseClick, left, 954, 1014 ;外审里面保存
+	Send {tab}{enter}
+	Sleep 500
+	MouseClick, left, 1050, 666 ;保存确认提示
+	
+	MouseClick, left, 801, 393 ;外审主页面保存
+	Send {tab}{enter}
+	Sleep 500
+	Send {enter}
+	
+	Sleep 2000
+	
+	ToolTip("...脚本结束")
+}
+
+/*
+ * @Description: 外审 - 自动表单
+ * @author XuDong
+ */
+ ::``22q::
 	waiShen()
  return  
  
@@ -960,11 +1038,11 @@ neiShen2w(){
  * @Description: 派驻风控总监审批 - 自动表单
  * @author XuDong
  */
- ::``3w::
-	paiZhu_xin()
+ ::``3::
+	paiZhuw()
  return  
  
- paiZhu_xin(){
+ paiZhuw(){
 	MouseClick, left, 1657, 311 ;待办进入第一个
 	Sleep, 2000  ;等待
 	MouseClick, left, 860, 1003 ;提交
@@ -983,7 +1061,7 @@ neiShen2w(){
  * @Description: 派驻风控总监审批 - 自动表单
  * @author XuDong
  */
- ::``3::
+ ::``3q::
 	paiZhu()
  return  
  
@@ -1006,19 +1084,27 @@ neiShen2w(){
  * @Description: 终评_评估经理终审 - 自动表单
  * @author XuDong
  */
- ::``33w::
-	zhongShen_xin()
+ ::``33::
+	zhongShenw()
  return  
 
-zhongShen_xin(){
-	MouseClick, left, 1774, 317 ;待办进入第一个
+zhongShenw(){
+	;~ MouseClick, left, 1774, 317 ;待办进入第一个
+	;~ Send {tab}{enter}	;待办进入第一个
+	;~ MouseClick, left, 1007, 659 ;接受任务
+	MouseClick, left, 1765, 333 ;待办进入第一个
 	Send {tab}{enter}	;待办进入第一个
-	MouseClick, left, 1007, 659 ;接受任务
-	Sleep, 2500  ;等待
-	MouseClick, left, 1774, 317 ;待办进入第一个
+	Send {enter}	;接受任务
+	Sleep, 1500  ;等待
+	MouseClick, left, 1765, 333 ;待办进入第一个
 	Send {tab}{enter}	;待办进入第一个
-	Sleep, 4000  ;等待
-	MouseClick, left, 1563, 868, 2 ;下户快卖价（元）//双击
+	Sleep, 3000  ;等待
+	
+	MouseClick, left, 1765, 333 ;随便点一下，在修改抵押物信息里面定位
+	Send {PgDn}	;向下翻页
+	
+	Send, 1000
+	MouseClick, left, 1605, 824, 3 ;下户快卖价（元）//双击
 	Send ^c
 	Send {tab}^v
 	Send {tab 2}^v
@@ -1031,7 +1117,7 @@ zhongShen_xin(){
 	Sleep, 500  ;等待
 	
 	;fun_btn("评估经理终审", "tijiao5", "提交", 60, 20)
-	MouseClick, left, 810, 394 ;提交
+	MouseClick, left, 909, 390 ;提交
 	
 	MouseClick, left, 987, 655 ;确认
 	Sleep, 2000  ;等待
@@ -1044,7 +1130,7 @@ zhongShen_xin(){
  * @Description: 终评_评估经理终审 - 自动表单
  * @author XuDong
  */
- ::``33::
+ ::``33q::
 	zhongShen()
  return  
  
@@ -1081,7 +1167,7 @@ zhongShen_xin(){
  * @Description: 查看流程图 - 自动表单
  * @author XuDong
  */
- ::``43::
+ ::``43q::
 	liuChengTu()
  return  
  
@@ -1101,11 +1187,11 @@ zhongShen_xin(){
  * @Description: 审批经理审批Ⅰ - 自动表单
  * @author XuDong
  */
- ::``4w::
-	shenPi1_xin()
+ ::``4::
+	shenPi1w()
  return  
  
- shenPi1_xin(){
+ shenPi1w(){
 	
 	MouseClick, left,  1474,  273
 	Sleep, 100
@@ -1198,7 +1284,7 @@ zhongShen_xin(){
  * @Description: 审批经理审批Ⅰ - 自动表单
  * @author XuDong
  */
- ::``4::
+ ::``4q::
 	shenPi1()
  return  
  
@@ -1223,7 +1309,7 @@ zhongShen_xin(){
  * @Description: 审批经理审批Ⅱ - 自动表单
  * @author XuDong
  */
- ::``44::
+ ::``44q::
 	shenPi2()
  return  
  
@@ -1248,6 +1334,35 @@ zhongShen_xin(){
 	ToolTip("...脚本结束")
 }
 
+/*
+ * @Description: 审批经理审批Ⅱ - 自动表单
+ * @author XuDong
+ */
+ ::``44::
+	shenPi2w()
+ return  
+ 
+ shenPi2w(){
+	MouseClick, left, 1657, 311 ;待办进入第一个
+	MouseClick, left, 1007, 659 ;接受任务
+	Sleep, 2000  ;等待
+	;~ MouseClick, left, 346, 217 ;申请信息
+	;~ Sleep, 500  ;等待
+	
+	;~ MouseClick, left, 486, 536 ;附属产品
+	;~ Send {down}{enter}
+	;~ Send {tab}800000
+	;~ Send {tab}8
+	;~ Send {tab}{space}{tab}{space}{tab}{space}{tab}{space}{tab}{space}{tab}{space}{tab}{space}
+	;~ MouseClick, left, 740, 725 ;同意前面一点
+	;~ Send {tab}{enter}
+	
+	MouseClick, left, 825, 579 ;接受任务
+	Send {enter}
+	
+	ToolTip("...脚本结束")
+}
+
  /*
  * @Description: 资金专员决定放款渠道 - 自动表单
  * @author XuDong
@@ -1260,12 +1375,12 @@ zhongShen_xin(){
 	MouseClick, left,  1439, 308
 	Send {tab 2}{enter}
 	Sleep, 3000  ;等待
-	MouseClick, left, 455, 356 ;资金方
+	MouseClick, left, 467, 415 ;资金方
+	Send {down 2}{enter}
+	MouseClick, left, 1055, 415 ;放款机构
 	Send {down}{enter}
-	MouseClick, left, 1030, 358 ;放款机构
-	Send {down 4}{enter}
-	MouseClick, left, 1605, 360 ;计划归入资产包
-	Send {down 4}{enter}
+	MouseClick, left, 1693, 420 ;计划归入资产包
+	Send {down 5}{enter}
 	Send {tab}{enter 2}
 	Sleep, 2000  ;等待
 	Send {enter}
@@ -1283,13 +1398,16 @@ zhongShen_xin(){
  
  yongKuanQueRen(){
 	
-	nomsg := fun_btn_nomsg("用款确认", "yongkuanqueren", "用款确认", 10, 10)
-	if(nomsg == 2 || nomsg == 1){
-		MouseClick, left,  1749, 305
-		Send {tab}{enter}	;进入任务
-	}else{
-		Send {tab 2}{enter}	;进入任务
-	}
+	;~ nomsg := fun_btn_nomsg("用款确认", "yongkuanqueren", "用款确认", 10, 10)
+	;~ if(nomsg == 2 || nomsg == 1){
+		;~ MouseClick, left,  1749, 305
+		;~ Send {tab}{enter}	;进入任务
+	;~ }else{
+		;~ Send {tab 2}{enter}	;进入任务
+	;~ }
+	
+	MouseClick, left,  1746, 314
+	Send {tab}{enter}	;进入任务
 	Sleep 1500
 	MouseClick, left,  497, 651	;年利率
 	
@@ -1307,7 +1425,7 @@ zhongShen_xin(){
 	MouseClick, left,  519, 751	;委托收取
 	
 	MouseClick, left,  890, 900	;提交
-	MouseClick, left,  995, 731	;确定
+	MouseClick, left,  995, 741	;确定
 	
 	ToolTip("...脚本结束")
 }
@@ -1357,7 +1475,7 @@ tiKuanShenQing(){
 	;========================
 	;客户代扣开户行
 	;========================
-	MouseClick, left, 1794, 520 ;客户代扣开户行
+	MouseClick, left, 1814, 521 ;客户代扣开户行
 	Sleep, 1000  ;等待
 	MouseClick, left, 968, 517 ;选中第一个客户账号选择
 	Sleep, 500  ;等待
@@ -1366,7 +1484,7 @@ tiKuanShenQing(){
 	;========================
 	;客户放款账户开户行
 	;========================
-	MouseClick, left, 1792, 546	;客户放款账户开户行
+	MouseClick, left, 1811, 545	;客户放款账户开户行
 	Sleep, 1000  ;等待
 	MouseClick, left, 924, 537 ;选中第一个客户账号选择
 	Sleep, 500  ;等待
@@ -1383,12 +1501,26 @@ tiKuanShenQing(){
 	Send {enter}
 	
 	MouseClick, left, 633, 810 ;定位到保存合同前面
+	Send {tab 2}{enter}	;暂存
+	sleep 1000 
 	
+	Send {enter}
+	MouseClick, left, 633, 810 ;zj
+	Send {tab 3}{enter}	;生成合同
+	;~ sleep 5000 
+	
+	;~ Send {enter}
+	;~ MouseClick, left, 633, 810 ;zj
+	;~ Send {tab 4}{enter}	;签订合同
+	;~ sleep 5000 
+	
+	/*
 	fun_btn("提款申请", "qiandinghetong", "签订合同", 70, 10)
 	sleep 100
 	Send {enter}
 	Sleep, 2000  ;等待
 	closeTaskMsg()
+	*/
 	
 	ToolTip("...脚本结束")
 	
@@ -1410,16 +1542,16 @@ yunYing(){
 	Sleep, 100
 	Send, {TAB}{SPACE}
 	
-	nomsg := fun_btn_nomsg("运营4个", "tijiao", "提交", 50, 10)
+	nomsg := fun_btn_nomsg("运营4个", "tijiao6", "提交", 50, 10)
 	if(nomsg != 0){		
-		fun_btn("运营4个", "tongyi", "同意", 50, 10)
+		fun_btn_nomsg("运营4个", "tongyi2", "同意", 50, 10)
 	}
 	
 	Sleep, 500
 	Send {ENTER}
 	Sleep, 1500
 	Send {ENTER}
-	Sleep, 1000
+	Sleep, 500
 	Send {ENTER}
 	
 	ToolTip("...脚本结束")
@@ -1522,7 +1654,7 @@ daiqianfeiyong(){
  ::``hc:: 
 	Send ^r
 	Sleep, 1500  ;等待
-	MouseClick, left, 88, 359 ;系统缓存管理
+	MouseClick, left, 80, 253 ;系统缓存管理
 	Sleep, 1000  ;等待
 	MouseClick, left, 310, 257 ;定位到数据字典缓存
 	Send {tab}{enter}{tab}{tab}{enter}{tab}{enter}{tab}{enter}{tab}{enter}{tab}{enter}{tab}{enter}
@@ -2411,6 +2543,15 @@ daiqianfeiyong(){
 		Send {tab 2}qazwsx
 		Send {tab 3}{Enter}
 	return
+	
+	::wdz::
+		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+		Send ^a
+		Send 13568887446
+		Send {tab}verygood
+		Sleep 100
+		Send {tab 2}wd
+	return
  
   #IfWinActive 
  
@@ -2481,7 +2622,7 @@ micChangeTo(ByRef bchId){
  * @author XuDong
  */
  :://ex::   
- Run %A_Desktop%\excel
+ Run D:\快捷方式\excel
  return    
  
  /*
@@ -2497,13 +2638,13 @@ micChangeTo(ByRef bchId){
  * @author XuDong
  */
  :://cex::
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE.xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(1).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(2).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(3).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(4).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(5).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, %A_Desktop%\excel\LOAN_DATABASE(6).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE.xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE(1).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE(2).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE(3).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE(4).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE(5).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE(6).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
 	
 	MsgBox ...库表结构Excel已经复制完毕！
  return
@@ -2538,6 +2679,20 @@ micChangeTo(ByRef bchId){
 	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK_tag\workspace\busplatform_tag\src\main\resources\config\M10_MIC_INTERFACE.properties, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
 	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK_tag\workspace\busplatform_tag\src\main\resources\config\M12_MIC_INTERFACE.properties, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
 	MsgBox, 0, 提示, 微信bus的m01、m10、m12已替换成  分支  链接！, 1
+ return
+ 
+    /*
+ * @Description: 日终
+ * @author XuDong
+ */
+ :://rivs:: 
+
+	Loop, 134{
+		MouseClick, left, 1043, 274
+		Send {enter}
+		Sleep 2000
+	}
+	
  return
 
 
