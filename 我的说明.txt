@@ -1,0 +1,12 @@
+一些默认快捷键，是在这个文件中指定的：
+..\AutoHotKey\OneQuick.feature.yaml
+
+这个是默认的备份文件：
+..\AutoHotKey\script\OneQuick.feature.default.yaml
+
+
+自定义加载快捷键总开关：
+..\AutoHotKey\tool\AHK Script Manager\AHK Script Manager.ahk
+自定义加载的快捷键：
+..\AutoHotKey\tool\AHK Script Manager\scripts\OneQuick.Ext.ahk
+..\AutoHotKey\tool\AHK Script Manager\scripts\OneQuick.ExtWork.ahk

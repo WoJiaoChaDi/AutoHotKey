@@ -385,7 +385,7 @@ return
  * @author XuDong
  */
  #b::	
-	Run E:\software\Sublime Text 2\sublime_text.exe  
+	Run D:\Work\Tools\Sublime Text 3\sublime_text.exe 
  return  
 
 /*
@@ -498,6 +498,16 @@ return
 	; 下方代码可只保留一个
 	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 	; SwitchIME(0x08040804) ; 中文(中国) 简体中文-美式键盘
+return
+
+ /*
+win+下滚轮  透明窗口
+*/
+#WheelDown::
+	MouseGetPos,,, MouseWin
+	WinGetTitle, title, ahk_id %MouseWin%
+	MsgBox ahk_id %title%
+	WinSet, Transparent, 150, ahk_id %title%
 return
 
  /*
