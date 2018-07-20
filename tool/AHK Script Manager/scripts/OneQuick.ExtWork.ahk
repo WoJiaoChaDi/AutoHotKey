@@ -84,7 +84,7 @@ return
  * @Description: 从内审I到用款确认(北京)
  * @author XuDong
  */
-::``ww410::
+::``410::
 	Send ^{F5}
 	Sleep 2000
 	;MouseClick, left,  87, 211	;关闭系统菜单
@@ -94,7 +94,16 @@ return
 	addFangChan2()
 	fangChanChuPing()
 	yeWuShenQing(13581611612)
+	
+	refreshMenu()
+	MouseClick, left, 65, 432 ;个人中心
+	Sleep, 800  ;等待
+	MouseClick, left, 76, 466 ;待办流程
+	Sleep, 2000  ;等待
+	MouseClick, left,  1009,  253 ;搜索
+	Sleep, 2500  ;等待
 	neiShen1w()
+	
 	Sleep 500
 	Send {enter}
 	neiShen11w()
@@ -174,24 +183,25 @@ fangChanChuPing(){
 	Sleep, 2000  ;等待
 	MouseClick, left, 306, 217 ;待评估无房本
 	Sleep, 1000  ;等待
-	MouseClick, left, 1789, 363 ;选中第一条评估
+	MouseClick, left, 1704, 368 
+	Send {tab}{enter}	;选中第一条评估
 	Sleep, 3500  ;等待
 	
-	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\chuping_fangwuzuobiao.bmp
-	if ErrorLevel = 2 
-	MsgBox 房产初评_房屋坐标_不能实施搜索。
-	else if ErrorLevel = 1 
-	MsgBox 房产初评_房屋坐标_未在屏幕上寻得图标。
-	else{
-		MouseClick, left, %OutputVarX%, %OutputVarY% ;定位
-		;MouseClick, left, 1140, 365 ;定位
+	;~ ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\chuping_fangwuzuobiao2.png
+	;~ if ErrorLevel = 2 
+	;~ MsgBox 房产初评_房屋坐标_不能实施搜索。
+	;~ else if ErrorLevel = 1 
+	;~ MsgBox 房产初评_房屋坐标_未在屏幕上寻得图标。
+	;~ else{
+		;~ MouseClick, left, %OutputVarX%, %OutputVarY% ;定位
+		MouseClick, left, 1118, 315 ;定位
 		Sleep, 800  ;等待
 		Send ^+{tab}
 		Sleep, 800  ;等待
-		sX := OutputVarX - 700
-		sY := OutputVarY - 25
-		MouseClick, left, %sX%, %sY% ;选中所有权人
-		;MouseClick, left, 470, 337 ;选中所有权人
+		;~ sX := OutputVarX - 700
+		;~ sY := OutputVarY - 25
+		;~ MouseClick, left, %sX%, %sY% ;选中所有权人
+		MouseClick, left, 501, 285 ;选中所有权人
 		Send {Home}   
 		Send +{End}
 		Send ^c
@@ -214,17 +224,19 @@ fangChanChuPing(){
 		Send {tab}{enter}
 		Sleep, 500
 		
-		ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\chuping_tijiao.bmp
-		if ErrorLevel = 2 
-		MsgBox 房产初评_提交_不能实施搜索。
-		else if ErrorLevel = 1 
-		MsgBox 房产初评_提交_未在屏幕上寻得图标。
-		else{
-			MouseClick, left,  %OutputVarXA%, %OutputVarYA%
+		;~ ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\chuping_tijiao2.png
+		;~ if ErrorLevel = 2 
+		;~ MsgBox 房产初评_提交_不能实施搜索。
+		;~ else if ErrorLevel = 1 
+		;~ MsgBox 房产初评_提交_未在屏幕上寻得图标。
+		;~ else{
+			;~ MouseClick, left,  %OutputVarXA%, %OutputVarYA%
+			MouseClick, left,  756, 562 ;~ 定位到房估估询价前面
+			Send {tab 2}
 			Sleep, 100
 			Send, {ENTER}
-		}
-	}
+		;~ }
+	;~ }
 	
 	ToolTip("...脚本结束")
 }
@@ -264,7 +276,7 @@ fangChanChuPing(){
 	MouseClick, left,  1005,  808
 	Sleep, 500  ;等待
 	MouseClick, left, 507, 331 ;申请金额
-	Send 8000000{tab}7{tab}{tab}{tab}{enter}{tab}{tab}{tab}{enter} 
+	Send 150000{tab}7{tab}{tab}{tab}{enter}{tab}{tab}{tab}{enter} 
 	closeTaskMsg()
 	
 	ToolTip("...脚本结束")
@@ -400,13 +412,7 @@ fangChanChuPing(){
  return  
  
  neiShen1w(){
-	refreshMenu()
-	MouseClick, left, 65, 432 ;个人中心
-	Sleep, 800  ;等待
-	MouseClick, left, 76, 466 ;待办流程
-	Sleep, 2000  ;等待
-	MouseClick, left,  1009,  253 ;搜索
-	Sleep, 2500  ;等待
+	
 	MouseClick, left, 1657, 311 ;待办进入第一个
 	Sleep, 1000  ;等待
 	MouseClick, left, 1007, 659 ;接受任务
@@ -627,6 +633,7 @@ neiShen2ForCust(){
 	
 	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 	
+	Sleep 500
 	;========================
 	;客户基本信息
 	;========================
@@ -773,7 +780,7 @@ neiShen2ForCust(){
 	Send {tab}%rand4%联系地址
 	
 	Send {tab}{enter}	;保存
-	Sleep 300
+	Sleep 600
 	Send {tab}{enter}	;保存
 	
 	ToolTip("...脚本结束")
@@ -890,7 +897,8 @@ neiShen2w(){
 	;内审II提交
 	;========================
 	Sleep 500
-	fun_btn("内审II", "tijiao", "提交", 60, 20)
+	;~ fun_btn("内审II", "tijiao", "提交", 60, 20)
+	MouseClick, left, 778, 397	;~ 内审II提交
 	Sleep 500
 	
 	;~ fun_btn("内审II", "queding", "确定", 60, 20)
@@ -1209,70 +1217,70 @@ zhongShenw(){
 
 	MouseClick, left, 280, 229 ;审查信息
 	MouseClick, left, 773, 340 ;借款人身份证 
-	Loop, 7{
-	Send {tab}{right %A_Index%}{tab}%A_Index%
-	Sleep, 100
-	}
+	;~ Loop, 7{
+	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
+	;~ Sleep, 100
+	;~ }
 	
-	Send {tab}	;借款人户口本
-	Loop, 7{
-	Send {tab}{right %A_Index%}{tab}%A_Index%
-	Sleep, 100
-	}
+	;~ Send {tab}	;借款人户口本
+	;~ Loop, 7{
+	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
+	;~ Sleep, 100
+	;~ }
 
-	Send {tab}	;借款人婚姻证明
-	Loop, 7{
-	Send {tab}{right %A_Index%}{tab}%A_Index%
-	Sleep, 100
-	}
+	;~ Send {tab}	;借款人婚姻证明
+	;~ Loop, 7{
+	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
+	;~ Sleep, 100
+	;~ }
 	
-	Send {tab}	;征信报告-借款人
-	Loop, 11{
-	Send {tab}{right %A_Index%}{tab}%A_Index%
-	Sleep, 100
-	}
+	;~ Send {tab}	;征信报告-借款人
+	;~ Loop, 11{
+	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
+	;~ Sleep, 100
+	;~ }
 	
-	Send {tab}	;征信报告-配偶
-	Loop, 11{
-	Send {tab}{right %A_Index%}{tab}%A_Index%
-	Sleep, 100
-	}
+	;~ Send {tab}	;征信报告-配偶
+	;~ Loop, 11{
+	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
+	;~ Sleep, 100
+	;~ }
 	
-	Send {tab}	;涉诉查询截图
-	Loop, 3{
-	Send {tab}{right %A_Index%}{tab}%A_Index%
-	Sleep, 100
-	}
+	;~ Send {tab}	;涉诉查询截图
+	;~ Loop, 3{
+	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
+	;~ Sleep, 100
+	;~ }
 	
-	Send {tab}	;借款用途
-	Loop, 6{
-	Send {tab}{right %A_Index%}{tab}%A_Index%
-	Sleep, 100
-	}
+	;~ Send {tab}	;借款用途
+	;~ Loop, 6{
+	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
+	;~ Sleep, 100
+	;~ }
 	
-	Send {tab}	;房产证
-	Loop, 13{
-	Send {tab}{right %A_Index%}{tab}%A_Index%
-	Sleep, 100
-	}
+	;~ Send {tab}	;房产证
+	;~ Loop, 13{
+	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
+	;~ Sleep, 100
+	;~ }
 	
-	Send {tab}	;购房合同
-	Loop, 1{
-	Send {tab}{right %A_Index%}{tab}%A_Index%
-	Sleep, 100
-	}
+	;~ Send {tab}	;购房合同
+	;~ Loop, 1{
+	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
+	;~ Sleep, 100
+	;~ }
 	
-	Send {tab}	;产调
-	Loop, 1{
-	Send {tab}{right %A_Index%}{tab}%A_Index%
-	Sleep, 100
-	}
+	;~ Send {tab}	;产调
+	;~ Loop, 1{
+	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
+	;~ Sleep, 100
+	;~ }
 	
-	Send {tab}	;其他抵押物分类项下材料
-	Loop, 7{
-	Send {tab}{right %A_Index%}{tab}%A_Index%
-	Sleep, 100
-	}
+	;~ Send {tab}	;其他抵押物分类项下材料
+	;~ Loop, 7{
+	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
+	;~ Sleep, 100
+	;~ }
 	
 	MouseClick, left, 823, 908 ;同意
 	Send {enter}
@@ -1376,11 +1384,11 @@ zhongShenw(){
 	Send {tab 2}{enter}
 	Sleep, 3000  ;等待
 	MouseClick, left, 467, 415 ;资金方
-	Send {down 2}{enter}
+	Send {down 1}{enter}
 	MouseClick, left, 1055, 415 ;放款机构
-	Send {down}{enter}
-	MouseClick, left, 1693, 420 ;计划归入资产包
-	Send {down 5}{enter}
+	Send {down 4}{enter}
+	MouseClick, left, 1700, 426 ;计划归入资产包
+	Send {down 1}{enter}
 	Send {tab}{enter 2}
 	Sleep, 2000  ;等待
 	Send {enter}
@@ -1414,12 +1422,18 @@ zhongShenw(){
 	MouseClick, left,  510, 677, 2	;营销利率 双击
 	Send 19.8
 	
-	MouseClick, left,  1081, 701	;业务推介费收取方式
-	MouseClick, left,  1089, 770	;放款前收取部分放款后按月收取
+	MouseClick, left,  1103, 717	;业务推介费收取方式
+	MouseClick, left,  1098, 785	;放款前收取部分放款后按月收取
 	MouseClick, left,  1075, 675, 2	;业务推介费 双击
 	Send 6
 	MouseClick, left,  1620, 703, 2	;业务推介费放款后 双击
 	Send 2
+	
+	MouseClick, left,  1101, 746	;融资服务费收取方式
+	MouseClick, left,  1122, 812	;放款前收取部分放款后按月收取
+	MouseClick, left,  1640, 743, 2	;融资服务费放款后  双击
+	Send 1.5
+	
 	
 	MouseClick, left,  500, 707	;业务推介费收取形式
 	MouseClick, left,  519, 751	;委托收取
@@ -1673,7 +1687,7 @@ daiqianfeiyong(){
 	MouseClick, left, 78, 241 ;刷新菜单
 	Sleep, 1000  ;等待
 	*/
-	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\caidan_dakai.bmp
+	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\caidan_dakai_2.bmp
 	if ErrorLevel = 2 
 	MsgBox 菜单_打开_不能实施搜索。
 	else if ErrorLevel = 1 
@@ -2525,7 +2539,7 @@ daiqianfeiyong(){
 		Send {Enter}
 	return
 	
-	::adx::
+	::adz::
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send ^a
 		Send admin
@@ -2538,6 +2552,16 @@ daiqianfeiyong(){
 		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 		Send ^a
 		Send super
+		Send {tab}123456
+		Sleep 100
+		Send {tab 2}qazwsx
+		Send {tab 3}{Enter}
+	return
+	
+	::adx::
+		SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+		Send ^a
+		Send admin
 		Send {tab}123456
 		Sleep 100
 		Send {tab 2}qazwsx
