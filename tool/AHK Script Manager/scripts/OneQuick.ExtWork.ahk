@@ -15,7 +15,7 @@ GroupAdd, ChromeAndPLSQL , ahk_exe plsqldev.exe
 #IfWinActive ahk_exe chrome.exe
  
 /*
- * @Description: 房产新增 - 自动表单
+ * @Description: 房产新增 - 进入页面
  * @author XuDong
  */
  ::``q::
@@ -786,6 +786,9 @@ neiShen2ForCust(){
 	ToolTip("...脚本结束")
 }
 
+/*
+	内审2（外面信息） - 自动表单
+ */
  ::``2e::
 	neiShenWai()
  return
@@ -2585,7 +2588,7 @@ daiqianfeiyong(){
  #IfWinActive ahk_class SWT_Window0
  
  /*
- * @Description: 改成m10
+ * @Description: 改成m01
  * @author XuDong
  */
  :://m01:: 

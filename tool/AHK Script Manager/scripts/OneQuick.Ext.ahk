@@ -41,6 +41,9 @@ GroupAdd, EclipseAllWindow , ahk_class SWT_Window0
 return
 
 #IfWinActive
+/*
+------------------------------------------------------------------------------------------------------------------使用WPS表格时候结束------------------------------------------------------------------------------------------------------------------
+*/
 
  /*
 ----------------------------------------------------------------------------------------------------------------------使用chrome时候的快捷键----------------------------------------------------------------------------------------------------------------------
@@ -93,11 +96,74 @@ return
 
 
 #IfWinActive
+/*
+---------------------------------------------------------------------------------------------------使用chrome时候结束----------------------------------------------------------------------------
+*/
+
 
 /*
 ---------------------------------------------------------------------------------------------------使用EclipseAllWindow的时候（该窗口组定义在  本文件头  中）----------------------------------------------------------------------------------------------------------------------
 */
 #IfWinActive ahk_group EclipseAllWindow
+
+/*
+在eclipse里面，win+e打开当前文件所在路径，并定位在该文件上
+*/
+#e::
+	WinGet, active_id, ID, A    ;获取当前激活页面的id并赋值给active_id变量
+	WinGetClass, this_class, ahk_id %active_id%		;获取窗口class
+	WinGetTitle, this_title, ahk_id %active_id%		;获取窗口title标题
+	
+	index := InStr(this_title, " - ")
+	
+	mic := SubStr(this_title, 1, index-1)
+	dir := SubStr(this_title, index+3)
+	dir := SubStr(dir, 1, StrLen(file_name)-10 )
+	dir := RegExReplace(dir, "\/", "\")     ;将匹配的字符串替换成"123"，并返回替换后的值
+	
+	real_dir = ""
+	
+	if(mic == "mic_0"){
+		real_dir = D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\%dir%
+	}else if(mic == "mic_1"){
+		real_dir = D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64_tag1\workspace\microcredit-parent-yxjr-v2_tag\%dir%
+	}else if(mic == "mic_2"){
+		real_dir = D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64_tag2\workspace\microcredit-parent-yxjr-v2_tag2\%dir%
+	}else if(mic == "mic_3"){
+		real_dir = D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64_tag3\workspace\microcredit-parent-yxjr-v2_tag3\%dir%
+	}else if(mic == "mic_end"){
+		real_dir = D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64_tagEnd\workspace\microcredit-parent-yxjr-v2_tagEnd\%dir%
+	}else{
+		tooltip,请切换到java视图
+		sleep, 1000
+		tooltip,
+		return
+	}
+	
+	open_dir(real_dir)	;打开文件路径
+	
+return
+
+/*
+在eclipse里面，win+w打开主干合并代码的文件目录
+*/
+#w::
+	WinGet, active_id, ID, A    ;获取当前激活页面的id并赋值给active_id变量
+	WinGetClass, this_class, ahk_id %active_id%		;获取窗口class
+	WinGetTitle, this_title, ahk_id %active_id%		;获取窗口title标题
+	
+	index := InStr(this_title, " - ")
+	
+	mic := SubStr(this_title, 1, index-1)
+	dir := SubStr(this_title, index+3)
+	dir := SubStr(dir, 1, StrLen(file_name)-10 )
+	dir := RegExReplace(dir, "\/", "\")     ;将匹配的字符串替换成"123"，并返回替换后的值
+	
+	real_dir = D:\Work\PeteCat\eclipse-jee-主干_mic代码_合并\%dir%
+	
+	open_dir(real_dir)	;打开文件路径
+	
+return
 
 /*
 Ctrl+CapsLock --》 Ctrl + PgDn（下一个视图）
@@ -298,8 +364,52 @@ return
 return
 
 #IfWinActive
+/*
+------------------------------------------------------------------------------------------------------------------使用EclipseAllWindow时候结束
+*/
 
+/*
+------------------------------------------------------------------------------------------------------------------使用文件资源管理器时候开始----------------------------------------------------------------------------
+*/
+#IfWinActive ahk_exe explorer.exe
 
+/*
+新建文件夹，并以当前日期自动命名
+*/
+#t::
+	now_dir:= A_Desktop
+	;~ WinGetClass class, ahk_id WinExist("A")
+	WinGet, active_id, ID, A    ;获取当前激活页面的id并赋值给active_id变量
+	WinGetClass, this_class, ahk_id %active_id%		;获取窗口class
+	WinGetTitle, this_title, ahk_id %active_id%		;获取窗口title标题
+
+	 if (this_class ~= "(Cabinet|Explore)WClass") {
+		Send,!d		;alt+d 定位到地址栏
+		ControlGetText,now_dir,Edit1,A	;从控件获取内容
+		Send, {Enter}
+	}
+	dir_name=%A_YYYY%-%A_MM%-%A_DD%_	;拼接时间
+	dir_name_site=%dir_name%		    ;临时存储
+	final_dir_name=%now_dir%\%dir_name%
+	tmp_dir_name=%final_dir_name%
+	while InStr(FileExist(tmp_dir_name), "D")	;判断文件是否存在
+	{
+		end_fix:=Chr(96+A_index)
+		dir_name_site=%dir_name%%end_fix%
+		tmp_dir_name=%final_dir_name%%end_fix%
+	}
+	final_dir_name=%tmp_dir_name%
+	FileCreateDir, %final_dir_name%		;创建目录
+	MouseClick, left
+	Sleep 300
+	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+	Send, %dir_name_site%
+return
+
+#IfWinActive
+/*
+------------------------------------------------------------------------------------------------------------------使用文件资源管理器时候结束----------------------------------------------------------------------------
+*/
 
  /*
 -----------------------------------------------------------任何时候---------------------------------------------
@@ -501,13 +611,35 @@ return
 return
 
  /*
+ win+上滚轮 透明窗口
+*/
+#WheelUp::
+	WinGet, active_id, ID, A    ;获取当前激活页面的id
+	WinGet, active_tran, Transparent, A    ;获取当前激活页面的id
+	if(active_tran == ""){
+		active_tran = 255
+	}
+	active_tran := active_tran + 10
+	if(active_tran >= 255){
+		active_tran = 255
+	}
+	WinSet, Transparent, %active_tran%, ahk_id %active_id%		;修改透明值
+return
+
+ /*
 win+下滚轮  透明窗口
 */
 #WheelDown::
-	MouseGetPos,,, MouseWin
-	WinGetTitle, title, ahk_id %MouseWin%
-	MsgBox ahk_id %title%
-	WinSet, Transparent, 150, ahk_id %title%
+	WinGet, active_id, ID, A    ;获取当前激活页面的id
+	WinGet, active_tran, Transparent, A    ;获取当前激活页面的id
+	if(active_tran == ""){
+		active_tran = 255
+	}
+	active_tran := active_tran - 10
+	if(active_tran <= 0){
+		active_tran = 0
+	}
+	WinSet, Transparent, %active_tran%, ahk_id %active_id%		;修改透明值
 return
 
  /*
@@ -517,6 +649,20 @@ SwitchIME(dwLayout){
 		HKL:=DllCall("LoadKeyboardLayout", Str, dwLayout, UInt, 1)
 		ControlGetFocus,ctl,A
 		SendMessage,0x50,0,HKL,%ctl%,A
+}
+
+/*
+打开文件路径
+*/
+open_dir(real_dir){
+	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
+	Send {Shift}
+	xC_tmp := real_dir
+	tempPath := RegExMatch(xC_tmp, ".*\\", UnquotedOutputVar)
+	tempFile := RegExReplace(xC_tmp, ".*\\")
+	run %UnquotedOutputVar%
+	Sleep 1000
+	Send %tempFile%
 }
 
 /*
@@ -554,6 +700,65 @@ class Sys
 		 }
 	}
 
+/*
+双击PrintScreen息屏
+*/
+~PrintScreen::
+If Home_Presses > 0
+{
+    Home_Presses += 1
+    Return
+}
+Home_Presses = 1
+SetTimer, KeyHome, 300
+Return
+ 
+KeyHome:
+SetTimer, KeyHome, Off
+If Home_Presses = 2
+{
+    Sleep 1000
+	SendMessage, 0x112, 0xF170, 2,, Program Manager
+}
+Home_Presses = 0
+
+
+/*
+按住CapsLock和左键拖动当前窗口
+*/
+CapsLock & LButton::
+CoordMode, Mouse ; Switch to screen/absolute coordinates.
+MouseGetPos, EWD_MouseStartX, EWD_MouseStartY, EWD_MouseWin
+WinGetPos, EWD_OriginalPosX, EWD_OriginalPosY,,, ahk_id %EWD_MouseWin%
+WinGet, EWD_WinState, MinMax, ahk_id %EWD_MouseWin% 
+if EWD_WinState = 0 ; Only if the window isn't maximized 
+SetTimer, EWD_WatchMouse, 10 ; Track the mouse as the user drags it.
+return
+ 
+EWD_WatchMouse:
+GetKeyState, EWD_LButtonState, LButton, P
+	if EWD_LButtonState = U ; Button has been released, so drag is complete.
+	{
+	SetTimer, EWD_WatchMouse, off
+	return
+	}
+GetKeyState, EWD_EscapeState, Escape, P
+	if EWD_EscapeState = D ; Escape has been pressed, so drag is cancelled.
+	{
+	SetTimer, EWD_WatchMouse, off
+	WinMove, ahk_id %EWD_MouseWin%,, %EWD_OriginalPosX%, %EWD_OriginalPosY%
+	return
+	}
+	; Otherwise, reposition the window to match the change in mouse coordinates
+	; caused by the user having dragged the mouse:
+	CoordMode, Mouse
+	MouseGetPos, EWD_MouseX, EWD_MouseY
+	WinGetPos, EWD_WinX, EWD_WinY,,, ahk_id %EWD_MouseWin%
+	SetWinDelay, -1 ; Makes the below move faster/smoother.
+	WinMove, ahk_id %EWD_MouseWin%,, EWD_WinX + EWD_MouseX - EWD_MouseStartX, EWD_WinY + EWD_MouseY - EWD_MouseStartY
+	EWD_MouseStartX := EWD_MouseX ; Update for the next timer-call to this subroutine.
+	EWD_MouseStartY := EWD_MouseY
+return
 
 
 
