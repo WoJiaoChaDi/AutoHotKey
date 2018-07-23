@@ -37,6 +37,13 @@ screen-border:
       wheelclick: "send {media_play_pause}"
       wheeldown: "send {media_next}"
       wheelup: "send {media_prev}"
+    T: 
+      wheeldown: Sys.Win.GotoNextTab
+      wheelup: Sys.Win.GotoPreTab
+    B: 
+      wheelclick: "send #{tab}"
+      wheeldown: "send ^#{right}"
+      wheelup: "send ^#{left}"
 clipboard: 
   switch: 1
   hotkey: 
