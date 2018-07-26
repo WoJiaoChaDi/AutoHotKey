@@ -760,7 +760,14 @@ GetKeyState, EWD_EscapeState, Escape, P
 	EWD_MouseStartY := EWD_MouseY
 return
 
+;~ :*:``::
+	;~ Send {F2}{Home}
+;~ return
 
+;~ :*:`-::
+	;~ Send {Shift}
+	;~ Send _{Shift}
+;~ return
 
 
 

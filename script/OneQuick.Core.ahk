@@ -58,8 +58,8 @@ class OneQuick
 	static _Update_bkp_folder_prefix := "_auto_"
 	; file
 	static Launcher_Name := A_WorkingDir "\OneQuick Launcher.exe"
-	static Ext_ahk_file := "OneQuick.Ext.ahk"
-	static ExtWork_ahk_file := "OneQuick.ExtWork.ahk"
+	; static Ext_ahk_file := "OneQuick.Ext.ahk"
+	; static ExtWork_ahk_file := "OneQuick.ExtWork.ahk"
 	static version_yaml_file := OneQuick._SCRIPT_DIR "version.yaml"
 	static feature_yaml_file := "OneQuick.feature.yaml"
 	static feature_yaml_default_file := OneQuick._SCRIPT_DIR "OneQuick.feature.default.yaml"
@@ -792,12 +792,12 @@ class OneQuick
 				,[]])
 		}
 		TrayMenuList := xArray.merge(TrayMenuList
-			,[[version_str, "OneQuick.About"]
-			,[lang("help_online"), OneQuick.remote_help]
-			,[check_update_name, "OneQuick.Check_update"]
+			; ,[version_str, "OneQuick.About"]	;关于
+			,[[lang("help_online"), OneQuick.remote_help]
+			; ,[check_update_name, "OneQuick.Check_update"] ;新版本
 			,[]
 			,[lang("Autorun"), "OneQuick.SetAutorun", {check: autorun}]
-			,[lang("AutoUpdate"), "OneQuick.SetAutoUpdate", {check: autoupdate}]
+			; ,[lang("AutoUpdate"), "OneQuick.SetAutoUpdate", {check: autoupdate}] ;自动更新到最新版本
 			,["Language",, {"sub": "TrayLanguage"}]
 			,[lang("Advanced"),, {"sub": "TrayAdvanced"}]
 			,[]
@@ -810,9 +810,9 @@ class OneQuick
 			,[lang("AutoHotKey HelpCn"), "Sub_OneQuick_AHKHelpCn"] ;XuDong添加Quick右键菜单  前面那个是语言参数，在lang文件夹下，如果找到就对应翻译，找不到就用本身
 			,[lang("AutoHotKey HelpTemp"), "Sub_OneQuick_AHKHelpTemp"] ;XuDong添加Quick右键菜单  前面那个是语言参数，在lang文件夹下，如果找到就对应翻译，找不到就用本身
 			,[]
-			,[lang("Open OneQuick Folder"), A_WorkingDir]
-			,[lang("Edit Ext.ahk"), "edit:" OneQuick.Ext_ahk_file]
-			,[lang("Edit ExtWork.ahk"), "edit:" OneQuick.ExtWork_ahk_file] ;XuDong添加Quick右键菜单
+			,[lang("Open OneQuick Folder"), "Sub_OneQuick_dir"]
+			; ,[lang("Edit Ext.ahk"), "edit:" OneQuick.Ext_ahk_file]
+			; ,[lang("Edit ExtWork.ahk"), "edit:" OneQuick.ExtWork_ahk_file] ;XuDong添加Quick右键菜单
 			,[lang("Edit feature.yaml"), "OneQuick.Edit_feature_yaml"] ])
 		Tray.SetMenu(TrayMenuList, OneQuick._switch_tray_standard_menu)
 		Menu, Tray, Default, % lang("Disable")
@@ -1054,12 +1054,22 @@ run %helpfile%
 Return
 
 /*
-* 使用相对路径打开中文帮助例子手册
+* 使用相对路径打开快餐店帮助手册
 *XuDong 
 */
 Sub_OneQuick_AHKHelpTemp:
 helpfileold = %A_ScriptDir%
 helpfile := SubStr(helpfileold, 1 , StrLen(helpfileold)-6) "tool\AutoHotkeyTemp.chm" 
+run %helpfile%
+Return
+
+/*
+* 使用相对路径打开OneQuick目录
+*XuDong 
+*/
+Sub_OneQuick_dir:
+helpfileold = %A_ScriptDir%
+helpfile := SubStr(helpfileold, 1 , StrLen(helpfileold)-6) "" 
 run %helpfile%
 Return
 
