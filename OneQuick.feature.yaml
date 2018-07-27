@@ -7,7 +7,7 @@ hotkey:
   switch: 1
   buildin: 
     win_z: xmenu_show_great_menu
-    ctrl_alt_p: OneQuick.Command_run
+    ctrl_win_r: OneQuick.Command_run
     win_rclick: WinMenu.Show
     shift_wheeldown: "send {PgDn}"
     shift_wheelup: "send {PgUp}"
