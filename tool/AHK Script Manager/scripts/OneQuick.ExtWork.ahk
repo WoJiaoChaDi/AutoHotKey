@@ -1,10 +1,10 @@
-ï»¿;========================
-;å¤‡æ³¨æ¨¡æ¿
+;========================
+;±¸×¢Ä£°å
 ;========================
 
 
 /*
------------------------------------------------------------ä½¿ç”¨chromeçš„æ—¶å€™---------------------------------------------
+-----------------------------------------------------------Ê¹ÓÃchromeµÄÊ±ºò---------------------------------------------
 */
 
 #SingleInstance 
@@ -15,7 +15,7 @@ GroupAdd, ChromeAndPLSQL , ahk_exe plsqldev.exe
 #IfWinActive ahk_exe chrome.exe
  
 /*
- * @Description: æˆ¿äº§æ–°å¢ - è¿›å…¥é¡µé¢
+ * @Description: ·¿²úĞÂÔö - ½øÈëÒ³Ãæ
  * @author XuDong
  */
  ::``q::
@@ -33,11 +33,11 @@ addFangChan(){
 	MouseClick, left,  470,  327
 	Sleep, 1000
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
 /*
- * @Description: æˆ¿äº§æ–°å¢ - è‡ªåŠ¨è¡¨å•
+ * @Description: ·¿²úĞÂÔö - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``qq::
@@ -50,25 +50,25 @@ addFangChan(){
 	Send +{End}
 	Send ^v
 	Send ^c
-	MouseClick, left, 415, 348 ;æ‰€åœ¨åŸå¸‚åŒºåŸŸ
+	MouseClick, left, 415, 348 ;ËùÔÚ³ÇÊĞÇøÓò
 	Send {down}{enter}
 	Sleep 500
-	MouseClick, left, 518, 348 ;æ‰€åœ¨åŸå¸‚åŒºåŸŸ
+	MouseClick, left, 518, 348 ;ËùÔÚ³ÇÊĞÇøÓò
 	Send {down}{enter}
-	MouseClick, left, 1629, 420 ;æˆ¿äº§ç”¨é€”
+	MouseClick, left, 1629, 420 ;·¿²úÓÃÍ¾
 	Send {down}{enter}
-	MouseClick, left, 1048, 348 ;æˆ¿å±‹åè½
+	MouseClick, left, 1048, 348 ;·¿Îİ×øÂä
 	Send ^v
-	MouseClick, left, 1054, 419 ;å»ºç­‘é¢ç§¯ï¼ˆmÂ²ï¼‰
+	MouseClick, left, 1054, 419 ;½¨ÖşÃæ»ı£¨m2£©
 	Send 155
-	MouseClick, left, 999, 624 ;ä¿å­˜
-	MouseClick, left, 1051, 660 ;ç¡®å®š
+	MouseClick, left, 999, 624 ;±£´æ
+	MouseClick, left, 1051, 660 ;È·¶¨
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
 /*
- * @Description: ä»æ–°å»ºæŠµæŠ¼ç‰©åˆ°å†…å®¡I
+ * @Description: ´ÓĞÂ½¨µÖÑºÎïµ½ÄÚÉóI
  * @author XuDong
  */
 ::``qq1::
@@ -81,13 +81,13 @@ addFangChan(){
 return
 
 /*
- * @Description: ä»å†…å®¡Iåˆ°ç”¨æ¬¾ç¡®è®¤(åŒ—äº¬)
+ * @Description: ´ÓÄÚÉóIµ½ÓÃ¿îÈ·ÈÏ(±±¾©)
  * @author XuDong
  */
 ::``410::
 	Send ^{F5}
 	Sleep 2000
-	;MouseClick, left,  87, 211	;å…³é—­ç³»ç»Ÿèœå•
+	;MouseClick, left,  87, 211	;¹Ø±ÕÏµÍ³²Ëµ¥
 	Sleep, 1000
 	addFangChan()
 	Send ^v
@@ -96,12 +96,12 @@ return
 	yeWuShenQing(13581611612)
 	
 	refreshMenu()
-	MouseClick, left, 65, 432 ;ä¸ªäººä¸­å¿ƒ
-	Sleep, 800  ;ç­‰å¾…
-	MouseClick, left, 76, 466 ;å¾…åŠæµç¨‹
-	Sleep, 2000  ;ç­‰å¾…
-	MouseClick, left,  1009,  253 ;æœç´¢
-	Sleep, 2500  ;ç­‰å¾…
+	MouseClick, left, 65, 432 ;¸öÈËÖĞĞÄ
+	Sleep, 800  ;µÈ´ı
+	MouseClick, left, 76, 466 ;´ı°ìÁ÷³Ì
+	Sleep, 2000  ;µÈ´ı
+	MouseClick, left,  1009,  253 ;ËÑË÷
+	Sleep, 2500  ;µÈ´ı
 	neiShen1w()
 	
 	Sleep 500
@@ -118,13 +118,13 @@ return
 return
 
 /*
- * @Description: ä»å†…å®¡Iåˆ°ç”¨æ¬¾ç¡®è®¤(åŒ—äº¬)
+ * @Description: ´ÓÄÚÉóIµ½ÓÃ¿îÈ·ÈÏ(±±¾©)
  * @author XuDong
  */
 ::``qq410::
 	Send ^{F5}
 	Sleep 2000
-	;MouseClick, left,  87, 211	;å…³é—­ç³»ç»Ÿèœå•
+	;MouseClick, left,  87, 211	;¹Ø±ÕÏµÍ³²Ëµ¥
 	Sleep, 1000
 	addFangChan()
 	Send ^v
@@ -143,13 +143,13 @@ return
 return
 
 /*
- * @Description: ä»å†…å®¡Iåˆ°ç”¨æ¬¾ç¡®è®¤(å¹¿å·)
+ * @Description: ´ÓÄÚÉóIµ½ÓÃ¿îÈ·ÈÏ(¹ãÖİ)
  * @author XuDong
  */
 ::``qq412::
 	Send ^{F5}
 	Sleep 2000
-	MouseClick, left,  87, 211	;å…³é—­ç³»ç»Ÿèœå•
+	MouseClick, left,  87, 211	;¹Ø±ÕÏµÍ³²Ëµ¥
 	Sleep, 1000
 	addFangChan()
 	Send ^v
@@ -168,7 +168,7 @@ return
 return
 	
 /*
- * @Description: æˆ¿äº§åˆè¯„ - è‡ªåŠ¨è¡¨å•
+ * @Description: ·¿²ú³õÆÀ - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``w::
@@ -177,31 +177,31 @@ return
 
 fangChanChuPing(){
 	refreshMenu()
-	MouseClick, left, 64, 374 ;æ‹…ä¿ç®¡ç†
-	Sleep, 1000  ;ç­‰å¾…
-	MouseClick, left, 75, 486 ;æˆ¿äº§åˆè¯„
-	Sleep, 2000  ;ç­‰å¾…
-	MouseClick, left, 306, 217 ;å¾…è¯„ä¼°æ— æˆ¿æœ¬
-	Sleep, 1000  ;ç­‰å¾…
+	MouseClick, left, 64, 374 ;µ£±£¹ÜÀí
+	Sleep, 1000  ;µÈ´ı
+	MouseClick, left, 75, 486 ;·¿²ú³õÆÀ
+	Sleep, 2000  ;µÈ´ı
+	MouseClick, left, 306, 217 ;´ıÆÀ¹ÀÎŞ·¿±¾
+	Sleep, 1000  ;µÈ´ı
 	MouseClick, left, 1704, 368 
-	Send {tab}{enter}	;é€‰ä¸­ç¬¬ä¸€æ¡è¯„ä¼°
-	Sleep, 3500  ;ç­‰å¾…
+	Send {tab}{enter}	;Ñ¡ÖĞµÚÒ»ÌõÆÀ¹À
+	Sleep, 3500  ;µÈ´ı
 	
 	;~ ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\chuping_fangwuzuobiao2.png
 	;~ if ErrorLevel = 2 
-	;~ MsgBox æˆ¿äº§åˆè¯„_æˆ¿å±‹åæ ‡_ä¸èƒ½å®æ–½æœç´¢ã€‚
+	;~ MsgBox ·¿²ú³õÆÀ_·¿Îİ×ø±ê_²»ÄÜÊµÊ©ËÑË÷¡£
 	;~ else if ErrorLevel = 1 
-	;~ MsgBox æˆ¿äº§åˆè¯„_æˆ¿å±‹åæ ‡_æœªåœ¨å±å¹•ä¸Šå¯»å¾—å›¾æ ‡ã€‚
+	;~ MsgBox ·¿²ú³õÆÀ_·¿Îİ×ø±ê_Î´ÔÚÆÁÄ»ÉÏÑ°µÃÍ¼±ê¡£
 	;~ else{
-		;~ MouseClick, left, %OutputVarX%, %OutputVarY% ;å®šä½
-		MouseClick, left, 1118, 315 ;å®šä½
-		Sleep, 800  ;ç­‰å¾…
+		;~ MouseClick, left, %OutputVarX%, %OutputVarY% ;¶¨Î»
+		MouseClick, left, 1118, 315 ;¶¨Î»
+		Sleep, 800  ;µÈ´ı
 		Send ^+{tab}
-		Sleep, 800  ;ç­‰å¾…
+		Sleep, 800  ;µÈ´ı
 		;~ sX := OutputVarX - 700
 		;~ sY := OutputVarY - 25
-		;~ MouseClick, left, %sX%, %sY% ;é€‰ä¸­æ‰€æœ‰æƒäºº
-		MouseClick, left, 501, 285 ;é€‰ä¸­æ‰€æœ‰æƒäºº
+		;~ MouseClick, left, %sX%, %sY% ;Ñ¡ÖĞËùÓĞÈ¨ÈË
+		MouseClick, left, 501, 285 ;Ñ¡ÖĞËùÓĞÈ¨ÈË
 		Send {Home}   
 		Send +{End}
 		Send ^c
@@ -210,10 +210,10 @@ fangChanChuPing(){
 		Send {tab 7}
 		Send {Home}   
 		Send +{End}
-		Send 150000 ;ç³»ç»Ÿè¯„ä¼°å•ä»·ï¼ˆå…ƒï¼‰
+		Send 150000 ;ÏµÍ³ÆÀ¹Àµ¥¼Û£¨Ôª£©
 		Send ^{tab}
-		Sleep, 4000  ;ç­‰å¾…
-		Send {enter} ;æœç´¢å¤±è´¥çš„ç¡®å®š
+		Sleep, 4000  ;µÈ´ı
+		Send {enter} ;ËÑË÷Ê§°ÜµÄÈ·¶¨
 		Sleep, 500
 		MouseClick, left,  234,  175
 		Sleep, 500
@@ -226,23 +226,23 @@ fangChanChuPing(){
 		
 		;~ ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\chuping_tijiao2.png
 		;~ if ErrorLevel = 2 
-		;~ MsgBox æˆ¿äº§åˆè¯„_æäº¤_ä¸èƒ½å®æ–½æœç´¢ã€‚
+		;~ MsgBox ·¿²ú³õÆÀ_Ìá½»_²»ÄÜÊµÊ©ËÑË÷¡£
 		;~ else if ErrorLevel = 1 
-		;~ MsgBox æˆ¿äº§åˆè¯„_æäº¤_æœªåœ¨å±å¹•ä¸Šå¯»å¾—å›¾æ ‡ã€‚
+		;~ MsgBox ·¿²ú³õÆÀ_Ìá½»_Î´ÔÚÆÁÄ»ÉÏÑ°µÃÍ¼±ê¡£
 		;~ else{
 			;~ MouseClick, left,  %OutputVarXA%, %OutputVarYA%
-			MouseClick, left,  756, 562 ;~ å®šä½åˆ°æˆ¿ä¼°ä¼°è¯¢ä»·å‰é¢
+			MouseClick, left,  756, 562 ;~ ¶¨Î»µ½·¿¹À¹ÀÑ¯¼ÛÇ°Ãæ
 			Send {tab 2}
 			Sleep, 100
 			Send, {ENTER}
 		;~ }
 	;~ }
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
  /*
- * @Description: æˆ¿é€šè´·ç”³è¯· - è‡ªåŠ¨è¡¨å•
+ * @Description: ·¿Í¨´ûÉêÇë - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``e::
@@ -251,39 +251,39 @@ fangChanChuPing(){
  
  yeWuShenQing(ByRef tel){
 	refreshMenu()
-	MouseClick, left, 50, 459 ;è´·æ¬¾ç”³è¯·
-	Sleep, 1000  ;ç­‰å¾…
-	MouseClick, left, 68, 494 ;æˆ¿é€šè´·
-	Sleep, 2000  ;ç­‰å¾…
-	MouseClick, left, 207, 246 ;å…‰æ ‡å®šä½æ‰€æœ‰äºº
+	MouseClick, left, 50, 459 ;´û¿îÉêÇë
+	Sleep, 1000  ;µÈ´ı
+	MouseClick, left, 68, 494 ;·¿Í¨´û
+	Sleep, 2000  ;µÈ´ı
+	MouseClick, left, 207, 246 ;¹â±ê¶¨Î»ËùÓĞÈË
 	Send {tab}
 	Send ^v
 	Send {tab 5}{enter}
-	Sleep, 1000  ;ç­‰å¾…
-	MouseClick, left, 510, 367 ;å…‰æ ‡å®šä½ç¬¬ä¸€æ¡è®°å½•
-	Sleep, 500  ;ç­‰å¾…
+	Sleep, 1000  ;µÈ´ı
+	MouseClick, left, 510, 367 ;¹â±ê¶¨Î»µÚÒ»Ìõ¼ÇÂ¼
+	Sleep, 500  ;µÈ´ı
 	Send +{tab}+{tab}{enter}
-	Sleep, 1500  ;ç­‰å¾… 
-	MouseClick, left, 477, 277 ;å®¢æˆ·æ¸ é“
+	Sleep, 1500  ;µÈ´ı 
+	MouseClick, left, 477, 277 ;¿Í»§ÇşµÀ
 	Send {down}{enter}
-	MouseClick, left, 1113, 273 ;å®¢æˆ·ç»ç†
-	Sleep, 1500  ;ç­‰å¾…
-	MouseClick, left, 690, 471 ;ç™»å½•å
+	MouseClick, left, 1113, 273 ;¿Í»§¾­Àí
+	Sleep, 1500  ;µÈ´ı
+	MouseClick, left, 690, 471 ;µÇÂ¼Ãû
 	Send %tel%{tab}{tab}{tab}{tab}{enter}
 	Sleep 300
-	MouseClick, left, 763, 519 ;é€‰æ‹©ç¬¬ä¸€æ¡è®°å½•
-	Sleep, 500  ;ç­‰å¾…
+	MouseClick, left, 763, 519 ;Ñ¡ÔñµÚÒ»Ìõ¼ÇÂ¼
+	Sleep, 500  ;µÈ´ı
 	MouseClick, left,  1005,  808
-	Sleep, 500  ;ç­‰å¾…
-	MouseClick, left, 507, 331 ;ç”³è¯·é‡‘é¢
+	Sleep, 500  ;µÈ´ı
+	MouseClick, left, 507, 331 ;ÉêÇë½ğ¶î
 	Send 150000{tab}7{tab}{tab}{tab}{enter}{tab}{tab}{tab}{enter} 
 	closeTaskMsg()
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
  
  /*
- * @Description: å†…å®¡1 - è‡ªåŠ¨è¡¨å•
+ * @Description: ÄÚÉó1 - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``1q::
@@ -291,79 +291,79 @@ fangChanChuPing(){
  return  
  
  /*
- æ—§çš„å†…å®¡Iï¼Œå®¢æˆ·é‡‡ç”¨æ—§å®¢æˆ·ä¿¡æ¯
+ ¾ÉµÄÄÚÉóI£¬¿Í»§²ÉÓÃ¾É¿Í»§ĞÅÏ¢
  */
   neiShen1(){
 	refreshMenu()
-	MouseClick, left, 65, 432 ;ä¸ªäººä¸­å¿ƒ
-	Sleep, 800  ;ç­‰å¾…
-	MouseClick, left, 76, 466 ;å¾…åŠæµç¨‹
-	Sleep, 2000  ;ç­‰å¾…
-	MouseClick, left,  1009,  253 ;æœç´¢
-	Sleep, 2500  ;ç­‰å¾…
-	MouseClick, left, 1657, 311 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	Sleep, 1000  ;ç­‰å¾…
-	MouseClick, left, 1007, 659 ;æ¥å—ä»»åŠ¡
-	Sleep, 2500  ;ç­‰å¾…
-	MouseClick, left, 1657, 311 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	Sleep, 3800  ;ç­‰å¾…
-	MouseClick, left, 440, 500 ;äººæ°‘æ³•é™¢å…¬å‘Šç½‘ æ—  401 æœ‰
-	MouseClick, left, 440, 526 ;æ‰§è¡Œ/å¤±ä¿¡ç½‘ æ—  401 æœ‰
-	MouseClick, left, 440, 556 ;ä¸­å›½è£åˆ¤æ–‡ä¹¦ç½‘ æ—  401 æœ‰
-	MouseClick, left, 443, 585 ;å…¨å›½ä¼ä¸šä¿¡ç”¨ç½‘ æ—  401 æœ‰
-	MouseClick, left, 1872, 242 ;å®Œå–„å®¢æˆ·ä¿¡æ¯
+	MouseClick, left, 65, 432 ;¸öÈËÖĞĞÄ
+	Sleep, 800  ;µÈ´ı
+	MouseClick, left, 76, 466 ;´ı°ìÁ÷³Ì
+	Sleep, 2000  ;µÈ´ı
+	MouseClick, left,  1009,  253 ;ËÑË÷
+	Sleep, 2500  ;µÈ´ı
+	MouseClick, left, 1657, 311 ;´ı°ì½øÈëµÚÒ»¸ö
+	Sleep, 1000  ;µÈ´ı
+	MouseClick, left, 1007, 659 ;½ÓÊÜÈÎÎñ
+	Sleep, 2500  ;µÈ´ı
+	MouseClick, left, 1657, 311 ;´ı°ì½øÈëµÚÒ»¸ö
+	Sleep, 3800  ;µÈ´ı
+	MouseClick, left, 440, 500 ;ÈËÃñ·¨Ôº¹«¸æÍø ÎŞ 401 ÓĞ
+	MouseClick, left, 440, 526 ;Ö´ĞĞ/Ê§ĞÅÍø ÎŞ 401 ÓĞ
+	MouseClick, left, 440, 556 ;ÖĞ¹ú²ÃÅĞÎÄÊéÍø ÎŞ 401 ÓĞ
+	MouseClick, left, 443, 585 ;È«¹úÆóÒµĞÅÓÃÍø ÎŞ 401 ÓĞ
+	MouseClick, left, 1872, 242 ;ÍêÉÆ¿Í»§ĞÅÏ¢
 	openCustInfo()
 }
  
  /*
- æ–°çš„å†…å®¡Iï¼Œèº«ä»½è¯ä½¿ç”¨éšæœºèº«ä»½è¯é‡Œé¢çš„ä¸€ä¸ª
+ ĞÂµÄÄÚÉóI£¬Éí·İÖ¤Ê¹ÓÃËæ»úÉí·İÖ¤ÀïÃæµÄÒ»¸ö
  */
  neiShen1ForNew(){
 	refreshMenu()
-	MouseClick, left, 65, 432 ;ä¸ªäººä¸­å¿ƒ
-	Sleep, 800  ;ç­‰å¾…
-	MouseClick, left, 76, 466 ;å¾…åŠæµç¨‹
-	Sleep, 2000  ;ç­‰å¾…
-	MouseClick, left,  1009,  253 ;æœç´¢
-	Sleep, 2500  ;ç­‰å¾…
-	MouseClick, left, 1657, 311 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	Sleep, 1000  ;ç­‰å¾…
-	MouseClick, left, 1007, 659 ;æ¥å—ä»»åŠ¡
-	Sleep, 2500  ;ç­‰å¾…
-	MouseClick, left, 1657, 311 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	Sleep, 3800  ;ç­‰å¾…
-	MouseClick, left, 440, 500 ;äººæ°‘æ³•é™¢å…¬å‘Šç½‘ æ—  401 æœ‰
-	MouseClick, left, 440, 526 ;æ‰§è¡Œ/å¤±ä¿¡ç½‘ æ—  401 æœ‰
-	MouseClick, left, 440, 556 ;ä¸­å›½è£åˆ¤æ–‡ä¹¦ç½‘ æ—  401 æœ‰
-	MouseClick, left, 443, 585 ;å…¨å›½ä¼ä¸šä¿¡ç”¨ç½‘ æ—  401 æœ‰
-	MouseClick, left, 1872, 242 ;å®Œå–„å®¢æˆ·ä¿¡æ¯
-		;openCustInfo()	;æ—§çš„å†…å®¡Iï¼Œé‡‡ç”¨å®¢æˆ·ä¿¡æ¯ç¬¬å››é¡µçš„ä¸€æ¡æ•°æ®
+	MouseClick, left, 65, 432 ;¸öÈËÖĞĞÄ
+	Sleep, 800  ;µÈ´ı
+	MouseClick, left, 76, 466 ;´ı°ìÁ÷³Ì
+	Sleep, 2000  ;µÈ´ı
+	MouseClick, left,  1009,  253 ;ËÑË÷
+	Sleep, 2500  ;µÈ´ı
+	MouseClick, left, 1657, 311 ;´ı°ì½øÈëµÚÒ»¸ö
+	Sleep, 1000  ;µÈ´ı
+	MouseClick, left, 1007, 659 ;½ÓÊÜÈÎÎñ
+	Sleep, 2500  ;µÈ´ı
+	MouseClick, left, 1657, 311 ;´ı°ì½øÈëµÚÒ»¸ö
+	Sleep, 3800  ;µÈ´ı
+	MouseClick, left, 440, 500 ;ÈËÃñ·¨Ôº¹«¸æÍø ÎŞ 401 ÓĞ
+	MouseClick, left, 440, 526 ;Ö´ĞĞ/Ê§ĞÅÍø ÎŞ 401 ÓĞ
+	MouseClick, left, 440, 556 ;ÖĞ¹ú²ÃÅĞÎÄÊéÍø ÎŞ 401 ÓĞ
+	MouseClick, left, 443, 585 ;È«¹úÆóÒµĞÅÓÃÍø ÎŞ 401 ÓĞ
+	MouseClick, left, 1872, 242 ;ÍêÉÆ¿Í»§ĞÅÏ¢
+		;openCustInfo()	;¾ÉµÄÄÚÉóI£¬²ÉÓÃ¿Í»§ĞÅÏ¢µÚËÄÒ³µÄÒ»ÌõÊı¾İ
 		
 	Sleep 500
-	MouseClick, left, 260, 272 ;å®¢æˆ·å§“å
+	MouseClick, left, 260, 272 ;¿Í»§ĞÕÃû
 	Send {tab}^v
 	Send {tab 7}
-	RandIdCard := getIdCard()
-	Send %RandIdCard%	;éšæœºèº«ä»½è¯
+	RandIdCard := getIdCardLine()
+	Send %RandIdCard%	;Ëæ»úÉí·İÖ¤
 	
 	Send {tab 8}{enter}
 	Sleep 500
 	Send {enter}
 	
-	MouseClick, left, 480, 872 ;å€Ÿæ¬¾ç”¨é€”
+	MouseClick, left, 480, 872 ;½è¿îÓÃÍ¾
 	Send {down}{Enter}
 	
-	MouseClick, left, 748, 922 ;æäº¤
-	MouseClick, left, 994, 653 ;ç¡®å®š
+	MouseClick, left, 748, 922 ;Ìá½»
+	MouseClick, left, 994, 653 ;È·¶¨
 	closeTaskMsg()
 	Sleep, 2000
-	MouseClick, left, 1044, 704 ;å…³é—­ä»»åŠ¡
+	MouseClick, left, 1044, 704 ;¹Ø±ÕÈÎÎñ
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
  /*
- * @Description: å†…å®¡1ååŠéƒ¨åˆ† - è‡ªåŠ¨è¡¨å•
+ * @Description: ÄÚÉó1ºó°ë²¿·Ö - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``11q::
@@ -373,37 +373,37 @@ fangChanChuPing(){
  neiShen11(){
 	Send {BS}
 	Send ^v
-	Sleep, 500  ;ç­‰å¾…
+	Sleep, 500  ;µÈ´ı
 	Send {enter}
-	MouseClick, left, 1355, 491 ;ä½¿ç”¨å®¢æˆ·
-	Sleep, 1500  ;ç­‰å¾…
-	MouseClick, left,  420,  278 ;å®¢æˆ·å§“å
+	MouseClick, left, 1355, 491 ;Ê¹ÓÃ¿Í»§
+	Sleep, 1500  ;µÈ´ı
+	MouseClick, left,  420,  278 ;¿Í»§ĞÕÃû
 	Send {Home}   
 	Send +{End}{BS}
-	Sleep, 100  ;ç­‰å¾…
-	Send ^`` ;æ‰“å¼€ç²˜è´´
-	Sleep, 100  ;ç­‰å¾…
-	Send 2 ;ç¬¬äºŒä¸ª
-	Sleep, 1000  ;ç­‰å¾…
-	MouseClick, left, 987, 430 ;ä¿å­˜
-	Sleep, 1500  ;ç­‰å¾…
-	MouseClick, left, 1075, 659 ;å¦
-	Sleep, 1000  ;ç­‰å¾…
+	Sleep, 100  ;µÈ´ı
+	Send ^`` ;´ò¿ªÕ³Ìù
+	Sleep, 100  ;µÈ´ı
+	Send 2 ;µÚ¶ş¸ö
+	Sleep, 1000  ;µÈ´ı
+	MouseClick, left, 987, 430 ;±£´æ
+	Sleep, 1500  ;µÈ´ı
+	MouseClick, left, 1075, 659 ;·ñ
+	Sleep, 1000  ;µÈ´ı
 		
-	MouseClick, left, 480, 872 ;å€Ÿæ¬¾ç”¨é€”
+	MouseClick, left, 480, 872 ;½è¿îÓÃÍ¾
 	Send {down}{Enter}
 	
-	MouseClick, left, 748, 922 ;æäº¤
-	MouseClick, left, 994, 653 ;ç¡®å®š
+	MouseClick, left, 748, 922 ;Ìá½»
+	MouseClick, left, 994, 653 ;È·¶¨
 	closeTaskMsg()
 	Sleep, 2000
-	MouseClick, left, 1044, 704 ;å…³é—­ä»»åŠ¡
+	MouseClick, left, 1044, 704 ;¹Ø±ÕÈÎÎñ
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
  /*
- * @Description: å†…å®¡1ï¼ˆæ–°é¡µé¢ï¼‰ - è‡ªåŠ¨è¡¨å•
+ * @Description: ÄÚÉó1£¨ĞÂÒ³Ãæ£© - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``1::
@@ -413,15 +413,15 @@ fangChanChuPing(){
  
  neiShen1w(){
 	
-	MouseClick, left, 1657, 311 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	Sleep, 1000  ;ç­‰å¾…
-	MouseClick, left, 1007, 659 ;æ¥å—ä»»åŠ¡
-	Sleep, 2500  ;ç­‰å¾…
-	MouseClick, left, 1657, 311 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	Sleep, 3800  ;ç­‰å¾…
-	;openCustInfo()	;é‡‡ç”¨å®¢æˆ·ä¿¡æ¯ç¬¬å››é¡µçš„ä¸€æ¡æ•°æ®
+	MouseClick, left, 1657, 311 ;´ı°ì½øÈëµÚÒ»¸ö
+	Sleep, 1000  ;µÈ´ı
+	MouseClick, left, 1007, 659 ;½ÓÊÜÈÎÎñ
+	Sleep, 2500  ;µÈ´ı
+	MouseClick, left, 1657, 311 ;´ı°ì½øÈëµÚÒ»¸ö
+	Sleep, 3800  ;µÈ´ı
+	;openCustInfo()	;²ÉÓÃ¿Í»§ĞÅÏ¢µÚËÄÒ³µÄÒ»ÌõÊı¾İ
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
 ::``11::
@@ -430,58 +430,58 @@ return
  
 neishen11w(){
 	
-	SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+	SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 	
-	MouseClick, left, 1029, 273 ;èº«ä»½è¯å·
-	RandIdCard := getIdCard()
-	Send %RandIdCard%	;éšæœºèº«ä»½è¯
-	MouseClick, left, 514, 275 ;å®¢æˆ·åç§°
+	MouseClick, left, 1029, 273 ;Éí·İÖ¤ºÅ
+	RandIdCard := getIdCardLine()
+	Send %RandIdCard%	;Ëæ»úÉí·İÖ¤
+	MouseClick, left, 514, 275 ;¿Í»§Ãû³Æ
 	Send ^a
 	
-	;Send ^`` ;æ‰“å¼€ç²˜è´´
-	;Sleep, 100  ;ç­‰å¾…
-	;Send 2 ;ç¬¬äºŒä¸ª
+	;Send ^`` ;´ò¿ªÕ³Ìù
+	;Sleep, 100  ;µÈ´ı
+	;Send 2 ;µÚ¶ş¸ö
 	
 	Send ^v
 	
 	Sleep 200
-	Random, mobile8, 10000000, 99999999	;ç”Ÿæˆ8ä½éšæœºæ•°
-	Send {tab 2}186%mobile8%	;æ‰‹æœºå·
+	Random, mobile8, 10000000, 99999999	;Éú³É8Î»Ëæ»úÊı
+	Send {tab 2}186%mobile8%	;ÊÖ»úºÅ
 	
 	;========================
-	;æ¶‰è¯‰æƒ…å†µ
+	;ÉæËßÇé¿ö
 	;========================
-	MouseClick, left, 278, 218 ;æ¶‰è¯‰æƒ…å†µ
-	MouseClick, left, 314, 269 ;æ³•é™¢å…¬å‘Šç½‘å‰é¢å®šä½
+	MouseClick, left, 278, 218 ;ÉæËßÇé¿ö
+	MouseClick, left, 314, 269 ;·¨Ôº¹«¸æÍøÇ°Ãæ¶¨Î»
 	Send {tab 2}{right 2}{tab}
-	Send è¿™æ˜¯æ³•é™¢å…¬å‘Šç½‘çš„å¤‡æ³¨å“¦ï¼
+	Send ÕâÊÇ·¨Ôº¹«¸æÍøµÄ±¸×¢Å¶£¡
 	Send {tab 2}{right 2}{tab}
-	Send è¿™æ˜¯æ‰§è¡Œ/å¤±ä¿¡ç½‘çš„å¤‡æ³¨å“¦ï¼
+	Send ÕâÊÇÖ´ĞĞ/Ê§ĞÅÍøµÄ±¸×¢Å¶£¡
 	Send {tab 2}{right 2}{tab}
-	Send è¿™æ˜¯è£åˆ¤æ–‡ä¹¦ç½‘çš„å¤‡æ³¨å“¦ï¼
+	Send ÕâÊÇ²ÃÅĞÎÄÊéÍøµÄ±¸×¢Å¶£¡
 	Send {tab 2}{right 2}{tab}
-	Send è¿™æ˜¯ä¼ä¸šä¿¡ç”¨ç½‘çš„å¤‡æ³¨å“¦ï¼
+	Send ÕâÊÇÆóÒµĞÅÓÃÍøµÄ±¸×¢Å¶£¡
 	Send {tab 2}{right 2}{tab}
-	Send è¿™æ˜¯æ±‡æ³•ç½‘çš„å¤‡æ³¨å“¦ï¼
+	Send ÕâÊÇ»ã·¨ÍøµÄ±¸×¢Å¶£¡
 	Send {tab 2}{right 2}{tab}
-	Send è¿™æ˜¯ä¼æŸ¥æŸ¥çš„å¤‡æ³¨å“¦ï¼
+	Send ÕâÊÇÆó²é²éµÄ±¸×¢Å¶£¡
 	
-	MouseClick, left, 473, 908 ;æ¶‰è¯‰é‡‘é¢
+	MouseClick, left, 473, 908 ;ÉæËß½ğ¶î
 	Send {down}{enter}
-	MouseClick, left, 975, 910 ;æ¶‰è¯‰ç±»å‹
+	MouseClick, left, 975, 910 ;ÉæËßÀàĞÍ
 	Send {down}{enter}
-	MouseClick, left, 1481, 912 ;æ¶‰è¯‰æ—¶é—´
+	MouseClick, left, 1481, 912 ;ÉæËßÊ±¼ä
 	Send {down}{enter}
 	
 	Send {tab}{enter}
-	MouseClick, left, 1040, 493 ;ç¡®è®¤æäº¤
+	MouseClick, left, 1040, 493 ;È·ÈÏÌá½»
 	Send {tab}{enter}{enter}
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
  /*
- * @Description: å†…å®¡2 - è‡ªåŠ¨è¡¨å•
+ * @Description: ÄÚÉó2 - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``2q::
@@ -489,70 +489,70 @@ neishen11w(){
  return  
 
 neiShen2(){
-	MouseClick, left, 1657, 311 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	Sleep, 2000  ;ç­‰å¾…
-	MouseClick, left, 349, 220 ;tabæ‹…ä¿æ–¹å¼
-	Sleep, 1000  ;ç­‰å¾…
-	MouseClick, left, 1620, 352 ;ç¬¬ä¸€ä¸ªæŠµæŠ¼ç‰©å®Œå–„ä¿¡æ¯
-	Sleep, 2000  ;ç­‰å¾…
-	MouseClick, left, 1035, 367 ;æˆ¿äº§è·å¾—æ–¹å¼
+	MouseClick, left, 1657, 311 ;´ı°ì½øÈëµÚÒ»¸ö
+	Sleep, 2000  ;µÈ´ı
+	MouseClick, left, 349, 220 ;tabµ£±£·½Ê½
+	Sleep, 1000  ;µÈ´ı
+	MouseClick, left, 1620, 352 ;µÚÒ»¸öµÖÑºÎïÍêÉÆĞÅÏ¢
+	Sleep, 2000  ;µÈ´ı
+	MouseClick, left, 1035, 367 ;·¿²ú»ñµÃ·½Ê½
 	Send {down}{enter}
-	MouseClick, left, 465, 391 ;æˆ¿äº§æ€§è´¨
+	MouseClick, left, 465, 391 ;·¿²úĞÔÖÊ
 	Send {down}{enter}
-	MouseClick, left, 468, 417 ;è§„åˆ’ç”¨é€”
+	MouseClick, left, 468, 417 ;¹æ»®ÓÃÍ¾
 	Send {down}{enter}
-	MouseClick, left, 1033, 417 ;äº§æƒè¯ç™»è®°æ—¥æœŸ
-	MouseClick, left, 981, 442 ;äº§æƒè¯ç™»è®°æ—¥æœŸ å¾€å‰ä¸¤ä¸ªæœˆ
+	MouseClick, left, 1033, 417 ;²úÈ¨Ö¤µÇ¼ÇÈÕÆÚ
+	MouseClick, left, 981, 442 ;²úÈ¨Ö¤µÇ¼ÇÈÕÆÚ ÍùÇ°Á½¸öÔÂ
 	MouseClick, left
 	MouseClick, left
 	MouseClick, left
 	MouseClick, left
 	MouseClick, left
-	Sleep, 500  ;ç­‰å¾…
-	MouseClick, left, 1087, 571 ;äº§æƒè¯ç™»è®°æ—¥æœŸ 28æ—¥
-	MouseClick, left, 474, 470 ;æ€»æ¥¼å±‚
+	Sleep, 500  ;µÈ´ı
+	MouseClick, left, 1087, 571 ;²úÈ¨Ö¤µÇ¼ÇÈÕÆÚ 28ÈÕ
+	MouseClick, left, 474, 470 ;×ÜÂ¥²ã
 	Send 15
-	MouseClick, left, 1050, 473 ;æ‰€åœ¨æ¥¼å±‚
+	MouseClick, left, 1050, 473 ;ËùÔÚÂ¥²ã
 	Send 15
-	MouseClick, left, 464, 527 ;åœŸåœ°æ¥æº
+	MouseClick, left, 464, 527 ;ÍÁµØÀ´Ô´
 	Send {down}{enter}
-	MouseClick, left, 1002, 525 ;æ˜¯å¦æœ‰åœŸåœ°è¯ æ—   960, 525 æœ‰
-	MouseClick, left, 1573, 528 ;å½“å‰æ˜¯å¦åœ¨æŠ¼ æ— 
-	MouseClick, left, 431, 585 ;æ˜¯å¦å”¯ä¸€ä½æˆ¿ æ— 
-	MouseClick, left, 1000, 578 ;æ˜¯å¦æ»¡äºŒ/äº” æ— 
-	MouseClick, left, 1575, 584 ;æ˜¯å¦éœ€å«èµ„ æ— 
-	MouseClick, left, 457, 305 ;å¤åˆ¶æ‰€æœ‰æƒäºº
+	MouseClick, left, 1002, 525 ;ÊÇ·ñÓĞÍÁµØÖ¤ ÎŞ  960, 525 ÓĞ
+	MouseClick, left, 1573, 528 ;µ±Ç°ÊÇ·ñÔÚÑº ÎŞ
+	MouseClick, left, 431, 585 ;ÊÇ·ñÎ¨Ò»×¡·¿ ÎŞ
+	MouseClick, left, 1000, 578 ;ÊÇ·ñÂú¶ş/Îå ÎŞ
+	MouseClick, left, 1575, 584 ;ÊÇ·ñĞèµæ×Ê ÎŞ
+	MouseClick, left, 457, 305 ;¸´ÖÆËùÓĞÈ¨ÈË
 	Send {Home}   
 	Send +{End}
 	Send ^c
-	MouseClick, left, 1608, 304 ;äº§æƒè¯å·ç 
+	MouseClick, left, 1608, 304 ;²úÈ¨Ö¤ºÅÂë
 	Send {Home}   
 	Send +{End}
 	Send ^v
 	
-	;MouseClick, left, 931, 853 ;ä¿å­˜
-	fun_btn("å†…å®¡II-æŠµæŠ¼ç‰©ä¿¡æ¯", "baocun", "ä¿å­˜", 60, 20)
-	Sleep, 500  ;ç­‰å¾…
+	;MouseClick, left, 931, 853 ;±£´æ
+	fun_btn("ÄÚÉóII-µÖÑºÎïĞÅÏ¢", "baocun", "±£´æ", 60, 20)
+	Sleep, 500  ;µÈ´ı
 	Send {enter}
 	
-	MouseClick, left, 206, 220 ;é¢ç­¾ä¿¡æ¯
-	MouseClick, left, 1869, 246 ;ç¼–è¾‘å®¢æˆ·ä¿¡æ¯
+	MouseClick, left, 206, 220 ;ÃæÇ©ĞÅÏ¢
+	MouseClick, left, 1869, 246 ;±à¼­¿Í»§ĞÅÏ¢
 	Sleep 1000
-	neiShen2ForCust()	;å†…å®¡2å®¢æˆ·ä¿¡æ¯
+	neiShen2ForCust()	;ÄÚÉó2¿Í»§ĞÅÏ¢
 	
-	Sleep, 500  ;ç­‰å¾…
-	fun_btn("å†…å®¡II", "tijiao2", "æäº¤", 60, 20)
-	;MouseClick, left, 753, 496 ;æäº¤
+	Sleep, 500  ;µÈ´ı
+	fun_btn("ÄÚÉóII", "tijiao2", "Ìá½»", 60, 20)
+	;MouseClick, left, 753, 496 ;Ìá½»
 	Send {enter}
-	;MouseClick, left, 990, 653 ;ç¡®å®š
-	Sleep, 2000  ;ç­‰å¾…
+	;MouseClick, left, 990, 653 ;È·¶¨
+	Sleep, 2000  ;µÈ´ı
 	Send {enter}
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
  /*
- * @Description: å†…å®¡2ï¼ˆæŠµæŠ¼ç‰©ä¿¡æ¯ï¼‰ - è‡ªåŠ¨è¡¨å•
+ * @Description: ÄÚÉó2£¨µÖÑºÎïĞÅÏ¢£© - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``2d::
@@ -560,69 +560,69 @@ neiShen2(){
  return  
  
  neiShen2ForDbdm(){
-	MouseClick, left, 453, 219 ;æ‹…ä¿æ–¹å¼
-	MouseClick, left, 1501, 324 ;é¢„è®¡å¯è´·é‡‘é¢(å…ƒ)
-	Send {tab}{enter}	;å®Œå–„
+	MouseClick, left, 453, 219 ;µ£±£·½Ê½
+	MouseClick, left, 1501, 324 ;Ô¤¼Æ¿É´û½ğ¶î(Ôª)
+	Send {tab}{enter}	;ÍêÉÆ
 	Sleep 1500
 	
-	MouseClick, left, 422, 362, 2 ;æˆ¿é¾„ åŒå‡»
+	MouseClick, left, 422, 362, 2 ;·¿Áä Ë«»÷
 	Send 12
-	MouseClick, left, 1035, 367 ;æˆ¿äº§è·å¾—æ–¹å¼
+	MouseClick, left, 1035, 367 ;·¿²ú»ñµÃ·½Ê½
 	Send {down}{enter}
-	MouseClick, left, 465, 391 ;æˆ¿äº§æ€§è´¨
+	MouseClick, left, 465, 391 ;·¿²úĞÔÖÊ
 	Send {down}{enter}
-	MouseClick, left, 468, 417 ;è§„åˆ’ç”¨é€”
+	MouseClick, left, 468, 417 ;¹æ»®ÓÃÍ¾
 	Send {down}{enter}
-	MouseClick, left, 1033, 417 ;äº§æƒè¯ç™»è®°æ—¥æœŸ
-	MouseClick, left, 977, 451 ;äº§æƒè¯ç™»è®°æ—¥æœŸ å¾€å‰ä¸¤ä¸ªæœˆ
+	MouseClick, left, 1033, 417 ;²úÈ¨Ö¤µÇ¼ÇÈÕÆÚ
+	MouseClick, left, 977, 451 ;²úÈ¨Ö¤µÇ¼ÇÈÕÆÚ ÍùÇ°Á½¸öÔÂ
 	MouseClick, left
 
 
-	Sleep, 500  ;ç­‰å¾…
-	MouseClick, left, 1087, 571 ;äº§æƒè¯ç™»è®°æ—¥æœŸ 28æ—¥
-	MouseClick, left, 474, 470 ;æ€»æ¥¼å±‚
+	Sleep, 500  ;µÈ´ı
+	MouseClick, left, 1087, 571 ;²úÈ¨Ö¤µÇ¼ÇÈÕÆÚ 28ÈÕ
+	MouseClick, left, 474, 470 ;×ÜÂ¥²ã
 	Send 15
-	MouseClick, left, 1050, 473 ;æ‰€åœ¨æ¥¼å±‚
+	MouseClick, left, 1050, 473 ;ËùÔÚÂ¥²ã
 	Send 15
-	Send {tab}{right}	;æ˜¯å¦äºŒæ‰‹æˆ¿
-	MouseClick, left, 1040, 508 ;åœŸåœ°ç±»å‹
+	Send {tab}{right}	;ÊÇ·ñ¶şÊÖ·¿
+	MouseClick, left, 1040, 508 ;ÍÁµØÀàĞÍ
 	Send {down}{enter}
-	MouseClick, left, 476, 536 ;ç«£å·¥æ—¥æœŸ
-	MouseClick, left, 411, 556, 12 ;æ—¥æœŸå¾€å‰ç¿»
-	MouseClick, left, 423, 645 ;éšä¾¿é€‰ä¸€å¤©
+	MouseClick, left, 476, 536 ;¿¢¹¤ÈÕÆÚ
+	MouseClick, left, 411, 556, 12 ;ÈÕÆÚÍùÇ°·­
+	MouseClick, left, 423, 645 ;Ëæ±ãÑ¡Ò»Ìì
 	
-	MouseClick, left, 481, 558 ;åœŸåœ°æ¥æº
+	MouseClick, left, 481, 558 ;ÍÁµØÀ´Ô´
 	Send {down}{enter}
-	MouseClick, left, 856, 554 ;æ˜¯å¦æœ‰åœŸåœ°è¯
+	MouseClick, left, 856, 554 ;ÊÇ·ñÓĞÍÁµØÖ¤
 	Send {tab}{right}
-	MouseClick, left, 1480, 555 ;å½“å‰æ˜¯å¦åœ¨æŠ¼
+	MouseClick, left, 1480, 555 ;µ±Ç°ÊÇ·ñÔÚÑº
 	Send {tab}{right}
-	MouseClick, left, 333, 610 ;æ˜¯å¦å”¯ä¸€ä½æˆ¿ æ— 
+	MouseClick, left, 333, 610 ;ÊÇ·ñÎ¨Ò»×¡·¿ ÎŞ
 	Send {tab}{right}
-	MouseClick, left, 897, 608 ;æ˜¯å¦æ»¡äºŒ/äº” æ— 
+	MouseClick, left, 897, 608 ;ÊÇ·ñÂú¶ş/Îå ÎŞ
 	Send {tab}{right}
-	MouseClick, left, 1473, 609 ;æ˜¯å¦éœ€å«èµ„ æ— 
+	MouseClick, left, 1473, 609 ;ÊÇ·ñĞèµæ×Ê ÎŞ
 	Send {tab}{right}
-	MouseClick, left, 457, 305 ;å¤åˆ¶æ‰€æœ‰æƒäºº
+	MouseClick, left, 457, 305 ;¸´ÖÆËùÓĞÈ¨ÈË
 	Send {Home}   
 	Send +{End}
 	Send ^c
-	MouseClick, left, 1608, 304 ;äº§æƒè¯å·ç 
+	MouseClick, left, 1608, 304 ;²úÈ¨Ö¤ºÅÂë
 	Send {Home}   
 	Send +{End}
 	Send ^v
 	
-	;fun_btn("å†…å®¡II-æŠµæŠ¼ç‰©ä¿¡æ¯", "baocun2", "ä¿å­˜", 60, 20)
-	MouseClick, left, 850, 879 ;ä¿å­˜
+	;fun_btn("ÄÚÉóII-µÖÑºÎïĞÅÏ¢", "baocun2", "±£´æ", 60, 20)
+	MouseClick, left, 850, 879 ;±£´æ
 	Send {tab}{enter}
 	
-	Sleep, 500  ;ç­‰å¾…
+	Sleep, 500  ;µÈ´ı
 	Send {enter}
 
 }
 
  /*
- * @Description: å†…å®¡2ï¼ˆå®¢æˆ·ä¿¡æ¯ï¼‰ - è‡ªåŠ¨è¡¨å•
+ * @Description: ÄÚÉó2£¨¿Í»§ĞÅÏ¢£© - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``2c::
@@ -631,163 +631,163 @@ neiShen2(){
 
 neiShen2ForCust(){
 	
-	SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+	SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 	
 	Sleep 500
 	;========================
-	;å®¢æˆ·åŸºæœ¬ä¿¡æ¯
+	;¿Í»§»ù±¾ĞÅÏ¢
 	;========================
-	MouseClick, left, 208, 220 ;åˆå®¡ä¿¡æ¯
-	MouseClick, left, 1899, 249 ;ä¿®æ”¹å®¢æˆ·ä¿¡æ¯
+	MouseClick, left, 208, 220 ;³õÉóĞÅÏ¢
+	MouseClick, left, 1899, 249 ;ĞŞ¸Ä¿Í»§ĞÅÏ¢
 	Sleep 1000
-	MouseClick, left, 662, 300 ;å®šä½åˆ°ç§»åŠ¨ç”µè¯å‰é¢
-	Random, rand, 10000000, 99999999	;ç”Ÿæˆ8ä½éšæœºæ•°
-	Random, rand2, 00000, 99999	;ç”Ÿæˆ8ä½éšæœºæ•°
+	MouseClick, left, 662, 300 ;¶¨Î»µ½ÒÆ¶¯µç»°Ç°Ãæ
+	Random, rand, 10000000, 99999999	;Éú³É8Î»Ëæ»úÊı
+	Random, rand2, 00000, 99999	;Éú³É8Î»Ëæ»úÊı
 	Send {tab}186%rand%
-	Send {tab}^v%rand%	;å®¶åº­ä½å€
+	Send {tab}^v%rand%	;¼ÒÍ¥×¡Ö·
 	
-	MouseClick, left, 441, 325 ;å®šä½åˆ°æˆ·ç±æ‰€åœ¨çœ
+	MouseClick, left, 441, 325 ;¶¨Î»µ½»§¼®ËùÔÚÊ¡
 	Send {down}{enter}
 	
-	MouseClick, left, 838, 327 ;å®šä½åˆ°æˆ·ç±æ‰€åœ¨å¸‚
+	MouseClick, left, 838, 327 ;¶¨Î»µ½»§¼®ËùÔÚÊĞ
 	Send {down}{enter}
 	
-	Send {tab}^v%rand%	;æˆ·ç±ä½å€
-	Send {tab}^v%rand%	;æ›¾ç”¨å
-	MouseClick, left, 813, 351 ;å©šå§»çŠ¶å†µ
+	Send {tab}^v%rand%	;»§¼®×¡Ö·
+	Send {tab}^v%rand%	;ÔøÓÃÃû
+	MouseClick, left, 813, 351 ;»éÒö×´¿ö
 	Send {down 2}{enter}
-	MouseClick, left, 1339, 353 ;å©šå§»æƒ…å†µ
+	MouseClick, left, 1339, 353 ;»éÒöÇé¿ö
 	Send {down}{enter}
 	
-	MouseClick, left, 1710, 351 ;å©šå§»ç™»è®°æ—¥æœŸ
-	MouseClick, left, 1680, 379, 10 ;æ—¥æœŸå¾€å‰é€‰10ä¸ªæœˆ
-	MouseClick, left, 1731, 463 ;éšä¾¿ä¸€ç‚¹
+	MouseClick, left, 1710, 351 ;»éÒöµÇ¼ÇÈÕÆÚ
+	MouseClick, left, 1680, 379, 10 ;ÈÕÆÚÍùÇ°Ñ¡10¸öÔÂ
+	MouseClick, left, 1731, 463 ;Ëæ±ãÒ»µã
 	
-	MouseClick, left, 261, 373 ;å®šä½å®¶åº­ç”µè¯
-	Send {tab}028852%rand2%	;å®¶åº­ç”µè¯
+	MouseClick, left, 261, 373 ;¶¨Î»¼ÒÍ¥µç»°
+	Send {tab}028852%rand2%	;¼ÒÍ¥µç»°
 	
-	MouseClick, left, 1787, 375 ;è¯ä»¶åˆ°æœŸæ—¥
+	MouseClick, left, 1787, 375 ;Ö¤¼şµ½ÆÚÈÕ
 	Sleep 200
-	MouseClick, left, 1819, 403, 15 ;è¯ä»¶åˆ°æœŸæ—¥ å¾€å
-	MouseClick, left, 1739, 487 ;è¯ä»¶åˆ°æœŸæ—¥
+	MouseClick, left, 1819, 403, 15 ;Ö¤¼şµ½ÆÚÈÕ Íùºó
+	MouseClick, left, 1739, 487 ;Ö¤¼şµ½ÆÚÈÕ
 
 	
-	MouseClick, left, 822, 425 ;æ¥æœ¬å¸‚æ—¶é—´
+	MouseClick, left, 822, 425 ;À´±¾ÊĞÊ±¼ä
 	Send {down}{enter}
 	
-	MouseClick, left, 1220, 436 ;å¹´æ”¶å…¥
+	MouseClick, left, 1220, 436 ;ÄêÊÕÈë
 	Send {down}{enter}
 	Send {tab}800000
 	
-	MouseClick, left, 1724, 433 ;æœ€é«˜å­¦å†
+	MouseClick, left, 1724, 433 ;×î¸ßÑ§Àú
 	Send {down}{enter}
 	
-	MouseClick, left, 402, 462 ;å­¦ä½
+	MouseClick, left, 402, 462 ;Ñ§Î»
 	Send {down}{enter}
 	
-	Send {tab}%rand%@163.com	;é‚®ç®±
-	Send {tab}%rand2%_wx	;å¾®ä¿¡å·
-	Send {tab}%rand%	;QQå·
-	Send {tab}2			;ä¾›å…»äººå£
-	Send {tab}610041	;é‚®æ”¿ç¼–ç 
+	Send {tab}%rand%@163.com	;ÓÊÏä
+	Send {tab}%rand2%_wx	;Î¢ĞÅºÅ
+	Send {tab}%rand%	;QQºÅ
+	Send {tab}2			;¹©ÑøÈË¿Ú
+	Send {tab}610041	;ÓÊÕş±àÂë
 
-	MouseClick, left, 1264, 483 ;èµ„æ–™æ”¶é›†æ—¥
-	MouseClick, left, 1233, 504, 12 ;å¾€å‰é¢ç¿»é¡µ
-	MouseClick, left, 1290, 587 ;é€‰æ—¥
+	MouseClick, left, 1264, 483 ;×ÊÁÏÊÕ¼¯ÈÕ
+	MouseClick, left, 1233, 504, 12 ;ÍùÇ°Ãæ·­Ò³
+	MouseClick, left, 1290, 587 ;Ñ¡ÈÕ
 	
-	MouseClick, left, 1712, 487 ;èŒä¸šç±»åˆ«
+	MouseClick, left, 1712, 487 ;Ö°ÒµÀà±ğ
 	Send {down}{enter}
 	
-	MouseClick, left, 267, 496	;å®šä½åœ¨èŒå¹´é™
-	Send {tab}8	;åœ¨èŒå¹´é™
+	MouseClick, left, 267, 496	;¶¨Î»ÔÚÖ°ÄêÏŞ
+	Send {tab}8	;ÔÚÖ°ÄêÏŞ
 	
-	MouseClick, left, 280, 516 ;å®šä½å…¬å¸åç§°
-	Send {tab}çš®ç‰¹çŒ«ä¿¡æ¯ç§‘æŠ€æœ‰é™å…¬å¸
-	Send {tab}ç¯çƒä¸­å¿ƒN3-N9-1425
+	MouseClick, left, 280, 516 ;¶¨Î»¹«Ë¾Ãû³Æ
+	Send {tab}Æ¤ÌØÃ¨ĞÅÏ¢¿Æ¼¼ÓĞÏŞ¹«Ë¾
+	Send {tab}»·ÇòÖĞĞÄN3-N9-1425
 	
-	MouseClick, left, 406, 545 ;è¡Œä¸šåˆ†ç±»
+	MouseClick, left, 406, 545 ;ĞĞÒµ·ÖÀà
 	Send {down}{enter}
 	Sleep 500
-	MouseClick, left, 666, 552 ;è¡Œä¸šåˆ†ç±»
+	MouseClick, left, 666, 552 ;ĞĞÒµ·ÖÀà
 	Send {down}{enter}
 	
-	MouseClick, left, 1125, 542 ;å®šä½å¤‡æ³¨
+	MouseClick, left, 1125, 542 ;¶¨Î»±¸×¢
 	Send {tab}^v
-	Send è¿™æ˜¯å¤‡æ³¨
-	MouseClick, left, 429, 593 ;å®¢æˆ·æ‰€å±å›½å®¶
+	Send ÕâÊÇ±¸×¢
+	MouseClick, left, 429, 593 ;¿Í»§ËùÊô¹ú¼Ò
 	Send {down}{enter}
 	
 	;========================
-	;å®¢æˆ·é…å¶ä¿¡æ¯
+	;¿Í»§ÅäÅ¼ĞÅÏ¢
 	;========================
-	MouseClick, left, 299, 624 ;å®šä½é…å¶å§“å
-	Send {tab}^vçš„é…å¶			;é…å¶å§“å
+	MouseClick, left, 299, 624 ;¶¨Î»ÅäÅ¼ĞÕÃû
+	Send {tab}^vµÄÅäÅ¼			;ÅäÅ¼ĞÕÃû
 	
-	Random, randP1, 10000000, 99999999	;ç”Ÿæˆ8ä½éšæœºæ•°
-	Send {tab}186%randP1%		;é…å¶ç”µè¯
+	Random, randP1, 10000000, 99999999	;Éú³É8Î»Ëæ»úÊı
+	Send {tab}186%randP1%		;ÅäÅ¼µç»°
 	
-	MouseClick, left, 1274, 624 ;é…å¶æ€§åˆ«
+	MouseClick, left, 1274, 624 ;ÅäÅ¼ĞÔ±ğ
 	Send {down}{enter}
 	
-	MouseClick, left, 1701, 638 ;æœ€é«˜å­¦å†
+	MouseClick, left, 1701, 638 ;×î¸ßÑ§Àú
 	Send {down}{enter}
 	
-	Send {tab}18	;å¹´é¾„
+	Send {tab}18	;ÄêÁä
 	
-	MouseClick, left, 830, 649 ;è¯ä»¶ç±»å‹
+	MouseClick, left, 830, 649 ;Ö¤¼şÀàĞÍ
 	Send {down}{enter}		
 	
-	RandIdCardP1 := getIdCard()
-	Send {tab}%RandIdCardP1%	;éšæœºèº«ä»½è¯
+	RandIdCardP1 := getIdCardLine()
+	Send {tab}%RandIdCardP1%	;Ëæ»úÉí·İÖ¤
 	
-	MouseClick, left, 375, 673 ;é…å¶å¹´æ”¶å…¥
-	Send {down}{enter}		;é…å¶å¹´æ”¶å…¥
-	Send {tab}3000			;é…å¶å¹´æ”¶å…¥
+	MouseClick, left, 375, 673 ;ÅäÅ¼ÄêÊÕÈë
+	Send {down}{enter}		;ÅäÅ¼ÄêÊÕÈë
+	Send {tab}3000			;ÅäÅ¼ÄêÊÕÈë
 	
-	Send {tab}30			;é…å¶åœ¨èŒå¹´é™
+	Send {tab}30			;ÅäÅ¼ÔÚÖ°ÄêÏŞ
 	
-	Send {tab}^våœ°å€åœ°å€		;é…å¶æˆ·ç±åœ°å€
+	Send {tab}^vµØÖ·µØÖ·		;ÅäÅ¼»§¼®µØÖ·
 
 	;========================
-	;å®¢æˆ·é™„å±ä¿¡æ¯
+	;¿Í»§¸½ÊôĞÅÏ¢
 	;========================
-	MouseClick, left, 318, 249 ;å®¢æˆ·é™„å±ä¿¡æ¯
+	MouseClick, left, 318, 249 ;¿Í»§¸½ÊôĞÅÏ¢
 	Send {tab}549
 	Send {tab}148
 	Send {tab}549
 	Send {tab}148
 	
-	Send {tab}^vè”ç³»äºº1
-	Random, rand3, 10000000, 99999999	;ç”Ÿæˆ8ä½éšæœºæ•°
+	Send {tab}^vÁªÏµÈË1
+	Random, rand3, 10000000, 99999999	;Éú³É8Î»Ëæ»úÊı
 	Send {tab}186%rand3%
-	;Send {tab}%rand3%ä¸å€Ÿæ¬¾äººå…³ç³»
-	MouseClick, left, 1594, 389 ;ä¸å€Ÿæ¬¾äººå…³ç³»
+	;Send {tab}%rand3%Óë½è¿îÈË¹ØÏµ
+	MouseClick, left, 1594, 389 ;Óë½è¿îÈË¹ØÏµ
 	Send {down}{enter}
 	Send {tab}%rand3%22
 	Send {tab}%rand3%33
-	Send {tab}%rand3%å­¦æ ¡
-	Send {tab}%rand3%è”ç³»åœ°å€
+	Send {tab}%rand3%Ñ§Ğ£
+	Send {tab}%rand3%ÁªÏµµØÖ·
 	
-	Send {tab}^vè”ç³»äºº2
-	Random, rand4, 10000000, 99999999	;ç”Ÿæˆ8ä½éšæœºæ•°
+	Send {tab}^vÁªÏµÈË2
+	Random, rand4, 10000000, 99999999	;Éú³É8Î»Ëæ»úÊı
 	Send {tab}186%rand4%
-	;Send {tab}%rand4%ä¸å€Ÿæ¬¾äººå…³ç³»
-	MouseClick, left, 1599, 475 ;ä¸å€Ÿæ¬¾äººå…³ç³»
+	;Send {tab}%rand4%Óë½è¿îÈË¹ØÏµ
+	MouseClick, left, 1599, 475 ;Óë½è¿îÈË¹ØÏµ
 	Send {down}{enter}
 	Send {tab}%rand4%22
 	Send {tab}%rand4%33
-	Send {tab}%rand4%å­¦æ ¡
-	Send {tab}%rand4%è”ç³»åœ°å€
+	Send {tab}%rand4%Ñ§Ğ£
+	Send {tab}%rand4%ÁªÏµµØÖ·
 	
-	Send {tab}{enter}	;ä¿å­˜
+	Send {tab}{enter}	;±£´æ
 	Sleep 600
-	Send {tab}{enter}	;ä¿å­˜
+	Send {tab}{enter}	;±£´æ
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
 /*
-	å†…å®¡2ï¼ˆå¤–é¢ä¿¡æ¯ï¼‰ - è‡ªåŠ¨è¡¨å•
+	ÄÚÉó2£¨ÍâÃæĞÅÏ¢£© - ×Ô¶¯±íµ¥
  */
  ::``2e::
 	neiShenWai()
@@ -795,73 +795,73 @@ neiShen2ForCust(){
  
 neiShenWai(){
 	
-	SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+	SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 	
 	;========================
-	;åˆå®¡ä¿¡æ¯(å¤–å±‚)
+	;³õÉóĞÅÏ¢(Íâ²ã)
 	;========================
-	MouseClick, left, 200, 218 ;åˆå®¡ä¿¡æ¯
+	MouseClick, left, 200, 218 ;³õÉóĞÅÏ¢
 	
-	MouseClick, left, 1890, 335 ;å¤‡ç”¨èµ„äº§åŠ ä¸€ä¸ª
-	MouseClick, left, 1890, 335 ;å¤‡ç”¨èµ„äº§åŠ ä¸€ä¸ª
-	MouseClick, left, 1890, 335 ;å¤‡ç”¨èµ„äº§åŠ ä¸€ä¸ª
-	MouseClick, left, 940, 353 ;ç¬¬ä¸€ä¸ªå¤‡ç”¨èµ„äº§çš„æˆ¿äº§ç”¨é€”
-	Send ç»è¥ä¸‡äº‹å±‹
-	Send {tab}è€æˆ¿å­
-	Send {tab}è€112233
-	Send {tab}é“¶
-	Send {tab}æ—ºè´¢
-	Send {tab}æ­¦å£«é“
+	MouseClick, left, 1890, 335 ;±¸ÓÃ×Ê²ú¼ÓÒ»¸ö
+	MouseClick, left, 1890, 335 ;±¸ÓÃ×Ê²ú¼ÓÒ»¸ö
+	MouseClick, left, 1890, 335 ;±¸ÓÃ×Ê²ú¼ÓÒ»¸ö
+	MouseClick, left, 940, 353 ;µÚÒ»¸ö±¸ÓÃ×Ê²úµÄ·¿²úÓÃÍ¾
+	Send ¾­ÓªÍòÊÂÎİ
+	Send {tab}ÀÏ·¿×Ó
+	Send {tab}ÀÏ112233
+	Send {tab}Òø
+	Send {tab}Íú²Æ
+	Send {tab}ÎäÊ¿µÀ
 	Send {tab}112
 	Send {tab}5000000
 	Send {tab}{right}
 	Send {tab}4000000
-	MouseClick, left, 1507, 447 ;ä¸å€Ÿæ¬¾äººå…³ç³»
+	MouseClick, left, 1507, 447 ;Óë½è¿îÈË¹ØÏµ
 	Send {down}{enter}
 	
-	MouseClick, left, 447, 468 ;ç¬¬äºŒä¸ªå¤‡ç”¨èµ„äº§çš„èµ„äº§ç±»å‹
+	MouseClick, left, 447, 468 ;µÚ¶ş¸ö±¸ÓÃ×Ê²úµÄ×Ê²úÀàĞÍ
 	Send {down}
-	MouseClick, left, 447, 468 ;ç¬¬äºŒä¸ªå¤‡ç”¨èµ„äº§çš„èµ„äº§ç±»å‹
+	MouseClick, left, 447, 468 ;µÚ¶ş¸ö±¸ÓÃ×Ê²úµÄ×Ê²úÀàĞÍ
 	Send {down}
-	MouseClick, left, 447, 468 ;ç¬¬äºŒä¸ªå¤‡ç”¨èµ„äº§çš„èµ„äº§ç±»å‹
+	MouseClick, left, 447, 468 ;µÚ¶ş¸ö±¸ÓÃ×Ê²úµÄ×Ê²úÀàĞÍ
 	Send {down}
 	
-	MouseClick, left, 972, 471 ;ç¬¬äºŒä¸ªå¤‡ç”¨èµ„äº§çš„è½¦è¾†å“ç‰Œå‹å·
-	Send å·A12345
+	MouseClick, left, 972, 471 ;µÚ¶ş¸ö±¸ÓÃ×Ê²úµÄ³µÁ¾Æ·ÅÆĞÍºÅ
+	Send ´¨A12345
 	Send {tab}500000
 	
 	Send {tab 2}556
 	Send {tab}50000
 	
-	MouseClick, left, 1507, 447 ;ä¸å€Ÿæ¬¾äººå…³ç³»(ç¬¬ä¸€ä¸ªå¤‡ç”¨èµ„äº§)
+	MouseClick, left, 1507, 447 ;Óë½è¿îÈË¹ØÏµ(µÚÒ»¸ö±¸ÓÃ×Ê²ú)
 	Send {down}{enter}
 	
-	MouseClick, left, 1892, 535 ;é“¶è¡Œæµæ°´+1
-	MouseClick, left, 1892, 535 ;é“¶è¡Œæµæ°´+1
-	Send {tab}é“¶è¡Œæµæ°´1{tab}ä¸­é£é“¶è¡Œ{tab}4000{tab}80000{tab}40000{tab}2000
-	Send {tab}é“¶è¡Œæµæ°´2{tab}ä¼¤ä»²æ°¸é“¶è¡Œ{tab}4000{tab}80000{tab}40000{tab}2000
+	MouseClick, left, 1892, 535 ;ÒøĞĞÁ÷Ë®+1
+	MouseClick, left, 1892, 535 ;ÒøĞĞÁ÷Ë®+1
+	Send {tab}ÒøĞĞÁ÷Ë®1{tab}ÖĞ·çÒøĞĞ{tab}4000{tab}80000{tab}40000{tab}2000
+	Send {tab}ÒøĞĞÁ÷Ë®2{tab}ÉËÖÙÓÀÒøĞĞ{tab}4000{tab}80000{tab}40000{tab}2000
 	
-	MouseClick, left, 1859, 669 ;è¿˜æ¬¾æ¥æº+1
-	MouseClick, left, 1841, 668 ;è¿˜æ¬¾æ¥æº+1
-	Send {tab}å®¶å¾’å››å£ä¹¦ä¾µåï¼Œæ— å¯å¥ˆä½•èŠ±è½å»{tab}å‡ºæ¯æ˜¯ä¸ªå¤§å¤´é¬¼ï¼Œéš¾å¾—é‡è§è€å¤«å¦»
+	MouseClick, left, 1859, 669 ;»¹¿îÀ´Ô´+1
+	MouseClick, left, 1841, 668 ;»¹¿îÀ´Ô´+1
+	Send {tab}¼ÒÍ½ËÄ±ÚÊéÇÖ×ø£¬ÎŞ¿ÉÄÎºÎ»¨ÂäÈ¥{tab}³öÏ¢ÊÇ¸ö´óÍ·¹í£¬ÄÑµÃÓö¼ûÀÏ·òÆŞ
 	
-	Send {tab}{right}{tab}{right}{tab}æ‹¿é’±æ¥ä¹°å¼€å¿ƒï¼	;å€Ÿæ¬¾ç”¨é€”
+	Send {tab}{right}{tab}{right}{tab}ÄÃÇ®À´Âò¿ªĞÄ£¡	;½è¿îÓÃÍ¾
 	
 	;========================
-	;å¾ä¿¡æ¶‰è¯‰æƒ…å†µ
+	;Õ÷ĞÅÉæËßÇé¿ö
 	;========================
-	MouseClick, left, 290, 220 ;å¾ä¿¡æ¶‰è¯‰æƒ…å†µ
-	MouseClick, left, 278, 266 ;å€Ÿæ¬¾äººäººè¡Œå¾ä¿¡(å®šä½)
-	Send {tab}{right}{tab}1{tab}2{tab}3{tab}{right}{tab}{right}{tab 2}{right}{tab}å®¢æˆ·äººè¡Œå¾ä¿¡å¯ä»¥è¯´æ˜¯è‚¥è‚ è‰¯å¥½ï¼
-	Send {tab}{right}{tab}1{tab}2{tab}3{tab}{right}{tab}{right}{tab 2}{right}{tab}é…å¶äººè¡Œå¾ä¿¡ä¹Ÿå¯ä»¥è¯´æ˜¯è‚¥è‚ è‰¯å¥½ï¼
-	MouseClick, left, 1623, 334 ;è´·æ¬¾äº”çº§åˆ†ç±»
+	MouseClick, left, 290, 220 ;Õ÷ĞÅÉæËßÇé¿ö
+	MouseClick, left, 278, 266 ;½è¿îÈËÈËĞĞÕ÷ĞÅ(¶¨Î»)
+	Send {tab}{right}{tab}1{tab}2{tab}3{tab}{right}{tab}{right}{tab 2}{right}{tab}¿Í»§ÈËĞĞÕ÷ĞÅ¿ÉÒÔËµÊÇ·Ê³¦Á¼ºÃ£¡
+	Send {tab}{right}{tab}1{tab}2{tab}3{tab}{right}{tab}{right}{tab 2}{right}{tab}ÅäÅ¼ÈËĞĞÕ÷ĞÅÒ²¿ÉÒÔËµÊÇ·Ê³¦Á¼ºÃ£¡
+	MouseClick, left, 1623, 334 ;´û¿îÎå¼¶·ÖÀà
 	Send {down}{enter}
-	MouseClick, left, 1615, 490 ;è´·æ¬¾äº”çº§åˆ†ç±»
+	MouseClick, left, 1615, 490 ;´û¿îÎå¼¶·ÖÀà
 	Send {down}{enter}
 }
 
  /*
- * @Description: å†…å®¡2ï¼ˆæ–°é¡µé¢ï¼‰ - è‡ªåŠ¨è¡¨å•
+ * @Description: ÄÚÉó2£¨ĞÂÒ³Ãæ£© - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``2::
@@ -870,49 +870,49 @@ neiShenWai(){
 
 neiShen2w(){
 	
-	SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+	SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 	
-	MouseClick, left, 1657, 311 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	Send {enter}	;æ¥å—ä»»åŠ¡
+	MouseClick, left, 1657, 311 ;´ı°ì½øÈëµÚÒ»¸ö
+	Send {enter}	;½ÓÊÜÈÎÎñ
 	Sleep 1000
-	MouseClick, left, 1657, 311 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	Sleep, 2000  ;ç­‰å¾…
+	MouseClick, left, 1657, 311 ;´ı°ì½øÈëµÚÒ»¸ö
+	Sleep, 2000  ;µÈ´ı
 	
 	;========================
-	;åˆå®¡ä¿¡æ¯(å®¢æˆ·ä¿¡æ¯)
+	;³õÉóĞÅÏ¢(¿Í»§ĞÅÏ¢)
 	;========================
-	;~ fun_btn_nomsg("å†…å®¡2", "huabi", "ç¼–è¾‘å®¢æˆ·ä¿¡æ¯æŒ‰é’®", 10, 10)
-	;~ MouseClick, left, 1898, 248 ;ç¼–è¾‘å®¢æˆ·ä¿¡æ¯æŒ‰é’®
+	;~ fun_btn_nomsg("ÄÚÉó2", "huabi", "±à¼­¿Í»§ĞÅÏ¢°´Å¥", 10, 10)
+	;~ MouseClick, left, 1898, 248 ;±à¼­¿Í»§ĞÅÏ¢°´Å¥
 	;~ Sleep 2000
 	neiShen2ForCust()
 	
 	;========================
-	;åˆå®¡ä¿¡æ¯(å¤–å±‚)
+	;³õÉóĞÅÏ¢(Íâ²ã)
 	;========================
 	neiShenWai()
 	
 	;========================
-	;æ‹…ä¿æ–¹å¼
+	;µ£±£·½Ê½
 	;========================
 	neiShen2ForDbdm()
 	
 	;========================
-	;å†…å®¡IIæäº¤
+	;ÄÚÉóIIÌá½»
 	;========================
 	Sleep 500
-	;~ fun_btn("å†…å®¡II", "tijiao", "æäº¤", 60, 20)
-	MouseClick, left, 778, 397	;~ å†…å®¡IIæäº¤
+	;~ fun_btn("ÄÚÉóII", "tijiao", "Ìá½»", 60, 20)
+	MouseClick, left, 778, 397	;~ ÄÚÉóIIÌá½»
 	Sleep 500
 	
-	;~ fun_btn("å†…å®¡II", "queding", "ç¡®å®š", 60, 20)
+	;~ fun_btn("ÄÚÉóII", "queding", "È·¶¨", 60, 20)
 	MouseClick, left, 1001, 746
 	Sleep 1000
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
 /*
- * @Description: å¤–å®¡ - è‡ªåŠ¨è¡¨å•
+ * @Description: ÍâÉó - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``22::
@@ -920,73 +920,73 @@ neiShen2w(){
  return  
  
  waiShenw(){
-	MouseClick, left, 1657, 311 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	Sleep, 5000  ;ç­‰å¾…
+	MouseClick, left, 1657, 311 ;´ı°ì½øÈëµÚÒ»¸ö
+	Sleep, 5000  ;µÈ´ı
 
-	MouseClick, left, 505, 693 ;å†…éƒ¨ç»“æ„
+	MouseClick, left, 505, 693 ;ÄÚ²¿½á¹¹
 	Send {down}{enter}
-	MouseClick, left, 1045, 693 ;æˆ·å‹ç»“æ„
+	MouseClick, left, 1045, 693 ;»§ĞÍ½á¹¹
 	Send {down}{enter}
-	MouseClick, left, 1626, 694 ;è£…ä¿®
+	MouseClick, left, 1626, 694 ;×°ĞŞ
 	Send {down}{enter}
-	MouseClick, left, 484, 717 ;æœå‘
+	MouseClick, left, 484, 717 ;³¯Ïò
 	Send {down}{enter}
 	
-	MouseClick, left, 349, 742 ;å®šä½åˆ°ï¼ˆæˆ¿äº§å®é™…åœ°å€ä¸äº§æƒè¯åœ°å€æ˜¯å¦ä¸€è‡´ï¼‰
+	MouseClick, left, 349, 742 ;¶¨Î»µ½£¨·¿²úÊµ¼ÊµØÖ·Óë²úÈ¨Ö¤µØÖ·ÊÇ·ñÒ»ÖÂ£©
 	Loop, 18{
 	Send {tab}{right}
 	Sleep, 10
 	}
-	;~ å¾ªç¯ç»“æŸæŠµè¾¾  æ˜¯å¦æœ‰è€å¹´äººã€æ®‹ç–¾äºº
-	Send {tab}å¤–å®¡ä¸‹æˆ·çš„å¤‡æ³¨å¤‡æ³¨å¤‡æ³¨
+	;~ Ñ­»·½áÊøµÖ´ï  ÊÇ·ñÓĞÀÏÄêÈË¡¢²Ğ¼²ÈË
+	Send {tab}ÍâÉóÏÂ»§µÄ±¸×¢±¸×¢±¸×¢
 	Send {PgDn}{tab}{tab}
 
 	/*
-	MouseClick, left, 318, 740 ;æˆ¿äº§å®é™…åœ°å€ä¸äº§æƒè¯åœ°å€æ˜¯å¦ä¸€è‡´
+	MouseClick, left, 318, 740 ;·¿²úÊµ¼ÊµØÖ·Óë²úÈ¨Ö¤µØÖ·ÊÇ·ñÒ»ÖÂ
 	Send {tab}{right}
-	MouseClick, left, 908, 739 ;ä½¿ç”¨çŠ¶å†µ
+	MouseClick, left, 908, 739 ;Ê¹ÓÃ×´¿ö
 	Send {tab}{right}
-	MouseClick, left, 1463, 738 ;æ˜¯å¦æœ‰ç”µæ¢¯
+	MouseClick, left, 1463, 738 ;ÊÇ·ñÓĞµçÌİ
 	Send {tab}{right}
-	MouseClick, left, 330, 768 ;æ˜¯å¦æœ‰é®æŒ¡
+	MouseClick, left, 330, 768 ;ÊÇ·ñÓĞÕÚµ²
 	Send {tab}{right}
-	MouseClick, left, 905, 765 ;æ˜¯å¦æ‰“é€š
+	MouseClick, left, 905, 765 ;ÊÇ·ñ´òÍ¨
 	Send {tab}{right}
-	MouseClick, left, 1455, 771 ;æ˜¯å¦æœ‰è€å¹´äººã€æ®‹ç–¾äºº
+	MouseClick, left, 1455, 771 ;ÊÇ·ñÓĞÀÏÄêÈË¡¢²Ğ¼²ÈË
 	Send {tab}{right}
 	*/
 	
-	;~ MouseClick, left, 370, 869 ;ä¸­ä»‹åç§°
-	ClipboardOld = %ClipboardAll% ;ä¿ç•™å‰ªè´´æ¿ä¸­åŸæ¥çš„å†…å®¹
-	Clipboard = é“¾å®¶é“¾å®¶
+	;~ MouseClick, left, 370, 869 ;ÖĞ½éÃû³Æ
+	ClipboardOld = %ClipboardAll% ;±£Áô¼ôÌù°åÖĞÔ­À´µÄÄÚÈİ
+	Clipboard = Á´¼ÒÁ´¼Ò
 	Send ^v
-	Clipboard = %ClipboardOld% ;æ¢å¤å‰ªè´´æ¿åˆå§‹çš„å†…å®¹Return
+	Clipboard = %ClipboardOld% ;»Ö¸´¼ôÌù°å³õÊ¼µÄÄÚÈİReturn
 	
-	;MouseClick, left, 756, 844 ;ä¸­ä»‹è”ç³»æ–¹å¼
-	Send {tab}	;ä¸­ä»‹è”ç³»æ–¹å¼
+	;MouseClick, left, 756, 844 ;ÖĞ½éÁªÏµ·½Ê½
+	Send {tab}	;ÖĞ½éÁªÏµ·½Ê½
 	Send 18600000000
-	;MouseClick, left, 1147, 841 ;å•ä»·ï¼ˆå…ƒ/mÂ²ï¼‰
-	Send {tab}	;å•ä»·ï¼ˆå…ƒ/mÂ²ï¼‰
+	;MouseClick, left, 1147, 841 ;µ¥¼Û£¨Ôª/m2£©
+	Send {tab}	;µ¥¼Û£¨Ôª/m2£©
 	Send 15452
-	;MouseClick, left, 931, 881 ;ä¿å­˜
-	;fun_btn("å¤–å®¡", "baocun2", "ä¿å­˜", 60, 20)
-	MouseClick, left, 954, 1014 ;å¤–å®¡é‡Œé¢ä¿å­˜
+	;MouseClick, left, 931, 881 ;±£´æ
+	;fun_btn("ÍâÉó", "baocun2", "±£´æ", 60, 20)
+	MouseClick, left, 954, 1014 ;ÍâÉóÀïÃæ±£´æ
 	Send {tab}{enter}
 	Sleep 500
-	MouseClick, left, 1050, 666 ;ä¿å­˜ç¡®è®¤æç¤º
+	MouseClick, left, 1050, 666 ;±£´æÈ·ÈÏÌáÊ¾
 	
-	MouseClick, left, 801, 393 ;å¤–å®¡ä¸»é¡µé¢ä¿å­˜
+	MouseClick, left, 801, 393 ;ÍâÉóÖ÷Ò³Ãæ±£´æ
 	Send {tab}{enter}
 	Sleep 500
 	Send {enter}
 	
 	Sleep 2000
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
 /*
- * @Description: å¤–å®¡ - è‡ªåŠ¨è¡¨å•
+ * @Description: ÍâÉó - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``22q::
@@ -994,59 +994,59 @@ neiShen2w(){
  return  
  
  waiShen(){
-	MouseClick, left, 1657, 311 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	Sleep, 5000  ;ç­‰å¾…
+	MouseClick, left, 1657, 311 ;´ı°ì½øÈëµÚÒ»¸ö
+	Sleep, 5000  ;µÈ´ı
 
-	MouseClick, left, 469, 684 ;å†…éƒ¨ç»“æ„
+	MouseClick, left, 469, 684 ;ÄÚ²¿½á¹¹
 	Send {down}{enter}
-	MouseClick, left, 1033, 684 ;æˆ·å‹ç»“æ„
+	MouseClick, left, 1033, 684 ;»§ĞÍ½á¹¹
 	Send {down}{enter}
-	MouseClick, left, 1609, 686 ;è£…ä¿®
+	MouseClick, left, 1609, 686 ;×°ĞŞ
 	Send {down}{enter}
-	MouseClick, left, 462, 712 ;æœå‘
+	MouseClick, left, 462, 712 ;³¯Ïò
 	Send {down}{enter}
-	MouseClick, left, 318, 740 ;æˆ¿äº§å®é™…åœ°å€ä¸äº§æƒè¯åœ°å€æ˜¯å¦ä¸€è‡´
+	MouseClick, left, 318, 740 ;·¿²úÊµ¼ÊµØÖ·Óë²úÈ¨Ö¤µØÖ·ÊÇ·ñÒ»ÖÂ
 	Send {tab}{right}
-	MouseClick, left, 908, 739 ;ä½¿ç”¨çŠ¶å†µ
+	MouseClick, left, 908, 739 ;Ê¹ÓÃ×´¿ö
 	Send {tab}{right}
-	MouseClick, left, 1463, 738 ;æ˜¯å¦æœ‰ç”µæ¢¯
+	MouseClick, left, 1463, 738 ;ÊÇ·ñÓĞµçÌİ
 	Send {tab}{right}
-	MouseClick, left, 330, 768 ;æ˜¯å¦æœ‰é®æŒ¡
+	MouseClick, left, 330, 768 ;ÊÇ·ñÓĞÕÚµ²
 	Send {tab}{right}
-	MouseClick, left, 905, 765 ;æ˜¯å¦æ‰“é€š
+	MouseClick, left, 905, 765 ;ÊÇ·ñ´òÍ¨
 	Send {tab}{right}
-	MouseClick, left, 1455, 771 ;æ˜¯å¦æœ‰è€å¹´äººã€æ®‹ç–¾äºº
+	MouseClick, left, 1455, 771 ;ÊÇ·ñÓĞÀÏÄêÈË¡¢²Ğ¼²ÈË
 	Send {tab}{right}
 	
-	MouseClick, left, 370, 869 ;ä¸­ä»‹åç§°
-	ClipboardOld = %ClipboardAll% ;ä¿ç•™å‰ªè´´æ¿ä¸­åŸæ¥çš„å†…å®¹
-	Clipboard = é“¾å®¶é“¾å®¶
+	MouseClick, left, 370, 869 ;ÖĞ½éÃû³Æ
+	ClipboardOld = %ClipboardAll% ;±£Áô¼ôÌù°åÖĞÔ­À´µÄÄÚÈİ
+	Clipboard = Á´¼ÒÁ´¼Ò
 	Send ^v
-	Clipboard = %ClipboardOld% ;æ¢å¤å‰ªè´´æ¿åˆå§‹çš„å†…å®¹Return
+	Clipboard = %ClipboardOld% ;»Ö¸´¼ôÌù°å³õÊ¼µÄÄÚÈİReturn
 	
-	;MouseClick, left, 756, 844 ;ä¸­ä»‹è”ç³»æ–¹å¼
-	Send {tab}	;ä¸­ä»‹è”ç³»æ–¹å¼
+	;MouseClick, left, 756, 844 ;ÖĞ½éÁªÏµ·½Ê½
+	Send {tab}	;ÖĞ½éÁªÏµ·½Ê½
 	Send 18600000000
-	;MouseClick, left, 1147, 841 ;å•ä»·ï¼ˆå…ƒ/mÂ²ï¼‰
-	Send {tab}	;å•ä»·ï¼ˆå…ƒ/mÂ²ï¼‰
+	;MouseClick, left, 1147, 841 ;µ¥¼Û£¨Ôª/m2£©
+	Send {tab}	;µ¥¼Û£¨Ôª/m2£©
 	Send 15452
-	;MouseClick, left, 931, 881 ;ä¿å­˜
-	;fun_btn("å¤–å®¡", "baocun2", "ä¿å­˜", 60, 20)
-	MouseClick, left, 746, 908 ;å¤–å®¡é‡Œé¢ä¿å­˜
+	;MouseClick, left, 931, 881 ;±£´æ
+	;fun_btn("ÍâÉó", "baocun2", "±£´æ", 60, 20)
+	MouseClick, left, 746, 908 ;ÍâÉóÀïÃæ±£´æ
 	Send {tab}{enter}
 	
-	MouseClick, left, 801, 393 ;å¤–å®¡ä¸»é¡µé¢ä¿å­˜
+	MouseClick, left, 801, 393 ;ÍâÉóÖ÷Ò³Ãæ±£´æ
 	Send {tab}{enter}
 	Sleep 500
 	Send {enter}
 	
 	Sleep 2000
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
 /*
- * @Description: æ´¾é©»é£æ§æ€»ç›‘å®¡æ‰¹ - è‡ªåŠ¨è¡¨å•
+ * @Description: ÅÉ×¤·ç¿Ø×Ü¼àÉóÅú - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``3::
@@ -1054,22 +1054,22 @@ neiShen2w(){
  return  
  
  paiZhuw(){
-	MouseClick, left, 1657, 311 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	Sleep, 2000  ;ç­‰å¾…
-	MouseClick, left, 860, 1003 ;æäº¤
+	MouseClick, left, 1657, 311 ;´ı°ì½øÈëµÚÒ»¸ö
+	Sleep, 2000  ;µÈ´ı
+	MouseClick, left, 860, 1003 ;Ìá½»
 	Send {enter}
-	Sleep, 2000  ;ç­‰å¾…
-	MouseClick, left, 1045, 707 ;ç¡®å®š
-	Sleep, 2000  ;ç­‰å¾…
+	Sleep, 2000  ;µÈ´ı
+	MouseClick, left, 1045, 707 ;È·¶¨
+	Sleep, 2000  ;µÈ´ı
 	Send {enter}
 	Sleep, 4000
-	MouseClick, left, 1044, 704 ;å…³é—­ä»»åŠ¡
+	MouseClick, left, 1044, 704 ;¹Ø±ÕÈÎÎñ
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
  /*
- * @Description: æ´¾é©»é£æ§æ€»ç›‘å®¡æ‰¹ - è‡ªåŠ¨è¡¨å•
+ * @Description: ÅÉ×¤·ç¿Ø×Ü¼àÉóÅú - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``3q::
@@ -1077,22 +1077,22 @@ neiShen2w(){
  return  
  
  paiZhu(){
-	MouseClick, left, 1657, 311 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	Sleep, 2000  ;ç­‰å¾…
-	MouseClick, left, 849, 426 ;æäº¤
+	MouseClick, left, 1657, 311 ;´ı°ì½øÈëµÚÒ»¸ö
+	Sleep, 2000  ;µÈ´ı
+	MouseClick, left, 849, 426 ;Ìá½»
 	Send {enter}
-	Sleep, 2000  ;ç­‰å¾…
-	MouseClick, left, 1045, 707 ;ç¡®å®š
-	Sleep, 2000  ;ç­‰å¾…
+	Sleep, 2000  ;µÈ´ı
+	MouseClick, left, 1045, 707 ;È·¶¨
+	Sleep, 2000  ;µÈ´ı
 	Send {enter}
 	Sleep, 4000
-	MouseClick, left, 1044, 704 ;å…³é—­ä»»åŠ¡
+	MouseClick, left, 1044, 704 ;¹Ø±ÕÈÎÎñ
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
 /*
- * @Description: ç»ˆè¯„_è¯„ä¼°ç»ç†ç»ˆå®¡ - è‡ªåŠ¨è¡¨å•
+ * @Description: ÖÕÆÀ_ÆÀ¹À¾­ÀíÖÕÉó - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``33::
@@ -1100,45 +1100,45 @@ neiShen2w(){
  return  
 
 zhongShenw(){
-	;~ MouseClick, left, 1774, 317 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	;~ Send {tab}{enter}	;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	;~ MouseClick, left, 1007, 659 ;æ¥å—ä»»åŠ¡
-	MouseClick, left, 1765, 333 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	Send {tab}{enter}	;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	Send {enter}	;æ¥å—ä»»åŠ¡
-	Sleep, 1500  ;ç­‰å¾…
-	MouseClick, left, 1765, 333 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	Send {tab}{enter}	;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	Sleep, 3000  ;ç­‰å¾…
+	;~ MouseClick, left, 1774, 317 ;´ı°ì½øÈëµÚÒ»¸ö
+	;~ Send {tab}{enter}	;´ı°ì½øÈëµÚÒ»¸ö
+	;~ MouseClick, left, 1007, 659 ;½ÓÊÜÈÎÎñ
+	MouseClick, left, 1765, 333 ;´ı°ì½øÈëµÚÒ»¸ö
+	Send {tab}{enter}	;´ı°ì½øÈëµÚÒ»¸ö
+	Send {enter}	;½ÓÊÜÈÎÎñ
+	Sleep, 1500  ;µÈ´ı
+	MouseClick, left, 1765, 333 ;´ı°ì½øÈëµÚÒ»¸ö
+	Send {tab}{enter}	;´ı°ì½øÈëµÚÒ»¸ö
+	Sleep, 3000  ;µÈ´ı
 	
-	MouseClick, left, 1765, 333 ;éšä¾¿ç‚¹ä¸€ä¸‹ï¼Œåœ¨ä¿®æ”¹æŠµæŠ¼ç‰©ä¿¡æ¯é‡Œé¢å®šä½
-	Send {PgDn}	;å‘ä¸‹ç¿»é¡µ
+	MouseClick, left, 1765, 333 ;Ëæ±ãµãÒ»ÏÂ£¬ÔÚĞŞ¸ÄµÖÑºÎïĞÅÏ¢ÀïÃæ¶¨Î»
+	Send {PgDn}	;ÏòÏÂ·­Ò³
 	
 	Send, 1000
-	MouseClick, left, 1605, 824, 3 ;ä¸‹æˆ·å¿«å–ä»·ï¼ˆå…ƒï¼‰//åŒå‡»
+	MouseClick, left, 1605, 824, 3 ;ÏÂ»§¿ìÂô¼Û£¨Ôª£©//Ë«»÷
 	Send ^c
 	Send {tab}^v
 	Send {tab 2}^v
 	Send {tab}{tab}{tab}{tab}{enter}
 	Send {tab}{tab}{tab}{enter}
-	Sleep, 500  ;ç­‰å¾…
+	Sleep, 500  ;µÈ´ı
 	Send {enter} 
-	;MouseClick, left, 941, 495 ;æäº¤
+	;MouseClick, left, 941, 495 ;Ìá½»
 	
-	Sleep, 500  ;ç­‰å¾…
+	Sleep, 500  ;µÈ´ı
 	
-	;fun_btn("è¯„ä¼°ç»ç†ç»ˆå®¡", "tijiao5", "æäº¤", 60, 20)
-	MouseClick, left, 909, 390 ;æäº¤
+	;fun_btn("ÆÀ¹À¾­ÀíÖÕÉó", "tijiao5", "Ìá½»", 60, 20)
+	MouseClick, left, 909, 390 ;Ìá½»
 	
-	MouseClick, left, 987, 655 ;ç¡®è®¤
-	Sleep, 2000  ;ç­‰å¾…
+	MouseClick, left, 987, 655 ;È·ÈÏ
+	Sleep, 2000  ;µÈ´ı
 	Send {enter}
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
  /*
- * @Description: ç»ˆè¯„_è¯„ä¼°ç»ç†ç»ˆå®¡ - è‡ªåŠ¨è¡¨å•
+ * @Description: ÖÕÆÀ_ÆÀ¹À¾­ÀíÖÕÉó - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``33q::
@@ -1146,36 +1146,36 @@ zhongShenw(){
  return  
  
  zhongShen(){
-	MouseClick, left, 1580, 330 ;å¾…åŠè¿›å…¥ç¬¬äºŒä¸ª
-	Send {tab 2}{enter}	;å¾…åŠè¿›å…¥ç¬¬äºŒä¸ª
-	MouseClick, left, 1007, 659 ;æ¥å—ä»»åŠ¡
-	Sleep, 2500  ;ç­‰å¾…
-	MouseClick, left, 1580, 330 ;å¾…åŠè¿›å…¥ç¬¬äºŒä¸ª
-	Send {tab 2}{enter}	;å¾…åŠè¿›å…¥ç¬¬äºŒä¸ª
-	Sleep, 4000  ;ç­‰å¾…
-	MouseClick, left, 1563, 868, 2 ;ä¸‹æˆ·å¿«å–ä»·ï¼ˆå…ƒï¼‰//åŒå‡»
+	MouseClick, left, 1580, 330 ;´ı°ì½øÈëµÚ¶ş¸ö
+	Send {tab 2}{enter}	;´ı°ì½øÈëµÚ¶ş¸ö
+	MouseClick, left, 1007, 659 ;½ÓÊÜÈÎÎñ
+	Sleep, 2500  ;µÈ´ı
+	MouseClick, left, 1580, 330 ;´ı°ì½øÈëµÚ¶ş¸ö
+	Send {tab 2}{enter}	;´ı°ì½øÈëµÚ¶ş¸ö
+	Sleep, 4000  ;µÈ´ı
+	MouseClick, left, 1563, 868, 2 ;ÏÂ»§¿ìÂô¼Û£¨Ôª£©//Ë«»÷
 	Send ^c
 	Send {tab}^v
 	Send {tab 2}^v
 	Send {tab}{tab}{tab}{tab}{enter}
 	Send {tab}{tab}{tab}{enter}
-	Sleep, 500  ;ç­‰å¾…
+	Sleep, 500  ;µÈ´ı
 	Send {enter} 
-	;MouseClick, left, 941, 495 ;æäº¤
+	;MouseClick, left, 941, 495 ;Ìá½»
 	
-	Sleep, 500  ;ç­‰å¾…
+	Sleep, 500  ;µÈ´ı
 	
-	fun_btn("è¯„ä¼°ç»ç†ç»ˆå®¡", "tijiao5", "æäº¤", 60, 20)
+	fun_btn("ÆÀ¹À¾­ÀíÖÕÉó", "tijiao5", "Ìá½»", 60, 20)
 	
-	MouseClick, left, 987, 655 ;ç¡®è®¤
-	Sleep, 2000  ;ç­‰å¾…
+	MouseClick, left, 987, 655 ;È·ÈÏ
+	Sleep, 2000  ;µÈ´ı
 	Send {enter}
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
  /*
- * @Description: æŸ¥çœ‹æµç¨‹å›¾ - è‡ªåŠ¨è¡¨å•
+ * @Description: ²é¿´Á÷³ÌÍ¼ - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``43q::
@@ -1191,11 +1191,11 @@ zhongShenw(){
 	Sleep, 2500
 	MouseClick, left,  1717,  439
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
 /*
- * @Description: å®¡æ‰¹ç»ç†å®¡æ‰¹â…  - è‡ªåŠ¨è¡¨å•
+ * @Description: ÉóÅú¾­ÀíÉóÅú¢ñ - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``4::
@@ -1207,92 +1207,92 @@ zhongShenw(){
 	MouseClick, left,  1474,  273
 	Sleep, 100
 	Send, {TAB}{enter}
-	Sleep, 2000  ;ç­‰å¾…
-	MouseClick, left, 1657, 311 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	MouseClick, left, 1007, 659 ;æ¥å—ä»»åŠ¡
-	Sleep, 2000  ;ç­‰å¾…
+	Sleep, 2000  ;µÈ´ı
+	MouseClick, left, 1657, 311 ;´ı°ì½øÈëµÚÒ»¸ö
+	MouseClick, left, 1007, 659 ;½ÓÊÜÈÎÎñ
+	Sleep, 2000  ;µÈ´ı
 	
-	MouseClick, left, 367, 282 ;éœ€è¦ç­¾ç½²çš„æ–‡ä»¶
+	MouseClick, left, 367, 282 ;ĞèÒªÇ©ÊğµÄÎÄ¼ş
 	Send {tab}{space}{tab}{space}{tab}{space}{tab}{space}{tab}{space}{tab}{space}
 	
-	MouseClick, left, 510, 417 ;ç”¨æ¬¾å®¡æ‰¹æ„è§
+	MouseClick, left, 510, 417 ;ÓÃ¿îÉóÅúÒâ¼û
 	
 
-	MouseClick, left, 280, 229 ;å®¡æŸ¥ä¿¡æ¯
-	MouseClick, left, 773, 340 ;å€Ÿæ¬¾äººèº«ä»½è¯ 
+	MouseClick, left, 280, 229 ;Éó²éĞÅÏ¢
+	MouseClick, left, 773, 340 ;½è¿îÈËÉí·İÖ¤ 
 	;~ Loop, 7{
 	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
 	;~ Sleep, 100
 	;~ }
 	
-	;~ Send {tab}	;å€Ÿæ¬¾äººæˆ·å£æœ¬
+	;~ Send {tab}	;½è¿îÈË»§¿Ú±¾
 	;~ Loop, 7{
 	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
 	;~ Sleep, 100
 	;~ }
 
-	;~ Send {tab}	;å€Ÿæ¬¾äººå©šå§»è¯æ˜
+	;~ Send {tab}	;½è¿îÈË»éÒöÖ¤Ã÷
 	;~ Loop, 7{
 	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
 	;~ Sleep, 100
 	;~ }
 	
-	;~ Send {tab}	;å¾ä¿¡æŠ¥å‘Š-å€Ÿæ¬¾äºº
+	;~ Send {tab}	;Õ÷ĞÅ±¨¸æ-½è¿îÈË
 	;~ Loop, 11{
 	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
 	;~ Sleep, 100
 	;~ }
 	
-	;~ Send {tab}	;å¾ä¿¡æŠ¥å‘Š-é…å¶
+	;~ Send {tab}	;Õ÷ĞÅ±¨¸æ-ÅäÅ¼
 	;~ Loop, 11{
 	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
 	;~ Sleep, 100
 	;~ }
 	
-	;~ Send {tab}	;æ¶‰è¯‰æŸ¥è¯¢æˆªå›¾
+	;~ Send {tab}	;ÉæËß²éÑ¯½ØÍ¼
 	;~ Loop, 3{
 	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
 	;~ Sleep, 100
 	;~ }
 	
-	;~ Send {tab}	;å€Ÿæ¬¾ç”¨é€”
+	;~ Send {tab}	;½è¿îÓÃÍ¾
 	;~ Loop, 6{
 	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
 	;~ Sleep, 100
 	;~ }
 	
-	;~ Send {tab}	;æˆ¿äº§è¯
+	;~ Send {tab}	;·¿²úÖ¤
 	;~ Loop, 13{
 	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
 	;~ Sleep, 100
 	;~ }
 	
-	;~ Send {tab}	;è´­æˆ¿åˆåŒ
+	;~ Send {tab}	;¹º·¿ºÏÍ¬
 	;~ Loop, 1{
 	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
 	;~ Sleep, 100
 	;~ }
 	
-	;~ Send {tab}	;äº§è°ƒ
+	;~ Send {tab}	;²úµ÷
 	;~ Loop, 1{
 	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
 	;~ Sleep, 100
 	;~ }
 	
-	;~ Send {tab}	;å…¶ä»–æŠµæŠ¼ç‰©åˆ†ç±»é¡¹ä¸‹ææ–™
+	;~ Send {tab}	;ÆäËûµÖÑºÎï·ÖÀàÏîÏÂ²ÄÁÏ
 	;~ Loop, 7{
 	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
 	;~ Sleep, 100
 	;~ }
 	
-	MouseClick, left, 823, 908 ;åŒæ„
+	MouseClick, left, 823, 908 ;Í¬Òâ
 	Send {enter}
 
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
  /*
- * @Description: å®¡æ‰¹ç»ç†å®¡æ‰¹â…  - è‡ªåŠ¨è¡¨å•
+ * @Description: ÉóÅú¾­ÀíÉóÅú¢ñ - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``4q::
@@ -1303,21 +1303,21 @@ zhongShenw(){
 	MouseClick, left,  1474,  273
 	Sleep, 100
 	Send, {TAB}{enter}
-	Sleep, 2000  ;ç­‰å¾…
-	MouseClick, left, 1657, 311 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	MouseClick, left, 1007, 659 ;æ¥å—ä»»åŠ¡
-	Sleep, 2000  ;ç­‰å¾…
-	MouseClick, left, 715, 449 ;éœ€è¦ç­¾ç½²çš„æ–‡ä»¶
+	Sleep, 2000  ;µÈ´ı
+	MouseClick, left, 1657, 311 ;´ı°ì½øÈëµÚÒ»¸ö
+	MouseClick, left, 1007, 659 ;½ÓÊÜÈÎÎñ
+	Sleep, 2000  ;µÈ´ı
+	MouseClick, left, 715, 449 ;ĞèÒªÇ©ÊğµÄÎÄ¼ş
 	Send {down}{down}{down}{esc}
 	Send {tab}{tab}{tab}{enter}{enter}
-	Sleep, 2000  ;ç­‰å¾…
+	Sleep, 2000  ;µÈ´ı
 	Send {enter}
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
  /*
- * @Description: å®¡æ‰¹ç»ç†å®¡æ‰¹â…¡ - è‡ªåŠ¨è¡¨å•
+ * @Description: ÉóÅú¾­ÀíÉóÅú¢ò - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``44q::
@@ -1325,28 +1325,28 @@ zhongShenw(){
  return  
  
  shenPi2(){
-	MouseClick, left, 1657, 311 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	MouseClick, left, 1007, 659 ;æ¥å—ä»»åŠ¡
-	Sleep, 2000  ;ç­‰å¾…
-	MouseClick, left, 346, 217 ;ç”³è¯·ä¿¡æ¯
-	Sleep, 500  ;ç­‰å¾…
+	MouseClick, left, 1657, 311 ;´ı°ì½øÈëµÚÒ»¸ö
+	MouseClick, left, 1007, 659 ;½ÓÊÜÈÎÎñ
+	Sleep, 2000  ;µÈ´ı
+	MouseClick, left, 346, 217 ;ÉêÇëĞÅÏ¢
+	Sleep, 500  ;µÈ´ı
 	
-	fun_btn("å®¡æ‰¹ç»ç†å®¡æ‰¹â…¡", "fushuchanpin", "é™„å±äº§å“", 100, 15)
+	fun_btn("ÉóÅú¾­ÀíÉóÅú¢ò", "fushuchanpin", "¸½Êô²úÆ·", 100, 15)
 	Sleep, 100
 	Send {down}{enter}
-	Send {tab}500000 ;æˆä¿¡é¢åº¦(å…ƒ)
+	Send {tab}500000 ;ÊÚĞÅ¶î¶È(Ôª)
 	
-	fun_btn("å®¡æ‰¹ç»ç†å®¡æ‰¹â…¡", "shenpi_xuyaoqianshudewenjian", "éœ€è¦å®¡æ‰¹çš„æ–‡ä»¶", 300, 20)
+	fun_btn("ÉóÅú¾­ÀíÉóÅú¢ò", "shenpi_xuyaoqianshudewenjian", "ĞèÒªÉóÅúµÄÎÄ¼ş", 300, 20)
 	Send {down}{down}{down}{esc}
 	Send {tab}{tab}{enter}{enter}
-	Sleep, 2000  ;ç­‰å¾…
+	Sleep, 2000  ;µÈ´ı
 	Send {enter}
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
 /*
- * @Description: å®¡æ‰¹ç»ç†å®¡æ‰¹â…¡ - è‡ªåŠ¨è¡¨å•
+ * @Description: ÉóÅú¾­ÀíÉóÅú¢ò - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``44::
@@ -1354,28 +1354,28 @@ zhongShenw(){
  return  
  
  shenPi2w(){
-	MouseClick, left, 1657, 311 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	MouseClick, left, 1007, 659 ;æ¥å—ä»»åŠ¡
-	Sleep, 2000  ;ç­‰å¾…
-	;~ MouseClick, left, 346, 217 ;ç”³è¯·ä¿¡æ¯
-	;~ Sleep, 500  ;ç­‰å¾…
+	MouseClick, left, 1657, 311 ;´ı°ì½øÈëµÚÒ»¸ö
+	MouseClick, left, 1007, 659 ;½ÓÊÜÈÎÎñ
+	Sleep, 2000  ;µÈ´ı
+	;~ MouseClick, left, 346, 217 ;ÉêÇëĞÅÏ¢
+	;~ Sleep, 500  ;µÈ´ı
 	
-	;~ MouseClick, left, 486, 536 ;é™„å±äº§å“
+	;~ MouseClick, left, 486, 536 ;¸½Êô²úÆ·
 	;~ Send {down}{enter}
 	;~ Send {tab}800000
 	;~ Send {tab}8
 	;~ Send {tab}{space}{tab}{space}{tab}{space}{tab}{space}{tab}{space}{tab}{space}{tab}{space}
-	;~ MouseClick, left, 740, 725 ;åŒæ„å‰é¢ä¸€ç‚¹
+	;~ MouseClick, left, 740, 725 ;Í¬ÒâÇ°ÃæÒ»µã
 	;~ Send {tab}{enter}
 	
-	MouseClick, left, 825, 579 ;æ¥å—ä»»åŠ¡
+	MouseClick, left, 825, 579 ;½ÓÊÜÈÎÎñ
 	Send {enter}
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
  /*
- * @Description: èµ„é‡‘ä¸“å‘˜å†³å®šæ”¾æ¬¾æ¸ é“ - è‡ªåŠ¨è¡¨å•
+ * @Description: ×Ê½ğ×¨Ô±¾ö¶¨·Å¿îÇşµÀ - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``444::
@@ -1385,22 +1385,22 @@ zhongShenw(){
  ziJinZhuanYuan(){
 	MouseClick, left,  1439, 308
 	Send {tab 2}{enter}
-	Sleep, 3000  ;ç­‰å¾…
-	MouseClick, left, 467, 415 ;èµ„é‡‘æ–¹
+	Sleep, 3000  ;µÈ´ı
+	MouseClick, left, 467, 415 ;×Ê½ğ·½
 	Send {down 1}{enter}
-	MouseClick, left, 1055, 415 ;æ”¾æ¬¾æœºæ„
+	MouseClick, left, 1055, 415 ;·Å¿î»ú¹¹
 	Send {down 4}{enter}
-	MouseClick, left, 1700, 426 ;è®¡åˆ’å½’å…¥èµ„äº§åŒ…
+	MouseClick, left, 1700, 426 ;¼Æ»®¹éÈë×Ê²ú°ü
 	Send {down 1}{enter}
 	Send {tab}{enter 2}
-	Sleep, 2000  ;ç­‰å¾…
+	Sleep, 2000  ;µÈ´ı
 	Send {enter}
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
  
   /*
- * @Description: ç”¨æ¬¾ç¡®è®¤ - è‡ªåŠ¨è¡¨å•
+ * @Description: ÓÃ¿îÈ·ÈÏ - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``5::
@@ -1409,46 +1409,46 @@ zhongShenw(){
  
  yongKuanQueRen(){
 	
-	;~ nomsg := fun_btn_nomsg("ç”¨æ¬¾ç¡®è®¤", "yongkuanqueren", "ç”¨æ¬¾ç¡®è®¤", 10, 10)
+	;~ nomsg := fun_btn_nomsg("ÓÃ¿îÈ·ÈÏ", "yongkuanqueren", "ÓÃ¿îÈ·ÈÏ", 10, 10)
 	;~ if(nomsg == 2 || nomsg == 1){
 		;~ MouseClick, left,  1749, 305
-		;~ Send {tab}{enter}	;è¿›å…¥ä»»åŠ¡
+		;~ Send {tab}{enter}	;½øÈëÈÎÎñ
 	;~ }else{
-		;~ Send {tab 2}{enter}	;è¿›å…¥ä»»åŠ¡
+		;~ Send {tab 2}{enter}	;½øÈëÈÎÎñ
 	;~ }
 	
 	MouseClick, left,  1746, 314
-	Send {tab}{enter}	;è¿›å…¥ä»»åŠ¡
+	Send {tab}{enter}	;½øÈëÈÎÎñ
 	Sleep 1500
-	MouseClick, left,  497, 651	;å¹´åˆ©ç‡
+	MouseClick, left,  497, 651	;ÄêÀûÂÊ
 	
-	MouseClick, left,  510, 677, 2	;è¥é”€åˆ©ç‡ åŒå‡»
+	MouseClick, left,  510, 677, 2	;ÓªÏúÀûÂÊ Ë«»÷
 	Send 19.8
 	
-	MouseClick, left,  1103, 717	;ä¸šåŠ¡æ¨ä»‹è´¹æ”¶å–æ–¹å¼
-	MouseClick, left,  1098, 785	;æ”¾æ¬¾å‰æ”¶å–éƒ¨åˆ†æ”¾æ¬¾åæŒ‰æœˆæ”¶å–
-	MouseClick, left,  1075, 675, 2	;ä¸šåŠ¡æ¨ä»‹è´¹ åŒå‡»
+	MouseClick, left,  1103, 717	;ÒµÎñÍÆ½é·ÑÊÕÈ¡·½Ê½
+	MouseClick, left,  1098, 785	;·Å¿îÇ°ÊÕÈ¡²¿·Ö·Å¿îºó°´ÔÂÊÕÈ¡
+	MouseClick, left,  1075, 675, 2	;ÒµÎñÍÆ½é·Ñ Ë«»÷
 	Send 6
-	MouseClick, left,  1620, 703, 2	;ä¸šåŠ¡æ¨ä»‹è´¹æ”¾æ¬¾å åŒå‡»
+	MouseClick, left,  1620, 703, 2	;ÒµÎñÍÆ½é·Ñ·Å¿îºó Ë«»÷
 	Send 2
 	
-	MouseClick, left,  1101, 746	;èèµ„æœåŠ¡è´¹æ”¶å–æ–¹å¼
-	MouseClick, left,  1122, 812	;æ”¾æ¬¾å‰æ”¶å–éƒ¨åˆ†æ”¾æ¬¾åæŒ‰æœˆæ”¶å–
-	MouseClick, left,  1640, 743, 2	;èèµ„æœåŠ¡è´¹æ”¾æ¬¾å  åŒå‡»
+	MouseClick, left,  1101, 746	;ÈÚ×Ê·şÎñ·ÑÊÕÈ¡·½Ê½
+	MouseClick, left,  1122, 812	;·Å¿îÇ°ÊÕÈ¡²¿·Ö·Å¿îºó°´ÔÂÊÕÈ¡
+	MouseClick, left,  1640, 743, 2	;ÈÚ×Ê·şÎñ·Ñ·Å¿îºó  Ë«»÷
 	Send 1.5
 	
 	
-	MouseClick, left,  500, 707	;ä¸šåŠ¡æ¨ä»‹è´¹æ”¶å–å½¢å¼
-	MouseClick, left,  519, 751	;å§”æ‰˜æ”¶å–
+	MouseClick, left,  500, 707	;ÒµÎñÍÆ½é·ÑÊÕÈ¡ĞÎÊ½
+	MouseClick, left,  519, 751	;Î¯ÍĞÊÕÈ¡
 	
-	MouseClick, left,  890, 900	;æäº¤
-	MouseClick, left,  995, 741	;ç¡®å®š
+	MouseClick, left,  890, 900	;Ìá½»
+	MouseClick, left,  995, 741	;È·¶¨
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
  
    /*
- * @Description: ç”¨æ¬¾æ‰¹å¤ - è‡ªåŠ¨è¡¨å•
+ * @Description: ÓÃ¿îÅú¸´ - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``55::
@@ -1456,17 +1456,17 @@ zhongShenw(){
  return  
  
  yongKuanPiFu(){
-	MouseClick, left, 1657, 311 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-	Sleep, 2000  ;ç­‰å¾…
+	MouseClick, left, 1657, 311 ;´ı°ì½øÈëµÚÒ»¸ö
+	Sleep, 2000  ;µÈ´ı
 	MouseClick, left,  800,  955
 	Sleep, 100
 	Send, {TAB}{ENTER}{ENTER}
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
  /*
- * @Description: ææ¬¾ç”³è¯· - è‡ªåŠ¨è¡¨å•
+ * @Description: Ìá¿îÉêÇë - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``555::
@@ -1475,77 +1475,77 @@ zhongShenw(){
 
 tiKuanShenQing(){
 	
-	nomsg := fun_btn_nomsg("ææ¬¾ç”³è¯·", "tikuanshenqing", "ææ¬¾ç”³è¯·", 10, 10)
+	nomsg := fun_btn_nomsg("Ìá¿îÉêÇë", "tikuanshenqing", "Ìá¿îÉêÇë", 10, 10)
 	if(nomsg == 2 || nomsg == 1){
-		MouseClick, left, 1657, 311 ;å¾…åŠè¿›å…¥ç¬¬ä¸€ä¸ª
-		MouseClick, left, 1007, 659 ;æ¥å—ä»»åŠ¡
+		MouseClick, left, 1657, 311 ;´ı°ì½øÈëµÚÒ»¸ö
+		MouseClick, left, 1007, 659 ;½ÓÊÜÈÎÎñ
 	}else{
-		Send {tab 2}{enter}	;è¿›å…¥ä»»åŠ¡
+		Send {tab 2}{enter}	;½øÈëÈÎÎñ
 	}
 	
-	Sleep, 2500  ;ç­‰å¾…
+	Sleep, 2500  ;µÈ´ı
 	
 	
-	MouseClick, left, 298, 273 ;åˆåŒä¿¡æ¯tab
-	Send {tab 5}{enter}		;åˆåŒç”Ÿæ•ˆæ—¥æœŸ
-	
-	;========================
-	;å®¢æˆ·ä»£æ‰£å¼€æˆ·è¡Œ
-	;========================
-	MouseClick, left, 1814, 521 ;å®¢æˆ·ä»£æ‰£å¼€æˆ·è¡Œ
-	Sleep, 1000  ;ç­‰å¾…
-	MouseClick, left, 968, 517 ;é€‰ä¸­ç¬¬ä¸€ä¸ªå®¢æˆ·è´¦å·é€‰æ‹©
-	Sleep, 500  ;ç­‰å¾…
-	MouseClick, left, 987, 797 ;ç¡®å®š
+	MouseClick, left, 298, 273 ;ºÏÍ¬ĞÅÏ¢tab
+	Send {tab 5}{enter}		;ºÏÍ¬ÉúĞ§ÈÕÆÚ
 	
 	;========================
-	;å®¢æˆ·æ”¾æ¬¾è´¦æˆ·å¼€æˆ·è¡Œ
+	;¿Í»§´ú¿Û¿ª»§ĞĞ
 	;========================
-	MouseClick, left, 1811, 545	;å®¢æˆ·æ”¾æ¬¾è´¦æˆ·å¼€æˆ·è¡Œ
-	Sleep, 1000  ;ç­‰å¾…
-	MouseClick, left, 924, 537 ;é€‰ä¸­ç¬¬ä¸€ä¸ªå®¢æˆ·è´¦å·é€‰æ‹©
-	Sleep, 500  ;ç­‰å¾…
-	MouseClick, left, 987, 797 ;ç¡®å®š
+	MouseClick, left, 1814, 521 ;¿Í»§´ú¿Û¿ª»§ĞĞ
+	Sleep, 1000  ;µÈ´ı
+	MouseClick, left, 968, 517 ;Ñ¡ÖĞµÚÒ»¸ö¿Í»§ÕËºÅÑ¡Ôñ
+	Sleep, 500  ;µÈ´ı
+	MouseClick, left, 987, 797 ;È·¶¨
+	
+	;========================
+	;¿Í»§·Å¿îÕË»§¿ª»§ĞĞ
+	;========================
+	MouseClick, left, 1811, 545	;¿Í»§·Å¿îÕË»§¿ª»§ĞĞ
+	Sleep, 1000  ;µÈ´ı
+	MouseClick, left, 924, 537 ;Ñ¡ÖĞµÚÒ»¸ö¿Í»§ÕËºÅÑ¡Ôñ
+	Sleep, 500  ;µÈ´ı
+	MouseClick, left, 987, 797 ;È·¶¨
 	
 	
-	Sleep, 500  ;ç­‰å¾…
-	MouseClick, left, 534, 736 ;æˆä¿¡ç”¨é€”
+	Sleep, 500  ;µÈ´ı
+	MouseClick, left, 534, 736 ;ÊÚĞÅÓÃÍ¾
 	Send {down}{enter}
 	
-	Send {tab}123	;ç”¨é€”è¯´æ˜ï¼š
+	Send {tab}123	;ÓÃÍ¾ËµÃ÷£º
 	
-	MouseClick, left, 1150, 470 ;åˆåŒç”Ÿæ•ˆæ—¥
+	MouseClick, left, 1150, 470 ;ºÏÍ¬ÉúĞ§ÈÕ
 	Send {enter}
 	
-	MouseClick, left, 633, 810 ;å®šä½åˆ°ä¿å­˜åˆåŒå‰é¢
-	Send {tab 2}{enter}	;æš‚å­˜
+	MouseClick, left, 633, 810 ;¶¨Î»µ½±£´æºÏÍ¬Ç°Ãæ
+	Send {tab 2}{enter}	;Ôİ´æ
 	sleep 1000 
 	
 	Send {enter}
 	MouseClick, left, 633, 810 ;zj
-	Send {tab 3}{enter}	;ç”ŸæˆåˆåŒ
+	Send {tab 3}{enter}	;Éú³ÉºÏÍ¬
 	;~ sleep 5000 
 	
 	;~ Send {enter}
 	;~ MouseClick, left, 633, 810 ;zj
-	;~ Send {tab 4}{enter}	;ç­¾è®¢åˆåŒ
+	;~ Send {tab 4}{enter}	;Ç©¶©ºÏÍ¬
 	;~ sleep 5000 
 	
 	/*
-	fun_btn("ææ¬¾ç”³è¯·", "qiandinghetong", "ç­¾è®¢åˆåŒ", 70, 10)
+	fun_btn("Ìá¿îÉêÇë", "qiandinghetong", "Ç©¶©ºÏÍ¬", 70, 10)
 	sleep 100
 	Send {enter}
-	Sleep, 2000  ;ç­‰å¾…
+	Sleep, 2000  ;µÈ´ı
 	closeTaskMsg()
 	*/
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 	
 	
 }
 
  /*
- * @Description: è¿è¥æ”¾æ¬¾ç­‰ - è‡ªåŠ¨è¡¨å•
+ * @Description: ÔËÓª·Å¿îµÈ - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``6::
@@ -1559,9 +1559,9 @@ yunYing(){
 	Sleep, 100
 	Send, {TAB}{SPACE}
 	
-	nomsg := fun_btn_nomsg("è¿è¥4ä¸ª", "tijiao6", "æäº¤", 50, 10)
+	nomsg := fun_btn_nomsg("ÔËÓª4¸ö", "tijiao6", "Ìá½»", 50, 10)
 	if(nomsg != 0){		
-		fun_btn_nomsg("è¿è¥4ä¸ª", "tongyi2", "åŒæ„", 50, 10)
+		fun_btn_nomsg("ÔËÓª4¸ö", "tongyi2", "Í¬Òâ", 50, 10)
 	}
 	
 	Sleep, 500
@@ -1571,11 +1571,11 @@ yunYing(){
 	Sleep, 500
 	Send {ENTER}
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
  /*
- * @Description: è´·å‰è´¹ç”¨æ”¶å–/å¤æ ¸
+ * @Description: ´ûÇ°·ÑÓÃÊÕÈ¡/¸´ºË
  * @author XuDong
  */
  ::``66::
@@ -1584,42 +1584,42 @@ yunYing(){
 
 daiqianfeiyong(){
 	
-	fun_btn("èœå•", "feiyongshouqu", "è´¹ç”¨æ”¶å–", 50, 10)
+	fun_btn("²Ëµ¥", "feiyongshouqu", "·ÑÓÃÊÕÈ¡", 50, 10)
 	Sleep, 200
 	
-	fun_btn("èœå•", "daiqianfeiyongshouqu", "è´·å‰è´¹ç”¨æ”¶å–", 50, 10)
+	fun_btn("²Ëµ¥", "daiqianfeiyongshouqu", "´ûÇ°·ÑÓÃÊÕÈ¡", 50, 10)
 	Sleep, 200
-	MouseClick, left,  353, 222		;å®¢æˆ·åç§°
+	MouseClick, left,  353, 222		;¿Í»§Ãû³Æ
 	Send ^v
-	fun_btn("è´·å‰è´¹ç”¨æ”¶å–", "sousuotubiao", "æœç´¢å›¾æ ‡", 50, 10)
+	fun_btn("´ûÇ°·ÑÓÃÊÕÈ¡", "sousuotubiao", "ËÑË÷Í¼±ê", 50, 10)
 	Sleep 300
-	MouseClick, left,  575, 337		;ç¬¬ä¸€æ¡æ•°æ®
-	fun_btn("è´·å‰è´¹ç”¨æ”¶å–", "duigoutubiao", "å¯¹å‹¾å›¾æ ‡", 50, 10)
+	MouseClick, left,  575, 337		;µÚÒ»ÌõÊı¾İ
+	fun_btn("´ûÇ°·ÑÓÃÊÕÈ¡", "duigoutubiao", "¶Ô¹´Í¼±ê", 50, 10)
 	Sleep 500
-	fun_btn("è´·å‰è´¹ç”¨æ”¶å–", "duigoutubiao", "å¯¹å‹¾å›¾æ ‡", 50, 10)
+	fun_btn("´ûÇ°·ÑÓÃÊÕÈ¡", "duigoutubiao", "¶Ô¹´Í¼±ê", 50, 10)
 	Sleep 100
 	Send {enter}
 	Sleep 500
 	
-	fun_btn("èœå•", "daiqianfeiyongfuhe", "è´·å‰è´¹ç”¨å¤æ ¸", 50, 10)
+	fun_btn("²Ëµ¥", "daiqianfeiyongfuhe", "´ûÇ°·ÑÓÃ¸´ºË", 50, 10)
 	Sleep, 200
-	MouseClick, left,  353, 222		;å®¢æˆ·åç§°
+	MouseClick, left,  353, 222		;¿Í»§Ãû³Æ
 	Send ^v
-	fun_btn("è´·å‰è´¹ç”¨æ”¶å–", "sousuotubiao", "æœç´¢å›¾æ ‡", 50, 10)
+	fun_btn("´ûÇ°·ÑÓÃÊÕÈ¡", "sousuotubiao", "ËÑË÷Í¼±ê", 50, 10)
 	Sleep 300
-	MouseClick, left,  575, 337		;ç¬¬ä¸€æ¡æ•°æ®
-	fun_btn("è´·å‰è´¹ç”¨æ”¶å–", "duigoutubiao", "å¯¹å‹¾å›¾æ ‡", 50, 10)
+	MouseClick, left,  575, 337		;µÚÒ»ÌõÊı¾İ
+	fun_btn("´ûÇ°·ÑÓÃÊÕÈ¡", "duigoutubiao", "¶Ô¹´Í¼±ê", 50, 10)
 	Sleep 500
-	fun_btn("è´·å‰è´¹ç”¨æ”¶å–", "duigoutubiao", "å¯¹å‹¾å›¾æ ‡", 50, 10)
+	fun_btn("´ûÇ°·ÑÓÃÊÕÈ¡", "duigoutubiao", "¶Ô¹´Í¼±ê", 50, 10)
 	Sleep 100
 	Send {enter}
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
 
 /*
- * @Description: å«èµ„é¢ç­¾ - è‡ªåŠ¨è¡¨å•
+ * @Description: µæ×ÊÃæÇ© - ×Ô¶¯±íµ¥
  * @author XuDong
  */
  ::``dz:: 
@@ -1632,179 +1632,179 @@ daiqianfeiyong(){
 	MouseClick, left, 469, 479
 	Send 1{tab}2{tab}3{tab}4{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{space}{tab}{tab}{tab}{tab}6{tab}{tab}7{tab}80000{tab}79999{tab}10{tab}11{tab}1222 2222 2222 22{tab}13{tab}14{tab}15{tab}79888{tab}60000{tab}18{tab}19{tab}59999{tab}21{tab}22{tab}23
 	
-	MouseClick, left, 318, 244 ; å®šä½åˆ°å¾ä¿¡åŠæ¶‰è¯‰æƒ…å†µ
+	MouseClick, left, 318, 244 ; ¶¨Î»µ½Õ÷ĞÅ¼°ÉæËßÇé¿ö
 	Send {tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{space}
 	Send {tab}{tab}{tab}{space}
 	Send {tab}{tab}{tab}{space}
 	Send {tab}{tab}{tab}{space}
-	MouseClick, left, 1050, 518 ;æˆ¿äº§å½“å‰çŠ¶æ€
+	MouseClick, left, 1050, 518 ;·¿²úµ±Ç°×´Ì¬
 	Send {down}{enter}
-	MouseClick, left, 1611, 506 ;ä½¿ç”¨çŠ¶æ€
+	MouseClick, left, 1611, 506 ;Ê¹ÓÃ×´Ì¬
 	Send {down}{enter}
-	MouseClick, left, 470, 538 ;æƒåˆ©äººè¯ä»¶ç±»å‹
+	MouseClick, left, 470, 538 ;È¨ÀûÈËÖ¤¼şÀàĞÍ
 	Send {down}{enter}
-	MouseClick, left, 1029, 538 ;æƒåˆ©äººè¯ä»¶å·
+	MouseClick, left, 1029, 538 ;È¨ÀûÈËÖ¤¼şºÅ
 	Send 421002198005106890
-	MouseClick, left, 1574, 547 ;æˆ¿äº§æ‰€åœ¨åœ°åŒº
+	MouseClick, left, 1574, 547 ;·¿²úËùÔÚµØÇø
 	Send {down}{enter}
-	MouseClick, left, 1663, 547 ;æˆ¿äº§æ‰€åœ¨åœ°åŒº
+	MouseClick, left, 1663, 547 ;·¿²úËùÔÚµØÇø
 	Send {down}{enter}
-	MouseClick, left, 464, 567 ;æˆ¿äº§ç”¨é€”
+	MouseClick, left, 464, 567 ;·¿²úÓÃÍ¾
 	Send {down}{enter}
-	MouseClick, left, 1600, 574 ;æˆ¿äº§æ€§è´¨
+	MouseClick, left, 1600, 574 ;·¿²úĞÔÖÊ
 	Send {down}{enter}
-	MouseClick, left, 1036, 652 ;æˆä¿¡æ–¹å¼
+	MouseClick, left, 1036, 652 ;ÊÚĞÅ·½Ê½
 	Send {down}{enter}
 	Send {PgUp}
-	Sleep, 300  ;ç­‰å¾…
-	MouseClick, left, 1841, 246 ;æ–°å¢å®¢æˆ·åŸºæœ¬ä¿¡æ¯
-	Sleep, 1000  ;ç­‰å¾…
+	Sleep, 300  ;µÈ´ı
+	MouseClick, left, 1841, 246 ;ĞÂÔö¿Í»§»ù±¾ĞÅÏ¢
+	Sleep, 1000  ;µÈ´ı
 	openCustInfo()
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
  /*
- * @Description: æ¸…æ¥šç¼“å­˜
+ * @Description: Çå³ş»º´æ
  * @author XuDong
  */
  ::``hc:: 
 	Send ^r
-	Sleep, 1500  ;ç­‰å¾…
-	MouseClick, left, 80, 253 ;ç³»ç»Ÿç¼“å­˜ç®¡ç†
-	Sleep, 1000  ;ç­‰å¾…
-	MouseClick, left, 310, 257 ;å®šä½åˆ°æ•°æ®å­—å…¸ç¼“å­˜
+	Sleep, 1500  ;µÈ´ı
+	MouseClick, left, 80, 253 ;ÏµÍ³»º´æ¹ÜÀí
+	Sleep, 1000  ;µÈ´ı
+	MouseClick, left, 310, 257 ;¶¨Î»µ½Êı¾İ×Öµä»º´æ
 	Send {tab}{enter}{tab}{tab}{enter}{tab}{enter}{tab}{enter}{tab}{enter}{tab}{enter}{tab}{enter}
-	Sleep, 700  ;ç­‰å¾…
+	Sleep, 700  ;µÈ´ı
 	Send ^r
  return    
 
  /*
- * @Description: åˆ·æ–°èœå•
+ * @Description: Ë¢ĞÂ²Ëµ¥
  * @author XuDong
  */
  refreshMenu(){
 	/*
-	MouseClick, left, 78, 241 ;åˆ·æ–°èœå•
-	Sleep, 1000  ;ç­‰å¾…
-	MouseClick, left, 78, 241 ;åˆ·æ–°èœå•
-	Sleep, 1000  ;ç­‰å¾…
+	MouseClick, left, 78, 241 ;Ë¢ĞÂ²Ëµ¥
+	Sleep, 1000  ;µÈ´ı
+	MouseClick, left, 78, 241 ;Ë¢ĞÂ²Ëµ¥
+	Sleep, 1000  ;µÈ´ı
 	*/
 	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\caidan_dakai_2.bmp
 	if ErrorLevel = 2 
-	MsgBox èœå•_æ‰“å¼€_ä¸èƒ½å®æ–½æœç´¢ã€‚
+	MsgBox ²Ëµ¥_´ò¿ª_²»ÄÜÊµÊ©ËÑË÷¡£
 	else if ErrorLevel = 1 
-	MsgBox èœå•_æ‰“å¼€_æœªåœ¨å±å¹•ä¸Šå¯»å¾—å›¾æ ‡ã€‚
+	MsgBox ²Ëµ¥_´ò¿ª_Î´ÔÚÆÁÄ»ÉÏÑ°µÃÍ¼±ê¡£
 	else{
-		MouseClick, left, %OutputVarX%, %OutputVarY% ;å®šä½
-		Sleep, 500  ;ç­‰å¾…
+		MouseClick, left, %OutputVarX%, %OutputVarY% ;¶¨Î»
+		Sleep, 500  ;µÈ´ı
 	}
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
  }
 
  /*
- * @Description: å…³é—­ä»»åŠ¡å®Œæˆçª—å£
+ * @Description: ¹Ø±ÕÈÎÎñÍê³É´°¿Ú
  * @author XuDong
  */
  closeTaskMsg(){
-	Sleep, 3000  ;ç­‰å¾…
+	Sleep, 3000  ;µÈ´ı
 	Send {enter}
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
  }
 
  /*
- * @Description: æ‰“å¼€å®¢æˆ·ä¿¡æ¯æŸ¥è¯¢å¹¶è·³åˆ°ç¬¬å››é¡µ
+ * @Description: ´ò¿ª¿Í»§ĞÅÏ¢²éÑ¯²¢Ìøµ½µÚËÄÒ³
  * @author XuDong
  */
  openCustInfo(){
 	refreshMenu()
-	MouseClick, left, 53, 400 ;èœå•-å®¢æˆ·ä¿¡æ¯ç®¡ç†
-	Sleep, 1000  ;ç­‰å¾…
-	MouseClick, left, 75, 439 ;èœå•-å®¢æˆ·ä¿¡æ¯
-	Sleep, 1500  ;ç­‰å¾…
-	MouseClick, left, 311, 1021 ;é¡µ
+	MouseClick, left, 53, 400 ;²Ëµ¥-¿Í»§ĞÅÏ¢¹ÜÀí
+	Sleep, 1000  ;µÈ´ı
+	MouseClick, left, 75, 439 ;²Ëµ¥-¿Í»§ĞÅÏ¢
+	Sleep, 1500  ;µÈ´ı
+	MouseClick, left, 311, 1021 ;Ò³
 	Send {Home}   
 	Send +{End}
 	Send 4{enter}
-	Sleep, 1500  ;ç­‰å¾…
+	Sleep, 1500  ;µÈ´ı
 	MouseClick, left,  403,  594, 2
 	Send ^c
 	
 	ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\dangqiantab.bmp
 		if ErrorLevel = 2 
-		MsgBox å½“å‰tab_ä¸èƒ½å®æ–½æœç´¢ã€‚
+		MsgBox µ±Ç°tab_²»ÄÜÊµÊ©ËÑË÷¡£
 		else if ErrorLevel = 1 
-		MsgBox å½“å‰tab_æœªåœ¨å±å¹•ä¸Šå¯»å¾—å›¾æ ‡ã€‚
+		MsgBox µ±Ç°tab_Î´ÔÚÆÁÄ»ÉÏÑ°µÃÍ¼±ê¡£
 		else{
 			sX := OutputVarXA - 70
 			sY := OutputVarYA
 			MouseClick, left, %sX%, %sY% ;
 		}
 		
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
  }
  
 
  
     /*
- * @Description: chromeç™»å…¥é¢„ç”Ÿäº§
+ * @Description: chromeµÇÈëÔ¤Éú²ú
  * @author XuDong
  */
  ::``tt::
-	SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+	SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 	autoTestLogin(super, 123456, 1)
  return
 
    /*
- * @Description: chromeç™»å…¥æµ‹è¯•
+ * @Description: chromeµÇÈë²âÊÔ
  * @author XuDong
  */
  ::``oa::
-	SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+	SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 	autoTestLogin(super, 123456, 0)
  return
  
    /*
- * @Description: chromeæ‰“å¼€éšèº«æ¨¡å¼ï¼Œå¹¶æ‰“å¼€æµ‹è¯•\é¢„ç”Ÿäº§åœ°å€
+ * @Description: chrome´ò¿ªÒşÉíÄ£Ê½£¬²¢´ò¿ª²âÊÔ\Ô¤Éú²úµØÖ·
  * @author XuDong
  */
  autoTestLogin(ByRef userId, ByRef passwrd, ByRef openType){
 	
-	SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+	SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 	
 	if openType = 0 
 	{
-		localHttp = http://oa.cdhryx.cn:6900/sso/toLogin.do?loginKey=ftd	;æµ‹è¯•ç¯å¢ƒ
+		localHttp = http://oa.cdhryx.cn:6900/sso/toLogin.do?loginKey=ftd	;²âÊÔ»·¾³
 	}
 	else
 	{
-		localHttp = http://test.cdhryx.cn:6900/sso/toLogin.do?loginKey=ftd	;é¢„ç”Ÿäº§
+		localHttp = http://test.cdhryx.cn:6900/sso/toLogin.do?loginKey=ftd	;Ô¤Éú²ú
 	}
 	
 	Send ^+n
 	Send ^l
 	Send %localHttp%
 	Send {enter}
-	Sleep, 2000  ;ç­‰å¾…
+	Sleep, 2000  ;µÈ´ı
 	Send {tab}{tab}super{enter}
-	Sleep, 500  ;ç­‰å¾…
+	Sleep, 500  ;µÈ´ı
 	Send {tab}123456{enter}
-	Sleep, 500  ;ç­‰å¾…
+	Sleep, 500  ;µÈ´ı
 	Send {tab}{tab}qazwsx{enter}
 	Send {enter}
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
  
   /*
- * @Description: chromeæ‰“å¼€éšèº«æ¨¡å¼ï¼Œå¹¶æ‰“å¼€tagé¡µé¢//å®šä¹‰å¸¦å‚æ•°çš„æ–¹æ³•
+ * @Description: chrome´ò¿ªÒşÉíÄ£Ê½£¬²¢´ò¿ªtagÒ³Ãæ//¶¨Òå´ø²ÎÊıµÄ·½·¨
  * @author XuDong
  */
  autoLogin(ByRef userId, ByRef urlType, ByRef openType)
  {
-	SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+	SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 	
 	if openType = 0 
 	{
@@ -1838,12 +1838,12 @@ daiqianfeiyong(){
 	}
 	Send %localHttp%
 	Send {enter}
-	Sleep, 1500  ;ç­‰å¾…
+	Sleep, 1500  ;µÈ´ı
 	Send {tab}
 	Send %userId%
 	Send {enter}
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
  }
  
 
@@ -1865,7 +1865,7 @@ daiqianfeiyong(){
 
  
     /*
- * @Description: éšèº«ç™»å…¥crsæ›¹æ—¥å‡
+ * @Description: ÒşÉíµÇÈëcrs²ÜÈÕÉı
  * @author XuDong
  */
  ::``crs:: 
@@ -1886,7 +1886,7 @@ daiqianfeiyong(){
  
  
  /*
- * @Description: éšèº«ç™»å…¥cqxé™ˆç§‹æ™“
+ * @Description: ÒşÉíµÇÈëcqx³ÂÇïÏş
  * @author XuDong
  */
  ::``cqx:: 
@@ -1972,7 +1972,7 @@ daiqianfeiyong(){
  return   
  
     /*
- * @Description: éšèº«ç™»å…¥cxlé™ˆå°ç£Š
+ * @Description: ÒşÉíµÇÈëcxl³ÂĞ¡ÀÚ
  * @author XuDong
  */
  ::``cxl:: 
@@ -1993,7 +1993,7 @@ daiqianfeiyong(){
 
 
  /*
- * @Description: éšèº«ç™»å…¥lzhæ¢å¿—æµ·
+ * @Description: ÒşÉíµÇÈëlzhÁºÖ¾º£
  * @author XuDong
  */
  ::``lzh:: 
@@ -2015,7 +2015,7 @@ daiqianfeiyong(){
 
 
  /*
- * @Description: éšèº«ç™»å…¥lzpå•å¿—é¹
+ * @Description: ÒşÉíµÇÈëlzpÂÀÖ¾Åô
  * @author XuDong
  */
  ::``lzp:: 
@@ -2036,7 +2036,7 @@ daiqianfeiyong(){
  
  
     /*
- * @Description: éšèº«ç™»å…¥xgrå¹¸å›½è£
+ * @Description: ÒşÉíµÇÈëxgrĞÒ¹úÈÙ
  * @author XuDong
  */
  ::``xgr:: 
@@ -2057,7 +2057,7 @@ daiqianfeiyong(){
 
  
       /*
- * @Description: éšèº«ç™»å…¥damå…šçˆ±æ°‘
+ * @Description: ÒşÉíµÇÈëdamµ³°®Ãñ
  * @author XuDong
  */
   ::``dam:: 
@@ -2079,7 +2079,7 @@ daiqianfeiyong(){
 
 
  /*
- * @Description: éšèº«ç™»å…¥qlé½é¾™
+ * @Description: ÒşÉíµÇÈëqlÆëÁú
  * @author XuDong
  */
  ::``qlz:: 
@@ -2099,7 +2099,7 @@ daiqianfeiyong(){
  return 
  
  /*
- * @Description: éšèº«ç™»å…¥qlé½é¾™
+ * @Description: ÒşÉíµÇÈëqlÆëÁú
  * @author XuDong
  */
  ::``zfz:: 
@@ -2119,7 +2119,7 @@ daiqianfeiyong(){
  return 
  
  /*
- * @Description: éšèº«ç™»å…¥qlé½é¾™
+ * @Description: ÒşÉíµÇÈëqlÆëÁú
  * @author XuDong
  */
  ::``fbb:: 
@@ -2139,7 +2139,7 @@ daiqianfeiyong(){
  return 
 
   /*
- * @Description: éšèº«ç™»å…¥ytzå¶å©·
+ * @Description: ÒşÉíµÇÈëytzÒ¶æÃ
  * @author XuDong
  */
  ::``ytz:: 
@@ -2159,7 +2159,7 @@ daiqianfeiyong(){
  return
 
   /*
- * @Description: éšèº«ç™»å…¥tlwç”°ç²æ˜Š
+ * @Description: ÒşÉíµÇÈëtlwÌïÁáê»
  * @author XuDong
  */
  ::``tlw:: 
@@ -2179,7 +2179,7 @@ daiqianfeiyong(){
  return
 
   /*
- * @Description: éšèº«ç™»å…¥pjæ½˜æ°
+ * @Description: ÒşÉíµÇÈëpjÅË½Ü
  * @author XuDong
  */
  ::``pjz:: 
@@ -2199,7 +2199,7 @@ daiqianfeiyong(){
  return
 
   /*
- * @Description: éšèº«ç™»å…¥znyå¼ å—ç‡•
+ * @Description: ÒşÉíµÇÈëznyÕÅÄÏÑà
  * @author XuDong
  */
  ::``zny:: 
@@ -2219,7 +2219,7 @@ daiqianfeiyong(){
  return
  
   /*
- * @Description: éšèº«ç™»å…¥sddå­™ä¸¹ä¸¹
+ * @Description: ÒşÉíµÇÈësddËïµ¤µ¤
  * @author XuDong
  */
  ::``sdd:: 
@@ -2256,7 +2256,7 @@ daiqianfeiyong(){
 
  
   /*
- * @Description: è‘£è–‡
+ * @Description: ¶­Ş±
  * @author XuDong
  */
  ::``dwz:: 
@@ -2280,270 +2280,270 @@ daiqianfeiyong(){
  
 
 /*
------------------------------------------------------------ä½¿ç”¨chromeå’ŒPLSQLçš„æ—¶å€™ï¼ˆè¯¥çª—å£ç»„å®šä¹‰åœ¨  æœ¬æ–‡ä»¶å¤´  ä¸­ï¼‰---------------------------------------------
+-----------------------------------------------------------Ê¹ÓÃchromeºÍPLSQLµÄÊ±ºò£¨¸Ã´°¿Ú×é¶¨ÒåÔÚ  ±¾ÎÄ¼şÍ·  ÖĞ£©---------------------------------------------
 */
  #IfWinActive ahk_group ChromeAndPLSQL
  
 	::crs::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13501274292
 		Send {Enter}
 	return
  
  	::cqx::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13581611612
 		Send {Enter}
 	return
 	
 	::jjc::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 18510602312
 		Send {Enter}
 	return
 	
 	::cjs::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 15918702471
 		Send {Enter}
 	return
 	
 	::cqx::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 18210515167
 		Send {Enter}
 	return
 
 	::tjz::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 15201442426
 		Send {Enter}
 	return
 
 	::cxl::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13521284135
 		Send {Enter}
 	return
 
 	::dam::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 15130796352
 		Send {Enter}
 	return
 
 	::dsz::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 18611698942
 		Send {Enter}
 	return
 
 	::dwz::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13366186570
 		Send {Enter}
 	return
 
 	::gfz::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 18514256561
 		Send {Enter}
 	return
 
 	::hgz::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13601089205
 		Send {Enter}
 	return
 
 	::hhz::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13522217556
 		Send {Enter}
 	return
 
 	::hmz::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13003923034
 		Send {Enter}
 	return
 
 	::hwj::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 18800181757
 		Send {Enter}
 	return
 
 	::hyl::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 18664661876
 		Send {Enter}
 	return
 
 	::hzz::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 18612315653
 		Send {Enter}
 	return
 
 	::jhj::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13132250820
 		Send {Enter}
 	return
 
 	::lcz::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 18810551529
 		Send {Enter}
 	return
 
 	::lmr::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13161716585
 		Send {Enter}
 	return
 
 	::lyh::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 15810022483
 		Send {Enter}
 	return
 
 	::lzh::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13500011090
 		Send {Enter}
 	return
 
 	::lzp::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 15972997555
 		Send {Enter}
 	return
 
 	::pjz::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13922236063
 		Send {Enter}
 	return
 
 	::qlz::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13701247226
 		Send {Enter}
 	return
 	
 	::zfz::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13717658868
 		Send {Enter}
 	return
 	
 	::fbb::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 18501367449
 		Send {Enter}
 	return
 
 	::sygrb::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13321182669
 		Send {Enter}
 	return
 
 	::tlh::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 18301179489
 		Send {Enter}
 	return
 
 	::tlw::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 18301179489
 		Send {Enter}
 	return
 
 	::tzz::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 18305405616
 		Send {Enter}
 	return
 
 	::wdm::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13146664817
 		Send {Enter}
 	return
 
 	::wxl::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13682658612
 		Send {Enter}
 	return
 
 	::xgr::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13301206456
 		Send {Enter}
 	return
 
 	::yjz::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 18683259087
 		Send {Enter}
 	return
 
 	::ysz::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13810803511
 		Send {Enter}
 	return
 	
 	::cll::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 18210473155
 		Send {Enter}
 	return
 
 	::ytz::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13537712861
 		Send {Enter}
 	return
 
 	::zdk::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13860107916
 		Send {Enter}
 	return
 
 	::zhy::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13510209701
 		Send {Enter}
 	return
 
 	::zlz::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 15801502686
 		Send {Enter}
 	return
 
 	::zny::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13242030118
 		Send {Enter}
 	return
 	
 	::sdd::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send 13011893241
 		Send {Enter}
 	return
 	
 	::adz::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send ^a
 		Send admin
 		Send {tab}
@@ -2552,7 +2552,7 @@ daiqianfeiyong(){
 	return
 	
 	::sdx::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send ^a
 		Send super
 		Send {tab}123456
@@ -2562,7 +2562,7 @@ daiqianfeiyong(){
 	return
 	
 	::adx::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send ^a
 		Send admin
 		Send {tab}123456
@@ -2572,7 +2572,7 @@ daiqianfeiyong(){
 	return
 	
 	::wdz::
-		SwitchIME(0x04090409) ; è‹±è¯­(ç¾å›½) ç¾å¼é”®ç›˜
+		SwitchIME(0x04090409) ; Ó¢Óï(ÃÀ¹ú) ÃÀÊ½¼üÅÌ
 		Send ^a
 		Send 13568887446
 		Send {tab}verygood
@@ -2583,12 +2583,12 @@ daiqianfeiyong(){
   #IfWinActive 
  
  /*
------------------------------------------------------------ä½¿ç”¨eclipseçš„æ—¶å€™---------------------------------------------
+-----------------------------------------------------------Ê¹ÓÃeclipseµÄÊ±ºò---------------------------------------------
 */
  #IfWinActive ahk_class SWT_Window0
  
  /*
- * @Description: æ”¹æˆm01
+ * @Description: ¸Ä³Ém01
  * @author XuDong
  */
  :://m01:: 
@@ -2596,7 +2596,7 @@ daiqianfeiyong(){
  return
  
  /*
- * @Description: æ”¹æˆm10
+ * @Description: ¸Ä³Ém10
  * @author XuDong
  */
  :://m10:: 
@@ -2604,7 +2604,7 @@ daiqianfeiyong(){
  return
 
  /*
- * @Description: æ”¹æˆm12
+ * @Description: ¸Ä³Ém12
  * @author XuDong
  */
  :://m12:: 
@@ -2612,48 +2612,48 @@ daiqianfeiyong(){
  return
 
 /*
- * @Description: micä¿®æ”¹æœºæ„å·
+ * @Description: micĞŞ¸Ä»ú¹¹ºÅ
  * @author XuDong
  */
 micChangeTo(ByRef bchId){
-	ClipboardOld = %ClipboardAll% ;ä¿ç•™å‰ªè´´æ¿ä¸­åŸæ¥çš„å†…å®¹
+	ClipboardOld = %ClipboardAll% ;±£Áô¼ôÌù°åÖĞÔ­À´µÄÄÚÈİ
     Clipboard = COMPANY_IDENTIFICATION
 	Send ^+r
-	Sleep, 200  ;ç­‰å¾…
+	Sleep, 200  ;µÈ´ı
 	Send microcredit{enter}
-	Sleep, 100  ;ç­‰å¾…
+	Sleep, 100  ;µÈ´ı
 	Send ^f
-	Sleep, 200  ;ç­‰å¾…
+	Sleep, 200  ;µÈ´ı
 	Send ^v{enter}{esc}
-	Sleep, 200  ;ç­‰å¾…
+	Sleep, 200  ;µÈ´ı
 	Send ^d
 	Send ^+{enter}
-	Sleep, 200  ;ç­‰å¾…
+	Sleep, 200  ;µÈ´ı
 	Send ^v`=M
 	Send %bchId%
 	Send ^s
-	Clipboard = %ClipboardOld% ;æ¢å¤å‰ªè´´æ¿åˆå§‹çš„å†…å®¹Return
+	Clipboard = %ClipboardOld% ;»Ö¸´¼ôÌù°å³õÊ¼µÄÄÚÈİReturn
 	
-	ToolTip("...è„šæœ¬ç»“æŸ")
+	ToolTip("...½Å±¾½áÊø")
 }
 
 #IfWinActive
 
  
  /*
------------------------------------------------------------ä»»ä½•æ—¶å€™---------------------------------------------
+-----------------------------------------------------------ÈÎºÎÊ±ºò---------------------------------------------
 */
 
 /*
- * @Description: //exæ‰“å¼€æ¡Œé¢excelæ–‡ä»¶å¤¹
+ * @Description: //ex´ò¿ª×ÀÃæexcelÎÄ¼ş¼Ğ
  * @author XuDong
  */
  :://ex::   
- Run D:\å¿«æ·æ–¹å¼\excel
+ Run D:\¿ì½İ·½Ê½\excel
  return    
  
  /*
- * @Description: //exæ‰“å¼€æ¡Œé¢excelæ–‡ä»¶å¤¹
+ * @Description: //ex´ò¿ª×ÀÃæexcelÎÄ¼ş¼Ğ
  * @author XuDong
  */
  :://sql::   
@@ -2661,55 +2661,55 @@ micChangeTo(ByRef bchId){
  return    
 
   /*
- * @Description: å¤åˆ¶excelæ–‡ä»¶
+ * @Description: ¸´ÖÆexcelÎÄ¼ş
  * @author XuDong
  */
  :://cex::
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\å¿«æ·æ–¹å¼\excel\LOAN_DATABASE.xlsx, 1 ; é€šè¿‡æä¾›ä¸€ä¸ªæ–°çš„åå­—æ¥å¤åˆ¶æ–‡ä»¶åˆ°åŒä¸ªæ–‡ä»¶å¤¹ä¸­ã€‚
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\å¿«æ·æ–¹å¼\excel\LOAN_DATABASE(1).xlsx, 1 ; é€šè¿‡æä¾›ä¸€ä¸ªæ–°çš„åå­—æ¥å¤åˆ¶æ–‡ä»¶åˆ°åŒä¸ªæ–‡ä»¶å¤¹ä¸­ã€‚
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\å¿«æ·æ–¹å¼\excel\LOAN_DATABASE(2).xlsx, 1 ; é€šè¿‡æä¾›ä¸€ä¸ªæ–°çš„åå­—æ¥å¤åˆ¶æ–‡ä»¶åˆ°åŒä¸ªæ–‡ä»¶å¤¹ä¸­ã€‚
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\å¿«æ·æ–¹å¼\excel\LOAN_DATABASE(3).xlsx, 1 ; é€šè¿‡æä¾›ä¸€ä¸ªæ–°çš„åå­—æ¥å¤åˆ¶æ–‡ä»¶åˆ°åŒä¸ªæ–‡ä»¶å¤¹ä¸­ã€‚
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\å¿«æ·æ–¹å¼\excel\LOAN_DATABASE(4).xlsx, 1 ; é€šè¿‡æä¾›ä¸€ä¸ªæ–°çš„åå­—æ¥å¤åˆ¶æ–‡ä»¶åˆ°åŒä¸ªæ–‡ä»¶å¤¹ä¸­ã€‚
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\å¿«æ·æ–¹å¼\excel\LOAN_DATABASE(5).xlsx, 1 ; é€šè¿‡æä¾›ä¸€ä¸ªæ–°çš„åå­—æ¥å¤åˆ¶æ–‡ä»¶åˆ°åŒä¸ªæ–‡ä»¶å¤¹ä¸­ã€‚
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\å¿«æ·æ–¹å¼\excel\LOAN_DATABASE(6).xlsx, 1 ; é€šè¿‡æä¾›ä¸€ä¸ªæ–°çš„åå­—æ¥å¤åˆ¶æ–‡ä»¶åˆ°åŒä¸ªæ–‡ä»¶å¤¹ä¸­ã€‚
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\¿ì½İ·½Ê½\excel\LOAN_DATABASE.xlsx, 1 ; Í¨¹ıÌá¹©Ò»¸öĞÂµÄÃû×ÖÀ´¸´ÖÆÎÄ¼şµ½Í¬¸öÎÄ¼ş¼ĞÖĞ¡£
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\¿ì½İ·½Ê½\excel\LOAN_DATABASE(1).xlsx, 1 ; Í¨¹ıÌá¹©Ò»¸öĞÂµÄÃû×ÖÀ´¸´ÖÆÎÄ¼şµ½Í¬¸öÎÄ¼ş¼ĞÖĞ¡£
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\¿ì½İ·½Ê½\excel\LOAN_DATABASE(2).xlsx, 1 ; Í¨¹ıÌá¹©Ò»¸öĞÂµÄÃû×ÖÀ´¸´ÖÆÎÄ¼şµ½Í¬¸öÎÄ¼ş¼ĞÖĞ¡£
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\¿ì½İ·½Ê½\excel\LOAN_DATABASE(3).xlsx, 1 ; Í¨¹ıÌá¹©Ò»¸öĞÂµÄÃû×ÖÀ´¸´ÖÆÎÄ¼şµ½Í¬¸öÎÄ¼ş¼ĞÖĞ¡£
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\¿ì½İ·½Ê½\excel\LOAN_DATABASE(4).xlsx, 1 ; Í¨¹ıÌá¹©Ò»¸öĞÂµÄÃû×ÖÀ´¸´ÖÆÎÄ¼şµ½Í¬¸öÎÄ¼ş¼ĞÖĞ¡£
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\¿ì½İ·½Ê½\excel\LOAN_DATABASE(5).xlsx, 1 ; Í¨¹ıÌá¹©Ò»¸öĞÂµÄÃû×ÖÀ´¸´ÖÆÎÄ¼şµ½Í¬¸öÎÄ¼ş¼ĞÖĞ¡£
+	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\¿ì½İ·½Ê½\excel\LOAN_DATABASE(6).xlsx, 1 ; Í¨¹ıÌá¹©Ò»¸öĞÂµÄÃû×ÖÀ´¸´ÖÆÎÄ¼şµ½Í¬¸öÎÄ¼ş¼ĞÖĞ¡£
 	
-	MsgBox ...åº“è¡¨ç»“æ„Excelå·²ç»å¤åˆ¶å®Œæ¯•ï¼
+	MsgBox ...¿â±í½á¹¹ExcelÒÑ¾­¸´ÖÆÍê±Ï£¡
  return
  
   /*
- * @Description: å¾®ä¿¡busåˆ‡æ¢ä¸»å¹²
+ * @Description: Î¢ĞÅbusÇĞ»»Ö÷¸É
  * @author XuDong
  */
  ::``wxz:: 
 	ahkPath = %A_ScriptDir%
 	bus2ZhPath := SubStr(ahkPath, 1 , StrLen(ahkPath)-31) "tool\ReadFile\Bus2Zg.txt"
-	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK\workspace\busplatform\src\main\resources\config\M01_MIC_INTERFACE.properties, 1 ; é€šè¿‡æä¾›ä¸€ä¸ªæ–°çš„åå­—æ¥å¤åˆ¶æ–‡ä»¶åˆ°åŒä¸ªæ–‡ä»¶å¤¹ä¸­ã€‚
-	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK\workspace\busplatform\src\main\resources\config\M10_MIC_INTERFACE.properties, 1 ; é€šè¿‡æä¾›ä¸€ä¸ªæ–°çš„åå­—æ¥å¤åˆ¶æ–‡ä»¶åˆ°åŒä¸ªæ–‡ä»¶å¤¹ä¸­ã€‚
-	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK\workspace\busplatform\src\main\resources\config\M12_MIC_INTERFACE.properties, 1 ; é€šè¿‡æä¾›ä¸€ä¸ªæ–°çš„åå­—æ¥å¤åˆ¶æ–‡ä»¶åˆ°åŒä¸ªæ–‡ä»¶å¤¹ä¸­ã€‚
-	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK_tag\workspace\busplatform_tag\src\main\resources\config\M01_MIC_INTERFACE.properties, 1 ; é€šè¿‡æä¾›ä¸€ä¸ªæ–°çš„åå­—æ¥å¤åˆ¶æ–‡ä»¶åˆ°åŒä¸ªæ–‡ä»¶å¤¹ä¸­ã€‚
-	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK_tag\workspace\busplatform_tag\src\main\resources\config\M10_MIC_INTERFACE.properties, 1 ; é€šè¿‡æä¾›ä¸€ä¸ªæ–°çš„åå­—æ¥å¤åˆ¶æ–‡ä»¶åˆ°åŒä¸ªæ–‡ä»¶å¤¹ä¸­ã€‚
-	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK_tag\workspace\busplatform_tag\src\main\resources\config\M12_MIC_INTERFACE.properties, 1 ; é€šè¿‡æä¾›ä¸€ä¸ªæ–°çš„åå­—æ¥å¤åˆ¶æ–‡ä»¶åˆ°åŒä¸ªæ–‡ä»¶å¤¹ä¸­ã€‚
-	MsgBox, 0, æç¤º, å¾®ä¿¡busçš„m01ã€m10ã€m12å·²æ›¿æ¢æˆ  ä¸»å¹²  é“¾æ¥ï¼, 1
+	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK\workspace\busplatform\src\main\resources\config\M01_MIC_INTERFACE.properties, 1 ; Í¨¹ıÌá¹©Ò»¸öĞÂµÄÃû×ÖÀ´¸´ÖÆÎÄ¼şµ½Í¬¸öÎÄ¼ş¼ĞÖĞ¡£
+	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK\workspace\busplatform\src\main\resources\config\M10_MIC_INTERFACE.properties, 1 ; Í¨¹ıÌá¹©Ò»¸öĞÂµÄÃû×ÖÀ´¸´ÖÆÎÄ¼şµ½Í¬¸öÎÄ¼ş¼ĞÖĞ¡£
+	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK\workspace\busplatform\src\main\resources\config\M12_MIC_INTERFACE.properties, 1 ; Í¨¹ıÌá¹©Ò»¸öĞÂµÄÃû×ÖÀ´¸´ÖÆÎÄ¼şµ½Í¬¸öÎÄ¼ş¼ĞÖĞ¡£
+	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK_tag\workspace\busplatform_tag\src\main\resources\config\M01_MIC_INTERFACE.properties, 1 ; Í¨¹ıÌá¹©Ò»¸öĞÂµÄÃû×ÖÀ´¸´ÖÆÎÄ¼şµ½Í¬¸öÎÄ¼ş¼ĞÖĞ¡£
+	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK_tag\workspace\busplatform_tag\src\main\resources\config\M10_MIC_INTERFACE.properties, 1 ; Í¨¹ıÌá¹©Ò»¸öĞÂµÄÃû×ÖÀ´¸´ÖÆÎÄ¼şµ½Í¬¸öÎÄ¼ş¼ĞÖĞ¡£
+	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK_tag\workspace\busplatform_tag\src\main\resources\config\M12_MIC_INTERFACE.properties, 1 ; Í¨¹ıÌá¹©Ò»¸öĞÂµÄÃû×ÖÀ´¸´ÖÆÎÄ¼şµ½Í¬¸öÎÄ¼ş¼ĞÖĞ¡£
+	MsgBox, 0, ÌáÊ¾, Î¢ĞÅbusµÄm01¡¢m10¡¢m12ÒÑÌæ»»³É  Ö÷¸É  Á´½Ó£¡, 1
  return
  
    /*
- * @Description: å¾®ä¿¡busåˆ‡æ¢åˆ†æ”¯
+ * @Description: Î¢ĞÅbusÇĞ»»·ÖÖ§
  * @author XuDong
  */
  ::``wxf:: 
 	ahkPath = %A_ScriptDir%
     bus2ZhPath := SubStr(ahkPath, 1 , StrLen(ahkPath)-31) "tool\ReadFile\Bus2Fz.txt"
-	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK\workspace\busplatform\src\main\resources\config\M01_MIC_INTERFACE.properties, 1 ; é€šè¿‡æä¾›ä¸€ä¸ªæ–°çš„åå­—æ¥å¤åˆ¶æ–‡ä»¶åˆ°åŒä¸ªæ–‡ä»¶å¤¹ä¸­ã€‚
-	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK\workspace\busplatform\src\main\resources\config\M10_MIC_INTERFACE.properties, 1 ; é€šè¿‡æä¾›ä¸€ä¸ªæ–°çš„åå­—æ¥å¤åˆ¶æ–‡ä»¶åˆ°åŒä¸ªæ–‡ä»¶å¤¹ä¸­ã€‚
-	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK\workspace\busplatform\src\main\resources\config\M12_MIC_INTERFACE.properties, 1 ; é€šè¿‡æä¾›ä¸€ä¸ªæ–°çš„åå­—æ¥å¤åˆ¶æ–‡ä»¶åˆ°åŒä¸ªæ–‡ä»¶å¤¹ä¸­ã€‚
-	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK_tag\workspace\busplatform_tag\src\main\resources\config\M01_MIC_INTERFACE.properties, 1 ; é€šè¿‡æä¾›ä¸€ä¸ªæ–°çš„åå­—æ¥å¤åˆ¶æ–‡ä»¶åˆ°åŒä¸ªæ–‡ä»¶å¤¹ä¸­ã€‚
-	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK_tag\workspace\busplatform_tag\src\main\resources\config\M10_MIC_INTERFACE.properties, 1 ; é€šè¿‡æä¾›ä¸€ä¸ªæ–°çš„åå­—æ¥å¤åˆ¶æ–‡ä»¶åˆ°åŒä¸ªæ–‡ä»¶å¤¹ä¸­ã€‚
-	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK_tag\workspace\busplatform_tag\src\main\resources\config\M12_MIC_INTERFACE.properties, 1 ; é€šè¿‡æä¾›ä¸€ä¸ªæ–°çš„åå­—æ¥å¤åˆ¶æ–‡ä»¶åˆ°åŒä¸ªæ–‡ä»¶å¤¹ä¸­ã€‚
-	MsgBox, 0, æç¤º, å¾®ä¿¡busçš„m01ã€m10ã€m12å·²æ›¿æ¢æˆ  åˆ†æ”¯  é“¾æ¥ï¼, 1
+	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK\workspace\busplatform\src\main\resources\config\M01_MIC_INTERFACE.properties, 1 ; Í¨¹ıÌá¹©Ò»¸öĞÂµÄÃû×ÖÀ´¸´ÖÆÎÄ¼şµ½Í¬¸öÎÄ¼ş¼ĞÖĞ¡£
+	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK\workspace\busplatform\src\main\resources\config\M10_MIC_INTERFACE.properties, 1 ; Í¨¹ıÌá¹©Ò»¸öĞÂµÄÃû×ÖÀ´¸´ÖÆÎÄ¼şµ½Í¬¸öÎÄ¼ş¼ĞÖĞ¡£
+	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK\workspace\busplatform\src\main\resources\config\M12_MIC_INTERFACE.properties, 1 ; Í¨¹ıÌá¹©Ò»¸öĞÂµÄÃû×ÖÀ´¸´ÖÆÎÄ¼şµ½Í¬¸öÎÄ¼ş¼ĞÖĞ¡£
+	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK_tag\workspace\busplatform_tag\src\main\resources\config\M01_MIC_INTERFACE.properties, 1 ; Í¨¹ıÌá¹©Ò»¸öĞÂµÄÃû×ÖÀ´¸´ÖÆÎÄ¼şµ½Í¬¸öÎÄ¼ş¼ĞÖĞ¡£
+	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK_tag\workspace\busplatform_tag\src\main\resources\config\M10_MIC_INTERFACE.properties, 1 ; Í¨¹ıÌá¹©Ò»¸öĞÂµÄÃû×ÖÀ´¸´ÖÆÎÄ¼şµ½Í¬¸öÎÄ¼ş¼ĞÖĞ¡£
+	FileCopy, %bus2ZhPath%, D:\works\pertercat\eclipse-jee-luna-SR2-win32-x86_64_forWXJK_tag\workspace\busplatform_tag\src\main\resources\config\M12_MIC_INTERFACE.properties, 1 ; Í¨¹ıÌá¹©Ò»¸öĞÂµÄÃû×ÖÀ´¸´ÖÆÎÄ¼şµ½Í¬¸öÎÄ¼ş¼ĞÖĞ¡£
+	MsgBox, 0, ÌáÊ¾, Î¢ĞÅbusµÄm01¡¢m10¡¢m12ÒÑÌæ»»³É  ·ÖÖ§  Á´½Ó£¡, 1
  return
  
     /*
- * @Description: æ—¥ç»ˆ
+ * @Description: ÈÕÖÕ
  * @author XuDong
  */
  :://rivs:: 
@@ -2724,7 +2724,7 @@ micChangeTo(ByRef bchId){
 
 
  /*
-è¾“å…¥æ³•åˆ‡æ¢æ–¹æ³•
+ÊäÈë·¨ÇĞ»»·½·¨
 */
 SwitchIME(dwLayout){
     HKL:=DllCall("LoadKeyboardLayout", Str, dwLayout, UInt, 1)
@@ -2733,52 +2733,48 @@ SwitchIME(dwLayout){
 }
 
 /*
-	å›¾ç‰‡æœç´¢æŒ‰é’®
+	Í¼Æ¬ËÑË÷°´Å¥
 */
 fun_btn(ByRef eventName, ByRef btnId, ByRef btnName, ByRef xAdd, ByRef yAdd){
 	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\%btnId%.bmp
 	if ErrorLevel = 2 
-	MsgBox %eventName%_%btnName%_ä¸èƒ½å®æ–½æœç´¢ã€‚
+	MsgBox %eventName%_%btnName%_²»ÄÜÊµÊ©ËÑË÷¡£
 	else if ErrorLevel = 1 
-	MsgBox %eventName%_%btnName%_æœªåœ¨å±å¹•ä¸Šå¯»å¾—å›¾æ ‡ã€‚
+	MsgBox %eventName%_%btnName%_Î´ÔÚÆÁÄ»ÉÏÑ°µÃÍ¼±ê¡£
 	else{
 		xa := OutputVarX + xAdd		
 		ya := OutputVarY + yAdd
 		MouseClick, left,  %xa%, %ya%
-		Sleep, 500  ;ç­‰å¾…
+		Sleep, 500  ;µÈ´ı
 	}
 }
 
 /*
-	å›¾ç‰‡æœç´¢æŒ‰é’®
+	Í¼Æ¬ËÑË÷°´Å¥
 */
 fun_btn_nomsg(ByRef eventName, ByRef btnId, ByRef btnName, ByRef xAdd, ByRef yAdd){
 	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\%btnId%.bmp
 	nomsg := 2
 	if (ErrorLevel = 2) {
-		aa = %eventName%_%btnName%_æœªåœ¨å±å¹•ä¸Šå¯»å¾—å›¾æ ‡ã€‚
+		aa = %eventName%_%btnName%_Î´ÔÚÆÁÄ»ÉÏÑ°µÃÍ¼±ê¡£
 		ToolTip(aa)
 		nomsg := 2	
 	}else if (ErrorLevel = 1) {
-		bb = %eventName%_%btnName%_æœªåœ¨å±å¹•ä¸Šå¯»å¾—å›¾æ ‡ã€‚
+		bb = %eventName%_%btnName%_Î´ÔÚÆÁÄ»ÉÏÑ°µÃÍ¼±ê¡£
 		ToolTip(bb)
 		nomsg := 1
 	}else{
 		xa := OutputVarX + xAdd		
 		ya := OutputVarY + yAdd
 		MouseClick, left,  %xa%, %ya%
-		Sleep, 500  ;ç­‰å¾…
+		Sleep, 500  ;µÈ´ı
 		nomsg := 0
 	}
 	return nomsg
 }
 
-::``test::
-	fun_btn_nomsg("ç”¨æ¬¾ç¡®è®¤", "yongkuanqueren", "ç”¨æ¬¾ç¡®è®¤", 10, 10)
-return
-
 /*
-ä»50wèº«ä»½è¯æ•°æ®ä¸­è·å–èº«ä»½è¯
+´Ó50wÉí·İÖ¤Êı¾İÖĞ»ñÈ¡Éí·İÖ¤
 */
  getIdCard(){
 	ahkPath = %A_ScriptDir%
@@ -2787,6 +2783,51 @@ return
 	FileReadLine, idCardLine, %idCardPath%, %idCardRand%
 	return %idCardLine%
 }
+
+/*
+Ñ­»·¶ÁÈ¡Éí·İÖ¤²¢Ğ´ÈëÎÄ¼ş£¨ÌŞ³ıÒÑ¾­¶ÁÈ¡¹ıµÄÄÇÌõ£©
+*/
+ getIdCardLine(){
+    ahkPath = %A_ScriptDir%
+    idCardPath := SubStr(ahkPath, 1 , StrLen(ahkPath)-31) "tool\ReadFile\IdCardFile.txt"
+	idCardPath2 := SubStr(ahkPath, 1 , StrLen(ahkPath)-31) "tool\ReadFile\IdCardFile2.txt"
+	
+	FileDelete, %idCardPath2%	;É¾³ı±¸·İÎÄ¼ş
+	Loop, read, %idCardPath%	;Ò»ĞĞÒ»ĞĞÑ­»·¶ÁÈ¡ÎÄ¼ş
+	{
+		;~ MsgBox, µÚ %A_Index% ¸öÆ¬¶ÎÊÇ %A_LoopReadLine%¡£
+		if(1 != A_Index){
+			FileAppend, %A_LoopReadLine%`n, %idCardPath2%	;³ı¿ªµÚÒ»ĞĞĞ´Èë±¸·İÎÄ¼ş
+		}
+	}
+	
+	FileDelete, %idCardPath%	;É¾³ıÔ´ÎÄ¼ş
+	FileMove, %idCardPath2%, %idCardPath% ; ÖØÃüÃûµ¥¸öÎÄ¼ş¡£
+}
+
+/*
+Ñ­»·¶ÁÈ¡ÎÄ¼ş²¢Ğ´ÈëÎÄ¼ş
+*/
+ getReadFile(){
+    idCardPath := "D:\read.txt"
+	FileDelete, D:\read2.txt	;É¾³ı±¸·İÎÄ¼ş
+	Loop, read, %idCardPath%	;Ò»ĞĞÒ»ĞĞÑ­»·¶ÁÈ¡ÎÄ¼ş
+	{
+		;~ MsgBox, µÚ %A_Index% ¸öÆ¬¶ÎÊÇ %A_LoopReadLine%¡£
+		if(1 != A_Index){
+			FileAppend, %A_LoopReadLine%`n, D:\read2.txt	;³ı¿ªµÚÒ»ĞĞĞ´Èë±¸·İÎÄ¼ş
+		}
+	}
+	
+	FileDelete, D:\read.txt	;É¾³ıÔ´ÎÄ¼ş
+	FileMove, D:\read2.txt, D:\read.txt ; ÖØÃüÃûµ¥¸öÎÄ¼ş¡£
+}
+
+:://ff::
+:R:cc2::Pause3333
+	index := InStr(ahk_bak_dir,"::") ;²éÕÒ.java×Ö·ûÔÚtitileÕâ¸ö±äÁ¿ÖĞµÄÎ»ÖÃ£¬²¢¸³Öµ¸øindexJava  (Î»ÖÃÊÇ´Ó1¿ªÊ¼
+	ahk_bak_dir := SubStr(ahk_bak_dir, 1 , index+1)  ;×Ö·û´®½ØÈ¡
+return
 
 ;---------------------------------------
 ; Tooltips and Timers
@@ -2809,23 +2850,25 @@ return
 	}
 
 /*
- * @Description: æš‚åœè„šæœ¬
+ * @Description: ÔİÍ£½Å±¾
  * @author XuDong
  */
 Pause::Pause 
 
 ;---------------------------------------
-; æŸ¥æ‰¾å›¾ç‰‡ï¼ˆåªèƒ½æŸ¥è¯¢å½“å‰æ¿€æ´»çª—å£çš„æ–‡ä»¶ï¼‰   2
+; ²éÕÒÍ¼Æ¬£¨Ö»ÄÜ²éÑ¯µ±Ç°¼¤»î´°¿ÚµÄÎÄ¼ş£©   2
 ;---------------------------------------
 /*
 NumpadSub::
 ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\test.bmp 
 if ErrorLevel = 2 
-MsgBox ä¸èƒ½å®æ–½æœç´¢ã€‚
+MsgBox ²»ÄÜÊµÊ©ËÑË÷¡£
 else if ErrorLevel = 1 
-MsgBox æœªåœ¨å±å¹•ä¸Šå¯»å¾—å›¾æ ‡ã€‚
+MsgBox Î´ÔÚÆÁÄ»ÉÏÑ°µÃÍ¼±ê¡£
 else 
- ;MsgBox åœ¨ %OutputVarX%x%OutputVarY% å¤„å¯»å¾—å›¾æ ‡ã€‚
+ ;MsgBox ÔÚ %OutputVarX%x%OutputVarY% ´¦Ñ°µÃÍ¼±ê¡£
 MouseMove  %OutputVarX%, %OutputVarY%
 return 
 */
+
+

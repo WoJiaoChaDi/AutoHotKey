@@ -770,8 +770,91 @@ return
 ;~ return
 
 
+/*
+* 新增热字符串,是在本脚本的末尾新增字段（会自动替换热键重名的热字符串）
+* 热字符串都是以 :R::***::  形式的，所以不要在本脚本的其他地方用:R::***::形式的热字符串 
+* :R:: 表示  按照原样发送替换文本
+*/
+#v:: 
+	;获取当前选中的文本。使用剪贴板代替 "ControlGet Selected" 
+	;是因为它能在更多种类的编辑器(也就是字处理软件)中起作用。
+	;当前剪贴板中的内容将被保存，以便之后恢复。尽管只能恢复纯文本，但总比没有的好：
+	AutoTrim Off  ;保留剪贴板中首尾的空白字符。
+	ClipboardOld = %ClipboardAll%
+	Clipboard =  ;为检验正确，需要清空。
+	Send ^c
+	ClipWait 1
+	if ErrorLevel  ; ClipWait 超时
+		return
+	;将回车换行和/或换行符替换为 `n 以便使用在一个 "send-raw" 的热字符串中：
+	;对任何在 raw 模式下可能出问题的其他字符应用同样的操作：
+	StringReplace, Hotstring, Clipboard, ``, ````, All  ;为避免与下列替换冲突，先作这个替换。
+	StringReplace, Hotstring, Hotstring, `r`n, ``r, All  ;在微软 Word 等等软件中 `r 比 `n 表现得更好。
+	StringReplace, Hotstring, Hotstring, `n, ``r, All
+	StringReplace, Hotstring, Hotstring, %A_Tab%, ``t, All
+	StringReplace, Hotstring, Hotstring, `;, ```;, All
+	Clipboard = %ClipboardOld%  ;恢复记事本之前的内容
+	;这将把输入对话框中的光标移动到更人性化的位置：
+	SetTimer, MoveCaret, 10
+	;显示提供了缺省热字符串的输入对话框：
+	InputBox, Hotstring, MyHotstring, 在光标处输入你的缩写。`n需要的话，你也可以编辑替换文本。 , , , 150, , , , , :R:`::%Hotstring%
+	if ErrorLevel  ;用户选择了取消
+		return
+	IfInString, Hotstring, :R`:::
+	{
+		MsgBox 你没有输入缩写。热字符串不会被添加。
+		return
+	}
+	
+	;判断该热键是否已经被使用，如果已经被使用，则删除使用的那行
+	ahk_bak_flag = 0
+	ahk_bak_dir = %A_ScriptFullPath%
+	ahk_bak_dir := SubStr(ahk_bak_dir, 1 , StrLen(ahk_bak_dir) - 4)  ;字符串截取
+	ahk_bak_dir = %ahk_bak_dir%_bak.ahk
+	FileDelete, %ahk_bak_dir%    ;删除备份文件
+	
+    Loop, read, %A_ScriptFullPath%    ;一行一行循环读取文件
+    {
+        ;~ MsgBox, 第 %A_Index% 个片段是 %A_LoopReadLine%。
+		ahk_search_str = %Hotstring%
+		
+		ahk_index := InStr(ahk_search_str,"::") ;查找::字符在titile这个变量中的位置，并赋值给indexJava  (位置是从1开始
+		ahk_search_str := SubStr(ahk_search_str, 1 , ahk_index+1)  ;字符串截取   即热键字符串  :R:***::  这部分
+        IfInString, A_LoopReadLine, %ahk_search_str%		;判断新增的热键是否已经存在，如果已经存在，则是新增一个备份文件，等待写完备份文件后，删除主文件，更改备份文件名称为主文件名称
+		{
+			;如果新增的热键已经存在，则把新的字符串往备份文件里面写
+			FileAppend, %Hotstring%`n, %ahk_bak_dir%  ;在字符串开头放一个 `n 以防文件在它的末尾没有空行。
+			ahk_bak_flag = 1
+        }else{
+			;如果新增的热键不存在，则把旧的字符串往备份文件里面写
+			FileAppend, %A_LoopReadLine%`n, %ahk_bak_dir%    ;除开第一行写入备份文件
+		}
+    }
+	
+	if(1 == ahk_bak_flag){
+		;如果有替换的热键，则删除源文件，并把备份文件重命名为源文件
+		FileDelete, %A_ScriptFullPath%    ;删除源文件
+		FileMove, %ahk_bak_dir%, %A_ScriptFullPath% ; 重命名单个文件。
+	}else{
+		;否则，在源文件的基础上添加热字符串并重新加载脚本：
+		FileAppend, `n%Hotstring%, %A_ScriptFullPath%  ;在字符串开头放一个 `n 以防文件在它的末尾没有空行。
+		FileDelete, %ahk_bak_dir%    ;删除备份文件
+	}
+	
+	;重新加载脚本
+	Reload
+	Sleep 200 ;如果重新加载成功，那么在 Sleep 期间就会关闭这个实例，这样就永远不会运行到下一行。
+	MsgBox, 4,, 刚刚添加的热字符串格式化不正确。你要打开脚本编辑么？注意，有问题的热字符串在脚本的最后一行。
+	IfMsgBox, Yes, Edit
+return
 
-
+MoveCaret:
+	IfWinNotActive, MyHotstring
+		return
+	;否则，将输入对话框中的光标移动到用户输入缩写的位置。
+	Send {Home}{Right 3}
+	SetTimer, MoveCaret, Off
+return
 
  /*
  * f12::ExitApp ;f12退出	
@@ -788,3 +871,7 @@ return
  return		
 
  */
+ 
+ 
+;~下面是临时快捷键新增的字符串
+;~:R:***:的都是临时的热字符串

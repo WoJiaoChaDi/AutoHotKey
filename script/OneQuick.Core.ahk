@@ -1414,8 +1414,8 @@ class xClipboard
 		Menu, xClipboard_clipMenu, Add, % cliptrim, Sub_xClipboard_ClipMenu_CLIPTitle
 		Menu, xClipboard_clipMenu, Disable, % cliptrim
 		Menu, xClipboard_clipMenu, Add, % lang("Paste (Tab)") "`t&`t", Sub_xClipboard_ClipMenu_Paste
-		Menu, xClipboard_clipMenu, Add, % lang("Open Path (E)") "`t&e", Sub_xClipboard_ClipMenu_OpenPath
-		Menu, xClipboard_clipMenu, Add, % lang("Open Path File (R)") "`t&r", Sub_xClipboard_ClipMenu_OpenPathFile
+		Menu, xClipboard_clipMenu, Add, % lang("Open Path (E)") "`t&e", Sub_xClipboard_ClipMenu_OpenPath 	;打开路径文件
+		Menu, xClipboard_clipMenu, Add, % lang("Open Path File (R)") "`t&r", Sub_xClipboard_ClipMenu_OpenPathFile	;定位路径文件
 		Menu, xClipboard_clipMenu, Add, % lang("RUN in CMD (Space)") " `t& ", Sub_xClipboard_ClipMenu_CMD
 		Menu, xClipboard_clipMenu, Add
 		Loop, % this.SearchArr.MaxIndex()
@@ -1573,7 +1573,7 @@ run(Trim(Clipboard, " `t"), 0)
 Return
 
 Sub_xClipboard_ClipCmdMenu_Search:
-xC_site := xClipboard.SearchArr[A_ThisMenuItemPos-4][3]
+xC_site := xClipboard.SearchArr[A_ThisMenuItemPos-6][3]		;xC_site定位到快捷搜索，需要从菜单最大数减去  复制剪贴板上方，最大的行数，包括分割线，所以目前为6
 StringReplace, xC_site, xC_site, `%s, % UriEncode(clipboard), All
 Run(xC_site)
 Return
@@ -2677,7 +2677,7 @@ RunArr(arr)
 }
 
 ; 万能的run 函数
-; 参数可以是cmd命令，代码中的sub，function，网址，b站av号，还可以扩展
+; 参数可以是cmd命令，代码中的sub，function，网址，b站av号，还可以扩展 run()
 run(command, throwErr := 1)
 {
 	if(IsLabel(command))
