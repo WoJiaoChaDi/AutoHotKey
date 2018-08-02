@@ -434,6 +434,7 @@ neishen11w(){
 	
 	MouseClick, left, 1029, 273 ;身份证号
 	RandIdCard := getIdCardLine()
+	ToolTip("身份证号为:"RandIdCard)
 	Send %RandIdCard%	;随机身份证
 	MouseClick, left, 514, 275 ;客户名称
 	Send ^a
@@ -2665,13 +2666,13 @@ micChangeTo(ByRef bchId){
  * @author XuDong
  */
  :://cex::
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE.xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE(1).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE(2).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE(3).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE(4).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE(5).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
-	FileCopy, D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\microcredit-busbase-yxjr\sql\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE(6).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\sql_LOAN_DATABASE\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE.xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\sql_LOAN_DATABASE\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE(1).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\sql_LOAN_DATABASE\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE(2).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\sql_LOAN_DATABASE\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE(3).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\sql_LOAN_DATABASE\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE(4).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\sql_LOAN_DATABASE\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE(5).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
+	FileCopy, D:\Work\PeteCat\sql_LOAN_DATABASE\LOAN_DATABASE.xlsx, D:\快捷方式\excel\LOAN_DATABASE(6).xlsx, 1 ; 通过提供一个新的名字来复制文件到同个文件夹中。
 	
 	MsgBox ...库表结构Excel已经复制完毕！
  return
@@ -2792,17 +2793,23 @@ fun_btn_nomsg(ByRef eventName, ByRef btnId, ByRef btnName, ByRef xAdd, ByRef yAd
     idCardPath := SubStr(ahkPath, 1 , StrLen(ahkPath)-31) "tool\ReadFile\IdCardFile.txt"
 	idCardPath2 := SubStr(ahkPath, 1 , StrLen(ahkPath)-31) "tool\ReadFile\IdCardFile2.txt"
 	
+	idCardTmp = "";
+	
 	FileDelete, %idCardPath2%	;删除备份文件
 	Loop, read, %idCardPath%	;一行一行循环读取文件
 	{
 		;~ MsgBox, 第 %A_Index% 个片段是 %A_LoopReadLine%。
 		if(1 != A_Index){
 			FileAppend, %A_LoopReadLine%`n, %idCardPath2%	;除开第一行写入备份文件
+		}else{
+			idCardTmp := A_LoopReadLine
 		}
 	}
 	
 	FileDelete, %idCardPath%	;删除源文件
 	FileMove, %idCardPath2%, %idCardPath% ; 重命名单个文件。
+	
+	return idCardTmp
 }
 
 /*
