@@ -96,9 +96,9 @@ return
 	yeWuShenQing(13581611612)
 	
 	refreshMenu()
-	MouseClick, left, 65, 432 ;个人中心
+	MouseClick, left, 38, 441 ;个人中心
 	Sleep, 800  ;等待
-	MouseClick, left, 76, 466 ;待办流程
+	MouseClick, left, 72, 477 ;待办流程
 	Sleep, 2000  ;等待
 	MouseClick, left,  1009,  253 ;搜索
 	Sleep, 2500  ;等待

@@ -123,6 +123,8 @@ return
 	
 	real_dir = ""
 	
+	tooltip,即将打开:%dir%
+	
 	if(mic == "mic_0"){
 		real_dir = D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\%dir%
 	}else if(mic == "mic_1"){
@@ -133,6 +135,8 @@ return
 		real_dir = D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64_tag3\workspace\microcredit-parent-yxjr-v2_tag3\%dir%
 	}else if(mic == "mic_end"){
 		real_dir = D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64_tagEnd\workspace\microcredit-parent-yxjr-v2_tagEnd\%dir%
+	}else if(mic == "dh_1"){
+		real_dir = D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64_dtag1\workspace\microcredit-parent\%dir%
 	}else{
 		tooltip,请切换到java视图
 		sleep, 1000
@@ -141,6 +145,9 @@ return
 	}
 	
 	open_dir(real_dir)	;打开文件路径
+	
+	sleep, 1000
+	tooltip,
 	
 return
 
@@ -701,7 +708,7 @@ class Sys
 	}
 
 /*
-双击PrintScreen息屏
+按4下PrintScreen息屏
 */
 ~PrintScreen::
 If Home_Presses > 0
@@ -710,12 +717,12 @@ If Home_Presses > 0
     Return
 }
 Home_Presses = 1
-SetTimer, KeyHome, 300
+SetTimer, KeyHome, 1000	;在1000毫秒内
 Return
  
 KeyHome:
 SetTimer, KeyHome, Off
-If Home_Presses = 2
+If Home_Presses = 4		;按下4次按钮
 {
     Sleep 1000
 	SendMessage, 0x112, 0xF170, 2,, Program Manager
