@@ -1691,7 +1691,7 @@ daiqianfeiyong(){
 	MouseClick, left, 78, 241 ;刷新菜单
 	Sleep, 1000  ;等待
 	*/
-	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\caidan_dakai_2.bmp
+	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\caidan_dakai_3.bmp
 	if ErrorLevel = 2 
 	MsgBox 菜单_打开_不能实施搜索。
 	else if ErrorLevel = 1 

@@ -509,9 +509,18 @@ return
  * @Description: win+f 打开everything
  * @author XuDong
  */
+ ;~ #f::	
+	;~ Run D:\SoftWare\Everything-1.4.0.713b.x86-Setup\Everything.exe
+ ;~ return  
+ 
+ /*
+ * @Description: win+f 打开listary
+ * @author XuDong
+ */
  #f::	
-	Run D:\SoftWare\Everything-1.4.0.713b.x86-Setup\Everything.exe
+	Send {ctrl 2}
  return  
+ 
 
 /*
  * @Description: //d打开d盘
