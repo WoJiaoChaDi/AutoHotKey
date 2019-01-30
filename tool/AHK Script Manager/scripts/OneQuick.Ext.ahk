@@ -88,7 +88,7 @@ return
 return
 
  /*
-使用chrome时，按Ctrl+Shift+X,查看框架源代码
+使用chrome时，按Ctrl+Shift+X,打开调试模式
 */
 ^+x::
 	Send {F12}
@@ -381,9 +381,9 @@ return
 #IfWinActive ahk_exe explorer.exe
 
 /*
-新建文件夹，并以当前日期自动命名
+ win + p 新建文件夹，并以当前日期自动命名
 */
-#t::
+#p::
 	now_dir:= A_Desktop
 	;~ WinGetClass class, ahk_id WinExist("A")
 	WinGet, active_id, ID, A    ;获取当前激活页面的id并赋值给active_id变量
@@ -456,7 +456,7 @@ return
 #Esc::!F4
 
 /*
- * @Description: alt+A 选中光标所在行所有内容，并把光标定位到末尾
+ * @Description: alt+A 选中光标所在行所有内容，并把光标定位到末尾  **选中光标所在行，并把光标定位到末尾**
  * @author XuDong
  */
 !a::	
@@ -490,7 +490,7 @@ return
  return  
  
  /*
- * @Description: //b打开百度
+ * @Description: //b打开百度	
  * @author XuDong
  */
  :://b::	
@@ -498,7 +498,7 @@ return
  return  
 
 /*
- * @Description: win+b 打开sublime_text
+ * @Description: win+b 打开打开Sublime Text3
  * @author XuDong
  */
  #b::	
@@ -514,7 +514,7 @@ return
  ;~ return  
  
  /*
- * @Description: win+f 打开listary
+ * @Description: win+f 打开listary	**打开搜索**
  * @author XuDong
  */
  #f::	
@@ -658,6 +658,15 @@ win+下滚轮  透明窗口
 	WinSet, Transparent, %active_tran%, ahk_id %active_id%		;修改透明值
 return
 
+
+ /*
+	对窗口的置顶/取消置顶操作
+*/
+#t::
+Sys.Win.Topmost(WinMenu.InfoObj[3])
+Return
+
+
  /*
 输入法切换方法
 */
@@ -713,9 +722,36 @@ class Sys
 				 WinGetTitle, title, ahk_id %winID%
 				 return % title
 			 }
+			 
+			 IsTopmost(winID = "")
+			{
+				if (winID == "")
+					winID := this.ID()
+				WinGet, ExStyle, ExStyle, ahk_id %winID%
+				if (ExStyle & 0x8)  ; 0x8 is WS_EX_TOPMOST.
+					return true
+				else
+					return false
+			}
+
+			Topmost(winID := "", top := "")
+			{
+				if (winID == "")
+					winID := this.ID()
+				if (top = "")
+					top := not this.IsTopmost(winID)
+				if top
+				{
+					WinSet, AlwaysOnTop, on, ahk_id %winID%
+				} 
+				else
+				{
+					Winset, AlwaysOnTop, off, ahk_id %winID%
+				}
+			}
 		 }
 	}
-
+	
 /*
 按4下PrintScreen息屏
 */
@@ -740,7 +776,7 @@ Home_Presses = 0
 
 
 /*
-按住CapsLock和左键拖动当前窗口
+按住CapsLock和左键任意位置，可以任意位置拖动当前窗口
 */
 CapsLock & LButton::
 CoordMode, Mouse ; Switch to screen/absolute coordinates.

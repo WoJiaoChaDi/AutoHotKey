@@ -26,7 +26,7 @@ addFangChan(){
 	refreshMenu()
 	MouseClick, left,  76,  383
 	Sleep, 1000
-	MouseClick, left,  88,  473
+	MouseClick, left,  88,  477	;房产信息
 	Sleep, 2000
 	MouseClick, left,  1044,  318
 	Sleep, 1000
@@ -50,19 +50,19 @@ addFangChan(){
 	Send +{End}
 	Send ^v
 	Send ^c
-	MouseClick, left, 415, 348 ;所在城市区域
+	MouseClick, left, 415, 360 ;所在城市区域
 	Send {down}{enter}
 	Sleep 500
-	MouseClick, left, 518, 348 ;所在城市区域
+	MouseClick, left, 518, 360 ;所在城市区域
 	Send {down}{enter}
-	MouseClick, left, 1629, 420 ;房产用途
+	MouseClick, left, 1629, 432 ;房产用途
 	Send {down}{enter}
-	MouseClick, left, 1048, 348 ;房屋坐落
+	MouseClick, left, 1048, 360 ;房屋坐落
 	Send ^v
-	MouseClick, left, 1054, 419 ;建筑面积（m2）
+	MouseClick, left, 1054, 431 ;建筑面积（m2）
 	Send 155
-	MouseClick, left, 999, 624 ;保存
-	MouseClick, left, 1051, 660 ;确定
+	MouseClick, left, 999, 634 ;保存
+	MouseClick, left, 1051, 670 ;确定
 	
 	ToolTip("...脚本结束")
 }
@@ -177,13 +177,13 @@ return
 
 fangChanChuPing(){
 	refreshMenu()
-	MouseClick, left, 64, 374 ;担保管理
+	MouseClick, left, 64, 386 ;担保管理
 	Sleep, 1000  ;等待
-	MouseClick, left, 75, 486 ;房产初评
+	MouseClick, left, 75, 498 ;房产初评
 	Sleep, 2000  ;等待
-	MouseClick, left, 306, 217 ;待评估无房本
+	MouseClick, left, 306, 229 ;待评估无房本
 	Sleep, 1000  ;等待
-	MouseClick, left, 1704, 368 
+	MouseClick, left, 1704, 380 
 	Send {tab}{enter}	;选中第一条评估
 	Sleep, 3500  ;等待
 	
@@ -194,14 +194,14 @@ fangChanChuPing(){
 	;~ MsgBox 房产初评_房屋坐标_未在屏幕上寻得图标。
 	;~ else{
 		;~ MouseClick, left, %OutputVarX%, %OutputVarY% ;定位
-		MouseClick, left, 1118, 315 ;定位
+		MouseClick, left, 1118, 327 ;定位
 		Sleep, 800  ;等待
 		Send ^+{tab}
 		Sleep, 800  ;等待
 		;~ sX := OutputVarX - 700
 		;~ sY := OutputVarY - 25
 		;~ MouseClick, left, %sX%, %sY% ;选中所有权人
-		MouseClick, left, 501, 285 ;选中所有权人
+		MouseClick, left, 501, 297 ;选中所有权人
 		Send {Home}   
 		Send +{End}
 		Send ^c
@@ -215,11 +215,11 @@ fangChanChuPing(){
 		Sleep, 4000  ;等待
 		Send {enter} ;搜索失败的确定
 		Sleep, 500
-		MouseClick, left,  234,  175
+		MouseClick, left,  234,  187
 		Sleep, 500
-		MouseClick, left,  365,  336
+		MouseClick, left,  365,  348
 		Sleep, 500
-		MouseClick, left,  365,  336
+		MouseClick, left,  365,  348
 		Sleep, 500
 		Send {tab}{enter}
 		Sleep, 500
@@ -231,7 +231,7 @@ fangChanChuPing(){
 		;~ MsgBox 房产初评_提交_未在屏幕上寻得图标。
 		;~ else{
 			;~ MouseClick, left,  %OutputVarXA%, %OutputVarYA%
-			MouseClick, left,  756, 562 ;~ 定位到房估估询价前面
+			MouseClick, left,  756, 575 ;~ 定位到房估估询价前面
 			Send {tab 2}
 			Sleep, 100
 			Send, {ENTER}
@@ -251,31 +251,31 @@ fangChanChuPing(){
  
  yeWuShenQing(ByRef tel){
 	refreshMenu()
-	MouseClick, left, 50, 459 ;贷款申请
+	MouseClick, left, 50, 471 ;贷款申请
 	Sleep, 1000  ;等待
-	MouseClick, left, 68, 494 ;房通贷
+	MouseClick, left, 68, 506 ;房通贷
 	Sleep, 2000  ;等待
-	MouseClick, left, 207, 246 ;光标定位所有人
+	MouseClick, left, 207, 258 ;光标定位所有人
 	Send {tab}
 	Send ^v
 	Send {tab 5}{enter}
 	Sleep, 1000  ;等待
-	MouseClick, left, 510, 367 ;光标定位第一条记录
+	MouseClick, left, 510, 379 ;光标定位第一条记录
 	Sleep, 500  ;等待
 	Send +{tab}+{tab}{enter}
 	Sleep, 1500  ;等待 
-	MouseClick, left, 477, 277 ;客户渠道
+	MouseClick, left, 477, 289 ;客户渠道
 	Send {down}{enter}
-	MouseClick, left, 1113, 273 ;客户经理
+	MouseClick, left, 1113, 285 ;客户经理
 	Sleep, 1500  ;等待
-	MouseClick, left, 690, 471 ;登录名
+	MouseClick, left, 690, 483 ;登录名
 	Send %tel%{tab}{tab}{tab}{tab}{enter}
 	Sleep 300
-	MouseClick, left, 763, 519 ;选择第一条记录
+	MouseClick, left, 763, 531 ;选择第一条记录
 	Sleep, 500  ;等待
-	MouseClick, left,  1005,  808
+	MouseClick, left,  1005,  820
 	Sleep, 500  ;等待
-	MouseClick, left, 507, 331 ;申请金额
+	MouseClick, left, 507, 343 ;申请金额
 	Send 150000{tab}7{tab}{tab}{tab}{enter}{tab}{tab}{tab}{enter} 
 	closeTaskMsg()
 	
@@ -295,23 +295,23 @@ fangChanChuPing(){
  */
   neiShen1(){
 	refreshMenu()
-	MouseClick, left, 65, 432 ;个人中心
+	MouseClick, left, 65, 444 ;个人中心
 	Sleep, 800  ;等待
-	MouseClick, left, 76, 466 ;待办流程
+	MouseClick, left, 76, 478 ;待办流程
 	Sleep, 2000  ;等待
-	MouseClick, left,  1009,  253 ;搜索
+	MouseClick, left,  1009,  265 ;搜索
 	Sleep, 2500  ;等待
-	MouseClick, left, 1657, 311 ;待办进入第一个
+	MouseClick, left, 1657, 323 ;待办进入第一个
 	Sleep, 1000  ;等待
-	MouseClick, left, 1007, 659 ;接受任务
+	MouseClick, left, 1007, 671 ;接受任务
 	Sleep, 2500  ;等待
-	MouseClick, left, 1657, 311 ;待办进入第一个
+	MouseClick, left, 1657, 323 ;待办进入第一个
 	Sleep, 3800  ;等待
-	MouseClick, left, 440, 500 ;人民法院公告网 无 401 有
-	MouseClick, left, 440, 526 ;执行/失信网 无 401 有
-	MouseClick, left, 440, 556 ;中国裁判文书网 无 401 有
-	MouseClick, left, 443, 585 ;全国企业信用网 无 401 有
-	MouseClick, left, 1872, 242 ;完善客户信息
+	MouseClick, left, 440, 512 ;人民法院公告网 无 401 有
+	MouseClick, left, 440, 538 ;执行/失信网 无 401 有
+	MouseClick, left, 440, 568 ;中国裁判文书网 无 401 有
+	MouseClick, left, 443, 597 ;全国企业信用网 无 401 有
+	MouseClick, left, 1872, 254 ;完善客户信息
 	openCustInfo()
 }
  
@@ -320,27 +320,27 @@ fangChanChuPing(){
  */
  neiShen1ForNew(){
 	refreshMenu()
-	MouseClick, left, 65, 432 ;个人中心
+	MouseClick, left, 65, 444 ;个人中心
 	Sleep, 800  ;等待
-	MouseClick, left, 76, 466 ;待办流程
+	MouseClick, left, 76, 478 ;待办流程
 	Sleep, 2000  ;等待
-	MouseClick, left,  1009,  253 ;搜索
+	MouseClick, left,  1009,  265 ;搜索
 	Sleep, 2500  ;等待
-	MouseClick, left, 1657, 311 ;待办进入第一个
+	MouseClick, left, 1657, 323 ;待办进入第一个
 	Sleep, 1000  ;等待
-	MouseClick, left, 1007, 659 ;接受任务
+	MouseClick, left, 1007, 671 ;接受任务
 	Sleep, 2500  ;等待
-	MouseClick, left, 1657, 311 ;待办进入第一个
+	MouseClick, left, 1657, 323 ;待办进入第一个
 	Sleep, 3800  ;等待
-	MouseClick, left, 440, 500 ;人民法院公告网 无 401 有
-	MouseClick, left, 440, 526 ;执行/失信网 无 401 有
-	MouseClick, left, 440, 556 ;中国裁判文书网 无 401 有
-	MouseClick, left, 443, 585 ;全国企业信用网 无 401 有
-	MouseClick, left, 1872, 242 ;完善客户信息
+	MouseClick, left, 440, 512 ;人民法院公告网 无 401 有
+	MouseClick, left, 440, 538 ;执行/失信网 无 401 有
+	MouseClick, left, 440, 568 ;中国裁判文书网 无 401 有
+	MouseClick, left, 443, 597 ;全国企业信用网 无 401 有
+	MouseClick, left, 1872, 255 ;完善客户信息
 		;openCustInfo()	;旧的内审I，采用客户信息第四页的一条数据
 		
 	Sleep 500
-	MouseClick, left, 260, 272 ;客户姓名
+	MouseClick, left, 260, 284 ;客户姓名
 	Send {tab}^v
 	Send {tab 7}
 	RandIdCard := getIdCardLine()
@@ -350,14 +350,14 @@ fangChanChuPing(){
 	Sleep 500
 	Send {enter}
 	
-	MouseClick, left, 480, 872 ;借款用途
+	MouseClick, left, 480, 884 ;借款用途
 	Send {down}{Enter}
 	
-	MouseClick, left, 748, 922 ;提交
-	MouseClick, left, 994, 653 ;确定
+	MouseClick, left, 748, 934 ;提交
+	MouseClick, left, 994, 665 ;确定
 	closeTaskMsg()
 	Sleep, 2000
-	MouseClick, left, 1044, 704 ;关闭任务
+	MouseClick, left, 1044, 716 ;关闭任务
 	
 	ToolTip("...脚本结束")
 }
@@ -375,9 +375,9 @@ fangChanChuPing(){
 	Send ^v
 	Sleep, 500  ;等待
 	Send {enter}
-	MouseClick, left, 1355, 491 ;使用客户
+	MouseClick, left, 1355, 503 ;使用客户
 	Sleep, 1500  ;等待
-	MouseClick, left,  420,  278 ;客户姓名
+	MouseClick, left,  420,  290 ;客户姓名
 	Send {Home}   
 	Send +{End}{BS}
 	Sleep, 100  ;等待
@@ -385,19 +385,19 @@ fangChanChuPing(){
 	Sleep, 100  ;等待
 	Send 2 ;第二个
 	Sleep, 1000  ;等待
-	MouseClick, left, 987, 430 ;保存
+	MouseClick, left, 987, 442 ;保存
 	Sleep, 1500  ;等待
-	MouseClick, left, 1075, 659 ;否
+	MouseClick, left, 1075, 671 ;否
 	Sleep, 1000  ;等待
 		
-	MouseClick, left, 480, 872 ;借款用途
+	MouseClick, left, 480, 884 ;借款用途
 	Send {down}{Enter}
 	
-	MouseClick, left, 748, 922 ;提交
-	MouseClick, left, 994, 653 ;确定
+	MouseClick, left, 748, 932 ;提交
+	MouseClick, left, 994, 663 ;确定
 	closeTaskMsg()
 	Sleep, 2000
-	MouseClick, left, 1044, 704 ;关闭任务
+	MouseClick, left, 1044, 714 ;关闭任务
 	
 	ToolTip("...脚本结束")
 }
@@ -413,11 +413,11 @@ fangChanChuPing(){
  
  neiShen1w(){
 	
-	MouseClick, left, 1657, 311 ;待办进入第一个
+	MouseClick, left, 1657, 321 ;待办进入第一个
 	Sleep, 1000  ;等待
-	MouseClick, left, 1007, 659 ;接受任务
+	MouseClick, left, 1007, 669 ;接受任务
 	Sleep, 2500  ;等待
-	MouseClick, left, 1657, 311 ;待办进入第一个
+	MouseClick, left, 1657, 321 ;待办进入第一个
 	Sleep, 3800  ;等待
 	;openCustInfo()	;采用客户信息第四页的一条数据
 	
@@ -432,11 +432,11 @@ neishen11w(){
 	
 	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 	
-	MouseClick, left, 1029, 273 ;身份证号
+	MouseClick, left, 1029, 283 ;身份证号
 	RandIdCard := getIdCardLine()
 	ToolTip("身份证号为:"RandIdCard)
 	Send %RandIdCard%	;随机身份证
-	MouseClick, left, 514, 275 ;客户名称
+	MouseClick, left, 514, 285 ;客户名称
 	Send ^a
 	
 	;Send ^`` ;打开粘贴
@@ -452,8 +452,8 @@ neishen11w(){
 	;========================
 	;涉诉情况
 	;========================
-	MouseClick, left, 278, 218 ;涉诉情况
-	MouseClick, left, 314, 269 ;法院公告网前面定位
+	MouseClick, left, 278, 228 ;涉诉情况
+	MouseClick, left, 314, 279 ;法院公告网前面定位
 	Send {tab 2}{right 2}{tab}
 	Send 这是法院公告网的备注哦！
 	Send {tab 2}{right 2}{tab}
@@ -467,15 +467,15 @@ neishen11w(){
 	Send {tab 2}{right 2}{tab}
 	Send 这是企查查的备注哦！
 	
-	MouseClick, left, 473, 908 ;涉诉金额
+	MouseClick, left, 473, 918 ;涉诉金额
 	Send {down}{enter}
-	MouseClick, left, 975, 910 ;涉诉类型
+	MouseClick, left, 975, 920 ;涉诉类型
 	Send {down}{enter}
-	MouseClick, left, 1481, 912 ;涉诉时间
+	MouseClick, left, 1481, 922 ;涉诉时间
 	Send {down}{enter}
 	
 	Send {tab}{enter}
-	MouseClick, left, 1040, 493 ;确认提交
+	MouseClick, left, 1040, 503 ;确认提交
 	Send {tab}{enter}{enter}
 	
 	ToolTip("...脚本结束")
@@ -490,43 +490,43 @@ neishen11w(){
  return  
 
 neiShen2(){
-	MouseClick, left, 1657, 311 ;待办进入第一个
+	MouseClick, left, 1657, 321 ;待办进入第一个
 	Sleep, 2000  ;等待
-	MouseClick, left, 349, 220 ;tab担保方式
+	MouseClick, left, 349, 230 ;tab担保方式
 	Sleep, 1000  ;等待
-	MouseClick, left, 1620, 352 ;第一个抵押物完善信息
+	MouseClick, left, 1620, 362 ;第一个抵押物完善信息
 	Sleep, 2000  ;等待
-	MouseClick, left, 1035, 367 ;房产获得方式
+	MouseClick, left, 1035, 377 ;房产获得方式
 	Send {down}{enter}
-	MouseClick, left, 465, 391 ;房产性质
+	MouseClick, left, 465, 401 ;房产性质
 	Send {down}{enter}
-	MouseClick, left, 468, 417 ;规划用途
+	MouseClick, left, 468, 427 ;规划用途
 	Send {down}{enter}
-	MouseClick, left, 1033, 417 ;产权证登记日期
-	MouseClick, left, 981, 442 ;产权证登记日期 往前两个月
+	MouseClick, left, 1033, 427 ;产权证登记日期
+	MouseClick, left, 981, 452 ;产权证登记日期 往前两个月
 	MouseClick, left
 	MouseClick, left
 	MouseClick, left
 	MouseClick, left
 	MouseClick, left
 	Sleep, 500  ;等待
-	MouseClick, left, 1087, 571 ;产权证登记日期 28日
-	MouseClick, left, 474, 470 ;总楼层
+	MouseClick, left, 1087, 581 ;产权证登记日期 28日
+	MouseClick, left, 474, 480 ;总楼层
 	Send 15
-	MouseClick, left, 1050, 473 ;所在楼层
+	MouseClick, left, 1050, 483 ;所在楼层
 	Send 15
-	MouseClick, left, 464, 527 ;土地来源
+	MouseClick, left, 464, 537 ;土地来源
 	Send {down}{enter}
-	MouseClick, left, 1002, 525 ;是否有土地证 无  960, 525 有
-	MouseClick, left, 1573, 528 ;当前是否在押 无
-	MouseClick, left, 431, 585 ;是否唯一住房 无
-	MouseClick, left, 1000, 578 ;是否满二/五 无
-	MouseClick, left, 1575, 584 ;是否需垫资 无
-	MouseClick, left, 457, 305 ;复制所有权人
+	MouseClick, left, 1002, 535 ;是否有土地证 无  960, 525 有
+	MouseClick, left, 1573, 538 ;当前是否在押 无
+	MouseClick, left, 431, 595 ;是否唯一住房 无
+	MouseClick, left, 1000, 588 ;是否满二/五 无
+	MouseClick, left, 1575, 594 ;是否需垫资 无
+	MouseClick, left, 457, 315 ;复制所有权人
 	Send {Home}   
 	Send +{End}
 	Send ^c
-	MouseClick, left, 1608, 304 ;产权证号码
+	MouseClick, left, 1608, 314 ;产权证号码
 	Send {Home}   
 	Send +{End}
 	Send ^v
@@ -536,8 +536,8 @@ neiShen2(){
 	Sleep, 500  ;等待
 	Send {enter}
 	
-	MouseClick, left, 206, 220 ;面签信息
-	MouseClick, left, 1869, 246 ;编辑客户信息
+	MouseClick, left, 206, 230 ;面签信息
+	MouseClick, left, 1869, 256 ;编辑客户信息
 	Sleep 1000
 	neiShen2ForCust()	;内审2客户信息
 	
@@ -561,60 +561,60 @@ neiShen2(){
  return  
  
  neiShen2ForDbdm(){
-	MouseClick, left, 453, 219 ;担保方式
-	MouseClick, left, 1501, 324 ;预计可贷金额(元)
+	MouseClick, left, 453, 229 ;担保方式
+	MouseClick, left, 1501, 334 ;预计可贷金额(元)
 	Send {tab}{enter}	;完善
-	Sleep 1500
+	Sleep 2500
 	
-	MouseClick, left, 422, 362, 2 ;房龄 双击
+	MouseClick, left, 422, 372, 2 ;房龄 双击
 	Send 12
-	MouseClick, left, 1035, 367 ;房产获得方式
+	MouseClick, left, 1035, 377 ;房产获得方式
 	Send {down}{enter}
-	MouseClick, left, 465, 391 ;房产性质
+	MouseClick, left, 465, 401 ;房产性质
 	Send {down}{enter}
-	MouseClick, left, 468, 417 ;规划用途
+	MouseClick, left, 468, 427 ;规划用途
 	Send {down}{enter}
-	MouseClick, left, 1033, 417 ;产权证登记日期
-	MouseClick, left, 977, 451 ;产权证登记日期 往前两个月
+	MouseClick, left, 1033, 427 ;产权证登记日期
+	MouseClick, left, 977, 461 ;产权证登记日期 往前两个月
 	MouseClick, left
 
 
 	Sleep, 500  ;等待
-	MouseClick, left, 1087, 571 ;产权证登记日期 28日
-	MouseClick, left, 474, 470 ;总楼层
+	MouseClick, left, 1087, 581 ;产权证登记日期 28日
+	MouseClick, left, 474, 480 ;总楼层
 	Send 15
-	MouseClick, left, 1050, 473 ;所在楼层
+	MouseClick, left, 1050, 483 ;所在楼层
 	Send 15
 	Send {tab}{right}	;是否二手房
-	MouseClick, left, 1040, 508 ;土地类型
+	MouseClick, left, 1040, 518 ;土地类型
 	Send {down}{enter}
-	MouseClick, left, 476, 536 ;竣工日期
-	MouseClick, left, 411, 556, 12 ;日期往前翻
-	MouseClick, left, 423, 645 ;随便选一天
+	MouseClick, left, 476, 546 ;竣工日期
+	MouseClick, left, 411, 566, 12 ;日期往前翻
+	MouseClick, left, 423, 655 ;随便选一天
 	
-	MouseClick, left, 481, 558 ;土地来源
+	MouseClick, left, 481, 568 ;土地来源
 	Send {down}{enter}
-	MouseClick, left, 856, 554 ;是否有土地证
+	MouseClick, left, 856, 564 ;是否有土地证
 	Send {tab}{right}
-	MouseClick, left, 1480, 555 ;当前是否在押
+	MouseClick, left, 1480, 565 ;当前是否在押
 	Send {tab}{right}
-	MouseClick, left, 333, 610 ;是否唯一住房 无
+	MouseClick, left, 333, 620 ;是否唯一住房 无
 	Send {tab}{right}
-	MouseClick, left, 897, 608 ;是否满二/五 无
+	MouseClick, left, 897, 618 ;是否满二/五 无
 	Send {tab}{right}
-	MouseClick, left, 1473, 609 ;是否需垫资 无
+	MouseClick, left, 1473, 619 ;是否需垫资 无
 	Send {tab}{right}
-	MouseClick, left, 457, 305 ;复制所有权人
+	MouseClick, left, 457, 315 ;复制所有权人
 	Send {Home}   
 	Send +{End}
 	Send ^c
-	MouseClick, left, 1608, 304 ;产权证号码
+	MouseClick, left, 1608, 314 ;产权证号码
 	Send {Home}   
 	Send +{End}
 	Send ^v
 	
 	;fun_btn("内审II-抵押物信息", "baocun2", "保存", 60, 20)
-	MouseClick, left, 850, 879 ;保存
+	MouseClick, left, 850, 889 ;保存
 	Send {tab}{enter}
 	
 	Sleep, 500  ;等待
@@ -638,52 +638,52 @@ neiShen2ForCust(){
 	;========================
 	;客户基本信息
 	;========================
-	MouseClick, left, 208, 220 ;初审信息
-	MouseClick, left, 1899, 249 ;修改客户信息
+	MouseClick, left, 208, 222 ;初审信息
+	MouseClick, left, 1899, 256 ;修改客户信息
 	Sleep 1000
-	MouseClick, left, 662, 300 ;定位到移动电话前面
+	MouseClick, left, 662, 310 ;定位到移动电话前面
 	Random, rand, 10000000, 99999999	;生成8位随机数
 	Random, rand2, 00000, 99999	;生成8位随机数
 	Send {tab}186%rand%
 	Send {tab}^v%rand%	;家庭住址
 	
-	MouseClick, left, 441, 325 ;定位到户籍所在省
+	MouseClick, left, 441, 335 ;定位到户籍所在省
 	Send {down}{enter}
 	
-	MouseClick, left, 838, 327 ;定位到户籍所在市
+	MouseClick, left, 838, 337 ;定位到户籍所在市
 	Send {down}{enter}
 	
 	Send {tab}^v%rand%	;户籍住址
 	Send {tab}^v%rand%	;曾用名
-	MouseClick, left, 813, 351 ;婚姻状况
+	MouseClick, left, 813, 361 ;婚姻状况
 	Send {down 2}{enter}
-	MouseClick, left, 1339, 353 ;婚姻情况
+	MouseClick, left, 1339, 363 ;婚姻情况
 	Send {down}{enter}
 	
-	MouseClick, left, 1710, 351 ;婚姻登记日期
-	MouseClick, left, 1680, 379, 10 ;日期往前选10个月
-	MouseClick, left, 1731, 463 ;随便一点
+	MouseClick, left, 1710, 361 ;婚姻登记日期
+	MouseClick, left, 1680, 389, 10 ;日期往前选10个月
+	MouseClick, left, 1731, 473 ;随便一点
 	
-	MouseClick, left, 261, 373 ;定位家庭电话
+	MouseClick, left, 261, 383 ;定位家庭电话
 	Send {tab}028852%rand2%	;家庭电话
 	
-	MouseClick, left, 1787, 375 ;证件到期日
+	MouseClick, left, 1787, 385 ;证件到期日
 	Sleep 200
-	MouseClick, left, 1819, 403, 15 ;证件到期日 往后
-	MouseClick, left, 1739, 487 ;证件到期日
+	MouseClick, left, 1819, 413, 15 ;证件到期日 往后
+	MouseClick, left, 1739, 497 ;证件到期日
 
 	
-	MouseClick, left, 822, 425 ;来本市时间
+	MouseClick, left, 822, 435 ;来本市时间
 	Send {down}{enter}
 	
-	MouseClick, left, 1220, 436 ;年收入
+	MouseClick, left, 1220, 446 ;年收入
 	Send {down}{enter}
 	Send {tab}800000
 	
-	MouseClick, left, 1724, 433 ;最高学历
+	MouseClick, left, 1724, 443 ;最高学历
 	Send {down}{enter}
 	
-	MouseClick, left, 402, 462 ;学位
+	MouseClick, left, 402, 472 ;学位
 	Send {down}{enter}
 	
 	Send {tab}%rand%@163.com	;邮箱
@@ -692,56 +692,56 @@ neiShen2ForCust(){
 	Send {tab}2			;供养人口
 	Send {tab}610041	;邮政编码
 
-	MouseClick, left, 1264, 483 ;资料收集日
-	MouseClick, left, 1233, 504, 12 ;往前面翻页
-	MouseClick, left, 1290, 587 ;选日
+	MouseClick, left, 1264, 493 ;资料收集日
+	MouseClick, left, 1233, 514, 12 ;往前面翻页
+	MouseClick, left, 1290, 597 ;选日
 	
-	MouseClick, left, 1712, 487 ;职业类别
+	MouseClick, left, 1712, 497 ;职业类别
 	Send {down}{enter}
 	
-	MouseClick, left, 267, 496	;定位在职年限
+	MouseClick, left, 267, 506	;定位在职年限
 	Send {tab}8	;在职年限
 	
-	MouseClick, left, 280, 516 ;定位公司名称
+	MouseClick, left, 280, 526 ;定位公司名称
 	Send {tab}皮特猫信息科技有限公司
 	Send {tab}环球中心N3-N9-1425
 	
-	MouseClick, left, 406, 545 ;行业分类
+	MouseClick, left, 406, 555 ;行业分类
 	Send {down}{enter}
 	Sleep 500
-	MouseClick, left, 666, 552 ;行业分类
+	MouseClick, left, 666, 562 ;行业分类
 	Send {down}{enter}
 	
-	MouseClick, left, 1125, 542 ;定位备注
+	MouseClick, left, 1125, 552 ;定位备注
 	Send {tab}^v
 	Send 这是备注
-	MouseClick, left, 429, 593 ;客户所属国家
+	MouseClick, left, 429, 603 ;客户所属国家
 	Send {down}{enter}
 	
 	;========================
 	;客户配偶信息
 	;========================
-	MouseClick, left, 299, 624 ;定位配偶姓名
+	MouseClick, left, 299, 634 ;定位配偶姓名
 	Send {tab}^v的配偶			;配偶姓名
 	
 	Random, randP1, 10000000, 99999999	;生成8位随机数
 	Send {tab}186%randP1%		;配偶电话
 	
-	MouseClick, left, 1274, 624 ;配偶性别
+	MouseClick, left, 1274, 634 ;配偶性别
 	Send {down}{enter}
 	
-	MouseClick, left, 1701, 638 ;最高学历
+	MouseClick, left, 1701, 648 ;最高学历
 	Send {down}{enter}
 	
 	Send {tab}18	;年龄
 	
-	MouseClick, left, 830, 649 ;证件类型
+	MouseClick, left, 830, 659 ;证件类型
 	Send {down}{enter}		
 	
 	RandIdCardP1 := getIdCardLine()
 	Send {tab}%RandIdCardP1%	;随机身份证
 	
-	MouseClick, left, 375, 673 ;配偶年收入
+	MouseClick, left, 375, 683 ;配偶年收入
 	Send {down}{enter}		;配偶年收入
 	Send {tab}3000			;配偶年收入
 	
@@ -752,7 +752,7 @@ neiShen2ForCust(){
 	;========================
 	;客户附属信息
 	;========================
-	MouseClick, left, 318, 249 ;客户附属信息
+	MouseClick, left, 318, 259 ;客户附属信息
 	Send {tab}549
 	Send {tab}148
 	Send {tab}549
@@ -762,7 +762,7 @@ neiShen2ForCust(){
 	Random, rand3, 10000000, 99999999	;生成8位随机数
 	Send {tab}186%rand3%
 	;Send {tab}%rand3%与借款人关系
-	MouseClick, left, 1594, 389 ;与借款人关系
+	MouseClick, left, 1594, 399 ;与借款人关系
 	Send {down}{enter}
 	Send {tab}%rand3%22
 	Send {tab}%rand3%33
@@ -773,7 +773,7 @@ neiShen2ForCust(){
 	Random, rand4, 10000000, 99999999	;生成8位随机数
 	Send {tab}186%rand4%
 	;Send {tab}%rand4%与借款人关系
-	MouseClick, left, 1599, 475 ;与借款人关系
+	MouseClick, left, 1599, 485 ;与借款人关系
 	Send {down}{enter}
 	Send {tab}%rand4%22
 	Send {tab}%rand4%33
@@ -801,12 +801,12 @@ neiShenWai(){
 	;========================
 	;初审信息(外层)
 	;========================
-	MouseClick, left, 200, 218 ;初审信息
+	MouseClick, left, 200, 228 ;初审信息
 	
-	MouseClick, left, 1890, 335 ;备用资产加一个
-	MouseClick, left, 1890, 335 ;备用资产加一个
-	MouseClick, left, 1890, 335 ;备用资产加一个
-	MouseClick, left, 940, 353 ;第一个备用资产的房产用途
+	MouseClick, left, 1890, 345 ;备用资产加一个
+	MouseClick, left, 1890, 345 ;备用资产加一个
+	MouseClick, left, 1890, 345 ;备用资产加一个
+	MouseClick, left, 940, 363 ;第一个备用资产的房产用途
 	Send 经营万事屋
 	Send {tab}老房子
 	Send {tab}老112233
@@ -817,47 +817,47 @@ neiShenWai(){
 	Send {tab}5000000
 	Send {tab}{right}
 	Send {tab}4000000
-	MouseClick, left, 1507, 447 ;与借款人关系
+	MouseClick, left, 1507, 457 ;与借款人关系
 	Send {down}{enter}
 	
-	MouseClick, left, 447, 468 ;第二个备用资产的资产类型
+	MouseClick, left, 447, 478 ;第二个备用资产的资产类型
 	Send {down}
-	MouseClick, left, 447, 468 ;第二个备用资产的资产类型
+	MouseClick, left, 447, 478 ;第二个备用资产的资产类型
 	Send {down}
-	MouseClick, left, 447, 468 ;第二个备用资产的资产类型
+	MouseClick, left, 447, 478 ;第二个备用资产的资产类型
 	Send {down}
 	
-	MouseClick, left, 972, 471 ;第二个备用资产的车辆品牌型号
+	MouseClick, left, 972, 481 ;第二个备用资产的车辆品牌型号
 	Send 川A12345
 	Send {tab}500000
 	
 	Send {tab 2}556
 	Send {tab}50000
 	
-	MouseClick, left, 1507, 447 ;与借款人关系(第一个备用资产)
+	MouseClick, left, 1507, 457 ;与借款人关系(第一个备用资产)
 	Send {down}{enter}
 	
-	MouseClick, left, 1892, 535 ;银行流水+1
-	MouseClick, left, 1892, 535 ;银行流水+1
+	MouseClick, left, 1892, 545 ;银行流水+1
+	MouseClick, left, 1892, 545 ;银行流水+1
 	Send {tab}银行流水1{tab}中风银行{tab}4000{tab}80000{tab}40000{tab}2000
 	Send {tab}银行流水2{tab}伤仲永银行{tab}4000{tab}80000{tab}40000{tab}2000
 	
-	MouseClick, left, 1859, 669 ;还款来源+1
-	MouseClick, left, 1841, 668 ;还款来源+1
+	MouseClick, left, 1859, 679 ;还款来源+1
+	MouseClick, left, 1841, 678 ;还款来源+1
 	Send {tab}家徒四壁书侵坐，无可奈何花落去{tab}出息是个大头鬼，难得遇见老夫妻
 	
-	Send {tab}{right}{tab}{right}{tab}拿钱来买开心！	;借款用途
+	Send {tab}{right}{tab}{right}{tab}{right}{tab}拿钱来买开心！	;借款用途
 	
 	;========================
 	;征信涉诉情况
 	;========================
-	MouseClick, left, 290, 220 ;征信涉诉情况
-	MouseClick, left, 278, 266 ;借款人人行征信(定位)
+	MouseClick, left, 290, 230 ;征信涉诉情况
+	MouseClick, left, 278, 276 ;借款人人行征信(定位)
 	Send {tab}{right}{tab}1{tab}2{tab}3{tab}{right}{tab}{right}{tab 2}{right}{tab}客户人行征信可以说是肥肠良好！
 	Send {tab}{right}{tab}1{tab}2{tab}3{tab}{right}{tab}{right}{tab 2}{right}{tab}配偶人行征信也可以说是肥肠良好！
-	MouseClick, left, 1623, 334 ;贷款五级分类
+	MouseClick, left, 1623, 344 ;贷款五级分类
 	Send {down}{enter}
-	MouseClick, left, 1615, 490 ;贷款五级分类
+	MouseClick, left, 1615, 500 ;贷款五级分类
 	Send {down}{enter}
 }
 
@@ -873,10 +873,10 @@ neiShen2w(){
 	
 	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 	
-	MouseClick, left, 1657, 311 ;待办进入第一个
+	MouseClick, left, 1657, 321 ;待办进入第一个
 	Send {enter}	;接受任务
 	Sleep 1000
-	MouseClick, left, 1657, 311 ;待办进入第一个
+	MouseClick, left, 1657, 321 ;待办进入第一个
 	Sleep, 2000  ;等待
 	
 	;========================
@@ -902,11 +902,11 @@ neiShen2w(){
 	;========================
 	Sleep 500
 	;~ fun_btn("内审II", "tijiao", "提交", 60, 20)
-	MouseClick, left, 778, 397	;~ 内审II提交
+	MouseClick, left, 778, 407	;~ 内审II提交
 	Sleep 500
 	
 	;~ fun_btn("内审II", "queding", "确定", 60, 20)
-	MouseClick, left, 1001, 746
+	MouseClick, left, 1001, 756
 	Sleep 1000
 	
 	ToolTip("...脚本结束")
@@ -921,25 +921,25 @@ neiShen2w(){
  return  
  
  waiShenw(){
-	MouseClick, left, 1657, 311 ;待办进入第一个
+	MouseClick, left, 1657, 321 ;待办进入第一个
 	Sleep, 5000  ;等待
 
-	MouseClick, left, 505, 693 ;内部结构
+	MouseClick, left, 505, 703 ;内部结构
 	Send {down}{enter}
-	MouseClick, left, 1045, 693 ;户型结构
+	MouseClick, left, 1045, 703 ;户型结构
 	Send {down}{enter}
-	MouseClick, left, 1626, 694 ;装修
+	MouseClick, left, 1626, 704 ;装修
 	Send {down}{enter}
-	MouseClick, left, 484, 717 ;朝向
+	MouseClick, left, 484, 727 ;朝向
 	Send {down}{enter}
 	
-	MouseClick, left, 349, 742 ;定位到（房产实际地址与产权证地址是否一致）
+	MouseClick, left, 349, 752 ;定位到（房产实际地址与产权证地址是否一致）
 	Loop, 18{
 	Send {tab}{right}
 	Sleep, 10
 	}
 	;~ 循环结束抵达  是否有老年人、残疾人
-	Send {tab}外审下户的备注备注备注
+	Send {tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}外审下户的备注备注备注
 	Send {PgDn}{tab}{tab}
 
 	/*
@@ -971,12 +971,12 @@ neiShen2w(){
 	Send 15452
 	;MouseClick, left, 931, 881 ;保存
 	;fun_btn("外审", "baocun2", "保存", 60, 20)
-	MouseClick, left, 954, 1014 ;外审里面保存
+	MouseClick, left, 954, 1024 ;外审里面保存
 	Send {tab}{enter}
 	Sleep 500
-	MouseClick, left, 1050, 666 ;保存确认提示
+	MouseClick, left, 1050, 676 ;保存确认提示
 	
-	MouseClick, left, 801, 393 ;外审主页面保存
+	MouseClick, left, 801, 403 ;外审主页面保存
 	Send {tab}{enter}
 	Sleep 500
 	Send {enter}
@@ -995,31 +995,31 @@ neiShen2w(){
  return  
  
  waiShen(){
-	MouseClick, left, 1657, 311 ;待办进入第一个
+	MouseClick, left, 1657, 321 ;待办进入第一个
 	Sleep, 5000  ;等待
 
-	MouseClick, left, 469, 684 ;内部结构
+	MouseClick, left, 469, 694 ;内部结构
 	Send {down}{enter}
-	MouseClick, left, 1033, 684 ;户型结构
+	MouseClick, left, 1033, 694 ;户型结构
 	Send {down}{enter}
-	MouseClick, left, 1609, 686 ;装修
+	MouseClick, left, 1609, 696 ;装修
 	Send {down}{enter}
-	MouseClick, left, 462, 712 ;朝向
+	MouseClick, left, 462, 722 ;朝向
 	Send {down}{enter}
-	MouseClick, left, 318, 740 ;房产实际地址与产权证地址是否一致
+	MouseClick, left, 318, 750 ;房产实际地址与产权证地址是否一致
 	Send {tab}{right}
-	MouseClick, left, 908, 739 ;使用状况
+	MouseClick, left, 908, 749 ;使用状况
 	Send {tab}{right}
-	MouseClick, left, 1463, 738 ;是否有电梯
+	MouseClick, left, 1463, 748 ;是否有电梯
 	Send {tab}{right}
-	MouseClick, left, 330, 768 ;是否有遮挡
+	MouseClick, left, 330, 778 ;是否有遮挡
 	Send {tab}{right}
-	MouseClick, left, 905, 765 ;是否打通
+	MouseClick, left, 905, 775 ;是否打通
 	Send {tab}{right}
-	MouseClick, left, 1455, 771 ;是否有老年人、残疾人
+	MouseClick, left, 1455, 781 ;是否有老年人、残疾人
 	Send {tab}{right}
 	
-	MouseClick, left, 370, 869 ;中介名称
+	MouseClick, left, 370, 879 ;中介名称
 	ClipboardOld = %ClipboardAll% ;保留剪贴板中原来的内容
 	Clipboard = 链家链家
 	Send ^v
@@ -1033,10 +1033,10 @@ neiShen2w(){
 	Send 15452
 	;MouseClick, left, 931, 881 ;保存
 	;fun_btn("外审", "baocun2", "保存", 60, 20)
-	MouseClick, left, 746, 908 ;外审里面保存
+	MouseClick, left, 746, 918 ;外审里面保存
 	Send {tab}{enter}
 	
-	MouseClick, left, 801, 393 ;外审主页面保存
+	MouseClick, left, 801, 403 ;外审主页面保存
 	Send {tab}{enter}
 	Sleep 500
 	Send {enter}
@@ -1055,16 +1055,16 @@ neiShen2w(){
  return  
  
  paiZhuw(){
-	MouseClick, left, 1657, 311 ;待办进入第一个
+	MouseClick, left, 1657, 321 ;待办进入第一个
 	Sleep, 2000  ;等待
-	MouseClick, left, 860, 1003 ;提交
+	MouseClick, left, 860, 1013 ;提交
 	Send {enter}
 	Sleep, 2000  ;等待
-	MouseClick, left, 1045, 707 ;确定
+	MouseClick, left, 1045, 717 ;确定
 	Sleep, 2000  ;等待
 	Send {enter}
 	Sleep, 4000
-	MouseClick, left, 1044, 704 ;关闭任务
+	MouseClick, left, 1044, 714 ;关闭任务
 	
 	ToolTip("...脚本结束")
 }
@@ -1078,16 +1078,16 @@ neiShen2w(){
  return  
  
  paiZhu(){
-	MouseClick, left, 1657, 311 ;待办进入第一个
+	MouseClick, left, 1657, 321 ;待办进入第一个
 	Sleep, 2000  ;等待
-	MouseClick, left, 849, 426 ;提交
+	MouseClick, left, 849, 436 ;提交
 	Send {enter}
 	Sleep, 2000  ;等待
-	MouseClick, left, 1045, 707 ;确定
+	MouseClick, left, 1045, 717 ;确定
 	Sleep, 2000  ;等待
 	Send {enter}
 	Sleep, 4000
-	MouseClick, left, 1044, 704 ;关闭任务
+	MouseClick, left, 1044, 714 ;关闭任务
 	
 	ToolTip("...脚本结束")
 }
@@ -1104,19 +1104,19 @@ zhongShenw(){
 	;~ MouseClick, left, 1774, 317 ;待办进入第一个
 	;~ Send {tab}{enter}	;待办进入第一个
 	;~ MouseClick, left, 1007, 659 ;接受任务
-	MouseClick, left, 1765, 333 ;待办进入第一个
+	MouseClick, left, 1765, 343 ;待办进入第一个
 	Send {tab}{enter}	;待办进入第一个
 	Send {enter}	;接受任务
 	Sleep, 1500  ;等待
-	MouseClick, left, 1765, 333 ;待办进入第一个
+	MouseClick, left, 1765, 343 ;待办进入第一个
 	Send {tab}{enter}	;待办进入第一个
 	Sleep, 3000  ;等待
 	
-	MouseClick, left, 1765, 333 ;随便点一下，在修改抵押物信息里面定位
+	MouseClick, left, 1765, 343 ;随便点一下，在修改抵押物信息里面定位
 	Send {PgDn}	;向下翻页
 	
 	Send, 1000
-	MouseClick, left, 1605, 824, 3 ;下户快卖价（元）//双击
+	MouseClick, left, 1625, 797, 3 ;下户快卖价（元）//双击
 	Send ^c
 	Send {tab}^v
 	Send {tab 2}^v
@@ -1124,14 +1124,14 @@ zhongShenw(){
 	Send {tab}{tab}{tab}{enter}
 	Sleep, 500  ;等待
 	Send {enter} 
-	;MouseClick, left, 941, 495 ;提交
+	;MouseClick, left, 941, 505 ;提交
 	
 	Sleep, 500  ;等待
 	
 	;fun_btn("评估经理终审", "tijiao5", "提交", 60, 20)
-	MouseClick, left, 909, 390 ;提交
+	MouseClick, left, 909, 400 ;提交
 	
-	MouseClick, left, 987, 655 ;确认
+	MouseClick, left, 987, 665 ;确认
 	Sleep, 2000  ;等待
 	Send {enter}
 	
@@ -1147,14 +1147,14 @@ zhongShenw(){
  return  
  
  zhongShen(){
-	MouseClick, left, 1580, 330 ;待办进入第二个
+	MouseClick, left, 1580, 340 ;待办进入第二个
 	Send {tab 2}{enter}	;待办进入第二个
-	MouseClick, left, 1007, 659 ;接受任务
+	MouseClick, left, 1007, 669 ;接受任务
 	Sleep, 2500  ;等待
-	MouseClick, left, 1580, 330 ;待办进入第二个
+	MouseClick, left, 1580, 340 ;待办进入第二个
 	Send {tab 2}{enter}	;待办进入第二个
 	Sleep, 4000  ;等待
-	MouseClick, left, 1563, 868, 2 ;下户快卖价（元）//双击
+	MouseClick, left, 1563, 878, 2 ;下户快卖价（元）//双击
 	Send ^c
 	Send {tab}^v
 	Send {tab 2}^v
@@ -1168,7 +1168,7 @@ zhongShenw(){
 	
 	fun_btn("评估经理终审", "tijiao5", "提交", 60, 20)
 	
-	MouseClick, left, 987, 655 ;确认
+	MouseClick, left, 987, 665 ;确认
 	Sleep, 2000  ;等待
 	Send {enter}
 	
@@ -1184,13 +1184,13 @@ zhongShenw(){
  return  
  
  liuChengTu(){
-	MouseClick, left,  80,  271
+	MouseClick, left,  80,  281
 	Sleep, 1000
-	MouseClick, left,  94,  360
+	MouseClick, left,  94,  370
 	Sleep, 1500
-	MouseClick, left,  1005,  314
+	MouseClick, left,  1005,  324
 	Sleep, 2500
-	MouseClick, left,  1717,  439
+	MouseClick, left,  1717,  449
 	
 	ToolTip("...脚本结束")
 }
@@ -1205,22 +1205,22 @@ zhongShenw(){
  
  shenPi1w(){
 	
-	MouseClick, left,  1474,  273
+	MouseClick, left,  1474,  283
 	Sleep, 100
 	Send, {TAB}{enter}
 	Sleep, 2000  ;等待
-	MouseClick, left, 1657, 311 ;待办进入第一个
-	MouseClick, left, 1007, 659 ;接受任务
+	MouseClick, left, 1657, 321 ;待办进入第一个
+	MouseClick, left, 1007, 669 ;接受任务
 	Sleep, 2000  ;等待
 	
-	MouseClick, left, 367, 282 ;需要签署的文件
+	MouseClick, left, 367, 292 ;需要签署的文件
 	Send {tab}{space}{tab}{space}{tab}{space}{tab}{space}{tab}{space}{tab}{space}
 	
-	MouseClick, left, 510, 417 ;用款审批意见
+	MouseClick, left, 510, 427 ;用款审批意见
 	
 
-	MouseClick, left, 280, 229 ;审查信息
-	MouseClick, left, 773, 340 ;借款人身份证 
+	MouseClick, left, 280, 239 ;审查信息
+	MouseClick, left, 773, 350 ;借款人身份证 
 	;~ Loop, 7{
 	;~ Send {tab}{right %A_Index%}{tab}%A_Index%
 	;~ Sleep, 100
@@ -1286,7 +1286,7 @@ zhongShenw(){
 	;~ Sleep, 100
 	;~ }
 	
-	MouseClick, left, 823, 908 ;同意
+	MouseClick, left, 823, 918 ;同意
 	Send {enter}
 
 	ToolTip("...脚本结束")
@@ -1301,14 +1301,14 @@ zhongShenw(){
  return  
  
  shenPi1(){
-	MouseClick, left,  1474,  273
+	MouseClick, left,  1474,  283
 	Sleep, 100
 	Send, {TAB}{enter}
 	Sleep, 2000  ;等待
-	MouseClick, left, 1657, 311 ;待办进入第一个
-	MouseClick, left, 1007, 659 ;接受任务
+	MouseClick, left, 1657, 321 ;待办进入第一个
+	MouseClick, left, 1007, 669 ;接受任务
 	Sleep, 2000  ;等待
-	MouseClick, left, 715, 449 ;需要签署的文件
+	MouseClick, left, 715, 459 ;需要签署的文件
 	Send {down}{down}{down}{esc}
 	Send {tab}{tab}{tab}{enter}{enter}
 	Sleep, 2000  ;等待
@@ -1326,10 +1326,10 @@ zhongShenw(){
  return  
  
  shenPi2(){
-	MouseClick, left, 1657, 311 ;待办进入第一个
-	MouseClick, left, 1007, 659 ;接受任务
+	MouseClick, left, 1657, 321 ;待办进入第一个
+	MouseClick, left, 1007, 669 ;接受任务
 	Sleep, 2000  ;等待
-	MouseClick, left, 346, 217 ;申请信息
+	MouseClick, left, 346, 227 ;申请信息
 	Sleep, 500  ;等待
 	
 	fun_btn("审批经理审批Ⅱ", "fushuchanpin", "附属产品", 100, 15)
@@ -1355,8 +1355,8 @@ zhongShenw(){
  return  
  
  shenPi2w(){
-	MouseClick, left, 1657, 311 ;待办进入第一个
-	MouseClick, left, 1007, 659 ;接受任务
+	MouseClick, left, 1657, 321 ;待办进入第一个
+	MouseClick, left, 1007, 669 ;接受任务
 	Sleep, 2000  ;等待
 	;~ MouseClick, left, 346, 217 ;申请信息
 	;~ Sleep, 500  ;等待
@@ -1369,7 +1369,7 @@ zhongShenw(){
 	;~ MouseClick, left, 740, 725 ;同意前面一点
 	;~ Send {tab}{enter}
 	
-	MouseClick, left, 825, 579 ;接受任务
+	MouseClick, left, 825, 589 ;接受任务
 	Send {enter}
 	
 	ToolTip("...脚本结束")
@@ -1384,14 +1384,14 @@ zhongShenw(){
  return  
  
  ziJinZhuanYuan(){
-	MouseClick, left,  1439, 308
+	MouseClick, left,  1439, 318
 	Send {tab 2}{enter}
 	Sleep, 3000  ;等待
-	MouseClick, left, 467, 415 ;资金方
+	MouseClick, left, 467, 425 ;资金方
 	Send {down 1}{enter}
-	MouseClick, left, 1055, 415 ;放款机构
+	MouseClick, left, 1055, 425 ;放款机构
 	Send {down 4}{enter}
-	MouseClick, left, 1700, 426 ;计划归入资产包
+	MouseClick, left, 1700, 436 ;计划归入资产包
 	Send {down 1}{enter}
 	Send {tab}{enter 2}
 	Sleep, 2000  ;等待
@@ -1418,32 +1418,32 @@ zhongShenw(){
 		;~ Send {tab 2}{enter}	;进入任务
 	;~ }
 	
-	MouseClick, left,  1746, 314
+	MouseClick, left,  1746, 324
 	Send {tab}{enter}	;进入任务
 	Sleep 1500
-	MouseClick, left,  497, 651	;年利率
+	MouseClick, left,  497, 661	;年利率
 	
-	MouseClick, left,  510, 677, 2	;营销利率 双击
+	MouseClick, left,  510, 687, 2	;营销利率 双击
 	Send 19.8
 	
-	MouseClick, left,  1103, 717	;业务推介费收取方式
-	MouseClick, left,  1098, 785	;放款前收取部分放款后按月收取
-	MouseClick, left,  1075, 675, 2	;业务推介费 双击
+	MouseClick, left,  1103, 727	;业务推介费收取方式
+	MouseClick, left,  1098, 795	;放款前收取部分放款后按月收取
+	MouseClick, left,  1075, 685, 2	;业务推介费 双击
 	Send 6
-	MouseClick, left,  1620, 703, 2	;业务推介费放款后 双击
+	MouseClick, left,  1620, 713, 2	;业务推介费放款后 双击
 	Send 2
 	
-	MouseClick, left,  1101, 746	;融资服务费收取方式
-	MouseClick, left,  1122, 812	;放款前收取部分放款后按月收取
-	MouseClick, left,  1640, 743, 2	;融资服务费放款后  双击
+	MouseClick, left,  1101, 756	;融资服务费收取方式
+	MouseClick, left,  1122, 822	;放款前收取部分放款后按月收取
+	MouseClick, left,  1640, 753, 2	;融资服务费放款后  双击
 	Send 1.5
 	
 	
-	MouseClick, left,  500, 707	;业务推介费收取形式
-	MouseClick, left,  519, 751	;委托收取
+	MouseClick, left,  500, 717	;业务推介费收取形式
+	MouseClick, left,  519, 761	;委托收取
 	
-	MouseClick, left,  890, 900	;提交
-	MouseClick, left,  995, 741	;确定
+	MouseClick, left,  890, 910	;提交
+	MouseClick, left,  995, 751	;确定
 	
 	ToolTip("...脚本结束")
 }
@@ -1457,9 +1457,9 @@ zhongShenw(){
  return  
  
  yongKuanPiFu(){
-	MouseClick, left, 1657, 311 ;待办进入第一个
+	MouseClick, left, 1657, 321 ;待办进入第一个
 	Sleep, 2000  ;等待
-	MouseClick, left,  800,  955
+	MouseClick, left,  800,  965
 	Sleep, 100
 	Send, {TAB}{ENTER}{ENTER}
 	
@@ -1478,8 +1478,8 @@ tiKuanShenQing(){
 	
 	nomsg := fun_btn_nomsg("提款申请", "tikuanshenqing", "提款申请", 10, 10)
 	if(nomsg == 2 || nomsg == 1){
-		MouseClick, left, 1657, 311 ;待办进入第一个
-		MouseClick, left, 1007, 659 ;接受任务
+		MouseClick, left, 1657, 321 ;待办进入第一个
+		MouseClick, left, 1007, 669 ;接受任务
 	}else{
 		Send {tab 2}{enter}	;进入任务
 	}
@@ -1487,48 +1487,48 @@ tiKuanShenQing(){
 	Sleep, 2500  ;等待
 	
 	
-	MouseClick, left, 298, 273 ;合同信息tab
+	MouseClick, left, 298, 283 ;合同信息tab
 	Send {tab 5}{enter}		;合同生效日期
 	
 	;========================
 	;客户代扣开户行
 	;========================
-	MouseClick, left, 1814, 521 ;客户代扣开户行
+	MouseClick, left, 1814, 531 ;客户代扣开户行
 	Sleep, 1000  ;等待
-	MouseClick, left, 968, 517 ;选中第一个客户账号选择
+	MouseClick, left, 968, 527 ;选中第一个客户账号选择
 	Sleep, 500  ;等待
-	MouseClick, left, 987, 797 ;确定
+	MouseClick, left, 987, 807 ;确定
 	
 	;========================
 	;客户放款账户开户行
 	;========================
-	MouseClick, left, 1811, 545	;客户放款账户开户行
+	MouseClick, left, 1811, 555	;客户放款账户开户行
 	Sleep, 1000  ;等待
-	MouseClick, left, 924, 537 ;选中第一个客户账号选择
+	MouseClick, left, 924, 547 ;选中第一个客户账号选择
 	Sleep, 500  ;等待
-	MouseClick, left, 987, 797 ;确定
+	MouseClick, left, 987, 807 ;确定
 	
 	
 	Sleep, 500  ;等待
-	MouseClick, left, 534, 736 ;授信用途
+	MouseClick, left, 534, 746 ;授信用途
 	Send {down}{enter}
 	
 	Send {tab}123	;用途说明：
 	
-	MouseClick, left, 1150, 470 ;合同生效日
+	MouseClick, left, 1150, 480 ;合同生效日
 	Send {enter}
 	
-	MouseClick, left, 633, 810 ;定位到保存合同前面
+	MouseClick, left, 633, 820 ;定位到保存合同前面
 	Send {tab 2}{enter}	;暂存
 	sleep 1000 
 	
 	Send {enter}
-	MouseClick, left, 633, 810 ;zj
+	MouseClick, left, 633, 820 ;zj
 	Send {tab 3}{enter}	;生成合同
 	;~ sleep 5000 
 	
 	;~ Send {enter}
-	;~ MouseClick, left, 633, 810 ;zj
+	;~ MouseClick, left, 633, 820 ;zj
 	;~ Send {tab 4}{enter}	;签订合同
 	;~ sleep 5000 
 	
@@ -1554,9 +1554,9 @@ tiKuanShenQing(){
  return
 
 yunYing(){
-	MouseClick, left,  1645,  310
+	MouseClick, left,  1645,  320
 	Sleep, 1500
-	MouseClick, left,  201,  526
+	MouseClick, left,  201,  536
 	Sleep, 100
 	Send, {TAB}{SPACE}
 	
@@ -1590,11 +1590,11 @@ daiqianfeiyong(){
 	
 	fun_btn("菜单", "daiqianfeiyongshouqu", "贷前费用收取", 50, 10)
 	Sleep, 200
-	MouseClick, left,  353, 222		;客户名称
+	MouseClick, left,  353, 232		;客户名称
 	Send ^v
 	fun_btn("贷前费用收取", "sousuotubiao", "搜索图标", 50, 10)
 	Sleep 300
-	MouseClick, left,  575, 337		;第一条数据
+	MouseClick, left,  575, 347		;第一条数据
 	fun_btn("贷前费用收取", "duigoutubiao", "对勾图标", 50, 10)
 	Sleep 500
 	fun_btn("贷前费用收取", "duigoutubiao", "对勾图标", 50, 10)
@@ -1604,11 +1604,11 @@ daiqianfeiyong(){
 	
 	fun_btn("菜单", "daiqianfeiyongfuhe", "贷前费用复核", 50, 10)
 	Sleep, 200
-	MouseClick, left,  353, 222		;客户名称
+	MouseClick, left,  353, 232		;客户名称
 	Send ^v
 	fun_btn("贷前费用收取", "sousuotubiao", "搜索图标", 50, 10)
 	Sleep 300
-	MouseClick, left,  575, 337		;第一条数据
+	MouseClick, left,  575, 347		;第一条数据
 	fun_btn("贷前费用收取", "duigoutubiao", "对勾图标", 50, 10)
 	Sleep 500
 	fun_btn("贷前费用收取", "duigoutubiao", "对勾图标", 50, 10)
@@ -1630,35 +1630,35 @@ daiqianfeiyong(){
  dzMianQian(){
 	Send {PgDn} 
 	Sleep 100
-	MouseClick, left, 469, 479
+	MouseClick, left, 469, 489
 	Send 1{tab}2{tab}3{tab}4{tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{space}{tab}{tab}{tab}{tab}6{tab}{tab}7{tab}80000{tab}79999{tab}10{tab}11{tab}1222 2222 2222 22{tab}13{tab}14{tab}15{tab}79888{tab}60000{tab}18{tab}19{tab}59999{tab}21{tab}22{tab}23
 	
-	MouseClick, left, 318, 244 ; 定位到征信及涉诉情况
+	MouseClick, left, 318, 254 ; 定位到征信及涉诉情况
 	Send {tab}{tab}{tab}{tab}{tab}{tab}{tab}{tab}{space}
 	Send {tab}{tab}{tab}{space}
 	Send {tab}{tab}{tab}{space}
 	Send {tab}{tab}{tab}{space}
-	MouseClick, left, 1050, 518 ;房产当前状态
+	MouseClick, left, 1050, 528 ;房产当前状态
 	Send {down}{enter}
-	MouseClick, left, 1611, 506 ;使用状态
+	MouseClick, left, 1611, 516 ;使用状态
 	Send {down}{enter}
-	MouseClick, left, 470, 538 ;权利人证件类型
+	MouseClick, left, 470, 548 ;权利人证件类型
 	Send {down}{enter}
-	MouseClick, left, 1029, 538 ;权利人证件号
+	MouseClick, left, 1029, 548 ;权利人证件号
 	Send 421002198005106890
-	MouseClick, left, 1574, 547 ;房产所在地区
+	MouseClick, left, 1574, 557 ;房产所在地区
 	Send {down}{enter}
-	MouseClick, left, 1663, 547 ;房产所在地区
+	MouseClick, left, 1663, 557 ;房产所在地区
 	Send {down}{enter}
-	MouseClick, left, 464, 567 ;房产用途
+	MouseClick, left, 464, 577 ;房产用途
 	Send {down}{enter}
-	MouseClick, left, 1600, 574 ;房产性质
+	MouseClick, left, 1600, 584 ;房产性质
 	Send {down}{enter}
-	MouseClick, left, 1036, 652 ;授信方式
+	MouseClick, left, 1036, 662 ;授信方式
 	Send {down}{enter}
 	Send {PgUp}
 	Sleep, 300  ;等待
-	MouseClick, left, 1841, 246 ;新增客户基本信息
+	MouseClick, left, 1841, 256 ;新增客户基本信息
 	Sleep, 1000  ;等待
 	openCustInfo()
 	
@@ -1672,9 +1672,9 @@ daiqianfeiyong(){
  ::``hc:: 
 	Send ^r
 	Sleep, 1500  ;等待
-	MouseClick, left, 80, 253 ;系统缓存管理
+	MouseClick, left, 80, 263 ;系统缓存管理
 	Sleep, 1000  ;等待
-	MouseClick, left, 310, 257 ;定位到数据字典缓存
+	MouseClick, left, 310, 267 ;定位到数据字典缓存
 	Send {tab}{enter}{tab}{tab}{enter}{tab}{enter}{tab}{enter}{tab}{enter}{tab}{enter}{tab}{enter}
 	Sleep, 700  ;等待
 	Send ^r
@@ -1686,9 +1686,9 @@ daiqianfeiyong(){
  */
  refreshMenu(){
 	/*
-	MouseClick, left, 78, 241 ;刷新菜单
+	MouseClick, left, 78, 251 ;刷新菜单
 	Sleep, 1000  ;等待
-	MouseClick, left, 78, 241 ;刷新菜单
+	MouseClick, left, 78, 251 ;刷新菜单
 	Sleep, 1000  ;等待
 	*/
 	ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\caidan_dakai_3.bmp
@@ -1721,16 +1721,16 @@ daiqianfeiyong(){
  */
  openCustInfo(){
 	refreshMenu()
-	MouseClick, left, 53, 400 ;菜单-客户信息管理
+	MouseClick, left, 53, 410 ;菜单-客户信息管理
 	Sleep, 1000  ;等待
-	MouseClick, left, 75, 439 ;菜单-客户信息
+	MouseClick, left, 75, 449 ;菜单-客户信息
 	Sleep, 1500  ;等待
-	MouseClick, left, 311, 1021 ;页
+	MouseClick, left, 311, 1031 ;页
 	Send {Home}   
 	Send +{End}
 	Send 4{enter}
 	Sleep, 1500  ;等待
-	MouseClick, left,  403,  594, 2
+	MouseClick, left,  403,  604, 2
 	Send ^c
 	
 	ImageSearch, OutputVarXA, OutputVarYA, 0, 0, A_ScreenWidth, A_ScreenHeight,D:\SoftWare\AutoHotKey\AutoHotKey\tool\ReadFile\dangqiantab.bmp
