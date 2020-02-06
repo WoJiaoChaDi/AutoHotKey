@@ -88,7 +88,7 @@ return
 return
 
  /*
-使用chrome时，按Ctrl+Shift+X,打开调试模式
+使用chrome时，按Ctrl+Shift+X,查看框架源代码
 */
 ^+x::
 	Send {F12}
@@ -106,50 +106,6 @@ return
 */
 #IfWinActive ahk_group EclipseAllWindow
 
-/*
-在eclipse里面，win+e打开当前文件所在路径，并定位在该文件上
-*/
-#e::
-	WinGet, active_id, ID, A    ;获取当前激活页面的id并赋值给active_id变量
-	WinGetClass, this_class, ahk_id %active_id%		;获取窗口class
-	WinGetTitle, this_title, ahk_id %active_id%		;获取窗口title标题
-	
-	index := InStr(this_title, " - ")
-	
-	mic := SubStr(this_title, 1, index-1)
-	dir := SubStr(this_title, index+3)
-	dir := SubStr(dir, 1, StrLen(file_name)-10 )
-	dir := RegExReplace(dir, "\/", "\")     ;将匹配的字符串替换成"123"，并返回替换后的值
-	
-	real_dir = ""
-	
-	tooltip,即将打开:%dir%
-	
-	if(mic == "mic_0"){
-		real_dir = D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64\workspace\microcredit-parent-yxjr-v2\%dir%
-	}else if(mic == "mic_1"){
-		real_dir = D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64_tag1\workspace\microcredit-parent-yxjr-v2_tag\%dir%
-	}else if(mic == "mic_2"){
-		real_dir = D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64_tag2\workspace\microcredit-parent-yxjr-v2_tag2\%dir%
-	}else if(mic == "mic_3"){
-		real_dir = D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64_tag3\workspace\microcredit-parent-yxjr-v2_tag3\%dir%
-	}else if(mic == "mic_end"){
-		real_dir = D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64_tagEnd\workspace\microcredit-parent-yxjr-v2_tagEnd\%dir%
-	}else if(mic == "dh_1"){
-		real_dir = D:\Work\PeteCat\eclipse-jee-luna-SR2-win32-x86_64_dtag1\workspace\microcredit-parent\%dir%
-	}else{
-		tooltip,请切换到java视图
-		sleep, 1000
-		tooltip,
-		return
-	}
-	
-	open_dir(real_dir)	;打开文件路径
-	
-	sleep, 1000
-	tooltip,
-	
-return
 
 /*
 在eclipse里面，win+w打开主干合并代码的文件目录
@@ -381,9 +337,9 @@ return
 #IfWinActive ahk_exe explorer.exe
 
 /*
- win + p 新建文件夹，并以当前日期自动命名
+新建文件夹，并以当前日期自动命名
 */
-#p::
+#t::
 	now_dir:= A_Desktop
 	;~ WinGetClass class, ahk_id WinExist("A")
 	WinGet, active_id, ID, A    ;获取当前激活页面的id并赋值给active_id变量
@@ -456,7 +412,7 @@ return
 #Esc::!F4
 
 /*
- * @Description: alt+A 选中光标所在行所有内容，并把光标定位到末尾  **选中光标所在行，并把光标定位到末尾**
+ * @Description: alt+A 选中光标所在行所有内容，并把光标定位到末尾
  * @author XuDong
  */
 !a::	
@@ -465,43 +421,12 @@ return
 	Send +{End}
  return		
 
-/*
- * @Description: 键入//n再一个终止符，打开notepad
- * @author XuDong
- */
- :://n::	
-	Run notepad	
- return		
 
 /*
- * @Description: //calc打开计算器
+ * @Description: win+b 打开sublime_text
  * @author XuDong
  */
-	 :://calc::	
-	 Run calc
- return		
-
-/*
- * @Description: //f打开百度翻译
- * @author XuDong
- */
- :://f::	
-	Run https://fanyi.baidu.com/
- return  
- 
- /*
- * @Description: //b打开百度	
- * @author XuDong
- */
- :://b::	
-	Run https://www.baidu.com/
- return  
-
-/*
- * @Description: win+b 打开打开Sublime Text3
- * @author XuDong
- */
- #b::	
+#b::	
 	Run D:\Work\Tools\Sublime Text 3\sublime_text.exe 
  return  
 
@@ -509,82 +434,10 @@ return
  * @Description: win+f 打开everything
  * @author XuDong
  */
- ;~ #f::	
-	;~ Run D:\SoftWare\Everything-1.4.0.713b.x86-Setup\Everything.exe
- ;~ return  
- 
- /*
- * @Description: win+f 打开listary	**打开搜索**
- * @author XuDong
- */
- #f::	
-	Send {ctrl 2}
+#f::	
+	Run E:\Software\Everything-1.4.0.713b.x86\Everything.exe
  return  
- 
 
-/*
- * @Description: //d打开d盘
- * @author XuDong
- */
- :://d::	
-	Run D:\
- return		
-
-/*
- * @Description: //e打开e盘
- * @author XuDong
- */
- :://e::	
-	Run E:\
- return 
-
-/*
- * @Description: ctrl+win+c 复制文件路径
- * @author XuDong
- */
-^#c::
-	send ^c
-	sleep,200
-	clipboard=%clipboard% ; 这句还是废话一下：windows 复制的时候，剪贴板保存的是“路径”。只是路径不是字符串，只要转换成字符串就可以粘贴出来了。
-	tooltip,%clipboard%
-	sleep,1000
-	tooltip,
-return 
-
-/*
- * @Description: ctrl+delete 剪切
- * @author XuDong
- */
-^Delete::
-	send ^x
-return 
-
-/*
- * @Description: ctrl+insert 粘贴
- * @author XuDong
- */
-^Insert::
-	send ^v
-return 
-
-/*
- * @Description: ctrl+\ 复制
- * @author XuDong
- */
-^\::
-	send ^c
-return 
-
-/*
- * @Description: //t 计时器
- * @author XuDong
- */
-:://t::
-	InputBox, time, 计时器, 请输入一个时间（单位是秒）	; 弹出一个输入框，标题是“计时器”，内容是“请输入一个时间（单位是秒）”
-	millisecond := time*1000	; 如果一个变量要做计算的话，一定要像这样写，和平常的算式相比，多了一个冒号。sleep 的时间是按照千分之一秒算的，这里乘以 1000 就变成秒了。
-	Sleep,%millisecond%
-	MsgBox 计时结束（%time%秒）
-return
 
 /*
  * @Description: shift+alt+1 --> ctrl+home
@@ -606,7 +459,7 @@ return
  * @Description: win+alt+e  打开所选中的文件路径所在的文件夹，并定位到该文件
  * @author XuDong
  */
- #!e::	
+#!e::	
 	SwitchIME(0x04090409) ; 英语(美国) 美式键盘
 	Send ^c
 	xC_tmp := % Clipboard
@@ -658,11 +511,10 @@ win+下滚轮  透明窗口
 	WinSet, Transparent, %active_tran%, ahk_id %active_id%		;修改透明值
 return
 
-
  /*
-	对窗口的置顶/取消置顶操作
+	Win+P 对窗口的置顶/取消置顶操作
 */
-#t::
+#p::
 Sys.Win.Topmost(WinMenu.InfoObj[3])
 Return
 
@@ -908,6 +760,129 @@ MoveCaret:
 	SetTimer, MoveCaret, Off
 return
 
+/*
+ * @Description: ctrl+win+c 复制文件路径
+ * @author XuDong
+ */
+^#c::
+	send ^c
+	sleep,200
+	clipboard=%clipboard% ; 这句还是废话一下：windows 复制的时候，剪贴板保存的是“路径”。只是路径不是字符串，只要转换成字符串就可以粘贴出来了。
+	tooltip,%clipboard%
+	sleep,1000
+	tooltip,
+return 
+
+/*
+ * @Description: ctrl+delete 剪切
+ * @author XuDong
+ */
+^Delete::
+	send ^x
+return 
+
+/*
+ * @Description: ctrl+insert 粘贴
+ * @author XuDong
+ */
+^Insert::
+	send ^v
+return 
+
+/*
+ * @Description: ctrl+\ 复制
+ * @author XuDong
+ */
+^\::
+	send ^c
+return 
+
+ 
+/*
+-------------------任何时候，快捷字符串，需要键入相应的字符串--------------------
+*/
+
+/*
+ * @Description: 键入//n再一个终止符，打开notepad
+ * @author XuDong
+ */
+:://n::	
+	Run notepad	
+ return		
+
+/*
+ * @Description: //calc再一个终止符，打开计算器
+ * @author XuDong
+ */
+:://calc::	
+	 Run calc
+ return		
+
+/*
+ * @Description: //f打开百度翻译
+ * @author XuDong
+ */
+:://f::	
+	Run https://fanyi.baidu.com/
+ return  
+ 
+ /*
+ * @Description: //b打开百度
+ * @author XuDong
+ */
+:://b::	
+	Run https://www.baidu.com/
+ return  
+
+
+/*
+ * @Description: //d打开d盘
+ * @author XuDong
+ */
+:://d::	
+	Run D:\
+ return		
+
+/*
+ * @Description: //e打开e盘
+ * @author XuDong
+ */
+:://e::	
+	Run E:\
+ return 
+
+
+/*
+ * @Description: //t 计时器
+ * @author XuDong
+ */
+:://t::
+	InputBox, time, 计时器, 请输入一个时间（单位是秒）	; 弹出一个输入框，标题是“计时器”，内容是“请输入一个时间（单位是秒）”
+	millisecond := time*1000	; 如果一个变量要做计算的话，一定要像这样写，和平常的算式相比，多了一个冒号。sleep 的时间是按照千分之一秒算的，这里乘以 1000 就变成秒了。
+	Sleep,%millisecond%
+	MsgBox 计时结束（%time%秒）
+return
+
+
+/*
+ * @Description: //tab tab按键，按照行数排班
+ * @author XuDong
+ */
+:://tab::
+	InputBox, loopTime, End+Tab 循环次数, 请输入循环次数
+	
+	if (loopTime > 0) {
+		Loop, %loopTime% {
+			Send {Down}{Home}{Tab}
+		}
+	}
+return
+
+
+/*
+---------------测试内容----------------
+*/
+
  /*
  * f12::ExitApp ;f12退出	
  * f11::Pause ;暂停
@@ -923,7 +898,8 @@ return
  return		
 
  */
- 
+
+
  
 ;~下面是临时快捷键新增的字符串
 ;~:R:***:的都是临时的热字符串
